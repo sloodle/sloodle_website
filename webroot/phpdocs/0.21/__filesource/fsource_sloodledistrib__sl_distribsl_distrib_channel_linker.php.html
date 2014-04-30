@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for sl_distrib_channel_linker.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file sl_distrib_channel_linker.php</h1>
+<p>Documentation is available at <a href="../sloodledistrib/_sl_distrib---sl_distrib_channel_linker.php.html">sl_distrib_channel_linker.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a3"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Sloodle&nbsp;object&nbsp;distribution&nbsp;channel&nbsp;linker.</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Allows&nbsp;an&nbsp;in-world&nbsp;Sloodle&nbsp;Object&nbsp;Distributor&nbsp;object&nbsp;to&nbsp;send&nbsp;object&nbsp;distribution&nbsp;information&nbsp;to&nbsp;the&nbsp;Moodle&nbsp;database&nbsp;(including&nbsp;inventory&nbsp;list).</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;sloodledistrib</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@copyright</span><span class="src-doc">&nbsp;Copyright&nbsp;(c)&nbsp;2006-8&nbsp;Sloodle&nbsp;(various&nbsp;contributors)</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@license</span><span class="src-doc">&nbsp;http://www.gnu.org/licenses/gpl-3.0.html&nbsp;GNU&nbsp;GPL&nbsp;v3</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-tag">@contributor</span><span class="src-doc">&nbsp;Edmund&nbsp;Edgar</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-tag">@contributor</span><span class="src-doc">&nbsp;Peter&nbsp;R.&nbsp;Bloomfield</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a17"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Expected&nbsp;to&nbsp;be&nbsp;called&nbsp;from&nbsp;in-world&nbsp;by&nbsp;an&nbsp;LSL&nbsp;script.</span></div></li>
+<li><div class="src-line"><a name="a18"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;The&nbsp;following&nbsp;parameters&nbsp;are&nbsp;required:</span></div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a20"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;&nbsp;&nbsp;sloodlepwd&nbsp;=&nbsp;the&nbsp;prim&nbsp;password&nbsp;used&nbsp;to&nbsp;authenticate&nbsp;the&nbsp;request</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;&nbsp;&nbsp;sloodlechannel&nbsp;=&nbsp;specifies&nbsp;the&nbsp;UUID&nbsp;of&nbsp;the&nbsp;XMLRPC&nbsp;channel&nbsp;on&nbsp;which&nbsp;the&nbsp;object&nbsp;is&nbsp;listening</span></div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;&nbsp;&nbsp;sloodlecontents&nbsp;=&nbsp;a&nbsp;pipe-delimited&nbsp;list&nbsp;of&nbsp;inventory&nbsp;items</span></div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;On&nbsp;successful&nbsp;storage&nbsp;of&nbsp;channel,&nbsp;status&nbsp;code&nbsp;1&nbsp;is&nbsp;returned.</span></div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;On&nbsp;failure&nbsp;to&nbsp;set&nbsp;channel,&nbsp;status&nbsp;code&nbsp;error&nbsp;code&nbsp;-101&nbsp;is&nbsp;returned.</span></div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;If&nbsp;a&nbsp;required&nbsp;parameter&nbsp;was&nbsp;not&nbsp;specified,&nbsp;error&nbsp;code&nbsp;-811&nbsp;is&nbsp;returned.</span></div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-str">'../config.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">SLOODLE_DIRROOT</span>.<span class="src-str">'/sl_debug.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">SLOODLE_DIRROOT</span>.<span class="src-str">'/lib/sl_lsllib.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Create&nbsp;an&nbsp;LSL&nbsp;handler&nbsp;and&nbsp;process&nbsp;the&nbsp;basic&nbsp;request&nbsp;data</span></div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'Creating&nbsp;LSL&nbsp;handler...&lt;br/&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$lsl&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../sloodle/SloodleLSLHandler.html">SloodleLSLHandler</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'Processing&nbsp;basic&nbsp;request&nbsp;data...&lt;br/&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$lsl</span><span class="src-sym">-&gt;</span><span class="src-id">request</span><span class="src-sym">-&gt;</span><span class="src-id">process_request_data</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Ensure&nbsp;the&nbsp;request&nbsp;is&nbsp;authenticated</span></div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'Authenticating&nbsp;request...&lt;br/&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$lsl</span><span class="src-sym">-&gt;</span><span class="src-id">request</span><span class="src-sym">-&gt;</span><span class="src-id">authenticate_request</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Obtain&nbsp;our&nbsp;additional&nbsp;parameters</span></div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'Obtaining&nbsp;additional&nbsp;parameters...&lt;br/&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$sloodlechannel&nbsp;</span>=&nbsp;<span class="src-var">$lsl</span><span class="src-sym">-&gt;</span><span class="src-id">request</span><span class="src-sym">-&gt;</span><span class="src-id">required_param</span><span class="src-sym">(</span><span class="src-str">'sloodlechannel'</span><span class="src-sym">,&nbsp;</span><span class="src-id">PARAM_RAW</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$sloodlecontents&nbsp;</span>=&nbsp;<span class="src-var">$lsl</span><span class="src-sym">-&gt;</span><span class="src-id">request</span><span class="src-sym">-&gt;</span><span class="src-id">required_param</span><span class="src-sym">(</span><span class="src-str">'sloodlecontents'</span><span class="src-sym">,&nbsp;</span><span class="src-id">PARAM_RAW</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result&nbsp;</span>=&nbsp;<span class="src-id">TRUE</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Attempt&nbsp;to&nbsp;set&nbsp;the&nbsp;channel&nbsp;in&nbsp;the&nbsp;configuration&nbsp;settings</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'Storing&nbsp;distribution&nbsp;channel...&lt;br/&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><a href="../sloodle/_lib---sl_generallib.php.html#functionsloodle_set_config">sloodle_set_config</a><span class="src-sym">(</span><span class="src-str">'sloodle_distrib_channel'</span><span class="src-sym">,&nbsp;</span><span class="src-var">$sloodlechannel</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Success</span></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'-&amp;gt;&nbsp;Success.&lt;br/&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Failed</span></div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'-&amp;gt;&nbsp;Failed.&lt;br/&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$lsl</span><span class="src-sym">-&gt;</span><span class="src-id">response</span><span class="src-sym">-&gt;</span><span class="src-id">set_add_data_line</span><span class="src-sym">(</span><span class="src-str">'Failed&nbsp;to&nbsp;store&nbsp;object&nbsp;distribution&nbsp;XMLRPC&nbsp;channel&nbsp;in&nbsp;Moodle&nbsp;configuration&nbsp;table.'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result&nbsp;</span>=&nbsp;<span class="src-id">FALSE</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a62"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Attempt&nbsp;to&nbsp;store&nbsp;the&nbsp;contents&nbsp;in&nbsp;the&nbsp;configuration&nbsp;settings</span></div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'Storing&nbsp;distribution&nbsp;contents...&lt;br/&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><a href="../sloodle/_lib---sl_generallib.php.html#functionsloodle_set_config">sloodle_set_config</a><span class="src-sym">(</span><span class="src-str">'sloodle_distrib_objects'</span><span class="src-sym">,&nbsp;</span><span class="src-var">$sloodlecontents</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Success</span></div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'-&amp;gt;&nbsp;Success.&lt;br/&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a68"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Failed</span></div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'-&amp;gt;&nbsp;Failed.&lt;br/&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$lsl</span><span class="src-sym">-&gt;</span><span class="src-id">response</span><span class="src-sym">-&gt;</span><span class="src-id">set_add_data_line</span><span class="src-sym">(</span><span class="src-str">'Failed&nbsp;to&nbsp;store&nbsp;object&nbsp;distribution&nbsp;XMLRPC&nbsp;channel&nbsp;in&nbsp;Moodle&nbsp;configuration&nbsp;table.'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a71"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result&nbsp;</span>=&nbsp;<span class="src-id">FALSE</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Construct&nbsp;the&nbsp;rest&nbsp;of&nbsp;the&nbsp;response</span></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$result</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$lsl</span><span class="src-sym">-&gt;</span><span class="src-id">response</span><span class="src-sym">-&gt;</span><span class="src-id">set_status_code</span><span class="src-sym">(</span><span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$lsl</span><span class="src-sym">-&gt;</span><span class="src-id">response</span><span class="src-sym">-&gt;</span><span class="src-id">set_status_descriptor</span><span class="src-sym">(</span><span class="src-str">'OK'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$lsl</span><span class="src-sym">-&gt;</span><span class="src-id">response</span><span class="src-sym">-&gt;</span><span class="src-id">set_status_code</span><span class="src-sym">(</span>-<span class="src-num">101</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$lsl</span><span class="src-sym">-&gt;</span><span class="src-id">response</span><span class="src-sym">-&gt;</span><span class="src-id">set_status_descriptor</span><span class="src-sym">(</span><span class="src-str">'SYSTEM'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Render&nbsp;the&nbsp;output</span></div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'Outputting&nbsp;response...&lt;br/&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a85"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'&lt;pre&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$lsl</span><span class="src-sym">-&gt;</span><span class="src-id">response</span><span class="src-sym">-&gt;</span><span class="src-id">render_to_output</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-str">'&lt;/pre&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a89"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">exit</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a90"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a91"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 04 Mar 2008 15:08:39 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</body>
+</html>

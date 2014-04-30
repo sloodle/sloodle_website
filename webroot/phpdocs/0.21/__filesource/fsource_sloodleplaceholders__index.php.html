@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for index.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file index.php</h1>
+<p>Documentation is available at <a href="../sloodleplaceholders/_index.php.html">index.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Sloodle&nbsp;module&nbsp;instance&nbsp;view&nbsp;placeholder&nbsp;script.</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;A&nbsp;temporary&nbsp;placeholder&nbsp;to&nbsp;give&nbsp;information&nbsp;when&nbsp;a&nbsp;user&nbsp;attempts&nbsp;to&nbsp;browse&nbsp;Sloodle&nbsp;module&nbsp;instances.</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;sloodleplaceholders</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@copyright</span><span class="src-doc">&nbsp;Copyright&nbsp;(c)&nbsp;2008&nbsp;Sloodle&nbsp;(various&nbsp;contributors)</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@license</span><span class="src-doc">&nbsp;http://www.gnu.org/licenses/gpl-3.0.html&nbsp;GNU&nbsp;GPL&nbsp;v3</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-tag">@contributor</span><span class="src-doc">&nbsp;Peter&nbsp;R.&nbsp;Bloomfield</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a14"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a15"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**&nbsp;Sloodle/Moodle&nbsp;configuration.&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-str">'config.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a17"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a18"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Get&nbsp;the&nbsp;localization&nbsp;strings</span></div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$strsloodle&nbsp;</span>=&nbsp;<span class="src-id">get_string</span><span class="src-sym">(</span><span class="src-str">'modulename'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'sloodle'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a20"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$strsloodles&nbsp;</span>=&nbsp;<span class="src-id">get_string</span><span class="src-sym">(</span><span class="src-str">'modulenameplural'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'sloodle'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Display&nbsp;the&nbsp;header</span></div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">print_header_simple</span><span class="src-sym">(</span><span class="src-var">$strsloodles</span><span class="src-sym">,&nbsp;</span><span class="src-str">&quot;&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-var">$strsloodles</span><span class="src-sym">,&nbsp;</span><span class="src-str">&quot;&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-str">&quot;&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-id">true</span><span class="src-sym">,&nbsp;</span><span class="src-str">&quot;&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Display&nbsp;the&nbsp;Sloodle&nbsp;version</span></div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">print_heading</span><span class="src-sym">(</span><span class="src-id">get_string</span><span class="src-sym">(</span><span class="src-str">'sloodleversion'</span><span class="src-sym">,</span><span class="src-str">'sloodle'</span><span class="src-sym">)</span>.<span class="src-str">':&nbsp;'</span>.(string)<span class="src-id"><a href="../sloodle/_config.php.html#defineSLOODLE_VERSION">SLOODLE_VERSION</a></span><span class="src-sym">,&nbsp;</span><span class="src-str">'center'</span><span class="src-sym">,&nbsp;</span><span class="src-num">3</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Get&nbsp;and&nbsp;display&nbsp;the&nbsp;module&nbsp;version&nbsp;number&nbsp;(from&nbsp;version.php)</span></div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$sloodlemodule&nbsp;</span>=&nbsp;<span class="src-id">get_record</span><span class="src-sym">(</span><span class="src-str">'modules'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'name'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'sloodle'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$releasenum&nbsp;</span>=&nbsp;<span class="src-num">0</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$sloodlemodule&nbsp;</span>!==&nbsp;<span class="src-id">FALSE</span><span class="src-sym">)&nbsp;</span><span class="src-var">$releasenum&nbsp;</span>=&nbsp;<span class="src-var">$sloodlemodule</span><span class="src-sym">-&gt;</span><span class="src-id">version</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">print_heading</span><span class="src-sym">(</span><span class="src-id">get_string</span><span class="src-sym">(</span><span class="src-str">'releasenum'</span><span class="src-sym">,</span><span class="src-str">'sloodle'</span><span class="src-sym">)</span>.<span class="src-str">':&nbsp;'</span>.(string)<span class="src-var">$releasenum</span><span class="src-sym">,&nbsp;</span><span class="src-str">'center'</span><span class="src-sym">,&nbsp;</span><span class="src-num">5</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Display&nbsp;a&nbsp;help&nbsp;button&nbsp;regarding&nbsp;the&nbsp;version&nbsp;numbers</span></div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<span class="src-str">'&lt;div&nbsp;style=&quot;text-align:center;&quot;&gt;('</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">helpbutton</span><span class="src-sym">(</span><span class="src-str">'version_numbers'</span><span class="src-sym">,&nbsp;</span><span class="src-id">get_string</span><span class="src-sym">(</span><span class="src-str">'help:versionnumbers'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'sloodle'</span><span class="src-sym">)</span><span class="src-sym">,&nbsp;</span><span class="src-str">'sloodle'</span><span class="src-sym">,&nbsp;</span><span class="src-id">true</span><span class="src-sym">,&nbsp;</span><span class="src-id">true</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<span class="src-str">')&lt;/div&gt;'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a37"></a><span class="src-php">?&gt;</span></div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a39"></a>&lt;br/&gt;</div></li>
+<li><div class="src-line"><a name="a40"></a>&lt;div&nbsp;style=&quot;border:1px&nbsp;solid&nbsp;#bababa;&nbsp;padding:8px;&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a41"></a>&lt;!--&nbsp;Text&nbsp;taken&nbsp;from&nbsp;&quot;mod.html&quot;&nbsp;--&gt;</div></li>
+<li><div class="src-line"><a name="a42"></a><span class="src-php">&lt;?php&nbsp;</span><span class="src-id">print_string</span><span class="src-sym">(</span><span class="src-str">'mod.html:placeholder1'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'sloodle'</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;</span><span class="src-php">?&gt;</span>&lt;br/&gt;&lt;br/&gt;</div></li>
+<li><div class="src-line"><a name="a43"></a><span class="src-php">&lt;?php&nbsp;</span><span class="src-id">print_string</span><span class="src-sym">(</span><span class="src-str">'mod.html:placeholder2'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'sloodle'</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;</span><span class="src-php">?&gt;</span>&lt;br/&gt;</div></li>
+<li><div class="src-line"><a name="a44"></a><span class="src-php">&lt;?php&nbsp;</span><span class="src-id">print_string</span><span class="src-sym">(</span><span class="src-str">'mod.html:placeholder3'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'sloodle'</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;</span><span class="src-php">?&gt;</span>&nbsp;&lt;a&nbsp;href=&quot;http://www.sloodle.org/&quot;&nbsp;title=&quot;<span class="src-php">&lt;?php&nbsp;</span><span class="src-id">print_string</span><span class="src-sym">(</span><span class="src-str">'clicktovisitsloodle.org'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'sloodle'</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;</span><span class="src-php">?&gt;</span>&quot;&gt;www.sloodle.org&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;</div></li>
+<li><div class="src-line"><a name="a45"></a><span class="src-php">&lt;?php&nbsp;</span><span class="src-id">print_string</span><span class="src-sym">(</span><span class="src-str">'mod.html:placeholder4'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'sloodle'</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;</span><span class="src-php">?&gt;</span>&lt;br/&gt;</div></li>
+<li><div class="src-line"><a name="a46"></a>&lt;!--&nbsp;.....&nbsp;--&gt;</div></li>
+<li><div class="src-line"><a name="a47"></a>&lt;/div&gt;</div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a49"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Display&nbsp;the&nbsp;footer</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">print_footer</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a52"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 04 Mar 2008 15:08:33 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</body>
+</html>

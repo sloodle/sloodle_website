@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Sloodle Presenter plugins - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-Sloodle_Presenter_plugins">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Sloodle Presenter plugins</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This page lists the plugins for the <a href="../../../../articles/s/l/o/SLOODLE_Presenter.html" title="SLOODLE Presenter">SLOODLE Presenter</a>. This is a system which is currently in development, and will hopefully be released in SLOODLE 0.4.1.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Plugin_Types"><span class="tocnumber">1</span> <span class="toctext">Plugin Types</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Core_Slide_Plugins"><span class="tocnumber">1.1</span> <span class="toctext">Core Slide Plugins</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Image"><span class="tocnumber">1.1.1</span> <span class="toctext">Image</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Web_Page"><span class="tocnumber">1.1.2</span> <span class="toctext">Web Page</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Video"><span class="tocnumber">1.1.3</span> <span class="toctext">Video</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#Extra_Slide_Plugins"><span class="tocnumber">1.2</span> <span class="toctext">Extra Slide Plugins</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#LaTeX"><span class="tocnumber">1.2.1</span> <span class="toctext">LaTeX</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Bar_Chart"><span class="tocnumber">1.2.2</span> <span class="toctext">Bar Chart</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Pie_Chart"><span class="tocnumber">1.2.3</span> <span class="toctext">Pie Chart</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#Importer_Plugins"><span class="tocnumber">1.3</span> <span class="toctext">Importer Plugins</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#PDF"><span class="tocnumber">1.3.1</span> <span class="toctext">PDF</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#PowerPoint"><span class="tocnumber">1.3.2</span> <span class="toctext">PowerPoint</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Plugin_Types">Plugin Types</span></h2>
+<p>The Presenter will support two main types of plugins -- slides and importers. The "slide" plugins will represent different types of slides which can be added to a presentation. Ultimately, they have to be able to dynamically render the content in a format which Second Life can support (image, web, audio or video). The "importer" plugins will take a file, process it, and output a series of slides of some existing type. This is useful when on-the-fly rendering is not suitable.
+</p><p>A plugin will be installed by copying the folder to the appropriate location in the SLOODLE installation, probably "sloodle/plugin/presenter"/
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Core_Slide_Plugins">Core Slide Plugins</span></h3>
+<h4> <span class="mw-headline" id="Image">Image</span></h4>
+<p>This is a core slide type -- it simply stores the name/URL of an image file (whether in Moodle or externally), and outputs the URL directly to SL or the user's web-browser for viewing.
+</p>
+<h4> <span class="mw-headline" id="Web_Page">Web Page</span></h4>
+<p>This is a core slide type. It stores the URL of a webpage, and outputs it directly to SL for in-world viewing. For viewing in Moodle, it will display the webpage in an iFrame.
+</p>
+<h4> <span class="mw-headline" id="Video">Video</span></h4>
+<p>This is a core slide type. It stores the name/URL of a video file (whether in Moodle or externally), and provides that directly to SL for in-world viewing. The video is embedded in the webpage for Moodle viewing. If the URL provided is not a video file (i.e. it doesn't have an extension like .mov or .mp4), then it will be processed to see if it is a URL from a video sharing site, such as YouTube. In such cases, an appropriate video file URL will be sent into SL, and a suitable embedded player will be displayed in Moodle.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Extra_Slide_Plugins">Extra Slide Plugins</span></h3>
+<h4> <span class="mw-headline" id="LaTeX">LaTeX</span></h4>
+<p>Mathematical equations will be dynamically rendered as image slides, using either the LaTeX binaries (if available) or a substitute library, such as MiMeTex.
+</p>
+<h4> <span class="mw-headline" id="Bar_Chart">Bar Chart</span></h4>
+<p>A bar chart defined in Moodle will be rendered using a PHP graphics library, and represented like an image slide.
+</p>
+<h4> <span class="mw-headline" id="Pie_Chart">Pie Chart</span></h4>
+<p>A pie chart defined in Moodle will be rendered using a PHP graphics library, and represented like an image slide.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Importer_Plugins">Importer Plugins</span></h3>
+<h4> <span class="mw-headline" id="PDF">PDF</span></h4>
+<p>A PDF file will be converted into a series of image slides.
+</p>
+<h4> <span class="mw-headline" id="PowerPoint">PowerPoint</span></h4>
+<p>A PowerPoint presentation will be converted into a series of image slides.
+</p><p><br />
+</p><p><br />
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 51/1000000
+Post‐expand include size: 486/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../../../../articles/s/l/o/Category:Sloodle.html" title="Category:Sloodle">Sloodle</a></li><li><a href="../../../../articles/s/l/o/Category:SloodleDocs.html" title="Category:SloodleDocs">SloodleDocs</a></li><li><a href="../../../../articles/s/l/o/Category:SloodleDevDocs.html" title="Category:SloodleDevDocs">SloodleDevDocs</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/l/o/Sloodle_Presenter_plugins.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:Sloodle_Presenter_plugins&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/Sloodle_Presenter_plugins">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 07:15, 5 May 2009 by SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

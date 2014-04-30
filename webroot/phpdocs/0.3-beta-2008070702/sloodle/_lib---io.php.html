@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs for page io.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name"><img src="../media/images/Page_logo.png" alt="File" style="vertical-align: middle">/lib/io.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-classes">Classes</a>
+			|							<a href="#sec-includes">Includes</a>
+			|							<a href="#sec-constants">Constants</a>
+			|									<a href="#sec-functions">Functions</a>
+			</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sloodle input/output library.</p>
+<p class="description"><p>Provides general request and response functionality for interacting with in-world LSL scripts.</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2007-8 Sloodle (various contributors)</li>
+				<li><span class="field">contributor:</span> Peter R. Bloomfield</li>
+				<li><span class="field">since:</span> Sloodle 0.2</li>
+				<li><span class="field">filesource:</span> <a href="../__filesource/fsource_sloodle__libio.php.html">Source Code for this file</a></li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+	<a name="sec-classes"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Classes</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Classes</span>
+			|							<a href="#sec-includes">Includes</a>
+				|										<a href="#sec-constants">Constants</a>
+				|													<a href="#sec-functions">Functions</a>
+					</div>
+		<div class="info-box-body">	
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; vertical-align: top; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"/>
+						<a href="../sloodle/SloodleResponse.html">SloodleResponse</a>
+					</td>
+					<td>
+											A helper class to validate and structure data for output according to the <a href="http://slisweb.sjsu.edu/sl/index.php/Sloodle_communications_specification">Sloodle communications specification</a>.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; vertical-align: top; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"/>
+						<a href="../sloodle/SloodleRequest.html">SloodleRequest</a>
+					</td>
+					<td>
+											Handles incoming HTTP requests, typically from LSL if dealing with Second Life.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	<a name="sec-includes"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Includes</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-classes">Classes</a>
+				|						<span class="disabled">Includes</span>
+			|							<a href="#sec-constants">Constants</a>
+				|													<a href="#sec-functions">Functions</a>
+					</div>
+		<div class="info-box-body">	
+			<a name="_SLOODLE_DIRROOT_/lib/general_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Page.png" alt=" " />
+		<span class="include-title">
+			<span class="include-type">require_once</span>
+			(<span class="include-name">SLOODLE_DIRROOT.'/lib/general.php'</span>)
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a22">22</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Include our general library.</p>
+	
+</div>
+		</div>
+	</div>
+	
+	<a name="sec-constants"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-classes">Classes</a>
+				|										<a href="#sec-includes">Includes</a>
+				|						<span class="disabled">Constants</span>
+			|										<a href="#sec-functions">Functions</a>
+					</div>
+		<div class="info-box-body">	
+			<a name="defineSLOODLE_PARAM_AVATAR_NAME"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_PARAM_AVATAR_NAME</span> = 'sloodleavname'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a36">36</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Defines the HTTP parameter name for an avatar name.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_PARAM_AVATAR_UUID"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_PARAM_AVATAR_UUID</span> = 'sloodleuuid'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a34">34</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Defines the HTTP parameter name for an avatar UUID.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_PARAM_CONTROLLER_ID"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_PARAM_CONTROLLER_ID</span> = 'sloodlecontrollerid'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a30">30</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Defines the HTTP parameter name for a Sloodle controller ID.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_PARAM_COURSE_ID"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_PARAM_COURSE_ID</span> = 'sloodlecourseid'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a28">28</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Defines the HTTP parameter name for a course ID.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_PARAM_IS_OBJECT"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_PARAM_IS_OBJECT</span> = 'sloodleisobject'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a41">41</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Defines the HTTP parameter name for indicating a request which relates to an object instead of a user.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_PARAM_MODULE_ID"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_PARAM_MODULE_ID</span> = 'sloodlemoduleid'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a32">32</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Defines the HTTP parameter name for a module ID.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_PARAM_PASSWORD"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_PARAM_PASSWORD</span> = 'sloodlepwd'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a26">26</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Defines the HTTP parameter name for a Sloodle password.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_PARAM_REQUEST_DESC"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_PARAM_REQUEST_DESC</span> = 'sloodlerequestdesc'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a39">39</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Defines the HTTP parameter name for a request descriptor.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_PARAM_SERVER_ACCESS_LEVEL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_PARAM_SERVER_ACCESS_LEVEL</span> = 'sloodleserveraccesslevel'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a43">43</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Defines the HTTP parameter name for specifying server access level.</p>
+	
+		
+</div>
+		</div>
+	</div>
+	
+	
+	<a name="sec-functions"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Functions</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-classes">Classes</a>
+				|										<a href="#sec-includes">Includes</a>
+				|										<a href="#sec-constants">Constants</a>
+				|									<span class="disabled">Functions</span>
+		</div>
+		<div class="info-box-body">	
+			<a name="functionsloodle_required_param" id="functionsloodle_required_param"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_required_param</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a742">742</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Obtains a named HTTP request parameter, and terminates script with an error message if it was not provided.</p>
+<p class="description"><p>This is a 'Sloodle-friendly' version of the Moodle &quot;required_param&quot; function.  Instead of terminate the script with an HTML-formatted error message, it will terminate with a message   which conforms for the <a href="http://slisweb.sjsu.edu/sl/index.php/Sloodle_communications_specification">Sloodle communications specification</a>,   making it suitable for use in <a href="http://slisweb.sjsu.edu/sl/index.php/Linker_Script">linker scripts</a>.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The appropriately parsed and/or cleaned parameter value, if it was found.</li>
+				<li><span class="field">deprecated:</span> </li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			sloodle_required_param
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$parname</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$type</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$parname</span><span class="var-description">: Name of the HTTP request parameter to fetch.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$type</span><span class="var-description">: Type of parameter expected, such as &quot;PARAM_RAW&quot;. See Moodle documentation for a complete list.</span>			</li>
+				</ul>
+		
+	
+</div>
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 07 Jul 2008 12:32:29 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

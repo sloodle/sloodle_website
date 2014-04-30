@@ -1,0 +1,1315 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class SloodleUser</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> SloodleUser</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A class to represent a single user, including Moodle and Sloodle data.</p>
+	<ul class="tags">
+				<li><span class="field">usedby:</span> <a href="../sloodle/SloodleLSLRequest.html">SloodleLSLRequest</a> - Stores and processes user data incoming from an HTTP request</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_lib---sl_userlib.php.html">/lib/sl_userlib.php</a> (line <span class="field"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a29">29</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																								<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$enrolled_courses_cache" title="details" class="var-name">$enrolled_courses_cache</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$moodle_user_cache" title="details" class="var-name">$moodle_user_cache</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">int</span>
+					<a href="#$moodle_user_id" title="details" class="var-name">$moodle_user_id</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$sloodle_user_cache" title="details" class="var-name">$sloodle_user_cache</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">int</span>
+					<a href="#$sloodle_user_id" title="details" class="var-name">$sloodle_user_id</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																															
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#SloodleUser" title="details" class="method-name">SloodleUser</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#create_moodle_user" title="details" class="method-name">create_moodle_user</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$firstname</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$lastname</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$email</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#create_sloodle_user" title="details" class="method-name">create_sloodle_user</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$avname</span> = <span class="var-default">''</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$userid</span> = <span class="var-default">0</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$loginposition</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$loginpositionexpires</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$loginpositionregion</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$loginsecuritytoken</span> = <span class="var-default">''</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#delete_login_position" title="details" class="method-name">delete_login_position</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#delete_sloodle_user" title="details" class="method-name">delete_sloodle_user</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#find_linked_moodle_user" title="details" class="method-name">find_linked_moodle_user</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$use_cache</span> = <span class="var-default">FALSE</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$cache_data</span> = <span class="var-default">TRUE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#find_linked_sloodle_user" title="details" class="method-name">find_linked_sloodle_user</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$cache_data</span> = <span class="var-default">TRUE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#find_sloodle_user" title="details" class="method-name">find_sloodle_user</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$cache_data</span> = <span class="var-default">TRUE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#find_sloodle_user_by_login_position" title="details" class="method-name">find_sloodle_user_by_login_position</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$position</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$cache_data</span> = <span class="var-default">TRUE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#generate_login_position" title="details" class="method-name">generate_login_position</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$expires</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#get_moodle_user_id" title="details" class="method-name">get_moodle_user_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#get_sloodle_user_id" title="details" class="method-name">get_sloodle_user_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#has_login_security_token" title="details" class="method-name">has_login_security_token</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$use_cache</span> = <span class="var-default">FALSE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#insert_sloodle_user_cache_to_db" title="details" class="method-name">insert_sloodle_user_cache_to_db</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#is_user_in_course" title="details" class="method-name">is_user_in_course</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$course_id</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$use_cache</span> = <span class="var-default">FALSE</span>], <span class="var-type">bool</span>&nbsp;<span class="var-name">2</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#link_users" title="details" class="method-name">link_users</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#login_moodle_user" title="details" class="method-name">login_moodle_user</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#regenerate_login_security_token" title="details" class="method-name">regenerate_login_security_token</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$cache_data</span> = <span class="var-default">TRUE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_moodle_user_id" title="details" class="method-name">set_moodle_user_id</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_sloodle_user_id" title="details" class="method-name">set_sloodle_user_id</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#unlink_sloodle_user" title="details" class="method-name">unlink_sloodle_user</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">True</span>
+										<a href="#update_enrolled_courses_cache_from_db" title="details" class="method-name">update_enrolled_courses_cache_from_db</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#update_moodle_user_cache_from_db" title="details" class="method-name">update_moodle_user_cache_from_db</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#update_sloodle_user_cache_from_db" title="details" class="method-name">update_sloodle_user_cache_from_db</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#update_sloodle_user_cache_to_db" title="details" class="method-name">update_sloodle_user_cache_to_db</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#users_linked" title="details" class="method-name">users_linked</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$use_cache</span> = <span class="var-default">FALSE</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$enrolled_courses_cache" id="$enrolled_courses_cache"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$enrolled_courses_cache</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a99">99</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Cache of courses which the Moodle user is enrolled in  Used by some functions fetching database data about a Moodle user's courses.</p>
+<p class="description"><p>It is an array which caches the list of courses the Moodle user is enrolled in  Note that update is *not* automatic, but you can manually call {@link: update_enrolled_courses_cache_from_db()}.  After construction, it will always be a numeric array of integers (but may be empty)  Each element will be a course ID (integer).</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleUser.html#var$moodle_user_cache">SloodleUser::$moodle_user_cache</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$moodle_user_cache" id="$moodle_user_cache"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$moodle_user_cache</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a86">86</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Moodle user data cache.</p>
+<p class="description"><p>Used by various functions fetching database data about a Moodle user.  Contents can also be used in subsequent function calls to prevent the need for an additional database query (typically by specifying a $use_cache parameter).  Update is *not* automatic.  It can be updated manually by calling {@link: update_moodle_user_cache_from_db()}.  Unlike the Sloodle equivalent, this cannot be used to update the database  After construction, it will always be an object.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleUser.html#var$enrolled_courses_cache">SloodleUser::$enrolled_courses_cache</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleUser.html#var$sloodle_user_cache">SloodleUser::$sloodle_user_cache</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleUser.html#var$moodle_user_id">SloodleUser::$moodle_user_id</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$moodle_user_id" id="$moodle_user_id"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$moodle_user_id</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a52">52</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Integer ID of a Moodle user entry in the database.</p>
+<p class="description"><p>Value 0 represents no user.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleUser.html#var$sloodle_user_id">SloodleUser::$sloodle_user_id</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleUser.html#var$moodle_user_cache">SloodleUser::$moodle_user_cache</a></li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$sloodle_user_cache" id="$sloodle_user_cache"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$sloodle_user_cache</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a70">70</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sloodle user data cache.</p>
+<p class="description"><p>Used by various functions fetching database data about a Sloodle user.  Contents can also be used in subsequent function calls to prevent the need for an additional database query (typically by specifying a $use_cache parameter).  Update is *not* automatic.  It can be updated manually by calling {@link: update_sloodle_user_cache_from_db()}.  Data placed here can also be used to edit the database using {@link: insert_sloodle_user_cache_to_db()} or {@link: update_sloodle_user_cache_to_db()}.  After construction, it will always be an object.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleUser.html#var$moodle_user_cache">SloodleUser::$moodle_user_cache</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleUser.html#var$sloodle_user_id">SloodleUser::$sloodle_user_id</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$sloodle_user_id" id="$sloodle_user_id"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$sloodle_user_id</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a42">42</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Integer ID of a Sloodle user entry in the database.</p>
+<p class="description"><p>Value 0 represents no user.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleUser.html#var$moodle_user_id">SloodleUser::$moodle_user_id</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleUser.html#var$sloodle_user_cache">SloodleUser::$sloodle_user_cache</a></li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodSloodleUser" id="SloodleUser"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor SloodleUser</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a109">109</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class constructor.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			SloodleUser
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcreate_moodle_user" id="create_moodle_user"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">create_moodle_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a453">453</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create a Moodle user account with the specified first name, last name and email address.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or a string error message if something goes wrong.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			create_moodle_user
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$firstname</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$lastname</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$email</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$firstname</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$lastname</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$email</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreate_sloodle_user" id="create_sloodle_user"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">create_sloodle_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a347">347</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create a new Sloodle user.</p>
+<p class="description"><p>All parameters are optional. To enable loginzone authentication, you *must* specify position and expiry time.  Note that, if no login security token is specified, it is generated automatically.  If successful, the new ID is stored and the user data is cached.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false if not.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			create_sloodle_user
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$avname</span> = <span class="var-default">''</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$userid</span> = <span class="var-default">0</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$loginposition</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$loginpositionexpires</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$loginpositionregion</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$loginsecuritytoken</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: avatar UUID</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$avname</span><span class="var-description">: avatar name</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$userid</span><span class="var-description">: ID of Moodle user to be linked with this Sloodle user</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$loginposition</span><span class="var-description">: a position vector of format &lt;x,y,z&gt;, representing the allocated loginzone position</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$loginpositionexpires</span><span class="var-description">: an indication of when the allocated loginposition expires (format unknown)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$loginpositionregion</span><span class="var-description">: the name of the region in which the loginzone is (NOT IN USE YET!)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$loginsecuritytoken</span><span class="var-description">: a security token (random letters/numbers) used to allow secure authentication</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddelete_login_position" id="delete_login_position"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">delete_login_position</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a379">379</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clears the login position from the currently selected Sloodle user.</p>
+<p class="description"><p>This function will user the user identified by {@link:$sloodle_user_id},  retrieve all the user data, remove the login position values, and update the database.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, false if the database query fails, or a string if an error occurs.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			delete_login_position
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddelete_sloodle_user" id="delete_sloodle_user"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">delete_sloodle_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a243">243</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes the Sloodle user identified by {@link:$sloodle_user_id}.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, false on failure, or a string error message if something goes wrong</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			delete_sloodle_user
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodfind_linked_moodle_user" id="find_linked_moodle_user"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">find_linked_moodle_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a611">611</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Find the Moodle user linked to the current Sloodle user.</p>
+<p class="description"><p>Stores the Moodle user ID in {@link:$moodle_user_id}.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, false if no link was found, or a string if an error occurs</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			find_linked_moodle_user
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$use_cache</span> = <span class="var-default">FALSE</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$cache_data</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$use_cache</span><span class="var-description">: If true (not default) this function will use the local Sloodle user cache instead of querying the database again.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$cache_data</span><span class="var-description">: If true (default) then the Moodle user data is automatically cached by this function</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfind_linked_sloodle_user" id="find_linked_sloodle_user"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">find_linked_sloodle_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a579">579</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Find the Sloodle user linked to the current Moodle user.</p>
+<p class="description"><p>Stores the Sloodle user ID in {@link:$sloodle_user_id}.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, false if no link was found, or a string if an error occurs</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			find_linked_sloodle_user
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$cache_data</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$cache_data</span><span class="var-description">: If true (default) then the Sloodle user data is automatically cached by this function.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfind_sloodle_user" id="find_sloodle_user"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">find_sloodle_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a548">548</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Attempts to find a Sloodle user by their UUID and/or avatar nam.</p>
+<p class="description"><p>Note: the UUID takes precedence, but the name can be used as a fall-back.  The ID of the user is stored in {@link:$sloodle_user_id}.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, false if user was not found, or a string is some other error occurred.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			find_sloodle_user
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$cache_data</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: The UUID of the avatar</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The name of the avatar</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$cache_data</span><span class="var-description">: If true (default) then the user data is stored in the cache variable, {@link:$sloodle_user_cache}.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfind_sloodle_user_by_login_position" id="find_sloodle_user_by_login_position"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">find_sloodle_user_by_login_position</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a660">660</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Attempt to find a Sloodle user by their loginzone position  If successful, the user ID is stored in {@link:$sloodle_user_id} and the function returns true.</p>
+<p class="description"><p>If no user was found for the given position, false is returned (this may occur if the LoginZone position has expired).  If an error occurs, then a string containing an error message is returned.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			find_sloodle_user_by_login_position
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$position</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$cache_data</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$position</span><span class="var-description">: A vector, either as a string (&quot;&lt;x,y,z&gt;&quot;) or an associative array.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$cache_data</span><span class="var-description">: If true (default) then the user data is cached. Otherwise it is discarded.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerate_login_position" id="generate_login_position"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">generate_login_position</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a402">402</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates a new login position for the current Sloodle user.</p>
+<p class="description"><p>Stores the new login position in the database, and refreshes the user cache</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A numerical array containing the new position if successful, FALSE on failure, or a string if an error occurs</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			generate_login_position
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$expires</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$expires</span><span class="var-description">: A timestamp indicating when the position should expire.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_moodle_user_id" id="get_moodle_user_id"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_moodle_user_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a146">146</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor: gets the Moodle user ID member, {@link: $moodle_user_id}.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			get_moodle_user_id
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_sloodle_user_id" id="get_sloodle_user_id"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_sloodle_user_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a125">125</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor: gets the Sloodle user ID member, {@link: $sloodle_user_id}.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			get_sloodle_user_id
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodhas_login_security_token" id="has_login_security_token"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">has_login_security_token</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a770">770</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if the current Sloodle user has a login security token</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the user has a login security token, or false otherwise.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			has_login_security_token
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$use_cache</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$use_cache</span><span class="var-description">: If true then the cached user data will be used instead of querying the database.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinsert_sloodle_user_cache_to_db" id="insert_sloodle_user_cache_to_db"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">insert_sloodle_user_cache_to_db</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a317">317</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Use the Sloodle user cache to insert a new entry in the Sloodle user database table.</p>
+<p class="description"><p>Uses the object entirely as-is, except that the 'id' field is ignored.  The ID of the new entry is stored in {@link:$sloodle_user_id}.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false on failure.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			insert_sloodle_user_cache_to_db
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_user_in_course" id="is_user_in_course"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_user_in_course</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a831">831</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if the current Moodle user is already enrolled in the specified course.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			is_user_in_course
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$course_id</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$use_cache</span> = <span class="var-default">FALSE</span>], <span class="var-type">bool</span>&nbsp;<span class="var-name">2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$course_id</span><span class="var-description">: ID number of a course to check.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$use_cache</span><span class="var-description">: If true (not default) then the function uses the enrolled courses cache, instead of querying the database for new data.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">2</span><span class="var-description">: True if the user is enrolled, or false if not.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlink_users" id="link_users"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">link_users</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a200">200</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Links the current Sloodle and Moodle accounts together.</p>
+<p class="description"><p><strong>NOTE:</strong> does not remove any other links to the Moodle account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, false on failure, or a string error message if something goes wrong</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			link_users
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodlogin_moodle_user" id="login_moodle_user"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">login_moodle_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a728">728</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs an internal login of the current Moodle user.</p>
+<p class="description"><p>Stores all the user data in the global $USER variable.  Note: if login fails, $USER is unchanged.  Additionally, note that this function will not perform automatic registration.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			login_moodle_user
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodregenerate_login_security_token" id="regenerate_login_security_token"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">regenerate_login_security_token</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a747">747</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates a new login security token for the current Sloodle user</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false if an error occurs (such as there being no current Sloodle user)</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			regenerate_login_security_token
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$cache_data</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$cache_data</span><span class="var-description">: If true (default) then the new login security token will be stored in the Sloodle user cache (as well as the database).</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_moodle_user_id" id="set_moodle_user_id"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_moodle_user_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a157">157</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor: sets the Moodle user ID member, {@link: $moodle_user_id}.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_moodle_user_id
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$id</span><span class="var-description">: The integer ID of a Moodle user entry (or 0 for no entry).</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_sloodle_user_id" id="set_sloodle_user_id"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_sloodle_user_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a136">136</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor: sets the Sloodle user ID member, {@link: $sloodle_user_id}.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_sloodle_user_id
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$id</span><span class="var-description">: The integer ID of a Sloodle user entry (or 0 for no entry).</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodunlink_sloodle_user" id="unlink_sloodle_user"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">unlink_sloodle_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a221">221</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Completely unlinks the Sloodle user from any Moodle account.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, false on failure, or a string error message if something goes wrong</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			unlink_sloodle_user
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodupdate_enrolled_courses_cache_from_db" id="update_enrolled_courses_cache_from_db"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">update_enrolled_courses_cache_from_db</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a801">801</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Use the database to update the cache of courses which the current Moodle user is enrolled in.</p>
+<p class="description"><p>Note that admins are considered by this function to be enrolled in all courses.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> if successul, or false otherwise.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">True</span>
+		<span class="method-name">
+			update_enrolled_courses_cache_from_db
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodupdate_moodle_user_cache_from_db" id="update_moodle_user_cache_from_db"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">update_moodle_user_cache_from_db</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a273">273</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Update the Moodle user cache ({@link:$moodle_user_cache}) from the database</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, false on failure, or a string error message if something goes wrong</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			update_moodle_user_cache_from_db
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodupdate_sloodle_user_cache_from_db" id="update_sloodle_user_cache_from_db"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">update_sloodle_user_cache_from_db</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a257">257</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updates the Sloodle user cache ({@link:$sloodle_user_cache}) from the database</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, false on failure, or a string error message if something goes wrong</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			update_sloodle_user_cache_from_db
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodupdate_sloodle_user_cache_to_db" id="update_sloodle_user_cache_to_db"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">update_sloodle_user_cache_to_db</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a291">291</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Use the Sloodle user cache to update an entry in the Sloodle users database table.</p>
+<p class="description"><p>Uses the object-entirely as-is, so the 'id' field must be accurate.  Ignores anu unset fields.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, false if the query fails, or a string error message if something goes wrong</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			update_sloodle_user_cache_to_db
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodusers_linked" id="users_linked"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">users_linked</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_userlib.php.html#a171">171</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not the current Sloodle and Moodle users are linked.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Ture if users are linked, false if not, or a string error message if something goes wrong.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			users_linked
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$use_cache</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$use_cache</span><span class="var-description">: If true (not default) then the Sloodle and Moodle user caches ({@link:$sloodle_user_cache} and {@link:$moodle_user_cache})will be used instead of querying the database.</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 04 Mar 2008 15:08:56 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

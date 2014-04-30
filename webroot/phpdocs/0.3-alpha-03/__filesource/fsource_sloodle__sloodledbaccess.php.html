@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for access.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file access.php</h1>
+<p>Documentation is available at <a href="../sloodle/_sloodle---db---access.php.html">access.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">*&nbsp;Moodle&nbsp;capability&nbsp;definitions&nbsp;for&nbsp;the&nbsp;Sloodle&nbsp;module.</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">*</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">*&nbsp;The&nbsp;capabilities&nbsp;are&nbsp;loaded&nbsp;into&nbsp;the&nbsp;database&nbsp;table&nbsp;when&nbsp;the&nbsp;module&nbsp;is</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">*&nbsp;installed&nbsp;or&nbsp;updated.&nbsp;Whenever&nbsp;the&nbsp;capability&nbsp;definitions&nbsp;are&nbsp;updated,</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">*&nbsp;the&nbsp;module&nbsp;version&nbsp;number&nbsp;should&nbsp;be&nbsp;bumped&nbsp;up.</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">*</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;sloodle</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@copyright</span><span class="src-doc">&nbsp;Copyright&nbsp;(c)&nbsp;2008&nbsp;Sloodle&nbsp;(various&nbsp;contributors)</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@license</span><span class="src-doc">&nbsp;http://www.gnu.org/licenses/gpl-3.0.html&nbsp;GNU&nbsp;GPL&nbsp;v3</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@since</span><span class="src-doc">&nbsp;Sloodle&nbsp;0.3</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">*</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-tag">@contributor</span><span class="src-doc">&nbsp;Peter&nbsp;R.&nbsp;Bloomfield</span></div></li>
+<li><div class="src-line"><a name="a16"></a><span class="src-doc">*</span></div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-doc">*/</span></div></li>
+<li><div class="src-line"><a name="a18"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-comm">//&nbsp;The&nbsp;system&nbsp;has&nbsp;four&nbsp;possible&nbsp;values&nbsp;for&nbsp;a&nbsp;capability:</span></div></li>
+<li><div class="src-line"><a name="a21"></a><span class="src-comm">//&nbsp;CAP_ALLOW,&nbsp;CAP_PREVENT,&nbsp;CAP_PROHIBIT,&nbsp;and&nbsp;inherit&nbsp;(not&nbsp;set).</span></div></li>
+<li><div class="src-line"><a name="a22"></a><span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a23"></a><span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a24"></a><span class="src-comm">//&nbsp;CAPABILITY&nbsp;NAMING&nbsp;CONVENTION</span></div></li>
+<li><div class="src-line"><a name="a25"></a><span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a26"></a><span class="src-comm">//&nbsp;It&nbsp;is&nbsp;important&nbsp;that&nbsp;capability&nbsp;names&nbsp;are&nbsp;unique.&nbsp;The&nbsp;naming&nbsp;convention</span></div></li>
+<li><div class="src-line"><a name="a27"></a><span class="src-comm">//&nbsp;for&nbsp;capabilities&nbsp;that&nbsp;are&nbsp;specific&nbsp;to&nbsp;modules&nbsp;and&nbsp;blocks&nbsp;is&nbsp;as&nbsp;follows:</span></div></li>
+<li><div class="src-line"><a name="a28"></a><span class="src-comm">//&nbsp;&nbsp;&nbsp;[mod/block]/&lt;component_name&gt;:&lt;capabilityname&gt;</span></div></li>
+<li><div class="src-line"><a name="a29"></a><span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a30"></a><span class="src-comm">//&nbsp;component_name&nbsp;should&nbsp;be&nbsp;the&nbsp;same&nbsp;as&nbsp;the&nbsp;directory&nbsp;name&nbsp;of&nbsp;the&nbsp;mod&nbsp;or&nbsp;block.</span></div></li>
+<li><div class="src-line"><a name="a31"></a><span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a32"></a><span class="src-comm">//&nbsp;Core&nbsp;moodle&nbsp;capabilities&nbsp;are&nbsp;defined&nbsp;thus:</span></div></li>
+<li><div class="src-line"><a name="a33"></a><span class="src-comm">//&nbsp;&nbsp;&nbsp;&nbsp;moodle/&lt;capabilityclass&gt;:&lt;capabilityname&gt;</span></div></li>
+<li><div class="src-line"><a name="a34"></a><span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a35"></a><span class="src-comm">//&nbsp;Examples:&nbsp;mod/forum:viewpost</span></div></li>
+<li><div class="src-line"><a name="a36"></a><span class="src-comm">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block/recent_activity:view</span></div></li>
+<li><div class="src-line"><a name="a37"></a><span class="src-comm">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moodle/site:deleteuser</span></div></li>
+<li><div class="src-line"><a name="a38"></a><span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a39"></a><span class="src-comm">//&nbsp;The&nbsp;variable&nbsp;name&nbsp;for&nbsp;the&nbsp;capability&nbsp;definitions&nbsp;array&nbsp;follows&nbsp;the&nbsp;format</span></div></li>
+<li><div class="src-line"><a name="a40"></a><span class="src-comm">//&nbsp;&nbsp;&nbsp;$&lt;componenttype&gt;_&lt;component_name&gt;_capabilities</span></div></li>
+<li><div class="src-line"><a name="a41"></a><span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a42"></a><span class="src-comm">//&nbsp;For&nbsp;the&nbsp;core&nbsp;capabilities,&nbsp;the&nbsp;variable&nbsp;is&nbsp;$moodle_capabilities.</span></div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a44"></a><span class="src-comm">//&nbsp;NOTE:&nbsp;many&nbsp;Sloodle&nbsp;components&nbsp;relate&nbsp;directly&nbsp;to&nbsp;Moodle&nbsp;components.</span></div></li>
+<li><div class="src-line"><a name="a45"></a><span class="src-comm">//&nbsp;In&nbsp;these&nbsp;cases,&nbsp;the&nbsp;standard&nbsp;capabilities&nbsp;for&nbsp;those&nbsp;components&nbsp;apply.</span></div></li>
+<li><div class="src-line"><a name="a46"></a><span class="src-comm">//&nbsp;For&nbsp;example,&nbsp;Sloodle&nbsp;module&nbsp;configuration&nbsp;is&nbsp;covered&nbsp;by&nbsp;the&nbsp;Moodle&nbsp;standard&nbsp;capability:</span></div></li>
+<li><div class="src-line"><a name="a47"></a><span class="src-comm">//&nbsp;&nbsp;moodle/course:manageactivities</span></div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a49"></a><span class="src-comm">//&nbsp;Viewing&nbsp;and&nbsp;editing&nbsp;avatar&nbsp;details&nbsp;will&nbsp;be&nbsp;handled&nbsp;by&nbsp;the&nbsp;user&nbsp;profile&nbsp;capabilities.</span></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a52"></a><span class="src-var">$mod_sloodle_capabilities&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Considered&nbsp;a&nbsp;'staff'&nbsp;member&nbsp;in&nbsp;SL</span></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'mod/sloodle:staff'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'captype'&nbsp;</span>=&gt;&nbsp;<span class="src-str">'write'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'contextlevel'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CONTEXT_MODULE</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'legacy'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'teacher'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'editingteacher'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'admin'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span></div></li>
+<li><div class="src-line"><a name="a62"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Authorising&nbsp;objects&nbsp;to&nbsp;access&nbsp;Sloodle</span></div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'mod/sloodle:objectauth'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'riskbitmask'&nbsp;</span>=&gt;&nbsp;<span class="src-id">RISK_CONFIG</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a68"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'captype'&nbsp;</span>=&gt;&nbsp;<span class="src-str">'write'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'contextlevel'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CONTEXT_MODULE</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'legacy'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a71"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'editingteacher'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'admin'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Access&nbsp;and&nbsp;use&nbsp;classroom&nbsp;layout&nbsp;profiles</span></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'mod/sloodle:uselayouts'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'captype'&nbsp;</span>=&gt;&nbsp;<span class="src-str">'read'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'contextlevel'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CONTEXT_MODULE</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'legacy'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'teacher'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'editingteacher'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'admin'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span></div></li>
+<li><div class="src-line"><a name="a85"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Edit&nbsp;and&nbsp;delete&nbsp;classroom&nbsp;layout&nbsp;profiles</span></div></li>
+<li><div class="src-line"><a name="a89"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'mod/sloodle:editlayouts'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a90"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'captype'&nbsp;</span>=&gt;&nbsp;<span class="src-str">'write'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a91"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'contextlevel'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CONTEXT_MODULE</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a92"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'legacy'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a93"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'editingteacher'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a94"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'admin'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span></div></li>
+<li><div class="src-line"><a name="a95"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a96"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a97"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a98"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a99"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Register&nbsp;an&nbsp;avatar&nbsp;with&nbsp;their&nbsp;own&nbsp;account</span></div></li>
+<li><div class="src-line"><a name="a100"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'mod/sloodle:registeravatar'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a101"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'captype'&nbsp;</span>=&gt;&nbsp;<span class="src-str">'write'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a102"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'contextlevel'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CONTEXT_MODULE</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a103"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'legacy'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a104"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'student'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a105"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'teacher'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a106"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'editingteacher'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a107"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'admin'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span></div></li>
+<li><div class="src-line"><a name="a108"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a109"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a110"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a111"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Distribute&nbsp;objects&nbsp;to&nbsp;own&nbsp;avatar</span></div></li>
+<li><div class="src-line"><a name="a112"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'mod/sloodle:distributeself'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a113"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'captype'&nbsp;</span>=&gt;&nbsp;<span class="src-str">'write'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'contextlevel'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CONTEXT_MODULE</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a115"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'legacy'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a116"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'student'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a117"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'teacher'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a118"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'editingteacher'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a119"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'admin'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span></div></li>
+<li><div class="src-line"><a name="a120"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a121"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a122"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a123"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Distribute&nbsp;objects&nbsp;to&nbsp;other&nbsp;avatars</span></div></li>
+<li><div class="src-line"><a name="a124"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'mod/sloodle:distributeothers'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a125"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'riskbitmask'&nbsp;</span>=&gt;&nbsp;<span class="src-id">RISK_SPAM</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a126"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'captype'&nbsp;</span>=&gt;&nbsp;<span class="src-str">'write'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a127"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'contextlevel'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CONTEXT_MODULE</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a128"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'legacy'&nbsp;</span>=&gt;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a129"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'editingteacher'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a130"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'admin'&nbsp;</span>=&gt;&nbsp;<span class="src-id">CAP_ALLOW</span></div></li>
+<li><div class="src-line"><a name="a131"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a132"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a133"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a134"></a><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a135"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a136"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 16 Jun 2008 15:56:04 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</body>
+</html>

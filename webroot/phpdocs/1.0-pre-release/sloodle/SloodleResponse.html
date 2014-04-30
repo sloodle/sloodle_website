@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class SloodleResponse</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> SloodleResponse</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A helper class to validate and structure data for output according to the <a href="http://slisweb.sjsu.edu/sl/index.php/Sloodle_communications_specification">Sloodle communications specification</a>.</p>
+	<ul class="tags">
+				<li><span class="field">usedby:</span> <a href="../sloodle/SloodleRequest.html">SloodleRequest</a> - Outputs error messages in appropriate format if an error occurs.</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_lib---io.php.html">/lib/io.php</a> (line <span class="field"><a href="../__filesource/fsource_sloodle__libio.php.html#a50">50</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																																								<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$avatar_uuid" title="details" class="var-name">$avatar_uuid</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$data" title="details" class="var-name">$data</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$field_separator" title="details" class="var-name">$field_separator</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$line_separator" title="details" class="var-name">$line_separator</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">integer</span>
+					<a href="#$page_number" title="details" class="var-name">$page_number</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">integer</span>
+					<a href="#$page_total" title="details" class="var-name">$page_total</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$request_descriptor" title="details" class="var-name">$request_descriptor</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">integer</span>
+					<a href="#$request_timestamp" title="details" class="var-name">$request_timestamp</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">integer</span>
+					<a href="#$response_timestamp" title="details" class="var-name">$response_timestamp</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$side_effects" title="details" class="var-name">$side_effects</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">int</span>
+					<a href="#$status_code" title="details" class="var-name">$status_code</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$status_descriptor" title="details" class="var-name">$status_descriptor</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$tracking_code" title="details" class="var-name">$tracking_code</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																															
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#SloodleResponse" title="details" class="method-name">SloodleResponse</a>
+											([<span class="var-type">int</span>&nbsp;<span class="var-name">$status_code</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$status_descriptor</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#add_data_line" title="details" class="method-name">add_data_line</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#add_side_effect" title="details" class="method-name">add_side_effect</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#add_side_effects" title="details" class="method-name">add_side_effects</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#clear_data" title="details" class="method-name">clear_data</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_field_separator" title="details" class="method-name">get_field_separator</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_line_separator" title="details" class="method-name">get_line_separator</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#quick_output" title="details" class="method-name">quick_output</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$status_code</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$status_descriptor</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span> = <span class="var-default">null</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$static</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#render_to_output" title="details" class="method-name">render_to_output</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#render_to_string" title="details" class="method-name">render_to_string</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">&$str</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_avatar_uuid" title="details" class="method-name">set_avatar_uuid</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_data" title="details" class="method-name">set_data</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_field_separator" title="details" class="method-name">set_field_separator</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sep</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_line_separator" title="details" class="method-name">set_line_separator</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sep</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_page_number" title="details" class="method-name">set_page_number</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_page_total" title="details" class="method-name">set_page_total</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_request_descriptor" title="details" class="method-name">set_request_descriptor</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_request_timestamp" title="details" class="method-name">set_request_timestamp</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_response_timestamp" title="details" class="method-name">set_response_timestamp</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_side_effects" title="details" class="method-name">set_side_effects</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_status_code" title="details" class="method-name">set_status_code</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_status_descriptor" title="details" class="method-name">set_status_descriptor</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_tracking_code" title="details" class="method-name">set_tracking_code</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/PrivateMethod.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_internal_validation_error" title="details" class="method-name">_internal_validation_error</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$msg</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$avatar_uuid" id="$avatar_uuid"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$avatar_uuid</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a131">131</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Avatar UUID.</p>
+<p class="description"><p>Should be a string specifying the UUID key of the agent in-world being handled. (Typically of the user who initiated the request).  <strong>Optional. Ignored if null.</strong></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$data" id="$data"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$data</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a174">174</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Data to render following the status line in the response.</p>
+<p class="description"><p>This value can either be a scalar (single value, e.g. int, string, float), or an array.  If it is a single scalar, it is rendered as a single line.  If it is an array, then each element becomes one line.  If an element is a scalar, then it is directly output onto the line.  If an element is an array, then each child element is output as a separate field on the same line.  <strong>Optional. Ignored if null.</strong></p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleResponse.html#methodclear_data">SloodleResponse::clear_data()</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleResponse.html#methodadd_data_line">SloodleResponse::add_data_line()</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleResponse.html#methodset_data">SloodleResponse::set_data()</a></li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$field_separator" id="$field_separator"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$field_separator</span>
+			 = <span class="var-default"> &quot;|&quot;</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a66">66</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The separation string between fields of a response line (by default, a pipe character |).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$line_separator" id="$line_separator"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$line_separator</span>
+			 = <span class="var-default"> &quot;\n&quot;</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a59">59</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The separation string between lines of the response (typically just a newline).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$page_number" id="$page_number"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$page_number</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a158">158</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Current page number.</p>
+<p class="description"><p>If a response requires multiple pages, this value indicates which page is being returned in this response.  <strong>Optional, unless $page_total is specified. Ignored if null.</strong> <em>Not yet supported.</em></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$page_total" id="$page_total"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$page_total</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a149">149</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Total number of pages.</p>
+<p class="description"><p>If a response requires multiple pages, this value indicates how many pages there are.  <strong>Optional, unless $page_number is specified. Ignored if null.</strong> <em>Not yet supported.</em></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$request_descriptor" id="$request_descriptor"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$request_descriptor</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a104">104</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Request descriptor.</p>
+<p class="description"><p>A brief string passed into the request by an LSL script (via HTTP parameter 'sloodlerequestdesc'),  which is returned so that it can correctly distinguish one request from anotehr.  <strong>Optional. Ignored if null.</strong></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$request_timestamp" id="$request_timestamp"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$request_timestamp</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a113">113</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Timestamp when the request was originally made by the LSL script.</p>
+<p class="description"><p>This is <em>not</em> filled-in automatically. You must do it manually if you need it.  <strong>Optional. Ignored if null.</strong></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$response_timestamp" id="$response_timestamp"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$response_timestamp</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a122">122</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Timestamp when the response was generated on the Moodle site.</p>
+<p class="description"><p>This is <em>not</em> filled-in automatically. You must do it manually if you need it.  <strong>Optional. Ignored if null.</strong></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$side_effects" id="$side_effects"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$side_effects</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a94">94</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Integer side effect(s) codes.</p>
+<p class="description"><p>Status code(s) of side effect(s) incurred during the operation.  Can be a single integer, or an array of integers.  <strong>Optional. Ignored if null.</strong></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$status_code" id="$status_code"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$status_code</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a75">75</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Integer status code of the response.</p>
+<p class="description"><p>Refer to the <a href="http://slisweb.sjsu.edu/sl/index.php/Sloodle_status_codes">status codes</a> page on the Sloodle wiki for a reference.  <strong>Required.</strong></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$status_descriptor" id="$status_descriptor"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$status_descriptor</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a84">84</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Status descriptor string.</p>
+<p class="description"><p>Should contain a generalised description/category of the status code.  <strong>Optional but recommended. Ignored if null.</strong></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$tracking_code" id="$tracking_code"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$tracking_code</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a140">140</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tracking code of the request.</p>
+<p class="description"><p>Use of this value is undefined. Please do not use it.  <strong>Optional. Ignored if null.</strong></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodSloodleResponse" id="SloodleResponse"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor SloodleResponse</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a522">522</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><em>Constructor</em><ul><li>can intialise some variables</li></ul></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			SloodleResponse
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$status_code</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$status_descriptor</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$status_code</span><span class="var-description">: The initial status code for the response (optional - ignore if null)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$status_descriptor</span><span class="var-description">: The initial status descriptor for the response (optional - ignore if null)</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$data</span><span class="var-description">: The initial data for the response, which can be a scalar, or a mixed array of scalars/scalar-arrays (see <a href="../sloodle/SloodleResponse.html#var$data">SloodleResponse::$data</a>) (optional - ignore if null)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodadd_data_line" id="add_data_line"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">add_data_line</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a478">478</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds one line of data to the $data member</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			add_data_line
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: A scalar, or an array of scalars</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodadd_side_effect" id="add_side_effect"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">add_side_effect</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a326">326</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a single side effect code to member $status_code</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			add_side_effect
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$par</span><span class="var-description">: An integer side-effect code.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodadd_side_effects" id="add_side_effects"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">add_side_effects</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a285">285</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds one or more integer side effect codes to member $status_code.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			add_side_effects
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: An integer side effect code, or an array of them.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclear_data" id="clear_data"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">clear_data</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a506">506</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clears all data from member $data</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clear_data
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_field_separator" id="get_field_separator"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_field_separator</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a214">214</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the field separator.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current field separator string</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_field_separator
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_line_separator" id="get_line_separator"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_line_separator</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a194">194</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the line separator.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current line separator string</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_line_separator
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodquick_output" id="quick_output"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">quick_output</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a699">699</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Quick output of data to avoid several accessor calls if the response is very basic.</p>
+<p class="description"><p>Can be called statically to allow simple output of basic data.  The status code is required, but the other parameters are optional  If an error occurs, the LSL-friendly error message is output to the HTTP response, and the script terminated</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			quick_output
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$status_code</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$status_descriptor</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span> = <span class="var-default">null</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$static</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$status_code</span><span class="var-description">: The status code for the response (required)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$status_descriptor</span><span class="var-description">: The status descriptor for the response (optional - ignored if null)</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$data</span><span class="var-description">: The data for the response, which can be a scalar, or a mixed array of scalars/scalar-arrays (see <a href="../sloodle/SloodleResponse.html#var$data">SloodleResponse::$data</a>) (optional - ignored if null)</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$static</span><span class="var-description">: If true (default), then this function will assume it is being call statically, and construct its own response object. Otherwise, it will all the existing member data to render the output.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrender_to_output" id="render_to_output"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">render_to_output</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a671">671</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Outputs the response directly to the HTTP response.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../sloodle/SloodleResponse.html#methodrender_to_string">SloodleResponse::render_to_string()</a> - Outputs the result from this function directly to the HTTP response stream.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			render_to_output
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodrender_to_string" id="render_to_string"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">render_to_string</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a539">539</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renders the response to a string.</p>
+<p class="description"><p>Prior to rendering, this function will perform final validation on all the data.  If anything fails, then the script will terminate with an LSL-friendly error message.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">usedby:</span> <a href="../sloodle/SloodleResponse.html#methodrender_to_output">SloodleResponse::render_to_output()</a> - Outputs the result from this function directly to the HTTP response stream.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			render_to_string
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">&$str</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">&$str</span><span class="var-description">: Reference to a string object which the response should be rendered to.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_avatar_uuid" id="set_avatar_uuid"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_avatar_uuid</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a384">384</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor function to set member value $avatar_uuid</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_avatar_uuid
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: A string containing a UUID, or null to clear it</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_data" id="set_data"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_data</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a439">439</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor function to set member value $data. <strong>Note: it is recommended that you use the add_data_line() and clear_data() functions instead of this.</strong></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_data
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: Any scalar value, or a mixed array of scalars or scalar arrays, or null to clear it</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_field_separator" id="set_field_separator"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_field_separator</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a205">205</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the field separator.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_field_separator
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sep</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sep</span><span class="var-description">: A string to separate fields</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_line_separator" id="set_line_separator"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_line_separator</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a185">185</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the line separator.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_line_separator
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sep</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sep</span><span class="var-description">: A string to separate lines</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_page_number" id="set_page_number"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_page_number</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a424">424</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor function to set member value $page_number</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_page_number
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: A positive page number, or null to clear it</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_page_total" id="set_page_total"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_page_total</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a409">409</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor function to set member value $page_total</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_page_total
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: A positive page total count, or null to clear it</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_request_descriptor" id="set_request_descriptor"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_request_descriptor</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a339">339</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor function to set member value $request_descriptor</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_request_descriptor
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: A string request descriptor, or null to clear it</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_request_timestamp" id="set_request_timestamp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_request_timestamp</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a354">354</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor function to set member value $request_timestamp</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_request_timestamp
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: An integer timestamp, or null to clear it</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_response_timestamp" id="set_response_timestamp"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_response_timestamp</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a369">369</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor function to set member value $response_timestamp</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_response_timestamp
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: An integer timestamp, or null to clear it</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_side_effects" id="set_side_effects"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_side_effects</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a255">255</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor function to set member value $side_effects. <strong>Note:</strong> it is recommended that you use add_side_effect() or add_side_effects() instead.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_side_effects
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: An integer side effect code, an array of integer side effect codes, or null to clear it</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_status_code" id="set_status_code"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_status_code</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a225">225</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor function to set member value $status_code</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_status_code
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$par</span><span class="var-description">: A non-zero status code</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_status_descriptor" id="set_status_descriptor"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_status_descriptor</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a240">240</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor function to set member value $status_descriptor</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_status_descriptor
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: A status descriptor string, or null to clear it</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_tracking_code" id="set_tracking_code"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_tracking_code</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a399">399</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accessor function to set member value $tracking_code</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_tracking_code
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$par</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$par</span><span class="var-description">: Any scalar value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_internal_validation_error" id="_internal_validation_error"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/PrivateMethod.png" />
+		<span class="method-title">_internal_validation_error</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libio.php.html#a725">725</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internal function to report a data validation error.</p>
+<p class="description"><p>Outputs an LSL-friendly error message, and terminates the script</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_internal_validation_error
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$msg</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$msg</span><span class="var-description">: The error message to output.</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 17 Jul 2009 11:01:26 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

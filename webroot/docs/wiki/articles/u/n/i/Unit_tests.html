@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Unit tests - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-Unit_tests">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Unit tests</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="border:solid 2px red; background-color:#ffffff; width:100%; font-style:italic; color:red;">
+<tr>
+<th> This <a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Sloodle</a> article needs to be updated, so it may no longer be accurate. You could help by updating it.
+</th></tr></table>
+<p><br />
+Provisionally, we are putting together a set of automated tests under the sloodle_tests directory. (This isn't included in a normal sloodle checkout)
+</p><p>You can checkout the sloodle tests into your modules directory with:
+</p>
+<pre>  svn checkout <a rel="nofollow" class="external free" href="https://anon@sloodle.googlecode.com/svn/trunk/sloodle_tests">https://anon@sloodle.googlecode.com/svn/trunk/sloodle_tests</a>
+</pre>
+<p><br />
+This uses the PHP <a rel="nofollow" class="external text" href="http://www.lastcraft.com/simple_test.php">SimpleTest</a> framework.
+</p><p>TODO: Moodle already uses SimpleTest - we should really figure out how they arrange things, and do it the same way.
+</p><p>Currently, these are mostly HTTP accesses simulating the requests Second Life objects would send to the web server.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Test_data"><span class="tocnumber">1</span> <span class="toctext">Test data</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Courses"><span class="tocnumber">1.1</span> <span class="toctext">Courses</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Users"><span class="tocnumber">1.2</span> <span class="toctext">Users</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Quizzes"><span class="tocnumber">1.3</span> <span class="toctext">Quizzes</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Chatrooms"><span class="tocnumber">1.4</span> <span class="toctext">Chatrooms</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Configuring_the_tests"><span class="tocnumber">2</span> <span class="toctext">Configuring the tests</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Test_data"> Test data </span></h2>
+<p>We will need the following test data in the database of the test installation.
+Provisionally, I'm putting a test installation at <a rel="nofollow" class="external free" href="http://test.moodlefarm.socialminds.jp">http://test.moodlefarm.socialminds.jp</a>
+</p><p>As we create functionlity in Sloodle using more data, we will need to create more test data.
+</p>
+<h3> <span class="mw-headline" id="Courses"> Courses </span></h3>
+<ul><li> c1 "Course Test 1" (allow students to enrol themselves)
+</li><li> c2 "Course Test 2" (do not students to enrol themselves)
+</li></ul>
+<h3> <span class="mw-headline" id="Users"> Users </span></h3>
+<ul><li> admin1 Admin1first Admin1last (c1,c2)
+</li><li> admin2 Admin2first Admin2last ()
+</li></ul>
+<ul><li> t1 Teacher1first Teacher1last (c1)
+</li><li> t2 Teacher2first Teacher2last (c1,c2)
+</li><li> t3 Teacher3first Teacher3last ()
+</li></ul>
+<ul><li> s1 Student1first Student1last (c1)
+</li><li> s2 Student2first Student2last (c1,c2)
+</li><li> s3 Student3first Student3last ()
+</li></ul>
+<h3> <span class="mw-headline" id="Quizzes"> Quizzes </span></h3>
+<ul><li> q1 "Quiz Test 1" (c1) 
+</li><li> q2 "Quiz Test 2" (c1)
+</li><li> q3 "Quiz Test 3" (c2)
+</li></ul>
+<h3> <span class="mw-headline" id="Chatrooms"> Chatrooms </span></h3>
+<ul><li> ch1 "Chatroom Test 1" (c1)
+</li><li> ch2 "Chatroom Test 2" (c1)
+</li><li> ch3 "Chatroom Test 3" (c2)
+</li></ul>
+<h2> <span class="mw-headline" id="Configuring_the_tests"> Configuring the tests </span></h2>
+<p>The details of test users, prim passwords etc. are set in sloodle_tests/config.php.
+</p><p>When this is done, I'll make available a database dump that will allow you to setup a sloodle installation with the appropriate dummy data so that you can run the tests.
+</p><p>TODO: It would be better to have the test suite create all the dummy data itself, then clean up when it's done...
+</p><p><br />
+Edmund Edgar, 2007-04-16
+</p><p><br /> 
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 30/1000000
+Post‐expand include size: 702/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/s/l/o/Category:SloodleDevDocs.html" title="Category:SloodleDevDocs">SloodleDevDocs</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/u/n/i/Unit_tests.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:Unit_tests&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/Unit_tests">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 07:22, 10 January 2008 by SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>. Based on work by <a href="http:http://localhost/sl/index.php?title=User:Azwaldo&amp;action=edit&amp;redlink=1" class="new" title="User:Azwaldo (page does not exist)">John Wallace</a> and SLIS Second Life Wiki anonymous user <a href="http://localhost/sl/index.php/Special:Contributions/60.62.8.214" title="Special:Contributions/60.62.8.214">60.62.8.214</a>.</li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

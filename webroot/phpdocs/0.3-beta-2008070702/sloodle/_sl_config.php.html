@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs for page sl_config.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name"><img src="../media/images/Page_logo.png" alt="File" style="vertical-align: middle">/sl_config.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+									<a href="#sec-includes">Includes</a>
+			|							<a href="#sec-constants">Constants</a>
+			|									<a href="#sec-functions">Functions</a>
+			</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sloodle core script.</p>
+<p class="description"><p>Sets up the basic Sloodle information, and includes the necessary Moodle data/functionality.</p></p>
+	<ul class="tags">
+				<li><span class="field">filesource:</span> <a href="../__filesource/fsource_sloodle__sl_config.php.html">Source Code for this file</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	<a name="sec-includes"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Includes</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Includes</span>
+			|							<a href="#sec-constants">Constants</a>
+				|													<a href="#sec-functions">Functions</a>
+					</div>
+		<div class="info-box-body">	
+			<a name="_realpath(dirname(__FILE__)_/___/__/config_php)"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Page.png" alt=" " />
+		<span class="include-title">
+			<span class="include-type">require_once</span>
+			(<span class="include-name">realpath(dirname(__FILE__)."/"."../../config.php")</span>)
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a13">13</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+		</div>
+	</div>
+	
+	<a name="sec-constants"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-includes">Includes</a>
+				|						<span class="disabled">Constants</span>
+			|										<a href="#sec-functions">Functions</a>
+					</div>
+		<div class="info-box-body">	
+			<a name="defineSLOODLE_DEBUG"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_DEBUG</span> = true
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a44">44</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">usedby:</span> <a href="../sloodle/_sl_config.php.html#functionsloodle_debug">sloodle_debug()</a></li>
+			</ul>
+	
+		
+</div>
+<a name="defineSLOODLE_DEBUG_MODE_PARAM_NAME"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_DEBUG_MODE_PARAM_NAME</span> = 'sloodledebug'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a38">38</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The name of the HTTP parameter which can be used to activate Sloodle debug mode.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_DIRROOT"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_DIRROOT</span> = $CFG-&gt;dirroot.'/mod/sloodle'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a29">29</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The data path for the root of the Sloodle folder.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_LIBROOT"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_LIBROOT</span> = $CFG-&gt;dirroot.'/mod/sloodle/lib'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a31">31</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The data path for the root of the Sloodle library folder.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_OBJECT_ACCESS_LEVEL_GROUP"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_OBJECT_ACCESS_LEVEL_GROUP</span> = 2
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a102">102</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates that only in-world group-members may access an object in-world.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_OBJECT_ACCESS_LEVEL_OWNER"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_OBJECT_ACCESS_LEVEL_OWNER</span> = 1
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a100">100</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates that only the owner may access an object in-world.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_OBJECT_ACCESS_LEVEL_PUBLIC"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_OBJECT_ACCESS_LEVEL_PUBLIC</span> = 0
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a98">98</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates that anybody may access an object in-world.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_SERVER_ACCESS_LEVEL_COURSE"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_SERVER_ACCESS_LEVEL_COURSE</span> = 1
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a107">107</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates that only those registered and enrolled in a specific course may access a server resource.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_SERVER_ACCESS_LEVEL_PUBLIC"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_SERVER_ACCESS_LEVEL_PUBLIC</span> = 0
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a105">105</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates that anybody may access a server resource (still requires an authenticated request).</p>
+	
+		
+</div>
+<a name="defineSLOODLE_SERVER_ACCESS_LEVEL_SITE"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_SERVER_ACCESS_LEVEL_SITE</span> = 2
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a109">109</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates that only those registered on the site may access a server resource.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_SERVER_ACCESS_LEVEL_STAFF"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_SERVER_ACCESS_LEVEL_STAFF</span> = 3
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a111">111</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates that only those with Sloodle staff status on a course may access a server resource.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_TYPE_CTRL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_TYPE_CTRL</span> = 'controller'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a82">82</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineSLOODLE_TYPE_DISTRIB"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_TYPE_DISTRIB</span> = 'distributor'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a85">85</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineSLOODLE_VERSION"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_VERSION</span> = 0.3
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a33">33</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Sloodle version number.</p>
+	
+		
+</div>
+<a name="defineSLOODLE_WWWROOT"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">SLOODLE_WWWROOT</span> = $CFG-&gt;wwwroot.'/mod/sloodle'
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a27">27</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The path for browsing to the root of the Sloodle folder.</p>
+	
+		
+</div>
+		</div>
+	</div>
+	
+	
+	<a name="sec-functions"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Functions</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-includes">Includes</a>
+				|										<a href="#sec-constants">Constants</a>
+				|									<span class="disabled">Functions</span>
+		</div>
+		<div class="info-box-body">	
+			<a name="functionsloodle_debug" id="functionsloodle_debug"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_debug</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sl_config.php.html#a69">69</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Outputs messages if in debug mode.</p>
+	<ul class="tags">
+				<li><span class="field">uses:</span> <a href="../sloodle/_sl_config.php.html#defineSLOODLE_DEBUG">SLOODLE_DEBUG</a></li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sloodle_debug
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$msg</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$msg</span><span class="var-description">: The debug message to output</span>			</li>
+				</ul>
+		
+	
+</div>
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 07 Jul 2008 12:33:16 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>PDF Importer installation - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-PDF_Importer_installation">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">PDF Importer installation</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Since the release of <a href="../../../../articles/s/l/o/Sloodle_Versions.html#Version_1.0" title="Sloodle Versions">SLOODLE 1.0</a>, the <a href="../../../../articles/s/l/o/SLOODLE_Presenter.html" title="SLOODLE Presenter">SLOODLE Presenter</a> has provided a PDF importer plugin. The purpose of the plugin is to allow the user to upload a PDF file, which will then be automatically converted into a slideshow of images. Unfortunately, most webservers do not support it directly.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#System_Requirements"><span class="tocnumber">1</span> <span class="toctext">System Requirements</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Using_the_Importer"><span class="tocnumber">2</span> <span class="toctext">Using the Importer</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Setup"><span class="tocnumber">3</span> <span class="toctext">Setup</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#How_do_I_install_ImageMagick.3F"><span class="tocnumber">3.1</span> <span class="toctext">How do I install ImageMagick?</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#How_do_I_install_GhostScript.3F"><span class="tocnumber">3.2</span> <span class="toctext">How do I install GhostScript?</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#How_do_I_install_MagickWand.3F"><span class="tocnumber">3.3</span> <span class="toctext">How do I install MagickWand?</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#I_can.27t_install_MagickWand"><span class="tocnumber">3.4</span> <span class="toctext">I can't install MagickWand</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Troubleshooting"><span class="tocnumber">4</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#The_plugin_says_.22Incompatible.22.2C_but_I_don.27t_know_why"><span class="tocnumber">4.1</span> <span class="toctext">The plugin says "Incompatible", but I don't know why</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#The_.27convert.27_program_could_not_be_found"><span class="tocnumber">4.2</span> <span class="toctext">The 'convert' program could not be found</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#The_.27convert.27_program_failed_to_execute"><span class="tocnumber">4.3</span> <span class="toctext">The 'convert' program failed to execute</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#ImageMagick_is_not_installed"><span class="tocnumber">4.4</span> <span class="toctext">ImageMagick is not installed</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#GhostScript_is_not_installed"><span class="tocnumber">4.5</span> <span class="toctext">GhostScript is not installed</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="System_Requirements">System Requirements</span></h2>
+<p>You will need the following programs installed on your webserver in order to use the PDF Importer:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.imagemagick.org">ImageMagick</a>
+</li><li> <a rel="nofollow" class="external text" href="http://sourceforge.net/projects/ghostscript">GhostScript</a>
+</li></ul>
+<p>Optional:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.magickwand.org">MagickWand</a>
+</li></ul>
+<p>Having the MagickWand extension is not always necessary, but it makes it easier and more reliable for the importer to find and use ImageMagick. If it is not installed (or if it cannot be loaded dynamically) then the importer will try to find and execute the ImageMagick 'convert' program on its own.
+</p><p><br />
+<b>Installation Requirements</b>
+You will need to have administrator privileges on the server to install necessary components. This is not the same as being a Moodle administrator. You may need ask your web-host or the system/network administrator at your institution to do this for you.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Using_the_Importer">Using the Importer</span></h2>
+<p>Add a "Presenter" activity to your Moodle course, and click the "Import Slides" tab at the top right. Underneath "PDF Importer", it will display "Incompatible" if something does not seem to work. If you are using SLOODLE version 1.0.2 or later then you will be able to hover the mouse over it to see a summary of what is wrong.
+</p><p>To use the importer, click on "PDF Importer" and use the form to upload and convert a PDF file. It may takes several seconds, depending on the size of the PDF file. If it worked then you will be able to view the pages of the PDF file as image slides in the presentation. An error message will be displayed otherwise.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Setup">Setup</span></h2>
+<p>If your server has ImageMagick, GhostScript, and MagickWand installed already, then you are probably ready to use the PDF Importer immediately. No further setup should be required. Otherwise, you will need to install the following components (preferably in this order):
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="How_do_I_install_ImageMagick.3F">How do I install ImageMagick?</span></h3>
+<p>The simplest way of installing ImageMagick is usually to download a "binary release" from their website. Select the appropriate release for your operating system:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.imagemagick.org/script/binary-releases.php#windows">Windows</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.imagemagick.org/script/binary-releases.php#macosx">Mac OS</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.imagemagick.org/script/binary-releases.php#unix">Unix/Linux</a>
+</li></ul>
+<p><br />
+<b>Package manager (Linux)</b>
+</p><p>If you are running a Linux webserver, then you may prefer to obtain ImageMagick using package management tools such as Yum. The procedure will be different depending on your operating system and other factors, but a typical shell command might look like this:
+</p><p>yum install ImageMagick
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="How_do_I_install_GhostScript.3F">How do I install GhostScript?</span></h3>
+<p>You can get "binary releases" of GhostScript from their SourceForge site. Make sure you download the latest version for your operating system:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://sourceforge.net/projects/ghostscript/">GhostScript</a>
+</li></ul>
+<p><br />
+<b>Package manager (Linux)</b>
+</p><p>As with ImageMagick, you can usually obtain GhostScript through a package manager on Linux. A typical command might look like this:
+</p><p>yum install GhostScript
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="How_do_I_install_MagickWand.3F">How do I install MagickWand?</span></h3>
+<p>The MagickWand extension is often much more complicated to install than the other parts, but you can usually omit it if necessary. See the section below on "I can't install MagickWand" for more information on using the PDF importer without it.
+</p><p>It is recommended that you install it if possible though. For non-expert users, the easiest approach is often to make sure MagickWand is included when you install PHP. For more information, visit the <a rel="nofollow" class="external text" href="http://www.magickwand.org">MagickWand website</a>.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="I_can.27t_install_MagickWand">I can't install MagickWand</span></h3>
+<p>If you can't install MagickWand, but you have ImageMagick and GhostScript installed, then the PDF Importer may work anyway. Try using it to find out. If it is incompatible, then it will probably be because the importer could not auto-detect the location of the ImageMagick 'convert' program. You will need to find the location of the program, and tell the PDF Importer where it is.
+</p><p>Check the sections below to help you find the complete 'path' to your convert program. When you have done that, you need to edit a file in the SLOODLE module. It is called "sloodle/plugin/presenter/pdfimporter.php". Near the top, you should see a line like this:
+</p><p>$IMAGICK_CONVERT_PATH = '/usr/bin/convert';
+</p><p>Replace '/usr/bin/convert' with the path to your convert program, but remember to keep single quotation marks in. It is recommended that you use only forward slashes (/) rather than backslashes, even if you are on a Windows computer. Make sure you do not leave a slash on the end of the path you specify.
+</p><p><b>Linux/Unix</b>
+</p><p>If you are on a Linux (or similar) system, then the 'convert' program will usually be in a common binary ('bin') folder somewhere. For example, common paths are:
+</p>
+<ul><li> /usr/bin/convert
+</li><li> /usr/local/bin/convert
+</li></ul>
+<p>If you have shell (command line) access to your server, then you could try typing in "whereis convert". That will suggest some paths which you could try. However, it is quite common for webserver administrators to deny access to executable files. If you cannot find the convert program, then speak to your server administrator.
+</p><p><b>Windows</b>
+</p><p>The ImageMagick programs will usually be installed into your "Program Files" folder, although it could have been installed directly to the hard disk. Your path will often look something like this:
+</p>
+<ul><li> C:/Program Files/ImageMagick-6.5.7-Q16/convert.exe
+</li><li> C:/ImageMagick-6.5.7-Q16/convert.exe
+</li></ul>
+<p>Please note that the version information ("6.5.7-Q16") may be different, but the rest of the information should be the same. Please remember to use forward slashes (/) in your path, instead of backslashes (\).
+</p><p><b>Mac</b>
+</p><p>Sorry, I have never used a Mac so I have no idea! I suspect it will be somewhat similar to Linux/Unix though.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h4> <span class="mw-headline" id="The_plugin_says_.22Incompatible.22.2C_but_I_don.27t_know_why">The plugin says "Incompatible", but I don't know why</span></h4>
+<p>Currently, the plugin does not give any indication of why it is incompatible, or how you can fix it. Hopefully this will be improved as of SLOODLE v1.0.2. The following list shows the most common reasons why it will be incompatible:
+</p>
+<ol><li> <a href="#The_.27convert.27_program_could_not_be_found">The 'convert' program could not be found</a>
+</li><li> <a href="#The_.27convert.27_program_failed_to_execute">The 'convert' program failed to execute</a>
+</li><li> <a href="#ImageMagick_is_not_installed">ImageMagick is not installed</a>
+</li><li> <a href="#GhostScript_is_not_installed">GhostScript is not installed</a>
+</li></ol>
+<p><br />
+Please note that the ideal solution to problems 1 and 2 is to use the MagickWand extension for PHP (see <a href="#How_do_I_install_MagickWand.3F">How do I install MagickWand?</a>). If that is not possible, then see the information below.
+</p><p><br />
+</p>
+<h4> <span class="mw-headline" id="The_.27convert.27_program_could_not_be_found">The 'convert' program could not be found</span></h4>
+<p>This problem occurs when the plugin cannot auto-detect ImageMagick on the server. This can often be because ImageMagick is installed in an unexpected location, so you will need to tell the plugin to find it. Follow the instructions for "<a href="#I_can.27t_install_MagickWand">I can't install MagickWand</a>".
+</p><p>If that does not work, then it is possible ImageMagick is not installed. See the instructions for "<a href="#How_do_I_install_ImageMagick.3F">How do I install ImageMagick?</a>".
+</p><p>If ImageMagick is definitely installed but the plugin still cannot access it, then there may be a permissions problem on your server. PHP needs to be able to execute programs on the server, which means "safe mode" should be disabled. It also requires that the webserver program (such as Apache) has access to the ImageMagick 'convert' program. Granting the program access to it can be complex -- consult your operating system documentation for more details.
+</p><p><br />
+</p>
+<h4> <span class="mw-headline" id="The_.27convert.27_program_failed_to_execute">The 'convert' program failed to execute</span></h4>
+<p>When the plugin attempts to use the 'convert' program, there are several things which can go wrong. An easy mistake is forgetting to install GhostScript. See "<a href="#How_do_I_install_GhostScript.3F">How do I install GhostScript?</a>" for more information.
+</p><p><b>Windows users:</b> some versions of Windows have a totally unrelated program called 'convert'. It can get executed instead of the ImageMagick program, in which case you need to tell the plugin explicitly where to find the ImageMagick installation. Follow the instructions for "<a href="#I_can.27t_install_MagickWand">I can't install MagickWand</a>".
+</p><p>If you had to specify the path to 'convert' explicitly then it is possible that you typed the wrong path.
+</p><p>Please also make sure you are using the latest versions of ImageMagick and GhostScript.
+</p><p><br />
+</p>
+<h4> <span class="mw-headline" id="ImageMagick_is_not_installed">ImageMagick is not installed</span></h4>
+<p>You need ImageMagick installed on the server to use this plugin. See: <a href="#How_do_I_install_ImageMagick.3F">How do I install ImageMagick?</a>
+</p><p><br />
+</p>
+<h4> <span class="mw-headline" id="GhostScript_is_not_installed">GhostScript is not installed</span></h4>
+<p>You need GhostScript installed on the server to use this plugin. See: <a href="#How_do_I_install_GhostScript.3F">How do I install GhostScript?</a>
+</p><p><br />
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 55/1000000
+Post‐expand include size: 486/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/s/l/o/Category:SloodleAdminDocs.html" title="Category:SloodleAdminDocs">SloodleAdminDocs</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/p/d/f/PDF_Importer_installation.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:PDF_Importer_installation&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/PDF_Importer_installation">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 08:46, 4 February 2010 by SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

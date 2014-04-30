@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Sloodle Distributor Module - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-Sloodle_Distributor_Module">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Sloodle Distributor Module</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p style="text-align:right;"><span title="This information only applies to Sloodle versions: 0.3" style="vertical-align:middle; padding:4px; font-size:12pt; background-color:#ccffff; border:solid 1px #7777ff;">Sloodle Versions: <strong>0.3</strong> <span style="font-size:75%; vertical-align:middle;"><a href="../../../../articles/s/l/o/Sloodle_Versions.html" title="Sloodle Versions">(?)</a></span></span></p>
+<p>The <strong class="selflink">Sloodle Distributor Module</strong> and <a href="../../../../articles/s/l/o/Sloodle_Vending_Machine.html" title="Sloodle Vending Machine">Sloodle Vending Machine</a> replace the <a href="../../../../articles/m/o/o/Moodle_Distribution_Interface.html" title="Moodle Distribution Interface">Moodle Distribution Interface</a> and the <a href="../../../../articles/s/l/o/Sloodle_Object_Distributor.html" title="Sloodle Object Distributor">Sloodle Object Distributor</a> functionality from previous versions of Sloodle. They allow you to distribute items in Second Life via an interface in Moodle. It is a sub-type of the Sloodle activity module in Moodle, so you will need to add an <a href="../../../../articles/s/l/o/Sloodle_Instances.html" title="Sloodle Instances">instance</a> of it to your course in order to use it.
+</p><p><br />
+An important change is that you can have as many Distributor modules as you like in a course/site, whereas previous versions of Sloodle only allowed a single distributor.
+</p><p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Quick_Start_Guide"><span class="tocnumber">1</span> <span class="toctext">Quick Start Guide</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#A._Setting_up_Moodle"><span class="tocnumber">1.1</span> <span class="toctext">A. Setting up Moodle</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#B._Setting_up_in_Second_Life"><span class="tocnumber">1.2</span> <span class="toctext">B. Setting up in Second Life</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#C._Adding_Objects"><span class="tocnumber">1.3</span> <span class="toctext">C. Adding Objects</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#D._Distributing_Objects"><span class="tocnumber">1.4</span> <span class="toctext">D. Distributing Objects</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Frequently_Asked_Questions"><span class="tocnumber">2</span> <span class="toctext">Frequently Asked Questions</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#See_Also"><span class="tocnumber">3</span> <span class="toctext">See Also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Developer_Information"><span class="tocnumber">4</span> <span class="toctext">Developer Information</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Communications"><span class="tocnumber">4.1</span> <span class="toctext">Communications</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#API_Classes"><span class="tocnumber">4.2</span> <span class="toctext">API Classes</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Files"><span class="tocnumber">4.3</span> <span class="toctext">Files</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Moodle_Interface"><span class="tocnumber">4.4</span> <span class="toctext">Moodle Interface</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Database"><span class="tocnumber">4.5</span> <span class="toctext">Database</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Quick_Start_Guide"> Quick Start Guide </span></h2>
+<h4> <span class="mw-headline" id="A._Setting_up_Moodle"> A. Setting up Moodle </span></h4>
+<p>Before you can use a Distributor, you must allow Sloodle to access your course. To do that, ensure that there is a <a href="../../../../articles/s/l/o/Sloodle_Controller_Module.html" title="Sloodle Controller Module">Sloodle Controller Module</a> in your course, and that it is visible and enabled. (The course itself should also be visible). Next, you need to add a Distributor module <a href="../../../../articles/s/l/o/Sloodle_Instances.html" title="Sloodle Instances">instance</a> to your course, as follows:
+</p>
+<ol><li> Activate edit mode (if it is not already active)
+</li><li> Click a box which says "Add an activity..."
+</li><li> Look down the list for "Sloodle Modules", and click "Distributor" underneath it
+<ol><li> <i>(you will be taken to a module editing page)</i>
+</li></ol>
+</li><li> Enter a name for your Distributor
+</li><li> Enter a description for your Distributor
+</li><li> Click one of the "Save" buttons at the bottom
+</li></ol>
+<p>If you view your course page again, you will see a Distributor instance, entitled "Sloodle Distributor: " followed by the name you specified.
+</p><p><br />
+</p>
+<h4> <span class="mw-headline" id="B._Setting_up_in_Second_Life"> B. Setting up in Second Life </span></h4>
+<p>You now need to create a <a href="../../../../articles/s/l/o/Sloodle_Vending_Machine.html" title="Sloodle Vending Machine">Sloodle Vending Machine</a> object in Second Life, which will be linked to your Distributor in Moodle. You can rez it from a <a href="../../../../articles/s/l/o/Sloodle_Set.html" title="Sloodle Set">Sloodle Set</a>, or rez it manually if you have one in your inventory. Authorize the Vending Machine if necessary, and visit its web-configuration page. Select the Distributor instance you just created, and save the configuration. In Second Life, download the configuration, and the Vending Machine will attempt to connect to the Distributor in Moodle.
+</p><p><br />
+</p>
+<h4> <span class="mw-headline" id="C._Adding_Objects"> C. Adding Objects </span></h4>
+<p>The Vending Machine and Distributor need to have objects to distribute. Right-click the Vending Machine, click Edit, and select the "Contents" tab. You will see several Sloodle scripts there, which you must not alter. There may also be a "Test Object", which you are free to delete. Click and drag items from your inventory into that Contents tab to store them (note that they may not appear immediately, as Second Life's inventory system can be quite slow sometimes!). You can add anything except scripts, but you must make sure it has the copy permission enabled, otherwise it will be removed from the Vending Machine as soon as somebody takes on.
+</p><p>You can now close the "Edit" window. By default, the Vending Machine should notify Moodle every hour if it has new items to distribute. However, you can manually make an updated by touching the Vending Machine, clicking the "cmd" button, and selecting "Reconnect". <b>Warning:</b> do not click "Reset", because that will force you to re-authorise and reconfigure the Vending Machine.
+</p><p><br />
+</p>
+<h4> <span class="mw-headline" id="D._Distributing_Objects"> D. Distributing Objects </span></h4>
+<p>Go back to your Moodle course, and click on the Distributor module. If you are a teacher or administrator, then you will see 3 sections on the page, entitled "Send to me", "Send to another avatar", and "Send to custom UUID". Students will normally only see the first section.
+</p><p>If a Moodle user (such as a student) has their avatar registered with the Moodle site, they can select an object from the menu, and click the send button to have the Vending Machine automatically send them an object. Teachers and administrators can use the other two sections to send objects to any avatar registered with the site, or they can paste any avatar's UUID into the box and have the Vending Machine send objects to them.
+</p><p>(You can also allow avatars to select objects directly from the Vending Machine, without the need for a Distributor module in Moodle).
+</p><p><br />
+</p>
+<ul><li> Note: you can only send one object to one avatar at a time. In the future, the ability may be added to distribute multiple objects and/or to multiple avatars.
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Frequently_Asked_Questions"> Frequently Asked Questions </span></h2>
+<p><b>Q: How many Distributor modules and Vending Machines can I have?</b><br />
+A: As many as you like. You can add multiple modules to each course in Moodle, and you can have as many Vending Machines as you like.
+</p><p><br />
+<b>Q: Can I use the Vending Machine without the Distributor module, or vice versa?</b><br />
+A: Yes and no. You can use a Vending Machine 'standalone', in which case it is not connected to a Distributor module in Moodle (the only way to access it is to touch the Vending Machine in-world to request objects). However, you <i>cannot</i> use a Distributor module without a Vending Machine, because without, there is nothing in-world to store and distribute the objects.
+</p><p><br />
+<b>Q: How many items can the Distributor handle?</b><br />
+A: There is no definite number, but it is inherently limited by the available memory of the <a href="../../../../articles/s/l/o/Sloodle_Vending_Machine.html" title="Sloodle Vending Machine">Sloodle Vending Machine</a> script to process object names. (Thus, if the object names are shorter, then it should be able to handle a larger number of them).
+</p><p><br />
+<b>Q: What types of items can the Distributor handle?</b><br />
+A: In theory, any items can be handled, although scripts are ignored by the <a href="../../../../articles/s/l/o/Sloodle_Vending_Machine.html" title="Sloodle Vending Machine">Sloodle Vending Machine</a>.
+</p><p><br />
+<b>Q: Are there any limits on the names of objects?</b><br />
+A: Any unicode characters should work, including single and double quotation marks. However, this is an area prone to bugs, so if you find a problem, then please report it!&#160;:-)
+</p><p><br />
+<b>Q: Why can I not have separate Distributor/Selector objects in-world anymore?</b><br />
+A: When those objects were first developed, only a single Distributor could be connected to a site, and thus the Selector was created to allow multiple access points. However, since the number of Distributors (or Vending Machines) is no longer limited, it is simpler to combine all functionality together.
+</p><p><br />
+<b>Q: Why can't I just use SL groups to distribute items?</b><br />
+A: You certainly can, and for many purposes, that is much easier. However, it is sometimes useful to be able to distribute an item to yourself or somebody else without having to login to Second Life.
+</p><p><br />
+<b>Q: Do I need XMLRPC?</b><br />
+A: Currently, yes. The distribution requests from Moodle into Second Life are send via XMLRPC, as it is fast. However, it is not supported by all servers, and not entirely reliable in Second Life, so email or HTTP 'polling' may be introduced as optional alternatives in future versions of Sloodle.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="See_Also"> See Also </span></h2>
+<ul><li> <a href="../../../../articles/s/l/o/Sloodle_Controller_Module.html" title="Sloodle Controller Module">Sloodle Controller Module</a>
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Developer_Information"> Developer Information </span></h2>
+<h4> <span class="mw-headline" id="Communications"> Communications </span></h4>
+<p>Updates from Second Life to Moodle are sent via HTTP parameters, using the LSL "llHTTPRequest()" function. When connected to Moodle, the <a href="../../../../articles/s/l/o/Sloodle_Vending_Machine.html" title="Sloodle Vending Machine">Sloodle Vending Machine</a> will open an <a href="../../../../articles/x/m/l/XMLRPC_in_Sloodle.html" title="XMLRPC in Sloodle">XMLRPC channel</a> (the key of which is stored in the Moodle database), and subsquent distribution requests are transmitted via that <a href="../../../../articles/x/m/l/XMLRPC_in_Sloodle.html" title="XMLRPC in Sloodle">XMLRPC channel</a>.
+</p>
+<h4> <span class="mw-headline" id="API_Classes"> API Classes </span></h4>
+<p>The <a href="../../../../articles/s/l/o/Sloodle_PHP_API.html" title="Sloodle PHP API">Sloodle PHP API</a> contains a class (called SloodleModuleDistributor) to encapsulate much of the Distributore module functionality. If you are using a SloodleSession, then you can access it in the following way:
+</p>
+<pre>$sloodle = new SloodleSession();
+$sloodle-&gt;load_module('distributor', true);
+$sloodle-&gt;module-&gt;...;
+</pre>
+<h4> <span class="mw-headline" id="Files"> Files </span></h4>
+<p>There is a dedicated folder in the Sloodle module for distributor functionality: "sloodle/mod/distributor-1.0".
+</p>
+<h4> <span class="mw-headline" id="Moodle_Interface"> Moodle Interface </span></h4>
+<ul><li> The form for adding/editing a Distributor is found in the "mod_form.php" file in the root of the Sloodle module folder.
+</li><li> The functionality for the main Distributor page is in "view/view_distributor.php", which is included by the "view.php" script.
+</li><li> The list of sub-types for the Sloodle module (in the "Add an activity..." menus) is defined by the "sloodle_get_types()" function in "lib.php"
+</li></ul>
+<h4> <span class="mw-headline" id="Database"> Database </span></h4>
+<p>Each Distributor module is a sub-type of the Sloodle module, so it will have an entry in the "sloodle" table, although additional information will be stored in the "sloodle_distributor" table. Each item available in a Distributor will occupy one record of the "sloodle_distributor_entry" table.
+</p><p><br />
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 64/1000000
+Post‐expand include size: 829/2097152 bytes
+Template argument size: 6/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../../../../articles/s/l/o/Category:SloodleDevDocs.html" title="Category:SloodleDevDocs">SloodleDevDocs</a></li><li><a href="../../../../articles/s/l/o/Category:SloodleUserDocs.html" title="Category:SloodleUserDocs">SloodleUserDocs</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/l/o/Sloodle_Distributor_Module.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:Sloodle_Distributor_Module&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/Sloodle_Distributor_Module">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 07:17, 22 July 2008 by SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1524 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class SloodleCourse</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> SloodleCourse</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Sloodle course data class</p>
+		<p class="notes">
+			Located in <a class="field" href="_sloodle---lib---course.php.html">/sloodle/lib/course.php</a> (line <span class="field"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a27">27</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																								<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../sloodle/SloodleController.html">SloodleController</a></span>
+					<a href="#$controller" title="details" class="var-name">$controller</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$course_object" title="details" class="var-name">$course_object</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$sloodle_course_data" title="details" class="var-name">$sloodle_course_data</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																																																															
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">SloodleCourse</span>
+										<a href="#SloodleCourse" title="details" class="method-name">SloodleCourse</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#can_user_authorise_objects" title="details" class="method-name">can_user_authorise_objects</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#check_autoenrol" title="details" class="method-name">check_autoenrol</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#check_autoreg" title="details" class="method-name">check_autoreg</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#delete_layout" title="details" class="method-name">delete_layout</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#delete_loginzone_allocation" title="details" class="method-name">delete_loginzone_allocation</a>
+											(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#disable_autoenrol" title="details" class="method-name">disable_autoenrol</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#disable_autoreg" title="details" class="method-name">disable_autoreg</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#enable_autoenrol" title="details" class="method-name">enable_autoenrol</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#enable_autoreg" title="details" class="method-name">enable_autoreg</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|false</span>
+										<a href="#generate_loginzone_allocation" title="details" class="method-name">generate_loginzone_allocation</a>
+											(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#get_autoenrol" title="details" class="method-name">get_autoenrol</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#get_autoreg" title="details" class="method-name">get_autoreg</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#get_course_id" title="details" class="method-name">get_course_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#get_course_object" title="details" class="method-name">get_course_object</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_full_name" title="details" class="method-name">get_full_name</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array|bool</span>
+										<a href="#get_layout_entries" title="details" class="method-name">get_layout_entries</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#get_layout_names" title="details" class="method-name">get_layout_names</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|bool</span>
+										<a href="#get_loginzone_allocation" title="details" class="method-name">get_loginzone_allocation</a>
+											(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_loginzone_position" title="details" class="method-name">get_loginzone_position</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_loginzone_region" title="details" class="method-name">get_loginzone_region</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_loginzone_size" title="details" class="method-name">get_loginzone_size</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#get_loginzone_time_updated" title="details" class="method-name">get_loginzone_time_updated</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_short_name" title="details" class="method-name">get_short_name</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#has_loginzone_data" title="details" class="method-name">has_loginzone_data</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_available" title="details" class="method-name">is_available</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_loaded" title="details" class="method-name">is_loaded</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#load" title="details" class="method-name">load</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$course</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#load_by_controller" title="details" class="method-name">load_by_controller</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$controllerid</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#load_user_by_loginzone" title="details" class="method-name">load_user_by_loginzone</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$pos</span>, <span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">&$user</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#save_layout" title="details" class="method-name">save_layout</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$entries</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$add</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_loginzone_position" title="details" class="method-name">set_loginzone_position</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$pos</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_loginzone_position_xyz" title="details" class="method-name">set_loginzone_position_xyz</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$z</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_loginzone_region" title="details" class="method-name">set_loginzone_region</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$region</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_loginzone_size" title="details" class="method-name">set_loginzone_size</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$size</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_loginzone_size_xyz" title="details" class="method-name">set_loginzone_size_xyz</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$z</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_loginzone_time_updated" title="details" class="method-name">set_loginzone_time_updated</a>
+											([<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#write" title="details" class="method-name">write</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$controller" id="$controller"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../sloodle/SloodleController.html">SloodleController</a></span>
+			<span class="var-name">$controller</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a53">53</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The <a href="../sloodle/SloodleController.html">SloodleController</a> object being used to access this course, if available.</p>
+	
+	
+		
+		
+
+</div>
+<a name="var$course_object" id="$course_object"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$course_object</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a38">38</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The database object of the course to which this object relates.</p>
+<p class="description"><p>Corresponds to the &quot;course&quot; table in Moodle.  Is null if not yet set</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$sloodle_course_data" id="$sloodle_course_data"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$sloodle_course_data</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a46">46</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Sloodle course data object, if it exists.</p>
+<p class="description"><p>Is null if not yet set.</p></p>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodSloodleCourse" id="SloodleCourse"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor SloodleCourse</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a61">61</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+	
+	<div class="method-signature">
+		<span class="method-result">SloodleCourse</span>
+		<span class="method-name">
+			SloodleCourse
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcan_user_authorise_objects" id="can_user_authorise_objects"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">can_user_authorise_objects</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a637">637</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks whether or not the CURRENTLY LOGGED-IN user can authorise objects on this course.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the user has object authorisation permission, or false otherwise.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			can_user_authorise_objects
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcheck_autoenrol" id="check_autoenrol"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">check_autoenrol</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a163">163</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Is auto enrolment permitted on this site AND course?  Takes into account the site-wide setting as well.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			check_autoenrol
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcheck_autoreg" id="check_autoreg"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">check_autoreg</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a120">120</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Is auto registration permitted on this site AND course?  Takes into account the site-wide setting as well.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			check_autoreg
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddelete_layout" id="delete_layout"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">delete_layout</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a578">578</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes the named layout.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			delete_layout
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The name of the layout to delete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddelete_loginzone_allocation" id="delete_loginzone_allocation"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">delete_loginzone_allocation</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a415">415</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes any loginzone allocations for the given user  If there are multiple for the same user (which there should never be) it will delete them all.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			delete_loginzone_allocation
+		</span>
+					(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">$user</span><span class="var-description">: The user whose allocation is to be deleted</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddisable_autoenrol" id="disable_autoenrol"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">disable_autoenrol</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a194">194</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Disables auto-enrolment for this course.</p>
+<p class="description"><p>NOTE: does not affect the site setting.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			disable_autoenrol
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddisable_autoreg" id="disable_autoreg"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">disable_autoreg</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a151">151</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Disables auto-registration for this course.</p>
+<p class="description"><p>NOTE: does not affect the site setting.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			disable_autoreg
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodenable_autoenrol" id="enable_autoenrol"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">enable_autoenrol</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a184">184</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enables auto-enrolment for this course.</p>
+<p class="description"><p>NOTE: it may still be disabled at site-level.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			enable_autoenrol
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodenable_autoreg" id="enable_autoreg"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">enable_autoreg</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a141">141</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enables auto-registration for this course.</p>
+<p class="description"><p>NOTE: it may still be disabled at site-level.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			enable_autoreg
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgenerate_loginzone_allocation" id="generate_loginzone_allocation"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">generate_loginzone_allocation</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a331">331</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates a new LoginZone allocation for the specified user.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A SLurl for the allocation, or false if it was unsuccessful</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|false</span>
+		<span class="method-name">
+			generate_loginzone_allocation
+		</span>
+					(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">$user</span><span class="var-description">: The user for whom this allocation should be made</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_autoenrol" id="get_autoenrol"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_autoenrol</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a174">174</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the auto enrolment value for this course only.</p>
+<p class="description"><p>(Ignores the site setting).</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			get_autoenrol
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_autoreg" id="get_autoreg"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_autoreg</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a131">131</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the autoregistration value for this course only.</p>
+<p class="description"><p>(Ignores the site setting).</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			get_autoreg
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_course_id" id="get_course_id"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_course_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a80">80</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the identifier of the course in the VLE.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Course identifier. Type depends on VLE. (In Moodle, it will be an integer).</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			get_course_id
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_course_object" id="get_course_object"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_course_object</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a91">91</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the VLE course object.</p>
+<p class="description"><p>WARNING: this should only be used when ABSOLUTELY necessary.  The contents are specific to the VLE.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Type and content depends upon VLE. In Moodle, it is an object representing a record from the 'course' table.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			get_course_object
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_full_name" id="get_full_name"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_full_name</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a110">110</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the full name of this course in the VLE.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Fullname of this course.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_full_name
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_layout_entries" id="get_layout_entries"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_layout_entries</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a550">550</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets all the entries in the named layout.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A numeric array of <a href="../sloodle/SloodleLayoutEntry.html">SloodleLayoutEntry</a> objects if successful, or false if the layout does not exist</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array|bool</span>
+		<span class="method-name">
+			get_layout_entries
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The name of the layout to query</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_layout_names" id="get_layout_names"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_layout_names</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a531">531</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets an array associating layout ID's to names</p>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			get_layout_names
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_loginzone_allocation" id="get_loginzone_allocation"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_loginzone_allocation</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a371">371</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the SLurl for the specified user's loginzone alloation</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The SLurl string if successful, or false if the user has no allocation or the loginzone does not exist</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|bool</span>
+		<span class="method-name">
+			get_loginzone_allocation
+		</span>
+					(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">$user</span><span class="var-description">: The user whose allocation is to be retrieved</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_loginzone_position" id="get_loginzone_position"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_loginzone_position</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a219">219</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the position of the loginzone as a string vector &lt;x,y,z&gt;</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_loginzone_position
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_loginzone_region" id="get_loginzone_region"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_loginzone_region</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a287">287</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the region of the loginzone</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_loginzone_region
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_loginzone_size" id="get_loginzone_size"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_loginzone_size</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a253">253</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the size of the loginzone as a string vector &lt;x,y,z&gt;</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_loginzone_size
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_loginzone_time_updated" id="get_loginzone_time_updated"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_loginzone_time_updated</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a308">308</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the timestamp of the last time the loginzone was updated</p>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			get_loginzone_time_updated
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_short_name" id="get_short_name"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_short_name</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a101">101</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the short name of this course in the VLE.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Shortname of this course.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_short_name
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodhas_loginzone_data" id="has_loginzone_data"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">has_loginzone_data</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a424">424</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not LoginZone data exists for this course.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if there is complete data, or false otherwise</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			has_loginzone_data
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_available" id="is_available"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_available</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a206">206</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not the course is available.</p>
+<p class="description"><p>Checks that the course has not been disabled or hidden etc..</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the course is available</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_available
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_loaded" id="is_loaded"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_loaded</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a70">70</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not course data has been loaded.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_loaded
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodload" id="load"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">load</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a438">438</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reads fresh data into the structure from the database.</p>
+<p class="description"><p>Fetches Moodle and Sloodle data about the course specified.  If necessary, it creates a new Sloodle entry with default settings.  Returns true if successful, or false on failure.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			load
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$course</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$course</span><span class="var-description">: Either a unique course ID, or a course data object. If the former, then VLE course data is read from the database. Otherwise, the data object is used as-is.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodload_by_controller" id="load_by_controller"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">load_by_controller</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a491">491</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loads course and controller data by the unqiue site-wide identifier of a Sloodle controller.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false on failure.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			load_by_controller
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$controllerid</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$controllerid</span><span class="var-description">: The unique site-wide identifier for a Sloodle Controller. (For Moodle, an integer cmi)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodload_user_by_loginzone" id="load_user_by_loginzone"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">load_user_by_loginzone</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a394">394</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Finds the user identified by LoginZone allocation, and loads it into the given user object.</p>
+<p class="description"><p>Note: does not delete the allocation.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			load_user_by_loginzone
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$pos</span>, <span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">&$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$pos</span><span class="var-description">: Absolute position vector (relative to sim, not to LoginZone)</span>			</li>
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">&$user</span><span class="var-description">: The user object which will be manipulated (by reference)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsave_layout" id="save_layout"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">save_layout</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a597">597</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Save the given entries in the named profile.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			save_layout
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$entries</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$add</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The name of the layout to query</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$entries</span><span class="var-description">: A numeric array of <a href="../sloodle/SloodleLayoutEntry.html">SloodleLayoutEntry</a> objects to store</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$add</span><span class="var-description">: (Default: false) If true, then the entries will be added to the layout instead of replacing existing entries</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_loginzone_position" id="set_loginzone_position"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_loginzone_position</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a231">231</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the position of the loginzone as a string vector &lt;x,y,z&gt;</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Update to handle arrays as well</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_loginzone_position
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$pos</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$pos</span><span class="var-description">: A string position vector &lt;x,y,z&gt;</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_loginzone_position_xyz" id="set_loginzone_position_xyz"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_loginzone_position_xyz</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a243">243</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the position of the loginzone as a set of components</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_loginzone_position_xyz
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$z</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$z</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_loginzone_region" id="set_loginzone_region"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_loginzone_region</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a298">298</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the region of the loginzone</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_loginzone_region
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$region</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$region</span><span class="var-description">: A string naming a region</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_loginzone_size" id="set_loginzone_size"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_loginzone_size</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a265">265</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the size of the loginzone as a string vector &lt;x,y,z&gt;</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Update to handle arrays as well</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_loginzone_size
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$size</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$size</span><span class="var-description">: A string size vector &lt;x,y,z&gt;</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_loginzone_size_xyz" id="set_loginzone_size_xyz"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_loginzone_size_xyz</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a277">277</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the size of the loginzone as a set of components</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_loginzone_size_xyz
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$z</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$z</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_loginzone_time_updated" id="set_loginzone_time_updated"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_loginzone_time_updated</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a319">319</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the timestamp of the last time the loginzone was updated</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_loginzone_time_updated
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$timestamp</span><span class="var-description">: A unix timestamp. If null, the current timestamp is used</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodwrite" id="write"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">write</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibcourse.php.html#a518">518</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes current Sloodle course data back to the database.</p>
+<p class="description"><p>Requires that a course structure has already been retrieved.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false on failure</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			write
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 16 Jun 2008 15:56:17 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

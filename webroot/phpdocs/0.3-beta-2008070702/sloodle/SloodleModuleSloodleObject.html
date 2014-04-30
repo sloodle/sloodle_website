@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class SloodleModuleSloodleObject</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> SloodleModuleSloodleObject</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Sloodle Object assignment module class.</p>
+		<p class="notes">
+			Located in <a class="field" href="_lib---modules---module_sloodleobject.php.html">/lib/modules/module_sloodleobject.php</a> (line <span class="field"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a30">30</a></span>)
+		</p>
+		
+				
+		<pre><a href="../sloodle/SloodleModule.html">SloodleModule</a>
+   |
+   --SloodleModuleSloodleObject</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																								<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type"><a href="../sloodle/assignment_sloodleobject.html">assignment_sloodleobject</a></span>
+					<a href="#$assignment" title="details" class="var-name">$assignment</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$cm" title="details" class="var-name">$cm</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$moodle_assignment_instance" title="details" class="var-name">$moodle_assignment_instance</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																															
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">SloodleModuleSloodleObject</span>
+										<a href="#SloodleModuleSloodleObject" title="details" class="method-name">SloodleModuleSloodleObject</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$_session</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#get_course_id" title="details" class="method-name">get_course_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#get_creation_time" title="details" class="method-name">get_creation_time</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_intro" title="details" class="method-name">get_intro</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#get_modification_time" title="details" class="method-name">get_modification_time</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_name" title="details" class="method-name">get_name</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_type" title="details" class="method-name">get_type</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_type_full" title="details" class="method-name">get_type_full</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_too_early" title="details" class="method-name">is_too_early</a>
+											([<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#is_too_late" title="details" class="method-name">is_too_late</a>
+											([<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#load" title="details" class="method-name">load</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#resubmit_allowed" title="details" class="method-name">resubmit_allowed</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#submit" title="details" class="method-name">submit</a>
+											(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$obj_name</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$num_prims</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$primdrop_name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$primdrop_uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$primdrop_region</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$primdrop_pos</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#user_can_submit" title="details" class="method-name">user_can_submit</a>
+											(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#user_can_view" title="details" class="method-name">user_can_view</a>
+											(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#user_has_submitted" title="details" class="method-name">user_has_submitted</a>
+											(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$assignment" id="$assignment"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../sloodle/assignment_sloodleobject.html">assignment_sloodleobject</a></span>
+			<span class="var-name">$assignment</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a55">55</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internal only - the Moodle assignment structure.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$cm" id="$cm"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$cm</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a40">40</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internal for Moodle only - course module instance.</p>
+<p class="description"><p>Corresponds to one record from the Moodle 'course_modules' table.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$moodle_assignment_instance" id="$moodle_assignment_instance"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$moodle_assignment_instance</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a48">48</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internal only - Moodle assignment module instance database object.</p>
+<p class="description"><p>Corresponds to one record from the Moodle 'assignment' table.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../sloodle/SloodleModule.html">SloodleModule</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../sloodle/SloodleModule.html#var$_session">SloodleModule::$_session</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodSloodleModuleSloodleObject" id="SloodleModuleSloodleObject"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor SloodleModuleSloodleObject</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a63">63</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+	
+	<div class="method-signature">
+		<span class="method-result">SloodleModuleSloodleObject</span>
+		<span class="method-name">
+			SloodleModuleSloodleObject
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$_session</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$_session</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_course_id" id="get_course_id"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_course_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a257">257</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the identifier of the course this controller belongs to.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Course identifier. Type depends on VLE. (In Moodle, it will be an integer).</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			get_course_id
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/SloodleModule.html#methodget_course_id">SloodleModule::get_course_id()</a></dt>
+						<dd>Gets the identifier of the course this controller belongs to.</dd>
+					</dl>
+			
+	</div>
+<a name="methodget_creation_time" id="get_creation_time"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_creation_time</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a266">266</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the time at which this instance was created, or 0 if unknown.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Timestamp</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			get_creation_time
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/SloodleModule.html#methodget_creation_time">SloodleModule::get_creation_time()</a></dt>
+						<dd>Gets the time at which this instance was created, or 0 if unknown.</dd>
+					</dl>
+			
+	</div>
+<a name="methodget_intro" id="get_intro"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_intro</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a248">248</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the intro description of this module instance, if available.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The intro description of this controller</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_intro
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/SloodleModule.html#methodget_intro">SloodleModule::get_intro()</a></dt>
+						<dd>Gets the intro description of this module instance, if available.</dd>
+					</dl>
+			
+	</div>
+<a name="methodget_modification_time" id="get_modification_time"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_modification_time</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a275">275</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the time at which this instance was last modified, or 0 if unknown.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Timestamp</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			get_modification_time
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/SloodleModule.html#methodget_modification_time">SloodleModule::get_modification_time()</a></dt>
+						<dd>Gets the time at which this instance was last modified, or 0 if unknown.</dd>
+					</dl>
+			
+	</div>
+<a name="methodget_name" id="get_name"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_name</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a239">239</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the name of this module instance.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The name of this controller</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_name
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/SloodleModule.html#methodget_name">SloodleModule::get_name()</a></dt>
+						<dd>Gets the name of this module instance.</dd>
+					</dl>
+			
+	</div>
+<a name="methodget_type" id="get_type"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_type</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a285">285</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the short type name of this instance.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_type
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/SloodleModule.html#methodget_type">SloodleModule::get_type()</a></dt>
+						<dd>Gets the short type name of this instance.</dd>
+					</dl>
+			
+	</div>
+<a name="methodget_type_full" id="get_type_full"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_type_full</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a295">295</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the full type name of this instance, according to the current language pack, if available.</p>
+<p class="description"><p>Note: should be overridden by sub-classes.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Full type name if possible, or the short name otherwise.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_type_full
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/SloodleModule.html#methodget_type_full">SloodleModule::get_type_full()</a></dt>
+						<dd>Gets the full type name of this instance, according to the current language pack, if available.</dd>
+					</dl>
+			
+	</div>
+<a name="methodis_too_early" id="is_too_early"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_too_early</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a168">168</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if an assignment submitted at the specified time would be too early for submission.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if assignment would be too early, or false if it's OK.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_too_early
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$timestamp</span><span class="var-description">: A timestamp giving the time to check (if omitted, it defaults to the current timestamp)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodis_too_late" id="is_too_late"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_too_late</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a183">183</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if an assignment submitted at the specified time would be too late for submission.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> 1 if assignment would be too late and cannot be accepted, 0 if it is OK, or -1 if it would be late but still accepted</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			is_too_late
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$timestamp</span><span class="var-description">: A timestamp giving the time to check (if omitted, it defaults to the current timestamp)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodload" id="load"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">load</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a75">75</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loads data from the database.</p>
+<p class="description"><p>Note: even if the function fails, it may still have overwritten some or all existing data in the object.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			load
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: The site-wide unique identifier for all modules. Type depends on VLE. On Moodle, it is an integer course module identifier ('id' field of 'course_modules' table)</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/SloodleModule.html#methodload">SloodleModule::load()</a></dt>
+						<dd>Loads data from the database.</dd>
+					</dl>
+			
+	</div>
+<a name="methodresubmit_allowed" id="resubmit_allowed"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">resubmit_allowed</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a157">157</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if re-submissions are permitted.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if resubmissions are permitted, or false otherwise</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			resubmit_allowed
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsubmit" id="submit"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">submit</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a215">215</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add a new submission (or replace an existing one).</p>
+<p class="description"><p>Ignores all submission checks, such as permissions and time.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			submit
+		</span>
+					(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$obj_name</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$num_prims</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$primdrop_name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$primdrop_uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$primdrop_region</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$primdrop_pos</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">$user</span><span class="var-description">: The user making the submission</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$obj_name</span><span class="var-description">: Name of the object being submitted</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$num_prims</span><span class="var-description">: Number of prims in the object being submitted</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$primdrop_name</span><span class="var-description">: Name of the PrimDrop being submitted to</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$primdrop_uuid</span><span class="var-description">: UUID of the PrimDrop being submitted to</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$primdrop_region</span><span class="var-description">: Region of the PrimDrop being submitted to</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$primdrop_pos</span><span class="var-description">: Position vector (&lt;x,y,z&gt;) of the PrimDrop being submitted to</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoduser_can_submit" id="user_can_submit"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">user_can_submit</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a116">116</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if the specified user is permitted to submit to this assignment.</p>
+<p class="description"><p>(Note: this only checks permissions, and no other settings, such as submission times).</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the user has permission to submit to this assignment, or false otherwise.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			user_can_submit
+		</span>
+					(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">$user</span><span class="var-description">: The user to be checked</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoduser_can_view" id="user_can_view"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">user_can_view</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a130">130</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if the specified user is permitted to view submissions to this assignment.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the user has permission to view the submissions, or false otherwise.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			user_can_view
+		</span>
+					(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">$user</span><span class="var-description">: The user to be checked</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoduser_has_submitted" id="user_has_submitted"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">user_has_submitted</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libmodulesmodule_sloodleobject.php.html#a144">144</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if the specified user has submitted to this assignment already.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the user has previously attempted this assignment, or false otherwise</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			user_has_submitted
+		</span>
+					(<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">$user</span><span class="var-description">: The user to be checked</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../sloodle/SloodleModule.html">SloodleModule</a></span></p>
+					<blockquote>
+													<img src="../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/SloodleModule.html#methodSloodleModule">SloodleModule::SloodleModule()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/SloodleModule.html#methodget_course_id">SloodleModule::get_course_id()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/SloodleModule.html#methodget_creation_time">SloodleModule::get_creation_time()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/SloodleModule.html#methodget_intro">SloodleModule::get_intro()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/SloodleModule.html#methodget_modification_time">SloodleModule::get_modification_time()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/SloodleModule.html#methodget_name">SloodleModule::get_name()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/SloodleModule.html#methodget_type">SloodleModule::get_type()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/SloodleModule.html#methodget_type_full">SloodleModule::get_type_full()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/SloodleModule.html#methodload">SloodleModule::load()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 07 Jul 2008 12:33:00 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

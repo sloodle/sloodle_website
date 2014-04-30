@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs for page general.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name"><img src="../media/images/Page_logo.png" alt="File" style="vertical-align: middle">/sloodle/lib/general.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+									<a href="#sec-includes">Includes</a>
+			|											<a href="#sec-functions">Functions</a>
+			</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sloodle general library.</p>
+<p class="description"><p>Provides various utility functionality for general Sloodle purposes.</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2007-8 Sloodle (various contributors)</li>
+				<li><span class="field">contributor:</span> Edmund Edgar</li>
+				<li><span class="field">contributor:</span> Peter R. Bloomfield</li>
+				<li><span class="field">filesource:</span> <a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html">Source Code for this file</a></li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	<a name="sec-includes"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Includes</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Includes</span>
+			|													<a href="#sec-functions">Functions</a>
+					</div>
+		<div class="info-box-body">	
+			<a name="_SLOODLE_LIBROOT_/mail_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Page.png" alt=" " />
+		<span class="include-title">
+			<span class="include-type">require_once</span>
+			(<span class="include-name">SLOODLE_LIBROOT.'/mail.php'</span>)
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a21">21</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Include our email functionality.</p>
+	
+</div>
+		</div>
+	</div>
+	
+	
+	
+	<a name="sec-functions"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Functions</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-includes">Includes</a>
+				|												<span class="disabled">Functions</span>
+		</div>
+		<div class="info-box-body">	
+			<a name="functionsloodle_add_to_log" id="functionsloodle_add_to_log"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_add_to_log</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a138">138</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Old logging function</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> <strong>May require update?</strong></li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sloodle_add_to_log
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$courseid</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$module</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$url</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$cmid</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$info</span> = <span class="var-default">null</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$courseid</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$module</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$action</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$url</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$cmid</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$info</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_array_to_vector" id="functionsloodle_array_to_vector"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_array_to_vector</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a272">272</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Converts an array vector to a string vector.</p>
+<p class="description"><p>Array vector should be associative, containing elements 'x', 'y', and 'z'.  Converts to a string vector of format &quot;&lt;x,y,z&gt;&quot;.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/_sloodle---lib---general.php.html#functionsloodle_round_vector">sloodle_round_vector()</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/_sloodle---lib---general.php.html#functionsloodle_vector_to_array">sloodle_vector_to_array()</a></li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			sloodle_array_to_vector
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$arr</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$arr</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_autoenrol_enabled_site" id="functionsloodle_autoenrol_enabled_site"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_autoenrol_enabled_site</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a84">84</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not auto-enrolment is allowed for the site.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if auto-enrolment is allowed on the site, or false otherwise.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_autoenrol_enabled_site
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functionsloodle_autoreg_enabled_site" id="functionsloodle_autoreg_enabled_site"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_autoreg_enabled_site</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a75">75</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not auto-registration is allowed for the site.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if auto-reg is allowed on the site, or false otherwise.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_autoreg_enabled_site
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functionsloodle_check_course_module_instance_type" id="functionsloodle_check_course_module_instance_type"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_check_course_module_instance_type</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a320">320</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines if the specified course module instance is of the named type.</p>
+<p class="description"><p>For example, this can check if a particular instance is a &quot;forum&quot; or a &quot;chat&quot;.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the module is of the specified type, or false otherwise</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_check_course_module_instance_type
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$module_name</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$id</span><span class="var-description">: The integer ID of a course module instance</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$module_name</span><span class="var-description">: Module type to check (must be the exact name of an installed module, e.g. 'sloodle' or 'quiz')</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_finished_login_coordinates" id="functionsloodle_finished_login_coordinates"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_finished_login_coordinates</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a390">390</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates teleport coordinates for a user who has already finished the LoginZone process.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> bool An associative array vector containing a teleport location, or false if the operation fails.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">array,</span>
+		<span class="method-name">
+			sloodle_finished_login_coordinates
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$pos</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$size</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$pos</span><span class="var-description">: A string vector giving the position of the LoginZone</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$size</span><span class="var-description">: A string vector giving the size of the LoginZone</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_get_config" id="functionsloodle_get_config"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_get_config</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a55">55</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets a Sloodle configuration value from Moodle's &quot;config&quot; table.</p>
+<p class="description"><p>This function does not necessarily need to be used.  All configuration data is available as named members of Moodle's $CFG global variable.  <strong>NOTE:</strong> in Sloodle debug mode, this function will terminate the script with an error if the name is not prefixed with &quot;sloodle_&quot;.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A string containing the configuration value, or false if the query failed (e.g. if the named value didn't exist)</li>
+				<li><span class="field">see:</span> <a href="../sloodle/_sloodle---lib---general.php.html#functionsloodle_set_config">sloodle_set_config()</a></li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			sloodle_get_config
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The name of the value to be stored (should be prefixed with &quot;sloodle_&quot;)</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_get_course_module_instance" id="functionsloodle_get_course_module_instance"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_get_course_module_instance</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a283">283</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Obtains the identified course module instance database record.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A database record if successful, or false if it could not be found</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			sloodle_get_course_module_instance
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$id</span><span class="var-description">: The integer ID of a course module instance</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_get_module_id" id="functionsloodle_get_module_id"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_get_module_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a341">341</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Obtains the ID number of the specified module (type not instance).</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Integer containing module ID, or false if it is not installed</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			sloodle_get_module_id
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The name of the module type to check, e.g. 'sloodle' or 'forum'</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_get_value" id="functionsloodle_get_value"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_get_value</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a661">661</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Extracts a value from a name-value associative array if it is set.</p>
+<p class="description"><p>(The array should associate name to value).</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The value from the input array, or the $default parameter</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			sloodle_get_value
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$settings</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$default</span> = <span class="var-default">null</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$settings</span><span class="var-description">: The array of names and values</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The name of the value to retrieve</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$default</span><span class="var-description">: The default value to return if the specified value was not found</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_is_course_module_instance_visible" id="functionsloodle_is_course_module_instance_visible"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_is_course_module_instance_visible</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a294">294</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not the specified course module instance is visible.</p>
+<p class="description"><p>Checks that the instance itself and the course section are both valid.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if visible, or false if invisible or not found</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_is_course_module_instance_visible
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$id</span><span class="var-description">: The integer ID of a course module instance.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_is_installed" id="functionsloodle_is_installed"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_is_installed</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a179">179</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not Sloodle is installed.</p>
+<p class="description"><p>Queries Moodle's modules table for a Sloodle entry.  <strong>NOTE:</strong> does not check for the presence of the Sloodle files.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if Sloodle is installed, or false otherwise.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_is_installed
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functionsloodle_login_notification" id="functionsloodle_login_notification"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_login_notification</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a572">572</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Stores a pending login notification for an auto-registered user.</p>
+<p class="description"><p>A cron job will process the pending notification queue.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_login_notification
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$destination</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$avatar</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$username</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$destination</span><span class="var-description">: Identifies the destination of the notification (for SL, this will be the object UUID. The send function will construct the email address)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$avatar</span><span class="var-description">: Identifier for the avatar being notified</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$username</span><span class="var-description">: The username to notify the user of</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: The (plaintext) password to notify the user of</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_login_zone_bounds" id="functionsloodle_login_zone_bounds"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_login_zone_bounds</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a471">471</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculates the maximum and minimum bounds of the specified LoginZone  Returns the bounds as a numeric array of two associate array vectors: ($max, $min).</p>
+<p class="description"><p>(Or returns false if no LoginZone position/size could be found in the Moodle configuration table).</p></p>
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			sloodle_login_zone_bounds
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$pos</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$size</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$pos</span><span class="var-description">: A string vector giving the position of the LoginZone</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$size</span><span class="var-description">: A string vector giving the size of the LoginZone</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_position_is_in_login_zone" id="functionsloodle_position_is_in_login_zone"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_position_is_in_login_zone</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a358">358</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if the specified position is in the current (site-wide) loginzone.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if position is in LoginZone, or false if not</li>
+				<li><span class="field">see:</span> sloodle_login_zone_coordinates()</li>
+				<li><span class="field">todo:</span> Update or remove... no longer valid</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_position_is_in_login_zone
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$pos</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$pos</span><span class="var-description">: A string vector or an associated array vector</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_print_access_level_options" id="functionsloodle_print_access_level_options"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_print_access_level_options</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a678">678</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Outputs the standard form elements for access levels in object configuration.</p>
+<p class="description"><p>Each part can be optionally hidden, and default values can be provided.  (Note: the server access level must be communicated from the object back to Moodle... rubbish implementation, but it works!)</p></p>
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sloodle_print_access_level_options
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$current_config</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$show_use_object</span> = <span class="var-default">true</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$show_control_object</span> = <span class="var-default">true</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$show_server</span> = <span class="var-default">true</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$current_config</span><span class="var-description">: An associative array of setting names to values, containing defaults. (Ignored if null).</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$show_use_object</span><span class="var-description">: Determines whether or not the &quot;Use Object&quot; setting is shown</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$show_control_object</span><span class="var-description">: Determines whether or not the &quot;Control Object&quot; setting is shown</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$show_server</span><span class="var-description">: Determines whether or not the server access setting is shown</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_process_login_notifications" id="functionsloodle_process_login_notifications"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_process_login_notifications</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a611">611</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Processes pending login notifications, up to a certain limit.</p>
+<p class="description"><p>Retrieves the requests one-at-a-time for processing.  This is slower, but ensures minimal damage if the process is terminated, e.g. due to server timeout.</p></p>
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sloodle_process_login_notifications
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">25</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$limit</span><span class="var-description">: The maximum number of pending requests to process.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_random_position_in_zone" id="functionsloodle_random_position_in_zone"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_random_position_in_zone</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a413">413</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates a random position within a cuboid zone of the specified size.</p>
+<p class="description"><p>(Note: leaves a 2 metre margin round the outside)</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An associative vector array</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			sloodle_random_position_in_zone
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$size</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$size</span><span class="var-description">: Associative array giving the size of the zone</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_random_prim_password" id="functionsloodle_random_prim_password"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_random_prim_password</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a237">237</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates a random prim password (7 to 9 digit number).</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The password as a string</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			sloodle_random_prim_password
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functionsloodle_random_security_token" id="functionsloodle_random_security_token"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_random_security_token</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a191">191</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates a random login security token.</p>
+<p class="description"><p>Uses mixed-case letters and numbers to generate a random 16-character string.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/_sloodle---lib---general.php.html#functionsloodle_random_web_password">sloodle_random_web_password()</a></li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			sloodle_random_security_token
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functionsloodle_random_web_password" id="functionsloodle_random_web_password"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_random_web_password</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a215">215</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates a random web password  Uses mixed-case letters and numbers to generate a random 8-character string.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/_sloodle---lib---general.php.html#functionsloodle_random_security_token">sloodle_random_security_token()</a></li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			sloodle_random_web_password
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functionsloodle_round_vector" id="functionsloodle_round_vector"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_round_vector</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a436">436</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Rounds the specified 3d vector integer values.</p>
+<p class="description"><p>Can handle/return a string vector, or an array vector.  (Output type matches input type).</p></p>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			sloodle_round_vector
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$pos</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$pos</span><span class="var-description">: Either a string vector or an array vector</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_send_login_notification" id="functionsloodle_send_login_notification"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_send_login_notification</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a598">598</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Send a login notification.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_send_login_notification
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$destination</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$avatar</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$username</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$destination</span><span class="var-description">: Identifies the destination of the notification (for SL, this will be the object UUID. The target email address will be constructed)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$avatar</span><span class="var-description">: Identifier for the avatar being notified</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$username</span><span class="var-description">: The username to notify the user of</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: The (plaintext) password to notify the user of</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_send_xmlrpc_message" id="functionsloodle_send_xmlrpc_message"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_send_xmlrpc_message</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a96">96</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sends an XMLRPC message into Second Life.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false if an error occurs</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_send_xmlrpc_message
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$intval</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$strval</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span><span class="var-description">: A string containing a UUID identifying the XMLRPC channel in SL to be used</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$intval</span><span class="var-description">: An integer value to be sent in the message</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$strval</span><span class="var-description">: A string value to be sent in the message</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_set_config" id="functionsloodle_set_config"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_set_config</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a34">34</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets a Sloodle configuration value.</p>
+<p class="description"><p>This data will be stored in Moodle's &quot;config&quot; table, so it will persist even after Sloodle is uninstalled.  After being set, it will be available (read-only) as a named member of Moodle's $CFG variable.  <strong>NOTE:</strong> in Sloodle debug mode, this function will terminate the script with an error if the name is not prefixed with &quot;sloodle_&quot;.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True on success, or false on failure (may fail if database query encountered an error)</li>
+				<li><span class="field">see:</span> <a href="../sloodle/_sloodle---lib---general.php.html#functionsloodle_get_config">sloodle_get_config()</a></li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_set_config
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The name of the value to be stored (should be prefixed with &quot;sloodle_&quot;)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span><span class="var-description">: The string representation of the value to be stored</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_validate_prim_password" id="functionsloodle_validate_prim_password"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_validate_prim_password</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a499">499</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if the given prim password is valid.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if it is valid, or false otherwise.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_validate_prim_password
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: The password string to check</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_validate_prim_password_verbose" id="functionsloodle_validate_prim_password_verbose"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_validate_prim_password_verbose</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a525">525</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if the given prim password is valid, and provides feedback.</p>
+<p class="description"><p>An array is written to by reference, each element containing error codes.  Each error code is a word. The full text of the error message may be obtained   from the string file by looking for &quot;primpass:errorcode&quot;.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the prim password is valid, or false otherwise</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			sloodle_validate_prim_password_verbose
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$errors</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: The password to validate</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$errors</span><span class="var-description">: An array (passed by reference) which will contain any error messages</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_vector_to_array" id="functionsloodle_vector_to_array"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_vector_to_array</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlelibgeneral.php.html#a252">252</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Converts a string vector to an array vector.</p>
+<p class="description"><p>String vector should be of format &quot;&lt;x,y,z&gt;&quot;.  Converts to associative array with members 'x', 'y', and 'z'.  Returns false if input parameter was not of correct format.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/_sloodle---lib---general.php.html#functionsloodle_round_vector">sloodle_round_vector()</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/_sloodle---lib---general.php.html#functionsloodle_array_to_vector">sloodle_array_to_vector()</a></li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			sloodle_vector_to_array
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$vector</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$vector</span><span class="var-description">: A string vector of format &quot;&lt;x,y,z&gt;&quot;.</span>			</li>
+				</ul>
+		
+	
+</div>
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 16 Jun 2008 15:56:19 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

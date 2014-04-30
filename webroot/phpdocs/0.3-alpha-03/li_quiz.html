@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title></title>
+			<link rel="stylesheet" href="media/stylesheet.css" />
+						<script src="media/lib/classTree.js"></script>
+									<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+									<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "media/images/plus.png";
+				imgMinus.src = "media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+						<h3 class="package-title">quiz</h3>
+<div class="tree">
+<script language="Javascript">
+if (document.getElementById) {
+			var tree = new WebFXTree('<span class="package">quiz</span>');
+		tree.setBehavior('classic');
+		tree.openIcon = 'media/images/package.png';
+		tree.icon = 'media/images/package.png';
+	
+					var todos = new WebFXTreeItem('To-do List', 'todolist.html');
+			todos.openIcon = 'media/images/Index.png';
+			todos.icon = 'media/images/Index.png';
+			tree.add(todos);
+		
+		var class_trees = new WebFXTreeItem('Class trees', 'classtrees_quiz.html');
+		class_trees.openIcon = 'media/images/Index.png';
+		class_trees.icon = 'media/images/Index.png';
+		tree.add(class_trees);
+
+		var elements = new WebFXTreeItem('Index of elements', 'elementindex_quiz.html');
+		elements.openIcon = 'media/images/Index.png';
+		elements.icon = 'media/images/Index.png';
+		tree.add(elements);
+
+		var parent_node;
+
+		
+		
+					var tree_classe = new WebFXTreeItem('Class(es)', '');
+			tree_classe.openIcon = 'media/images/class_folder.png';
+			tree_classe.icon = 'media/images/class_folder.png';
+			
+				
+			tree.add(tree_classe);
+		
+					var tree_function = new WebFXTreeItem('Function(s)', '');
+			tree_function.openIcon = 'media/images/function_folder.png';
+			tree_function.icon = 'media/images/function_folder.png';
+			
+							var fic = new WebFXTreeItem('quiz_calculate_best_attempt', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_calculate_best_attempt');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_calculate_best_grade', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_calculate_best_grade');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_create_attempt', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_create_attempt');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_delete_attempt', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_delete_attempt');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_feedback_for_grade', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_feedback_for_grade');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_first_questionnumber', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_first_questionnumber');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_get_all_question_grades', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_get_all_question_grades');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_get_best_grade', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_get_best_grade');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_get_combined_reviewoptions', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_get_combined_reviewoptions');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_get_grading_options', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_get_grading_options');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_get_grading_option_name', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_get_grading_option_name');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_get_renderoptions', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_get_renderoptions');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_get_reviewoptions', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_get_reviewoptions');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_get_user_attempt_unfinished', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_get_user_attempt_unfinished');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_has_feedback', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_has_feedback');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_number_of_pages', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_number_of_pages');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_parse_fieldname', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_parse_fieldname');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_print_navigation_panel', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_print_navigation_panel');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_questions_in_quiz', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_questions_in_quiz');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_questions_on_page', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_questions_on_page');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_question_preview_button', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_question_preview_button');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_repaginate', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_repaginate');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_rescale_grade', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_rescale_grade');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_save_best_grade', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_save_best_grade');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_send_confirmation', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_send_confirmation');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_send_notification', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_send_notification');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_send_notification_emails', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_send_notification_emails');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_set_grade', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_set_grade');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('quiz_upgrade_states', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html#functionquiz_upgrade_states');
+				fic.openIcon = 'media/images/Function.png';
+				fic.icon = 'media/images/Function.png';
+				tree_function.add(fic);
+					
+			tree.add(tree_function);
+			
+					var tree_file = new WebFXTreeItem('File(s)', '');
+			tree_file.openIcon = 'media/images/folder.png';
+			tree_file.icon = 'media/images/folder.png';
+	
+							var file = new WebFXTreeItem('locallib.1.9.php', 'quiz/_sloodle---mod---quiz-1.0---locallib.1.9.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				tree_file.add(file);
+				
+			tree.add(tree_file);
+		
+	
+document.write(tree);
+}
+</script>
+</div>
+<p class="notes">
+	Generated by 
+	<a href="http://www.phpdoc.org" target="_blank">phpDocumentor <span class="field">1.4.0</span></a>
+</p>
+</body>
+</html>

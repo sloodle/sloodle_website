@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en" xml:lang="en">
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <title>Sloodle PHP Documentation</title>
+
+ <style type="text/css">
+  #content
+  {
+   font-family:sans-serif;
+   font-size:14pt;
+  }
+ 
+  a { color:blue; text-decoration:underline; }
+  a:visited { color:darkred; text-decoration:underline; }
+  a:hover { color:white; text-decoration:none; background-color:#7097d1; }
+ </style>
+</head>
+<body>
+<div id="content">
+<a href="http://www.sloodle.org/" title="Click here to go back to the Sloodle homepage"><img src="sloodle_logo.jpg" width="367" height="100" style="border:solid 1px black;"></a>
+
+<h2>Sloodle PHP Documentation</h2>
+<p>
+ These pages document the Sloodle PHP code, including files, functions and classes. Please select the version you need below:
+</p>
+
+<ul>
+ <li><a href="0.21" title="Click here to view the Sloodle 0.21 documentation">Sloodle 0.21</a></li>
+ <li><a href="0.3-alpha-03" title="Click here to view the Sloodle 0.3 Alpha 03 documentation">Sloodle 0.3 Alpha 03 <i>(Preview Release)</i></a></li>
+ <li><a href="0.3-beta-2008070702" title="Click here to view the Sloodle 0.3 Beta 2008070702 documentation">Sloodle 0.3 Beta 2008070702<b><i>(Preview Release)</i></b></a></li>
+</ul>
+</div>
+
+</body>
+</html>
+

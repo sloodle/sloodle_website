@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class SloodleSession</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> SloodleSession</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The primary API class, which manages all other parts.</p>
+		<p class="notes">
+			Located in <a class="field" href="_lib---sloodle_session.php.html">/lib/sloodle_session.php</a> (line <span class="field"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a32">32</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																								<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../sloodle/SloodleCourse.html">SloodleCourse</a></span>
+					<a href="#$course" title="details" class="var-name">$course</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../sloodle/SloodleModule.html">SloodleModule</a></span>
+					<a href="#$module" title="details" class="var-name">$module</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../sloodle/SloodleRequest.html">SloodleRequest</a></span>
+					<a href="#$request" title="details" class="var-name">$request</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../sloodle/SloodleResponse.html">SloodleResponse</a></span>
+					<a href="#$response" title="details" class="var-name">$response</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+					<a href="#$user" title="details" class="var-name">$user</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																															
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">SloodleSession</span>
+										<a href="#SloodleSession" title="details" class="method-name">SloodleSession</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$process</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#authenticate_request" title="details" class="method-name">authenticate_request</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#authenticate_user_request" title="details" class="method-name">authenticate_user_request</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#load_module" title="details" class="method-name">load_module</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">bool</span>&nbsp;<span class="var-name">$db</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$override_access</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#validate_avatar" title="details" class="method-name">validate_avatar</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#validate_user" title="details" class="method-name">validate_user</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$suppress_autoreg</span> = <span class="var-default">false</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$suppress_autoenrol</span> = <span class="var-default">false</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$course" id="$course"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../sloodle/SloodleCourse.html">SloodleCourse</a></span>
+			<span class="var-name">$course</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a62">62</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Sloodle course structure for the course this session is accessing</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$module" id="$module"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../sloodle/SloodleModule.html">SloodleModule</a></span>
+			<span class="var-name">$module</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a70">70</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Sloodle module this session relates to, if any.</p>
+<p class="description"><p>Note: this may be the base Sloodle module class, or a derivative.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$request" id="$request"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../sloodle/SloodleRequest.html">SloodleRequest</a></span>
+			<span class="var-name">$request</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a41">41</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Incoming HTTP request.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$response" id="$response"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../sloodle/SloodleResponse.html">SloodleResponse</a></span>
+			<span class="var-name">$response</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a48">48</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Outgoing response - can be rendered to HTTP or as a string.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$user" id="$user"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+			<span class="var-name">$user</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a55">55</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Current user information.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodSloodleSession" id="SloodleSession"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor SloodleSession</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a79">79</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor - initialises members</p>
+	
+	<div class="method-signature">
+		<span class="method-result">SloodleSession</span>
+		<span class="method-name">
+			SloodleSession
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$process</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$process</span><span class="var-description">: If true (default) then basic request data will be processed immediately. Otherwise, it can be done manually by calling $request-&gt;process_request_data()</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodauthenticate_request" id="authenticate_request"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">authenticate_request</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a132">132</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Verifies security for the incoming request (but does not check user access).</p>
+<p class="description"><p>Initially ensures that the request is coming in on a valid and enabled course/controller (rejects it if not).  The password is then checked, and it can handle prim-passwords and object-specific passwords.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if successful in authenticating the request, or false if not.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			authenticate_request
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$require</span><span class="var-description">: If true, the function will NOT return on authentication failure. Rather, it will terminate the script with an error message.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodauthenticate_user_request" id="authenticate_user_request"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">authenticate_user_request</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a250">250</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Verifies security for the incoming user-centric request.</p>
+<p class="description"><p>This ensures that the identified object is authorised for user-centric activities with the specified user.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> TRUE if successful, or FALSE on failure (unless parameter $require was TRUE).</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			authenticate_user_request
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$require</span><span class="var-description">: If TRUE (default) then the script will terminate with an error message on failure. Otherwise, it will return false on failure.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodload_module" id="load_module"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">load_module</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a101">101</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructs and loads the appropriate module part of the session.</p>
+<p class="description"><p>Note that this function will fail if the current VLE user (in the $user member) does not have permission to access it.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise. (Note, if parameter $require was true, then the script will terminate before this function returns if something goes wrong)</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			load_module
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">bool</span>&nbsp;<span class="var-name">$db</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$override_access</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: The expected type of module - function fails if type is not correctly matched</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$db</span><span class="var-description">: If true then the system will also try to load appropriate data from the database, as specified in the module ID request parameter</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$require</span><span class="var-description">: If true, then if something goes wrong, the script will be terminated with an error message</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$override_access</span><span class="var-description">: If true, then the user access permissions will be overriden to force access (not implemented yet)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodvalidate_avatar" id="validate_avatar"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">validate_avatar</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a549">549</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Validate the avatar specified in the request, to ensure it is registered to a Moodle account.</p>
+<p class="description"><p>(Also ensures that avatar details were in fact provided in the request).  This is effectively a less strict version of validated_user(), which also checks enrolment and such like.  This function will NOT perform auto-registration or auto-enrolment.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if validation was successful. Returns false on failure (unless $require was true).</li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleSession.html#methodvalidate_user">SloodleSession::validate_user()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			validate_avatar
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$require</span><span class="var-description">: If true, the script will be terminated with an error message if validation fails</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodvalidate_user" id="validate_user"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">validate_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsloodle_session.php.html#a340">340</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Validates the user account and enrolment (ensures there is an avatar linked to a VLE account, and that the VLE account is enrolled in the current course).</p>
+<p class="description"><p>Attempts auto-registration/enrolment if that is allowed and required, and logs-in the user.  Server access level is checked if it is specified in the request parameters.  If the request indicates that it relates to an object, then the validation fails.  Note: if you only require to ensure that an avatar is registered, then use <a href="../sloodle/SloodleSession.html#methodvalidate_avatar">validate_avatar()</a>.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if validation and/or autoregistration were successful. Returns false on failure (unless $require was true).</li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleSession.html#methodvalidate_avatar">SloodleSession::validate_avatar()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			validate_user
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$suppress_autoreg</span> = <span class="var-default">false</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$suppress_autoenrol</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$require</span><span class="var-description">: If true, the script will be terminated with an error message if validation fails</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$suppress_autoreg</span><span class="var-description">: If true, auto-registration will be completely suppressed for this function call</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$suppress_autoenrol</span><span class="var-description">: If true, auto-enrolment will be completely suppressed for this function call</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 07 Jul 2008 12:33:15 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

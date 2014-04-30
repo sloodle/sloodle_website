@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class SloodlePluginBase</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> SloodlePluginBase</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|													<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Base class for all SLOODLE plugins.</p>
+<p class="description"><p>All SLOODLE plugins should be derived from this (directly or indirectly).  Specific plugin types will likely have their own base classes, which should be sub-classes of this.  For example, the Presenter has plugin base classes for &quot;slide&quot; and &quot;import&quot; plugins.  New plugins should be derived directly from those.</p><p>Plugin classes should have names starting with &quot;SloodlePlugin&quot;.  Make sure your class name does not conflict with any existing plugin classes, even if it is a different type of plugin.  Instantiating a plugin class should require no parameters, and should perform minimal processing. This is to allow the plugin loader to be as efficient as possible.</p></p>
+		<p class="notes">
+			Located in <a class="field" href="_plugin---_base.php.html">/plugin/_base.php</a> (line <span class="field"><a href="../__filesource/fsource_sloodle__plugin_base.php.html#a32">32</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../sloodle/SloodlePluginBasePresenterSlide.html">SloodlePluginBasePresenterSlide</a>
+					</td>
+					<td>
+											Base class for plugins which provide slide types for the SLOODLE Presenter.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../sloodle/SloodlePluginBasePresenterImporter.html">SloodlePluginBasePresenterImporter</a>
+					</td>
+					<td>
+											Base class for plugins which provide slide importers for the SLOODLE Presenter.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#get_id" title="details" class="method-name">get_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_plugin_description" title="details" class="method-name">get_plugin_description</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$lang</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_plugin_name" title="details" class="method-name">get_plugin_name</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$lang</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#get_version" title="details" class="method-name">get_version</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodget_id" id="get_id"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__plugin_base.php.html#a70">70</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the identifier of this plugin.</p>
+<p class="description"><p>This can be overridden, but should usually not be.  This ID is just the name of the class</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			get_id
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_plugin_description" id="get_plugin_description"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_plugin_description</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__plugin_base.php.html#a60">60</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the human-readable description of this plugin.</p>
+<p class="description"><p>This should be overridden by base classes. If not, it will just return an empty string.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The human-readable description of this plugin</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_plugin_description
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$lang</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$lang</span><span class="var-description">: Optional -- can specify the language we want the description in, as an identifier like &quot;en_utf8&quot;. If unspecified, then the current Moodle language should be used.</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/SloodlePluginPresenterPDFImporter.html#methodget_plugin_description">SloodlePluginPresenterPDFImporter::get_plugin_description()</a>
+								: Gets the human-readable description of this plugin.
+							</li>
+				</ul>
+	</div>
+<a name="methodget_plugin_name" id="get_plugin_name"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_plugin_name</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__plugin_base.php.html#a48">48</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the human-readable name of this plugin.</p>
+<p class="description"><p>This MUST be overridden by base classes. If not, it will just return the name of the class.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The human-readable name of this plugin</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_plugin_name
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$lang</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$lang</span><span class="var-description">: Optional -- can specify the language we want the plugin name in, as an identifier like &quot;en_utf8&quot;. If unspecified, then the current Moodle language should be used.</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/SloodlePluginPresenterSlideImage.html#methodget_plugin_name">SloodlePluginPresenterSlideImage::get_plugin_name()</a>
+								: Gets the human-readable name of this plugin.
+							</li>
+					<li>
+				<a href="../sloodle/SloodlePluginPresenterSlideVideo.html#methodget_plugin_name">SloodlePluginPresenterSlideVideo::get_plugin_name()</a>
+								: Gets the human-readable name of this plugin.
+							</li>
+					<li>
+				<a href="../sloodle/SloodlePluginPresenterSlideWeb.html#methodget_plugin_name">SloodlePluginPresenterSlideWeb::get_plugin_name()</a>
+								: Gets the human-readable name of this plugin.
+							</li>
+					<li>
+				<a href="../sloodle/SloodlePluginPresenterPDFImporter.html#methodget_plugin_name">SloodlePluginPresenterPDFImporter::get_plugin_name()</a>
+								: Gets the human-readable name of this plugin.
+							</li>
+				</ul>
+	</div>
+<a name="methodget_version" id="get_version"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_version</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__plugin_base.php.html#a85">85</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the internal version number of this plugin.</p>
+<p class="description"><p>This MUST be overridden.  This should be a number like the internal version number for Moodle modules, containing the date and release number.  Format is: YYYYMMDD##.  For example, &quot;2009012302&quot; would be the 3rd release on the 23rd January 2009.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The version number of this module.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			get_version
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/SloodlePluginPresenterSlideImage.html#methodget_version">SloodlePluginPresenterSlideImage::get_version()</a>
+								: Gets the internal version number of this plugin.
+							</li>
+					<li>
+				<a href="../sloodle/SloodlePluginPresenterSlideVideo.html#methodget_version">SloodlePluginPresenterSlideVideo::get_version()</a>
+								: Gets the internal version number of this plugin.
+							</li>
+					<li>
+				<a href="../sloodle/SloodlePluginPresenterSlideWeb.html#methodget_version">SloodlePluginPresenterSlideWeb::get_version()</a>
+								: Gets the internal version number of this plugin.
+							</li>
+					<li>
+				<a href="../sloodle/SloodlePluginPresenterPDFImporter.html#methodget_version">SloodlePluginPresenterPDFImporter::get_version()</a>
+								: Gets the internal version number of this plugin.
+							</li>
+				</ul>
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 17 Jul 2009 11:02:50 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class SloodleLSLRequest</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> SloodleLSLRequest</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Handles incoming HTTP requests, typically from LSL scripts.</p>
+<p class="description"><p>This class will perform much of the complex and repetitive processing required for handling HTTP requests.</p></p>
+	<ul class="tags">
+				<li><span class="field">uses:</span> <a href="../sloodle/SloodleUser.html">SloodleUser</a> - Stores and processes user data incoming from an HTTP request</li>
+				<li><span class="field">uses:</span> <a href="../sloodle/SloodleLSLResponse.html">SloodleLSLResponse</a> - Outputs error messages in appropriate format if an error occurs.</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_lib---sl_iolib.php.html">/lib/sl_iolib.php</a> (line <span class="field"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a708">708</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																								<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">int</span>
+					<a href="#$auth_status" title="details" class="var-name">$auth_status</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$avatar_name" title="details" class="var-name">$avatar_name</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$avatar_uuid" title="details" class="var-name">$avatar_uuid</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$course_id" title="details" class="var-name">$course_id</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$login_security_token" title="details" class="var-name">$login_security_token</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$login_zone_pos" title="details" class="var-name">$login_zone_pos</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$module_id" title="details" class="var-name">$module_id</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$password" title="details" class="var-name">$password</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">bool</span>
+					<a href="#$request_data_processed" title="details" class="var-name">$request_data_processed</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type"><a href="../sloodle/SloodleLSLResponse.html">SloodleLSLResponse</a></span>
+					<a href="#$response" title="details" class="var-name">$response</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+					<a href="#$user" title="details" class="var-name">$user</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																															
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">SloodleLSLRequest</span>
+										<a href="#SloodleLSLRequest" title="details" class="method-name">SloodleLSLRequest</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$response</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$user</span>, <span class="var-type"><a href="../sloodle/SloodleLSLResponse.html">SloodleLSLResponse</a></span>&nbsp;<span class="var-name">$response</span>, <span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#authenticate_request" title="details" class="method-name">authenticate_request</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">TRUE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#get_auth_status" title="details" class="method-name">get_auth_status</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|null</span>
+										<a href="#get_avatar_name" title="details" class="method-name">get_avatar_name</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|null</span>
+										<a href="#get_avatar_uuid" title="details" class="method-name">get_avatar_uuid</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer|null</span>
+										<a href="#get_course_id" title="details" class="method-name">get_course_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">object A</span>
+										<a href="#get_course_module_instance" title="details" class="method-name">get_course_module_instance</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">TRUE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">object A</span>
+										<a href="#get_course_record" title="details" class="method-name">get_course_record</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">TRUE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|null</span>
+										<a href="#get_login_security_token" title="details" class="method-name">get_login_security_token</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer|null</span>
+										<a href="#get_module_id" title="details" class="method-name">get_module_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|null</span>
+										<a href="#get_password" title="details" class="method-name">get_password</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">&SloodleLSLResponse</span>
+										<a href="#get_response" title="details" class="method-name">get_response</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">&SloodleUser</span>
+										<a href="#get_user" title="details" class="method-name">get_user</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_authenticated" title="details" class="method-name">is_authenticated</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_auth_failed" title="details" class="method-name">is_auth_failed</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_request_data_processed" title="details" class="method-name">is_request_data_processed</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#process_request_data" title="details" class="method-name">process_request_data</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$force</span> = <span class="var-default">FALSE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#required_param" title="details" class="method-name">required_param</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$parname</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">PARAM_RAW</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_response" title="details" class="method-name">set_response</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$response</span>, <span class="var-type"><a href="../sloodle/SloodleLSLResponse.html">SloodleLSLResponse</a></span>&nbsp;<span class="var-name">$response</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_user" title="details" class="method-name">set_user</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$user</span>, <span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$auth_status" id="$auth_status"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$auth_status</span>
+			 = <span class="var-default"> SLOODLE_AUTH_UNKNOWN</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a737">737</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates the status of request authentication.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/_lib---sl_iolib.php.html#defineSLOODLE_AUTH_FAILED">SLOODLE_AUTH_FAILED</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#methodauthenticate_request">SloodleLSLRequest::authenticate_request()</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/_lib---sl_iolib.php.html#defineSLOODLE_AUTH_UNKNOWN">SLOODLE_AUTH_UNKNOWN</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/_lib---sl_iolib.php.html#defineSLOODLE_AUTH_OK">SLOODLE_AUTH_OK</a></li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$avatar_name" id="$avatar_name"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$avatar_name</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a767">767</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">String name of the SL agent specified in the request (or NULL if not specified).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$avatar_uuid" id="$avatar_uuid"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$avatar_uuid</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a761">761</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">String UUID of the SL user agent specified in the request (or NULL if not specified).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$course_id" id="$course_id"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$course_id</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a749">749</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Integer ID of the course specified in the request (or NULL if not specified).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$login_security_token" id="$login_security_token"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$login_security_token</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a773">773</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">String containing the login security token specified in the request (or NULL if not specified).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$login_zone_pos" id="$login_zone_pos"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$login_zone_pos</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a743">743</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A 3-element array containing the LoginZone position vector specified in HTTP request parameters (or NULL if not specified).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$module_id" id="$module_id"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$module_id</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a755">755</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Integer ID of the course module instance specified in the request (or NULL if not specified).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$password" id="$password"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$password</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a726">726</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Contains the password specified in HTTP request parameters (or NULL if not specified).</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#methodauthenticate_request">SloodleLSLRequest::authenticate_request()</a></li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$request_data_processed" id="$request_data_processed"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">bool</span>
+			<span class="var-name">$request_data_processed</span>
+			 = <span class="var-default"> FALSE</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a719">719</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates whether or not the request data has been processed by the process_request_data() function.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#methodprocess_request_data">SloodleLSLRequest::process_request_data()</a></li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$response" id="$response"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../sloodle/SloodleLSLResponse.html">SloodleLSLResponse</a></span>
+			<span class="var-name">$response</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a787">787</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The object used to output response data.</p>
+<p class="description"><p>The object reference may be provided externally in the parameters of the constructor (<a href="../sloodle/SloodleLSLRequest.html#methodSloodleLSLRequest">SloodleLSLRequest()</a>) or via the (<a href="../sloodle/SloodleLSLRequest.html#methodset_response">set_response()</a>) accessor.  Otherwise, it will have been instantiated by this object itself.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#methodset_response">SloodleLSLRequest::set_response()</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#methodget_response">SloodleLSLRequest::get_response()</a></li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$user" id="$user"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+			<span class="var-name">$user</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a798">798</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The object used to store and process incoming user data.</p>
+<p class="description"><p>The object reference may be provided externally in the parameters of the constructor (<a href="../sloodle/SloodleLSLRequest.html#methodSloodleLSLRequest">SloodleLSLRequest()</a>) or via the (<a href="../sloodle/SloodleLSLRequest.html#methodset_user">set_user()</a>) accessor.  Otherwise, it will have been instantiated by this object itself.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#methodset_user">SloodleLSLRequest::set_user()</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#methodget_user">SloodleLSLRequest::get_user()</a></li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodSloodleLSLRequest" id="SloodleLSLRequest"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor SloodleLSLRequest</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a973">973</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><em>Constructor</em><ul><li>initialises the user and response objects.</li></ul></p>
+<p class="description"><p>If the parameters provide references to appropriate objects, then the constructor will store them.  However, if the parameters are NULL, then the constructor will create its own instances.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">SloodleLSLRequest</span>
+		<span class="method-name">
+			SloodleLSLRequest
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$response</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$user</span>, <span class="var-type"><a href="../sloodle/SloodleLSLResponse.html">SloodleLSLResponse</a></span>&nbsp;<span class="var-name">$response</span>, <span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleLSLResponse.html">SloodleLSLResponse</a></span>
+				<span class="var-name">$response</span><span class="var-description">: Reference to the response object which this object should use, or NULL</span>			</li>
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">$user</span><span class="var-description">: Refernce to the user object which this object should use, or NULL</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$response</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$user</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodauthenticate_request" id="authenticate_request"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">authenticate_request</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a1057">1057</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Authenticates the request against the site using the password parameter.</p>
+<p class="description"><p>This function can use both site-wide or object-specific prim passwords (the latter of which   uses the 'sloodle_active_object' table in the database).  It will also set the content of member {$link $auth_status} as appropriate.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> TRUE if successful in authenticating the request, or FALSE if not.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			authenticate_request
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$require</span><span class="var-description">: If TRUE, the function will NOT return on authentication failure. Rather, it will terminate the script with an error message.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_auth_status" id="get_auth_status"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_auth_status</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a818">818</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns member variable $auth_status.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> One of: <a href="../sloodle/_lib---sl_iolib.php.html#defineSLOODLE_AUTH_OK">SLOODLE_AUTH_OK</a>, <a href="../sloodle/_lib---sl_iolib.php.html#defineSLOODLE_AUTH_UNKNOWN">SLOODLE_AUTH_UNKNOWN</a>, or <a href="../sloodle/_lib---sl_iolib.php.html#defineSLOODLE_AUTH_FAILED">SLOODLE_AUTH_FAILED</a>.</li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#methodauthenticate_request">SloodleLSLRequest::authenticate_request()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			get_auth_status
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_avatar_name" id="get_avatar_name"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_avatar_name</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a919">919</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns member value $avatar_name.</p>
+<p class="description"><p>Note: this function will ensure that <a href="../sloodle/SloodleLSLRequest.html#methodprocess_request_data">process_request_data()</a> has already been called prior to execution.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The avatar name provided in the request parameters, or NULL if there wasn't one</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|null</span>
+		<span class="method-name">
+			get_avatar_name
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_avatar_uuid" id="get_avatar_uuid"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_avatar_uuid</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a907">907</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns member value $avatar_uuid.</p>
+<p class="description"><p>Note: this function will ensure that <a href="../sloodle/SloodleLSLRequest.html#methodprocess_request_data">process_request_data()</a> has already been called prior to execution.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The avatar UUID provided in the request parameters, or NULL if there wasn't one</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|null</span>
+		<span class="method-name">
+			get_avatar_uuid
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_course_id" id="get_course_id"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_course_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a883">883</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns member value $course_id.</p>
+<p class="description"><p>Note: this function will ensure that <a href="../sloodle/SloodleLSLRequest.html#methodprocess_request_data">process_request_data()</a> has already been called prior to execution.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The course ID provided in the request parameters, or NULL if there wasn't one</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer|null</span>
+		<span class="method-name">
+			get_course_id
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_course_module_instance" id="get_course_module_instance"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_course_module_instance</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a1182">1182</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get a course module instance for the module specified in the request  Uses the ID specified in $module_id.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> database record if successful, or FALSE if not (e.g. if instance is not found, is not visible, or is not of the correct type)</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">object A</span>
+		<span class="method-name">
+			get_course_module_instance
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: specifies the name of the module type (e.g. 'forum', 'choice' etc.) - ignored if blank (default).</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$require</span><span class="var-description">: If TRUE, the function will NOT return failure. Rather, it will terminate the script with an error message.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_course_record" id="get_course_record"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_course_record</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a1126">1126</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets a database record for the course identified in the request.</p>
+<p class="description"><p>(Note: this function does not check whether or not the user is enrolled in the course)</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> record directly from the database, or NULL if the course is not found.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">object A</span>
+		<span class="method-name">
+			get_course_record
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$require</span><span class="var-description">: If TRUE, the function will NOT return failure. Rather, it will terminate the script with an error message.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_login_security_token" id="get_login_security_token"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_login_security_token</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a931">931</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns member value $login_security_token.</p>
+<p class="description"><p>Note: this function will ensure that <a href="../sloodle/SloodleLSLRequest.html#methodprocess_request_data">process_request_data()</a> has already been called prior to execution.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The login security token provided in the request parameters, or NULL if there wasn't one</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|null</span>
+		<span class="method-name">
+			get_login_security_token
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_module_id" id="get_module_id"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_module_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a895">895</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns member value $module_id.</p>
+<p class="description"><p>Note: this function will ensure that <a href="../sloodle/SloodleLSLRequest.html#methodprocess_request_data">process_request_data()</a> has already been called prior to execution.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The course module instance ID provided in the request parameters, or NULL if there wasn't one</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer|null</span>
+		<span class="method-name">
+			get_module_id
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_password" id="get_password"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_password</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a871">871</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns member value $password.</p>
+<p class="description"><p>Note: this function will ensure that <a href="../sloodle/SloodleLSLRequest.html#methodprocess_request_data">process_request_data()</a> has already been called prior to execution.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The password provided in the request parameters, or NULL if there wasn't one</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|null</span>
+		<span class="method-name">
+			get_password
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_response" id="get_response"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_response</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a943">943</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns member value $response.</p>
+<p class="description"><p>Note: this function will ensure that <a href="../sloodle/SloodleLSLRequest.html#methodprocess_request_data">process_request_data()</a> has already been called prior to execution.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A reference to the response object used by this object</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">&SloodleLSLResponse</span>
+		<span class="method-name">
+			get_response
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_user" id="get_user"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a955">955</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns member value $user.</p>
+<p class="description"><p>Note: this function will ensure that <a href="../sloodle/SloodleLSLRequest.html#methodprocess_request_data">process_request_data()</a> has already been called prior to execution.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A reference to the user object used by this object</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">&SloodleUser</span>
+		<span class="method-name">
+			get_user
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_authenticated" id="is_authenticated"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_authenticated</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a829">829</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates whether or not request authentication has succeeded.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> TRUE if the request data has been authenticated, or FALSE if it failed or has not been attempted yet</li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#var$auth_status">SloodleLSLRequest::$auth_status</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#methodauthenticate_request">SloodleLSLRequest::authenticate_request()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_authenticated
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_auth_failed" id="is_auth_failed"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_auth_failed</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a840">840</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates whether or not request authentication has failed.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> TRUE if the request data has failed authentication, or FALSE if it passed or has not been attempted yet</li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#var$auth_status">SloodleLSLRequest::$auth_status</a></li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#methodauthenticate_request">SloodleLSLRequest::authenticate_request()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_auth_failed
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_request_data_processed" id="is_request_data_processed"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_request_data_processed</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a808">808</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns member variable $request_data_processed.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> TRUE if the request data has been processed, or FALSE if not</li>
+				<li><span class="field">see:</span> <a href="../sloodle/SloodleLSLRequest.html#methodprocess_request_data">SloodleLSLRequest::process_request_data()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_request_data_processed
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodprocess_request_data" id="process_request_data"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">process_request_data</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a1005">1005</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Process all of the standard data provided by the HTTP request.</p>
+<p class="description"><p>This function should normally be called very shortly after the start of a script, as it will   check all the expected HTTP request parameters, perform basic processing, and store the data.  It will also send data to the appropriate SloodleLSLResposne and <a href="../sloodle/SloodleUser.html">SloodleUser</a> objects.  When called, it will check the <a href="../sloodle/SloodleLSLRequest.html#var$request_data_processed">$request_data_processed</a> member to see if it has already been called.  If so, it will not execute again, unless the $force parameter is TRUE.  <strong>Note:</strong> most functions in this class will automatically call this function if needed to ensure data is available.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			process_request_data
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$force</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$force</span><span class="var-description">: If TRUE, then the function is forced to execute again, even if it has already been executed. (Default: FALSE).</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrequired_param" id="required_param"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">required_param</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a1253">1253</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Obtains a named HTTP request parameter, and terminate with an error message if it has not been provided.</p>
+<p class="description"><p>Note: for LSL linker scripts, this should *always* be used instead of the Moodle function, as this will   render appropraitely formatted error messages, which LSL scripts can understand.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The converted and cleaned parameter if it is found</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			required_param
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$parname</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">PARAM_RAW</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$parname</span><span class="var-description">: The name of the HTTP request parameter to get.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$type</span><span class="var-description">: Specifies the expected type of parameter, as according to the Moodle documentation.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_response" id="set_response"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_response</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a849">849</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the <a href="../sloodle/SloodleLSLRequest.html#var$response">SloodleLSLRequest::$response</a> member.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_response
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$response</span>, <span class="var-type"><a href="../sloodle/SloodleLSLResponse.html">SloodleLSLResponse</a></span>&nbsp;<span class="var-name">$response</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleLSLResponse.html">SloodleLSLResponse</a></span>
+				<span class="var-name">$response</span><span class="var-description">: Reference to a <a href="../sloodle/SloodleLSLResponse.html">SloodleLSLResponse</a> object</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$response</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_user" id="set_user"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libsl_iolib.php.html#a858">858</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the <a href="../sloodle/SloodleLSLRequest.html#var$user">SloodleLSLRequest::$user</a> member.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_user
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$user</span>, <span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">$user</span><span class="var-description">: Reference to a <a href="../sloodle/SloodleUser.html">SloodleUser</a> object</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$user</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 04 Mar 2008 15:08:45 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

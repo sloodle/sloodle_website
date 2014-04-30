@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>SLOODLE LSL API - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-SLOODLE_LSL_API">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">SLOODLE LSL API</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><i> This page describes an API that is currently undergoing significant development. Information on this page may be inaccurate, and API calls may be renamed, added or deleted during development of the API. We hope developers will experiment with the API, and suggest improvements </i>
+</p>
+<h3> <span class="mw-headline" id="Sloodle_API"> Sloodle API </span></h3>
+<p>Imagine being able to access the power the MOODLE Learning Management System live on a webserver directly through your LSL code.  Well, now you can!
+This is the beginning of an API to enable LSL developers to access data from the MOODLE LMS without having to have any prior knowledge to MOODLE coding.
+To get started, download and install the SLOODLE 1.1 branch here: <a rel="nofollow" class="external autonumber" href="http://code.google.com/p/sloodle/source/browse/branches/1.0-with-lsl-api/">[1]</a>
+</p><p>Once installed, you need the in your Object to get going.
+</p>
+<ol><li> <a rel="nofollow" class="external text" href="http://code.google.com/p/sloodle/source/browse/branches/1.1/sloodle/lsl/sloodle_setup_notecard.lsl%7C">sloodle_setup_notecard</a>
+</li><li> <a rel="nofollow" class="external text" href="http://code.google.com/p/sloodle/source/browse/branches/1.1/sloodle/lang/en_utf8/sloodle_translation_en.lsl%7C">sloodle_transation_en</a>
+</li><li> <a rel="nofollow" class="external text" href="http://code.google.com/p/sloodle/source/browse/branches/1.1/sloodle/mod/hq-1.0/lsl/_sloodle_api.lsl%7C">_sloodle_api.lsl</a>
+</li></ol>
+<p>You'll also need to generate a sloodle_config notecard. You can do this by creating a "Controller activity" in your MOODLE course.
+Once created, click on the controller activity, choose "Sloodle API HQ"
+Then choode "Generate notecard"
+Copy all the text, and paste it into a notecard in SL called "sloodle_config"
+</p><p>Once these scripts are in your object, you can use the commands below to access MOODLE data.
+</p><p>The _sloodle_api.lsl script listens on channel 998822, and responds on channel 998821.
+You can copy the declarations below and paste them in your code if you like.
+</p><p><b><font color="green">integer</font>PLUGIN_RESPONSE_CHANNEL                                =998822; <font color="orange">//sloodle_api.lsl responses</font></b>
+</p><p><b><font color="green">integer</font>PLUGIN_CHANNEL                                                    =998821;<font color="orange">//sloodle_api requests</font></b>
+</p><p>These channels can be changed if you edit the _sloodle_api.lsl script directly
+</p><p>In the list below, you will see the current list of linked messages that are part of the sloodle api
+</p>
+<table style="font-weight:bold;" border="1" cellpadding="5" cellspacing="0">
+
+
+
+<tr style="text-align: center;">
+<td> <a rel="nofollow" class="external text" href="http://code.google.com/p/sloodle/source/browse/branches/1.0-with-lsl-api/sloodle/mod/hq-1.0/plugin/user.php">user.php</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://code.google.com/p/sloodle/source/browse/branches/1.0-with-lsl-api/sloodle/mod/hq-1.0/plugin/awards.php">awards.php</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://code.google.com/p/sloodle/source/browse/branches/1.0-with-lsl-api/sloodle/mod/hq-1.0/plugin/general.php">general.php </a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://code.google.com/p/sloodle/source/browse/branches/1.0-with-lsl-api/sloodle/mod/hq-1.0/plugin/general.php">lessons.php </a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http://code.google.com/p/sloodle/source/browse/branches/1.0-with-lsl-api/sloodle/plugin/groups/groups.php">groups.php</a>
+</td></tr>
+<tr>
+<td><a href="../../../../articles/g/e/t/GetClassList.html" title="GetClassList">getClassList</a>
+</td>
+<td><a href="../../../../articles/m/a/k/MakeTransaction.html" title="MakeTransaction">makeTransaction</a>
+</td>
+<td><a href="../../../../articles/g/e/t/GetSloodleObjects.html" title="GetSloodleObjects">getSloodleObjects</a>
+</td>
+<td><a href="../../../../articles/g/e/t/GetLessons.html" title="GetLessons">getLessons</a>
+</td>
+<td><a href="../../../../articles/g/e/t/GetUsersGrps.html" title="GetUsersGrps">getUsersGrps</a>
+</td></tr>
+<tr>
+<td><a href="../../../../articles/g/e/t/GetAwardGrpMbrs.html" title="GetAwardGrpMbrs">getAwardGrpMbrs</a>
+</td>
+<td><a href="../../../../articles/g/e/t/GetAwardGrps.html" title="GetAwardGrps">getAwardGrps</a>
+</td>
+<td>
+</td>
+<td><a href="../../../../articles/g/e/t/GetLessonPages.html" title="GetLessonPages">getLessonPages</a>
+</td>
+<td><a href="../../../../articles/g/e/t/GetGrps.html" title="GetGrps">getGrps</a>
+</td></tr>
+<tr>
+<td><a href="../../../../articles/a/d/d/AddGrpMbr.html" title="AddGrpMbr">addGrpMbr</a>
+</td>
+<td><a href="../../../../articles/a/d/d/AddAwardGrp.html" title="AddAwardGrp">addAwardGrp</a>
+</td>
+<td>
+</td>
+<td><a href="../../../../articles/g/e/t/GetLessonAnswers.html" title="GetLessonAnswers">getLessonAnswers</a>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="../../../../articles/r/e/m/RemoveGrpMbr.html" title="RemoveGrpMbr">removeGrpMbr</a>
+</td>
+<td><a href="../../../../articles/r/e/m/RemoveAwardGrp.html" title="RemoveAwardGrp">removeAwardGrp</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="../../../../articles/g/e/t/GetTeamScore.html" title="GetTeamScore">getTeamScore</a>
+</td>
+<td><a href="../../../../articles/g/e/t/GetTeamScores.html" title="GetTeamScores">getTeamScores</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td><a href="../../../../articles/g/e/t/GetAwards.html" title="GetAwards">getAwards</a>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td><a href="../../../../articles/r/e/g/RegisterScoreboard.html" title="RegisterScoreboard">registerScoreboard</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td><a href="../../../../articles/d/e/r/DeregisterScoreboard.html" title="DeregisterScoreboard">deregisterScoreboard</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<p>To add more commands to the above list.  The developer simply needs to create another .php file, and save it as:
+<b><a rel="nofollow" class="external free" href="http://yoursite.com/moodle/mod/sloodle/mod/hq-1.0/plugins/yourplugin.php">http://yoursite.com/moodle/mod/sloodle/mod/hq-1.0/plugins/yourplugin.php</a></b>
+</p>
+<pre>/*********************************************
+*  Copyright (c) 2009 yourname
+*  Released under the GNU GPL 3.0
+*  This script can be used in your scripts, but you must include this copyright header as per the GPL Licence 
+*  For more information about GPL 3.0 - see: <a rel="nofollow" class="external free" href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a>
+*  This script is part of the SLOODLE Project see <a rel="nofollow" class="external free" href="http://sloodle.org">http://sloodle.org</a>
+*
+* example_plugin.lsl
+*  Copyright:
+*  yourname
+*  youremail
+* 
+* 
+*/
+integer PLUGIN_RESPONSE_CHANNEL                                =998822; //sloodle_api.lsl responses
+integer PLUGIN_CHANNEL                                                    =998821;//sloodle_api requests
+
+default {
+   state_entry() {
+       llOwnerSay("Example Plugin.  All commands sent to the _sloodle.api script go on channel 998822.\nAll responses come in on 998821");
+   }//end state_entry
+
+   touch_start(integer num_detected) {
+   	llMessageLinked(LINK_SET, PLUGIN_CHANNEL, "PLUGIN:user,FUNCTION:getClassList\nAWARDID:"+(string)104+"\nSENDERUUID:"+(string)llGetOwner()+"|INDEX:0|SORTMODE:balance", NULL_KEY);
+   }//end touch
+
+   link_message(integer sender_num, integer channel, string str, key id) {
+   	if (channel==PLUGIN_RESPONSE_CHANNEL){
+   		llOwnerSay(str);
+   	}
+   }//end link_message
+
+}//end state
+</pre>
+<!-- 
+NewPP limit report
+Preprocessor node count: 7/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/i/n/w/Category:Inworld_API.html" title="Category:Inworld API">Inworld API</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/l/o/SLOODLE_LSL_API.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:SLOODLE_LSL_API&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/SLOODLE_LSL_API">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 21:23, 18 October 2009 by <a href="http:http://localhost/sl/index.php?title=User:Fire&amp;action=edit&amp;redlink=1" class="new" title="User:Fire (page does not exist)">Paul Preibisch</a>. Based on work by <a href="../../../../articles/d/a/n/User:Daniel.html" title="User:Daniel">daniel.livingstone@gmail.com</a>.</li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Sloodle Chat Mirror Code - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-Sloodle_Chat_Mirror_Code">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Sloodle Chat Mirror Code</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="border:solid 2px red; background-color:#ffffff; width:100%; font-style:italic; color:red;">
+<tr>
+<th> This <a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Sloodle</a> article is <i>deprecated</i>. It is probably out of date and will not be updated. It continues to exist only for reference purposes.
+</th></tr></table>
+<pre>For up-to-date information, see: <a href="../../../../articles/s/l/o/Sloodle_WebIntercom.html" title="Sloodle WebIntercom">Sloodle WebIntercom</a>.
+</pre>
+<p>Setting notecard example:
+</p>
+<pre>
+
+// Settings for SLoodle Chat, make sure same version of card and code
+// MOODLE_NAME | URL_BASE | CHAT_ID | USER_ID
+SL Chat Bot
+http://www.sloodle.com/
+13
+158
+
+// Can include additional data on lower lines... for future extensions
+
+</pre>
+<p><br />
+The script itself:
+</p>
+<pre>
+
+//---------------------------
+/////// SLOODLE CHAT MIRROR
+/////// Version .74
+/////// Connects a Second Life object to a chat room in Moodle.
+/////// Texture is configured for a cube prim
+/////// Touch the object to give permission to log chat to Moodle.
+/////// Requires a Setting notecard
+
+//----------
+//VERSIONS
+// 0.74 Added Moodle chat URL to starting note, cleaned up chatter, cleaned SLURL maker
+// 0.72 reset when notecard is changed, to auto reload Moodle and chatroom data. - DL
+// 0.7 added?
+//0.6 changes - changed the /SLURL to /slurl to avoid clashes with other gestures. - PA
+
+//----------
+// NOTECARD SETTINGS
+// edit these to put in your moodle name as it appears in moodle chat room,
+// and place your moodle ID number at the end of line 2
+// you also need to log into the moodle chat room with your moodle account for this 
+// to work currently!
+
+//----------
+// Declare vars w/out values
+string MOODLE_NAME;
+string URL_BASE;
+string URL; // this will be constructed out of URL_BASE, CHAT_ID, USER_ID, and some other hard coding
+string CHAT_ID;
+string USER_ID;
+
+
+//----------
+//SLURL maker variables
+vector Where;
+string Name;
+string SLURL;
+integer X;
+integer Y;
+integer Z;
+string RevisedMessage;
+integer location;
+
+//-----------
+//Sloodle chat variables
+list menu1=[&quot;YES&quot;];
+list menu2=[&quot;STOP&quot;,&quot;Continue&quot;];
+list menu_other=[&quot;Accept&quot;,&quot;Cancel&quot;];
+list unique_names;
+list keys;
+integer listenID;
+integer part;
+integer active;
+integer CHANNEL = -67999;
+string text;
+string COL_START = &quot;&quot;;
+string COL_END = &quot;&quot;;
+string CODE_END = &quot;&quot;;
+integer total_len = 0;
+
+key httprequest;
+integer message_id = 0; // last message cc'd from moodle
+
+// FOR NOTECARD CONFIGURATION
+string gName;   // name of a notecard in the object's inventory
+integer gLine = 2;  // current line number, skips first commented line
+key gQueryID;   // id used to identify dataserver queries
+
+
+default
+{
+    state_entry()
+    {
+        //  READ THE NOTECARD TO GET SETTINGS
+        gName = llGetInventoryName(INVENTORY_NOTECARD, 0); // select the first notecard in the object's inventory
+        gQueryID = llGetNotecardLine(gName, gLine);    // request data line 2
+
+        llSetTimerEvent(0); // clear timer in case
+        llSetTexture(&quot;059eb6eb-9eef-c1b5-7e95-a4c6b3e5ed9a&quot;,ALL_SIDES);
+        unique_names = [];
+        part = 0;
+        llSetText(&quot;&quot;,&lt;1,1,1&gt;,1);
+    }
+    
+    // If there has been an inventory change, then it was probably the notecard with
+    // chatroom settings... so reset and reload.
+    changed(integer change) { 
+        if (change &amp; CHANGED_INVENTORY) // and it was inventory
+            llResetScript(); // reload the URL from the notecard
+   }
+
+    
+    // USE DATASERVER TO GET BACK THE NOTECARD SETTINGS
+    dataserver(key query_id, string data) {
+        if (query_id == gQueryID) {
+            if (data&#160;!= EOF) {    // not at the end of the notecard
+                // llSay(0, (string)gLine+&quot;: &quot;+data);    // output the line
+    
+                if (gLine == 2) { // MOODLE_NAME
+                MOODLE_NAME = data;
+                // llSay(0, MOODLE_NAME);
+                }
+                else if (gLine == 3) { // URL_BASE
+                URL_BASE = data;
+                // llSay(0, URL_BASE);
+                }
+                else if (gLine == 4) { // CHAT_ID
+                CHAT_ID = data;
+                // llSay(0, CHAT_ID);
+                }
+                else if (gLine == 5) { // USER_ID
+                USER_ID = data;
+                // llSay(0, USER_ID);
+                }
+                ++gLine;                // increase line count
+                
+                if (gLine &lt;= 5) { // still reading the notecard
+                    gQueryID = llGetNotecardLine(gName, gLine);    // request next line
+                }
+                else {
+                    URL = URL_BASE+&quot;/mod/sloodle/mod/chat/sl_chat_linker_noauth.php?chat_id=&quot;+CHAT_ID+&quot;&amp;user_id=&quot;+USER_ID;
+                    // should equal something like http://www.sloodle.com/SL_insert.php?chat_id=6&amp;user_id=158
+                    //llSay(0, URL); //DEBUG ECHO
+                }
+            }
+        }
+    }
+        
+    touch_start(integer total_number)   {
+        if (llDetectedKey(0) == llGetOwner() )  {
+            llListenRemove(listenID);
+            listenID = llListen(CHANNEL,&quot;&quot;,llGetOwner(),&quot;&quot;);
+            llDialog(llGetOwner(),&quot;\nRecord this chat?&quot;,menu1,CHANNEL);
+            llSetTimerEvent(10);
+        }
+    }
+    
+    listen(integer channel, string name, key id, string message)    {
+        //llOwnerSay(message);
+        if (message == &quot;YES&quot;) {
+            llSay(0,&quot;Chat logging is on!&quot;);
+            llSay(0,&quot;Join this Moodle chat at &quot;+URL_BASE+&quot;mod/chat/gui_header_js/index.php?id=&quot;+CHAT_ID);
+            llSay(0,&quot;Touch logger to record your chat.&quot;);
+            llSetText(&quot;Chat logging is on!&quot;,&lt;0,0,0&gt;,1.0);
+            llMessageLinked(LINK_THIS,part,&quot;START&quot;,NULL_KEY);
+            llSleep(0.1);
+            llSetTimerEvent(0);
+            state logging;
+        }
+    }
+
+    timer() {
+        llSetTimerEvent(0);
+        llListenRemove(listenID);
+        llOwnerSay(&quot;Dialog has timed out. Touch logger again to use.&quot;);
+    }
+    
+}
+
+state logging   {
+    on_rez(integer param)   {
+        // goto state default - TO FINISH
+        llOwnerSay(&quot;Chat logging is off&quot;);
+        state default;
+    }
+    
+    state_entry()   {
+        llSetTexture(&quot;d3c9180a-1703-3a84-8dcd-e3aa6306a343&quot;,ALL_SIDES);
+        listenID = llListen(0,&quot;&quot;,NULL_KEY,&quot;&quot;);
+        llListen(CHANNEL,&quot;&quot;,NULL_KEY,&quot;&quot;);  // listen for commands
+        keys = [llGetOwner()];
+        unique_names = [llKey2Name(llGetOwner())];
+        text = &quot;Recording: &quot; + llList2String(unique_names,0);
+        llSetText(text, &lt;1,0.2,0.2&gt;,1);
+        total_len = 0;
+        llSetTimerEvent(12);
+    }
+    
+    touch_start(integer total_number)   {
+        integer i;
+        
+        for (i=0; i &lt; total_number; i++)    {
+
+            if (llDetectedKey(i) == llGetOwner())  {
+                llDialog(llGetOwner(),&quot;\nStop logging?&quot;,menu2,CHANNEL);
+            }
+            else    {
+                // Add name of avatar touching to the list
+                llDialog(llDetectedKey(i),&quot;\nMay I record your chat?&quot;,menu_other,CHANNEL);
+                llLoadURL(llDetectedKey(0), &quot;\n\n\nClick 'Go To Page' to join the Moodle chatroom:&quot;, URL_BASE+&quot;mod/chat/gui_header_js/index.php?id=&quot;+CHAT_ID);
+
+            }
+        }
+    }
+    
+    listen(integer channel, string name, key id, string message)    {
+
+        if (llGetOwnerKey(id)&#160;!= id)    { // only true for avatars! Will ignore all object chat
+            //llOwnerSay(&quot;Attempted spoofing&quot;);
+            return;
+        }
+        
+        if (channel == CHANNEL)     {
+            if (message == &quot;STOP&quot; &amp;&amp; id == llGetOwner() )   {    
+                llSay(0,&quot;Chat logging is now off!&quot;);
+                llMessageLinked(LINK_THIS,part,&quot;SEND&quot;,NULL_KEY);
+                state default;
+            }
+            // double check that this message is genuinely from avatar not spoofed
+            if (message == &quot;Accept&quot; &amp;&amp; name == llKey2Name(id) )     {
+                llSetTimerEvent(10);
+                
+                if(llListFindList(unique_names,[name]) == -1)    { 
+                    unique_names += (unique_names=[]) + unique_names + name; // hack for faster code on wiki
+                    keys += (keys=[]) + keys + id;
+                    llSay(0,&quot;Now recording &quot; + name);
+                    text = text + &quot;\n &quot; + name;
+                    llSetText(text, &lt;1,0.2,0.2&gt;,1);
+                }
+            }
+        }
+        else    {
+            integer i;
+            string speech;
+            i = llListFindList(unique_names,[name]  );
+            
+            if (i&#160;!= -1)   {
+
+/////////////SLURL MAKER
+
+                if(llSubStringIndex(llToUpper(message),&quot;/SLURL&quot;)&gt;-1) {    
+                    Name = llGetRegionName();
+                    Where = llGetPos();
+                    X = (integer)Where.x;
+                    Y = (integer)Where.y;
+                    Z = (integer)Where.z;
+                    SLURL = &quot;http://slurl.com/secondlife/&quot; + Name + &quot;/&quot; + (string)X + &quot;/&quot; + (string)Y + &quot;/&quot; + (string)Z + &quot;/?title=&quot; + Name;  
+                    message=llInsertString(message,llSubStringIndex(llToUpper(message),&quot;/SLURL&quot;), SLURL);
+                    //llSay(0,(string)llSubStringIndex(llToUpper(message),&quot;/SLURL&quot;));
+                }
+///////////////SLURL MAKER  
+
+                httprequest = llHTTPRequest(URL+&quot;&amp;chat_message=&quot;+llEscapeURL(&quot; &lt;FONT color=#009999&gt;&quot; +name +&quot;&lt;/font&gt;: &quot;+ message+&quot; &lt;FONT size=1 color=gray&gt;&lt;a href=&quot;+SLURL+&quot;&gt;&quot;+llGetRegionName()+&quot;&lt;/a&gt;&lt;/font&gt;&quot;),[HTTP_METHOD,&quot;GET&quot;],&quot;&quot;);
+
+             
+            }
+        }
+    }    
+
+    timer()     {
+        httprequest = llHTTPRequest(URL,[HTTP_METHOD,&quot;GET&quot;],&quot;&quot;);
+        // llSay(0, httprequest); // DEBUG PURPOSES
+        // llSay(0, URL); // DEBUG PURPOSES
+        // FINDINGS:  the timer is working, the request is being properly constructed, and the SLoodle server does send back the proper info from the PHP script. Look further below...
+    }
+    
+    http_response(key id,integer status, list meta, string body)
+    {
+        if (httprequest == id)
+        {
+            if (llStringLength(body) == 0)
+                return;
+            list message_list = llParseString2List(body,[&quot;Line: &quot;],[]);
+            integer i= llGetListLength(message_list);
+
+            string text;
+            string line;
+            integer lno;
+                          
+            while ( i &gt; 0 ) //I did this kind of back to front, becuase this is the result of hackery
+                            // writing from scratch Id use a for loop, but this is kind of the way
+                            // it is.
+            {
+                i--;
+                text = llList2String(message_list,i);
+                line = llGetSubString(text,0,4);
+                lno = (integer)line;
+                if ( lno &gt; message_id &amp;&amp; llSubStringIndex(text,MOODLE_NAME + &quot; (SL)&quot;) == -1)
+                    llSay(0,llGetSubString(text,5,-1));
+            }
+            message_id = lno;
+        }
+    }
+}
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 9/1000000
+Post‐expand include size: 253/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks catlinks-allhidden'></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/l/o/Sloodle_Chat_Mirror_Code.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:Sloodle_Chat_Mirror_Code&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/Sloodle_Chat_Mirror_Code">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 05:36, 23 January 2008 by SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>. Based on work by <a href="../../../../articles/j/k/e/User:Jkemp.html" title="User:Jkemp">Jeremy Kemp</a>.</li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

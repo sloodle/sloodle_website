@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for base_view.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file base_view.php</h1>
+<p>Documentation is available at <a href="../sloodle/_view---base---base_view.php.html">base_view.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">*&nbsp;Defines&nbsp;a&nbsp;base&nbsp;class&nbsp;for&nbsp;views&nbsp;of&nbsp;SLOODLE&nbsp;modules&nbsp;and&nbsp;features.</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">*&nbsp;Module-/feature-specific&nbsp;functionality&nbsp;should&nbsp;be&nbsp;specified&nbsp;by&nbsp;inheriting&nbsp;and&nbsp;overidding&nbsp;specific&nbsp;functions.</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">*&nbsp;When&nbsp;this&nbsp;file&nbsp;is&nbsp;included,&nbsp;it&nbsp;expects&nbsp;the&nbsp;Moodle&nbsp;library&nbsp;and&nbsp;config&nbsp;info&nbsp;to&nbsp;already&nbsp;be&nbsp;included&nbsp;too.</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">*</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;sloodle</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@copyright</span><span class="src-doc">&nbsp;Copyright&nbsp;(c)&nbsp;2008&nbsp;Sloodle&nbsp;(various&nbsp;contributors)</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@license</span><span class="src-doc">&nbsp;http://www.gnu.org/licenses/gpl-3.0.html&nbsp;GNU&nbsp;GPL&nbsp;v3</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">*</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-tag">@contributor</span><span class="src-doc">&nbsp;Peter&nbsp;R.&nbsp;Bloomfield</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">*/</span></div></li>
+<li><div class="src-line"><a name="a13"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a14"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a16"></a><span class="src-doc">*&nbsp;The&nbsp;base&nbsp;class&nbsp;for&nbsp;viewing&nbsp;a&nbsp;SLOODLE&nbsp;module&nbsp;or&nbsp;feature.</span></div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-doc">*&nbsp;Should&nbsp;be&nbsp;inherited&nbsp;and&nbsp;overridden.</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-doc">*&nbsp;Child&nbsp;class&nbsp;MUST&nbsp;be&nbsp;named&nbsp;&quot;sloodle_view_NAME&quot;,&nbsp;where&nbsp;NAME&nbsp;replaces&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;feature&nbsp;or&nbsp;module.</span></div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-doc">*&nbsp;For&nbsp;example,&nbsp;&quot;sloodle_view_controller&quot;&nbsp;or&nbsp;&quot;sloodle_view_course&quot;.</span></div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-doc">*&nbsp;For&nbsp;modules,&nbsp;the&nbsp;NAME&nbsp;must&nbsp;match&nbsp;the&nbsp;&quot;type&quot;&nbsp;specifier&nbsp;in&nbsp;the&nbsp;&quot;sloodle&quot;&nbsp;table,&nbsp;such&nbsp;as&nbsp;&quot;controller&quot;,&nbsp;&quot;distributor&quot;,&nbsp;or&nbsp;&quot;presenter&quot;.</span></div></li>
+<li><div class="src-line"><a name="a21"></a><span class="src-doc">*&nbsp;Modules&nbsp;should&nbsp;be&nbsp;automatically&nbsp;found,&nbsp;although&nbsp;special&nbsp;features&nbsp;(such&nbsp;as&nbsp;courses&nbsp;or&nbsp;users)&nbsp;will&nbsp;need&nbsp;to&nbsp;coded&nbsp;manually&nbsp;into&nbsp;the&nbsp;main&nbsp;view.php&nbsp;script.</span></div></li>
+<li><div class="src-line"><a name="a22"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;sloodle</span></div></li>
+<li><div class="src-line"><a name="a23"></a><span class="src-doc">*/</span></div></li>
+<li><div class="src-line"><a name="a24"></a><span class="src-key">class&nbsp;</span><a href="../sloodle/sloodle_base_view.html">sloodle_base_view</a></div></li>
+<li><div class="src-line"><a name="a25"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a27"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Constructor.</span></div></li>
+<li><div class="src-line"><a name="a28"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/sloodle_base_view.html#methodsloodle_base_view">sloodle_base_view</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a34"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;main&nbsp;viewing&nbsp;function.</span></div></li>
+<li><div class="src-line"><a name="a35"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;gets&nbsp;called&nbsp;by&nbsp;the&nbsp;system&nbsp;to&nbsp;render&nbsp;the&nbsp;view&nbsp;of&nbsp;the&nbsp;module.</span></div></li>
+<li><div class="src-line"><a name="a36"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/sloodle_base_view.html#methodview">view</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Process&nbsp;basic&nbsp;incoming&nbsp;data</span></div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;(this&nbsp;fetches&nbsp;all&nbsp;necessary&nbsp;course&nbsp;and&nbsp;module&nbsp;data)</span></div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../sloodle/sloodle_base_view.html#methodprocess_request">process_request</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Check&nbsp;user&nbsp;permissions&nbsp;to&nbsp;access&nbsp;this&nbsp;resource.</span></div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;This&nbsp;first&nbsp;requires&nbsp;that&nbsp;the&nbsp;user&nbsp;is&nbsp;logged-in&nbsp;(for&nbsp;best&nbsp;results,&nbsp;DO&nbsp;NOT&nbsp;output&nbsp;anything&nbsp;before&nbsp;this).</span></div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;It&nbsp;then&nbsp;checks&nbsp;that&nbsp;the&nbsp;user&nbsp;has&nbsp;permission&nbsp;to&nbsp;view&nbsp;the&nbsp;course&nbsp;and&nbsp;module.</span></div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;It&nbsp;finally&nbsp;also&nbsp;checks&nbsp;to&nbsp;see&nbsp;if&nbsp;the&nbsp;user&nbsp;has&nbsp;edit&nbsp;permission.</span></div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../sloodle/sloodle_base_view.html#methodcheck_permission">check_permission</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Process&nbsp;any&nbsp;form&nbsp;submission.</span></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;It&nbsp;is&nbsp;useful&nbsp;to&nbsp;do&nbsp;this&nbsp;before&nbsp;any&nbsp;data&nbsp;is&nbsp;outputted,&nbsp;so&nbsp;that&nbsp;the&nbsp;user&nbsp;can&nbsp;be&nbsp;issued&nbsp;a&nbsp;header&nbsp;direct&nbsp;after&nbsp;form&nbsp;submission.</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;This&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;get&nbsp;rid&nbsp;of&nbsp;any&nbsp;form-related&nbsp;request&nbsp;parameters&nbsp;which&nbsp;break&nbsp;forward/back&nbsp;navigation&nbsp;and&nbsp;manual&nbsp;refreshes.</span></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../sloodle/sloodle_base_view.html#methodprocess_form">process_form</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Output&nbsp;the&nbsp;page&nbsp;header.</span></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;This&nbsp;normally&nbsp;includes&nbsp;standard&nbsp;SLOODLE&nbsp;stuff,&nbsp;such&nbsp;as&nbsp;a&nbsp;note&nbsp;of&nbsp;whether&nbsp;or&nbsp;not&nbsp;the&nbsp;course&nbsp;allows&nbsp;auto-registration.</span></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../sloodle/sloodle_base_view.html#methodprint_header">print_header</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Render&nbsp;the&nbsp;view&nbsp;of&nbsp;the&nbsp;module&nbsp;or&nbsp;feature&nbsp;itself</span></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../sloodle/sloodle_base_view.html#methodrender">render</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Output&nbsp;the&nbsp;page&nbsp;footer.</span></div></li>
+<li><div class="src-line"><a name="a62"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;This&nbsp;is&nbsp;normally&nbsp;very&nbsp;simple,&nbsp;but&nbsp;can&nbsp;include&nbsp;other&nbsp;data&nbsp;too.</span></div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../sloodle/sloodle_base_view.html#methodprint_footer">print_footer</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a67"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Check&nbsp;for&nbsp;incoming&nbsp;request&nbsp;data&nbsp;identifying&nbsp;a&nbsp;particular&nbsp;course&nbsp;or&nbsp;module.</span></div></li>
+<li><div class="src-line"><a name="a68"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;must&nbsp;be&nbsp;overridden&nbsp;to&nbsp;add&nbsp;functionality.</span></div></li>
+<li><div class="src-line"><a name="a69"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/sloodle_base_view.html#methodprocess_request">process_request</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a71"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a75"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Check&nbsp;that&nbsp;the&nbsp;user&nbsp;has&nbsp;permission&nbsp;to&nbsp;access&nbsp;the&nbsp;current&nbsp;resources.</span></div></li>
+<li><div class="src-line"><a name="a76"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;must&nbsp;be&nbsp;overridden&nbsp;to&nbsp;add&nbsp;functionality.</span></div></li>
+<li><div class="src-line"><a name="a77"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/sloodle_base_view.html#methodcheck_permission">check_permission</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a83"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Process&nbsp;any&nbsp;form&nbsp;data&nbsp;which&nbsp;has&nbsp;been&nbsp;submitted.</span></div></li>
+<li><div class="src-line"><a name="a84"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;must&nbsp;be&nbsp;overridden&nbsp;to&nbsp;add&nbsp;functionality.</span></div></li>
+<li><div class="src-line"><a name="a85"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/sloodle_base_view.html#methodprocess_form">process_form</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a89"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a90"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a91"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Print&nbsp;the&nbsp;standard&nbsp;page&nbsp;header.</span></div></li>
+<li><div class="src-line"><a name="a92"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;should&nbsp;usually&nbsp;be&nbsp;overridden&nbsp;to&nbsp;add&nbsp;additional&nbsp;information,&nbsp;such&nbsp;as&nbsp;page&nbsp;title,&nbsp;header,&nbsp;and&nbsp;navigation&nbsp;links.</span></div></li>
+<li><div class="src-line"><a name="a93"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a94"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/sloodle_base_view.html#methodprint_header">print_header</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a95"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a96"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">print_header_simple</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a97"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a98"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a99"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a100"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Render&nbsp;the&nbsp;view&nbsp;of&nbsp;the&nbsp;module&nbsp;or&nbsp;feature.</span></div></li>
+<li><div class="src-line"><a name="a101"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;MUST&nbsp;be&nbsp;overridden&nbsp;to&nbsp;provide&nbsp;functionality.</span></div></li>
+<li><div class="src-line"><a name="a102"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a103"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/sloodle_base_view.html#methodrender">render</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a104"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a105"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a106"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a107"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a108"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Output&nbsp;the&nbsp;page&nbsp;footer.</span></div></li>
+<li><div class="src-line"><a name="a109"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;does&nbsp;not&nbsp;usually&nbsp;have&nbsp;to&nbsp;be&nbsp;overridden,&nbsp;unless&nbsp;there&nbsp;is&nbsp;something&nbsp;to&nbsp;be&nbsp;added&nbsp;or&nbsp;a&nbsp;block&nbsp;element&nbsp;to&nbsp;be&nbsp;closed.</span></div></li>
+<li><div class="src-line"><a name="a110"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a111"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/sloodle_base_view.html#methodprint_footer">print_footer</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a112"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a113"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../sloodle/sloodle_base_view.html#methodprint_footer">print_footer</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a115"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a116"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a117"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a118"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a119"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 17 Jul 2009 11:01:01 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</body>
+</html>

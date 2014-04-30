@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Making new Sloodle objects (SLOODLE 2.x) - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-Making_new_Sloodle_objects_SLOODLE_2_x">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Making new Sloodle objects (SLOODLE 2.x)</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p style="text-align:right;"><span title="This information only applies to Sloodle versions: 2.x" style="vertical-align:middle; padding:4px; font-size:12pt; background-color:#ccffff; border:solid 1px #7777ff;">Sloodle Versions: <strong>2.x</strong> <span style="font-size:75%; vertical-align:middle;"><a href="../../../../articles/s/l/o/Sloodle_Versions.html" title="Sloodle Versions">(?)</a></span></span></p>
+<p>This page is for anybody interested in creating a new SLOODLE object to add to the toolset.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Creating_a_tool_using_an_existing_API"><span class="tocnumber">1</span> <span class="toctext">Creating a tool using an existing API</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Creating_a_tool_inside_the_rezzer"><span class="tocnumber">2</span> <span class="toctext">Creating a tool inside the rezzer</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Localization_Script"><span class="tocnumber">2.1</span> <span class="toctext">Localization Script</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Standard_Scripts"><span class="tocnumber">2.2</span> <span class="toctext">Standard Scripts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Creating_a_new_API_modules"><span class="tocnumber">3</span> <span class="toctext">Creating a new API modules</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Changes_in_Moodle"><span class="tocnumber">4</span> <span class="toctext">Changes in Moodle</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Module_Class"><span class="tocnumber">4.1</span> <span class="toctext">Module Class</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Help.21"><span class="tocnumber">5</span> <span class="toctext">Help!</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Creating_a_tool_using_an_existing_API"> Creating a tool using an existing API </span></h2>
+<p>SLOODLE 2 provides a set of API modules providing access to different parts of Moodle. Each API module has its own directory under "mod/" folder in SLOODLE, eg. the quiz API has a folder at "mod/quiz-1.0". 
+</p><p>The "1.0" refers to the version of the API module. If we want to change the functionality so that existing tools will no longer work, we'll create a new API module with a new version number, like "quiz-2.0".
+</p><p>Each API module may support a number of different tools that use the same Moodle functionality. We tell Moodle about each tool by giving it a directory under the API module that it uses in the "objects/" folder. The original tool created with the API module is often called "default/", so resources for the original quiz chair are in "mod/quiz-1.0/objects/default/".
+</p><p>The directory for each tool contains a PHP file called "definition.php".
+</p>
+<pre>
+&lt;?php
+$sloodleconfig = new SloodleObjectConfig();
+$sloodleconfig-&gt;primname   = 'SLOODLE Quiz Chair'; // The name of the object in the rezzer.
+$sloodleconfig-&gt;module     = 'quiz'; // The Moodle module the object uses.
+$sloodleconfig-&gt;module_choice_message = 'selectquiz'; // The message shown when people select the module to use.
+$sloodleconfig-&gt;module_no_choices_message = 'noquizzes'; // The message displayed if there is no module to use.
+$sloodleconfig-&gt;group      = 'activity'; // The group the object should be displayed in in the rezzer
+$sloodleconfig-&gt;collections= array('SLOODLE 2.0'); // The set of objects this tool belongs to. This allows you to hide objects that won't be in your rezzer.
+$sloodleconfig-&gt;aliases    = array('SLOODLE 1.2 Quiz Chair', 'SLOODLE 1.1 Quiz Chair'); // Any other names the object may have in the rezzer.
+$sloodleconfig-&gt;field_sets = array(
+        'generalconfiguration' =&gt; array(
+                'sloodlerepeat' =&gt; new SloodleConfigurationOptionYesNo( 'sloodlerepeat', 'repeatquiz', null, 0 ), // An option for whether the quiz should be repeated.
+        ),
+        'accesslevel' =&gt; array(
+                'sloodleobjectaccessleveluse'  =&gt; $sloodleconfig-&gt;access_level_object_use_option(), // A choice about who can use the object.
+                'sloodleserveraccesslevel'     =&gt; $sloodleconfig-&gt;access_level_server_option(), // A different kind of choice about who can use the object.
+        ),
+);
+
+</pre>
+<p>The directory for each tool should also contain a sub-directory called "assets/". This is for you to put copies of your LSL scripts, textures and sounds. Moodle doesn't use them directly - it's just handier to store them with the definition for the tool.
+</p><p>You can usually start by duplicating the definition for an existing tool. Use lowercaseletterswithoutspaces for the name of the directory, and make your primname "SLOODLE Something With Capital Letters And Spaces".
+</p><p>Once you have an object definition, your object will show up in the list of tools available in your rezzer. But that won't help unless there's actually a tool there to rez. Which brings us to:
+</p>
+<h2> <span class="mw-headline" id="Creating_a_tool_inside_the_rezzer"> Creating a tool inside the rezzer </span></h2>
+<p>All tools in the rezzer need to contain a copy of the script <i>sloodle_rezzer_object</i>. This will allow the rezzer to make them go to the appropriate position. It will also set up communication in both directions between the object and the server, as we'll explain later.
+</p><p>It is normally important to make your object capable of receiving configuration information, e.g. from web or notecard configuration methods. The standard way to do this is make your "default" state almost completely idle. The only thing it will do is receive link messages on the <a href="../../../../articles/s/l/o/Sloodle_channels.html" title="Sloodle channels">SLOODLE_CHANNEL_OBJECT_DIALOG</a> channel, which contain configuration commands. You can usually copy the default state from other objects, and be sure to copy the "sloodle_handle_command(..)" function too, and customize it to suit your needs. You will need to add/remove configuration settings, and make sure the function returns TRUE when it has got all the configuration data it needs, or false if it does not.
+</p><p>Your other states may behave as you like. If you want to completely reset your object and fetch a new configuration, send a "do:reset" link message on the SLOODLE_CHANNEL_OBJECT_DIALOG channel, and the configuration scripts will reset as well.
+</p><p>The scripts, images and sound files specific to that tool should be stored in a directory called "assets/" alongside that tool's definition.php. 
+</p><p>If you create scripts that will be shared by other objects using the same API module (eg you might make a shared script used by both your Quiz Rocket and your Quiz Balloon) it should go in an assets/ folder at the top level of that API module, eg. "mod/sloodle/mod/quiz-1.0/assets". 
+</p><p>Shared scripts that may be used by multiple tools (see below) should go in the assets/ folder at the top level of mod/sloodle. 
+</p><p>As the assets will be included in the in-world objects, in theory it should be possible to delete all the assets/ folders from your server-side module to save disk space.
+</p><p>If you use a shared script in your object, you may find it useful to include a file telling people what shared script they need to add. Use the script name + ".shared.txt", eg:
+attach_to_avatar.lslp.shared.txt
+This should be a text file containing a line saying where to get the script, eg:
+</p><p>
+// SLOODLE LSL Script Shared Location: assets/attachments/attach_to_avatar.lslp
+
+</p><p>All scripts should have a line at the bottom showing where they are stored in Git, eg:
+</p><p>
+// Please leave the following line intact to show where the script lives in Git:
+// SLOODLE LSL Script Git Location: assets/sloodle_email_login_details.lslp 
+
+</p><p>This can be used by automated tools to update shared scripts in the OpenSim oar directly from Git, and vice versa.
+</p>
+<h4> <span class="mw-headline" id="Localization_Script"> Localization Script </span></h4>
+<p>If your object outputs any text, then you will need to create a new <a href="http:http://localhost/sl/index.php?title=Sloodle_LSL_Localization_Script&amp;action=edit&amp;redlink=1" class="new" title="Sloodle LSL Localization Script (page does not exist)">LSL localization script</a>. The naming convention is as follows: "sloodle_translation_NAME_LANG". The NAME part should probably be very similar to your object identifier, but it is sometimes different, especially if multiple similar objects share the same script. The LANG part should be a language code, such as "en" for English, or "fr" for French.
+</p><p>It is best to copy an existing script, rename it, and change the contents to suit your needs. You will also need to copy some code into your main script so that you can access the localization script. Read the <a href="http:http://localhost/sl/index.php?title=Sloodle_LSL_Localization_Script&amp;action=edit&amp;redlink=1" class="new" title="Sloodle LSL Localization Script (page does not exist)">Sloodle LSL Localization Script</a> page for more details.
+</p>
+<h4> <span class="mw-headline" id="Standard_Scripts"> Standard Scripts </span></h4>
+<p>There are many standard Sloodle scripts which are re-used throughout many objects. It is often best to use these wherever possible, so that everything is consistent, and to save you programming time. Some of the common scripts are shown below:
+</p>
+<ul><li> <i>sloodle_translation_en</i> - the code Sloodle localization script (normally used by all objects)
+</li><li> <i>sloodle_email_login_details</i> - receives emails and notifies users of their auto-registered account details via Instant Message (has bugs!)
+</li><li> <i>sloodle_multi_url_loader</i>, <i>sloodle_parallel_url_loader_x</i> - allows parallel loading of multiple URLs to avoid script delays
+</li></ul>
+<p>Any script which is likely to be shared by objects across different API modules should be stored under assets/ in the top directory.
+</p>
+<h2> <span class="mw-headline" id="Creating_a_new_API_modules"> Creating a new API modules </span></h2>
+<p>Each API module should have a  '<a href="../../../../articles/s/l/o/Sloodle_Object_Type_Identifier.html" title="Sloodle Object Type Identifier">type identifier</a>'. This should consist of two parts: a short name (lower-case letters only), followed by a dash, and a version number (start at version 1.0). 
+</p><p>The PHP code that the in-world tool talks to should be contained in a script called "linker.php".
+</p><p>See the <i><a href="../../../../articles/s/l/o/Sloodle_communications_specification.html" title="Sloodle communications specification">Sloodle communications specification</a></i> for information about how your object will talk to it.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Changes_in_Moodle"> Changes in Moodle </span></h2>
+<h4> <span class="mw-headline" id="Module_Class"> Module Class </span></h4>
+<p>If your object adds new web pages to Moodle or adds new kind of data to Moodle, you will probably want to create a <a href="http:http://localhost/sl/index.php?title=Sloodle_Module_Class&amp;action=edit&amp;redlink=1" class="new" title="Sloodle Module Class (page does not exist)">Sloodle module class</a> for it. These are classes which effectively 'wrap' all the necessary functionality, such as database queries, with a fairly standard interface. This helps maintain consistency across different parts of Sloodle, and will hopefully make it easier for Sloodle to 'migrate' to other VLE platforms in the future. Additionally, it makes it possible for the Sloodle framework to automatically find and load your module.
+</p><p>Note: the module class should generally <b>not</b> output any information -- it should only be used to fetch and manipulate data.
+</p><p>You will find the module classes in <b>"sloodle/lib/modules"</b>. Each module class should be derived from the base class defined in "module_base.php". It is often best to copy an existing module class file, to see how things are done, and customize the functionality to suit your needs. Don't forget to check the base module class to see if there are any standard functions already there, or which you could override.
+</p>
+<pre>If your module class filename starts with "module_" and ends with ".php" then Sloodle will find it automatically.
+</pre>
+<p>Above all else, it is very important to specify the <b>type</b> name in the "get_type()" function. This should usually match the type identifier you created above, and will allow the system to automatically find the module later on. See the <a href="http:http://localhost/sl/index.php?title=Sloodle_Module_Class&amp;action=edit&amp;redlink=1" class="new" title="Sloodle Module Class (page does not exist)">Sloodle Module Class</a> page for more information on this.
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="Help.21"> Help! </span></h1>
+<p>I know this is an awful lot of information to get to grips with! The best thing to do is to start out creating just the <a href="../../../../articles/l/i/n/Linker_Script.html" title="Linker Script">Linker Script</a> in Moodle and your main LSL script in Second Life, and don't worry about everything else. When your idea is more fully established, you can start to introduce the rest of the concepts. And if you get stuck, please ask on our development forums.
+</p><p><br />
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 71/1000000
+Post‐expand include size: 829/2097152 bytes
+Template argument size: 6/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/s/l/o/Category:SloodleDevDocs.html" title="Category:SloodleDevDocs">SloodleDevDocs</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/m/a/k/Making_new_Sloodle_objects_(SLOODLE_2.x).html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:Making_new_Sloodle_objects_(SLOODLE_2.x)&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/Making_new_Sloodle_objects_(SLOODLE_2.x)">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 20:39, 1 February 2013 by <a href="http:http://localhost/sl/index.php?title=User:Edochan&amp;action=edit&amp;redlink=1" class="new" title="User:Edochan (page does not exist)">Edmund Edgar</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Fileref:mod/glossary/sl glossary linker.php - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-Fileref_mod_glossary_sl_glossary_linker_php">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Fileref:mod/glossary/sl glossary linker.php</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><a href="../../../../articles/f/o/l/File:Folder.gif.html" class="image"><img alt="Folder.gif" src="../../../../images/6/2F/6/6/67/Folder.gif" width="16" height="16" /></a>  <a href="../../../../articles/m/o/d/Fileref:mod/glossary.html" title="Fileref:mod/glossary">(parent)</a> <br />
+</p><p>This <a href="../../../../articles/l/i/n/Linker_Script.html" title="Linker Script">Linker Script</a> allows the <a href="../../../../articles/s/l/o/Sloodle_MetaGloss.html" title="Sloodle MetaGloss">Sloodle MetaGloss</a> object in Second Life to communicate with Moodle glossaries. There are 2 modes of operation: browse, and lookup. Browse mode will fetch a list of all available (i.e. visible) glossaries in the specified course, while lookup mode will search for a term in a specific glossary.
+</p><p>By default, the script behaves in browse mode, unless the additional parameters required for lookup mode are specified.
+</p><p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Additional_Information"><span class="tocnumber">1</span> <span class="toctext">Additional Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Dependencies"><span class="tocnumber">2</span> <span class="toctext">Dependencies</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Request_Parameters"><span class="tocnumber">3</span> <span class="toctext">Request Parameters</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Response"><span class="tocnumber">4</span> <span class="toctext">Response</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Browse_Mode"><span class="tocnumber">4.1</span> <span class="toctext">Browse Mode</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Lookup_Mode"><span class="tocnumber">4.2</span> <span class="toctext">Lookup Mode</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Algorithm"><span class="tocnumber">5</span> <span class="toctext">Algorithm</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Additional_Information"> Additional Information </span></h1>
+<p>Debug mode will output additional data, indicating what is happening at all points in the script.
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="Dependencies"> Dependencies </span></h1>
+<p>Sloodle files:
+</p>
+<ul><li> <a href="../../../../articles/c/o/n/Fileref:config.php.html" title="Fileref:config.php">config.php</a>
+</li><li> <a href="../../../../articles/s/l/_/Fileref:sl_debug.php.html" title="Fileref:sl debug.php">sl_debug.php</a>
+</li><li> <a href="../../../../articles/l/i/b/Fileref:lib/sl_lsllib.php.html" title="Fileref:lib/sl lsllib.php">lib/sl_lsllib.php</a>
+</li><li> <a href="../../../../articles/m/o/d/Fileref:mod/glossary/sl_glossary_lib.php.html" title="Fileref:mod/glossary/sl glossary lib.php">mod/glossary/sl_glossary_lib.php</a>
+</li></ul>
+<p>Moodle files:
+</p>
+<ul><li> mod/glossary/lib.php
+</li><li> lib/filelib.php
+</li></ul>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Request_Parameters"> Request Parameters </span></h1>
+<p>The following parameters are always required:
+</p>
+<ul><li> sloodlepwd = the <a href="../../../../articles/p/r/i/Prim_Password.html" title="Prim Password">Prim Password</a> used to authenticate the WebIntercom for this site
+</li><li> sloodlecourseid = ID of the course which the request relates to
+</li></ul>
+<p><br />
+The following additional parameter are required for lookup mode:
+</p>
+<ul><li> sloodlemoduleid = course module instance ID of the desired chatroom
+</li><li> sloodleconcept = the term to search for in the glossary
+</li></ul>
+<p><br />
+The following parameter is always optional:
+</p>
+<ul><li> sloodledebug = activates debug mode
+</li></ul>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Response"> Response </span></h1>
+<h4> <span class="mw-headline" id="Browse_Mode"> Browse Mode </span></h4>
+<p>If the search for glossaries is successful (even if there are no glossaries to find), the status code returned will be 1. Each data line will contain the ID and name of a glossary (remember to check the number of data lines before trying to process them). The format of each data line will be as follows:
+</p>
+<pre>&lt;id&gt;|&lt;name&gt;
+</pre>
+<p>The 'id' value will be an integer, giving the course module instance ID which should be passed back via the 'sloodlemoduleid' parameter for lookup mode. The 'name' value will be a string, giving the name of the glossary instance.
+</p><p><br />
+</p>
+<h4> <span class="mw-headline" id="Lookup_Mode"> Lookup Mode </span></h4>
+<p>If the glossary search works, then the status code will always be 1 (even if no search results are found). Each data line will contain information about one search result from the glossary, with the following format:
+</p>
+<pre>&lt;concept&gt;|&lt;definition&gt;
+</pre>
+<p>The 'concept' value is the string which uniquely identifies the glossary entry. Note that the glossary search fetches partial matches to the search term, so for example, searching for "scot" would return results for both "scotland" and "scottish". As such, the concept for each result may not exactly match the original search term. The 'definition' value is the raw-text definition stored in the database. Note that HTML and formatting etc. are stripped out.
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="Algorithm"> Algorithm </span></h1>
+<ol><li> Construct <a href="../../../../articles/s/l/o/SloodleLSLHandler.html" title="SloodleLSLHandler">SloodleLSLHandler</a> object
+</li><li> Process basic request data
+</li><li> Authenticate request
+</li><li> Fetch additional parameters
+</li><li> Retrieve course data (terminate on failure)
+</li><li> If module ID was specified, then retrieve module instance data (terminate on failure)
+</li><li> If module was specified but concept was not, then terminate on error
+</li><li> Else if concept was specified but module was not, then terminate on error
+</li><li> If module was not specified, then:
+<ol><li> (In browse mode)
+</li><li> Fetch list of available glossaries
+</li><li> Output each glossary
+</li></ol>
+</li><li> Else:
+<ol><li> (In lookup mode)
+</li><li> Search selected glossary for specified cocept
+</li><li> Output each entry
+</li></ol>
+</li><li> Render response
+</li><li> Terminate script
+</li></ol>
+<p><br />
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 36/1000000
+Post‐expand include size: 547/2097152 bytes
+Template argument size: 35/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/s/l/o/Category:SloodleFileRef.html" title="Category:SloodleFileRef">SloodleFileRef</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/m/o/d/Fileref:mod/glossary/sl_glossary_linker.php.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:Fileref:mod/glossary/sl_glossary_linker.php&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/Fileref:mod/glossary/sl_glossary_linker.php">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 08:17, 4 February 2008 by SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

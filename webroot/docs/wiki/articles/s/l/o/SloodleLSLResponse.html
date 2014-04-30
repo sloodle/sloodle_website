@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>SloodleLSLResponse - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-SloodleLSLResponse">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">SloodleLSLResponse</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Declaration"><span class="tocnumber">1</span> <span class="toctext">Declaration</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Summary"><span class="tocnumber">2</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Compatibility"><span class="tocnumber">3</span> <span class="toctext">Compatibility</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Data"><span class="tocnumber">4</span> <span class="toctext">Data</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#var_.24status_code"><span class="tocnumber">4.1</span> <span class="toctext">var $status code</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#var_.24status_descriptor"><span class="tocnumber">4.2</span> <span class="toctext">var $status_descriptor</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#var_.24side_effects"><span class="tocnumber">4.3</span> <span class="toctext">var $side_effects</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#var_.24request_descriptor"><span class="tocnumber">4.4</span> <span class="toctext">var $request_descriptor</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#var_.24request_timestamp"><span class="tocnumber">4.5</span> <span class="toctext">var $request_timestamp</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#var_.24response_timestamp"><span class="tocnumber">4.6</span> <span class="toctext">var $response_timestamp</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#var_.24user_key"><span class="tocnumber">4.7</span> <span class="toctext">var $user_key</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#var_.24tracking_code"><span class="tocnumber">4.8</span> <span class="toctext">var $tracking_code</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#var_.24page_total"><span class="tocnumber">4.9</span> <span class="toctext">var $page_total</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#var_.24page_number"><span class="tocnumber">4.10</span> <span class="toctext">var $page_number</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#var_.24data"><span class="tocnumber">4.11</span> <span class="toctext">var $data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Functions"><span class="tocnumber">5</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Accessors"><span class="tocnumber">5.1</span> <span class="toctext">Accessors</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#set_status_code.28.24par.29"><span class="tocnumber">5.1.1</span> <span class="toctext">set_status_code($par)</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#set_status_descriptor.28.24par.29"><span class="tocnumber">5.1.2</span> <span class="toctext">set_status_descriptor($par)</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#set_side_effects.28.24par.29"><span class="tocnumber">5.1.3</span> <span class="toctext">set_side_effects($par)</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#add_side_effects.28.24par.29"><span class="tocnumber">5.1.4</span> <span class="toctext">add_side_effects($par)</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#add_side_effect.28.24par.29"><span class="tocnumber">5.1.5</span> <span class="toctext">add_side_effect($par)</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#.3Dset_request_descriptor.28.24par.29"><span class="tocnumber">5.1.6</span> <span class="toctext">=set_request_descriptor($par)</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#set_request_timestamp.28.24par.29"><span class="tocnumber">5.1.7</span> <span class="toctext">set_request_timestamp($par)</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#set_response_timestamp.28.24par.29"><span class="tocnumber">5.1.8</span> <span class="toctext">set_response_timestamp($par)</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#set_user_key.28.24par.29"><span class="tocnumber">5.1.9</span> <span class="toctext">set_user_key($par)</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#set_tracking_code.28.24par.29"><span class="tocnumber">5.1.10</span> <span class="toctext">set_tracking_code($par)</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#set_page_total.28.24par.29"><span class="tocnumber">5.1.11</span> <span class="toctext">set_page_total($par)</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#set_page_number.28.24par.29"><span class="tocnumber">5.1.12</span> <span class="toctext">set_page_number($par)</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#set_data.28.24par.29"><span class="tocnumber">5.1.13</span> <span class="toctext">set_data($par)</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#add_data_line.28.24par.29"><span class="tocnumber">5.1.14</span> <span class="toctext">add_data_line($par)</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#clear_data.28.29"><span class="tocnumber">5.1.15</span> <span class="toctext">clear_data()</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-33"><a href="#Other_Functions"><span class="tocnumber">5.2</span> <span class="toctext">Other Functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-34"><a href="#SloodleLSLResponse.28.24status_code.3DNULL.2C_.24status_descriptor.3DNULL.2C_.24data.3DNULL.29"><span class="tocnumber">5.2.1</span> <span class="toctext">SloodleLSLResponse($status_code=NULL, $status_descriptor=NULL, $data=NULL)</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#render_to_string.28.26.24str.29"><span class="tocnumber">5.2.2</span> <span class="toctext">render_to_string(&amp;$str)</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#render_to_output.28.29"><span class="tocnumber">5.2.3</span> <span class="toctext">render_to_output()</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#quick_output.28.24status_code.2C_.24status_descriptor.3DNULL.2C_.24data.3DNULL.2C_.24static.3DTRUE.29"><span class="tocnumber">5.2.4</span> <span class="toctext">quick_output($status_code, $status_descriptor=NULL, $data=NULL, $static=TRUE)</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#internal_validation_error.28.24msg.29"><span class="tocnumber">5.2.5</span> <span class="toctext">_internal_validation_error($msg)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Declaration"> Declaration </span></h2>
+<p><font size="5"><code>class SloodleLSLResponse</code></font><br />
+Defined in: <a href="../../../../articles/f/i/l/File:File.gif.html" class="image"><img alt="File.gif" src="../../../../images/a/2F/a/a/af/File.gif" width="16" height="16" /></a>  <a href="../../../../articles/l/i/b/Fileref:lib/sl_iolib.php.html" title="Fileref:lib/sl iolib.php">lib/sl_iolib.php</a> <br />
+Contained by: <a href="../../../../articles/s/l/o/SloodleLSLHandler.html" title="SloodleLSLHandler">SloodleLSLHandler</a>, <a href="../../../../articles/s/l/o/SloodleLSLRequest.html" title="SloodleLSLRequest">SloodleLSLRequest</a><br />
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Summary"> Summary </span></h2>
+<p>This PHP class will help to structure and render appropriate response data for HTTP requests coming from in Second Life. See <a href="../../../../articles/s/l/o/Sloodle_communications_specification.html" title="Sloodle communications specification">Sloodle communications specification</a> for more information on the format.
+</p><p>The functions in the class are mostly accessor functions, which can be used to set items of data. They will do basic error-checking, store the data appropriately. The data rendering function will then perform additional error-checking, and then structure the data accordingly. It can be returned as a string, or renderer directly to the HTTP response.
+</p>
+<div class="center"><div class="floatnone"><a href="../../../../articles/s/l/o/File:Sloodle_api_uml_highlight_response.jpg.html" class="image"><img alt="Sloodle api uml highlight response.jpg" src="../../../../images/3/2F/3/3/3d/Sloodle_api_uml_highlight_response.jpg" width="798" height="273" /></a></div></div>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Compatibility"> Compatibility </span></h2>
+<p>This class conforms to PHP4 syntax, and so scope visibility qualifiers (public, private, protected) are not available. All of the data should be considered <b>private</b>, with access via appropraite accessor functions.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Data"> Data </span></h2>
+<p>Each data member represents some data to be output. If the value is NULL (which is default), then it is ignored (unless the value is required, in which case an error is generated). All data in this class should be considered <b>private</b>:
+</p>
+<h5> <span class="mw-headline" id="var_.24status_code">var $status code</span></h5>
+<p><i>Required.</i> An integer representing the <a href="../../../../articles/s/l/o/Sloodle_status_codes.html" title="Sloodle status codes">status code</a> of the request. A positive value means success, while a negative value means error.
+</p>
+<h5> <span class="mw-headline" id="var_.24status_descriptor">var $status_descriptor</span></h5>
+<p><i>Optional, but recommended.</i> A string giving the general category of the status code. You can see this information alongside the status codes on the <a href="../../../../articles/s/l/o/Sloodle_status_codes.html" title="Sloodle status codes">Sloodle status codes</a> page.
+</p>
+<h5> <span class="mw-headline" id="var_.24side_effects">var $side_effects</span></h5>
+<p><i>Optional.</i> <a href="../../../../articles/s/l/o/Sloodle_status_codes.html" title="Sloodle status codes">Status codes</a> of any side-effects caused while handling the request (such as auto-registration/enrolment of the user). Can be either a single integer, or an array of integers.
+</p>
+<h5> <span class="mw-headline" id="var_.24request_descriptor">var $request_descriptor</span></h5>
+<p><i>Optional.</i> A <i>brief</i> string describing the request. This value should not usually be specified within a PHP script. Rather, it should be taken from an HTTP parameter in a request (parameter name 'sloodlerequestdesc'). If using the <a href="../../../../articles/s/l/o/SloodleLSLHandler.html" title="SloodleLSLHandler">SloodleLSLHandler</a> class correctly, this value will be automatically parsed by the <a href="../../../../articles/s/l/o/SloodleLSLRequest.html" title="SloodleLSLRequest">SloodleLSLRequest</a> object, and written into the <strong class="selflink">SloodleLSLResponse</strong> object. This can be used by LSL scripts to distinguish one response from another.
+</p>
+<h5> <span class="mw-headline" id="var_.24request_timestamp">var $request_timestamp</span></h5>
+<p><i>Optional.</i> An integer giving the timestamp when the request was first made from within Second Life. Note that currently this value is <i>not</i> automatically parsed and handled by the <a href="../../../../articles/s/l/o/SloodleLSLRequest.html" title="SloodleLSLRequest">SloodleLSLRequest</a> class, so it will need to be handled manually if desired.
+</p>
+<h5> <span class="mw-headline" id="var_.24response_timestamp">var $response_timestamp</span></h5>
+<p><i>Optional.</i> An integer giving the timestamp when the response was generated on the Moodle side. This can be used by objects in-world to test turnaround times, and also to check when responses might be invalidated. Note that currently this is <i>not</i> generated automatically, so it will need to be set manually if you want to use it. (The return value from PHP's standard "time()" function would suffice).
+</p>
+<h5> <span class="mw-headline" id="var_.24user_key">var $user_key</span></h5>
+<p><i>Optional.</i> A string containing the UUID key of an SL agent (or avatar). It should generally refer to the avatar who initiated the request in the first place, but this is optional.
+</p>
+<ul><li> <i>Note:</i> when using the <a href="../../../../articles/s/l/o/SloodleLSLHandler.html" title="SloodleLSLHandler">SloodleLSLHandler</a> object correctly, the user key will be automatically taken from the "<i>sloodleuuid</i>" request parameter when the request is first processed. Thereafter, you can change it if you wish.
+</li></ul>
+<h5> <span class="mw-headline" id="var_.24tracking_code">var $tracking_code</span></h5>
+<p><i>Not used yet.</i> Can be any type which can be directly cast to a string.        
+</p>
+<h5> <span class="mw-headline" id="var_.24page_total">var $page_total</span></h5>
+<p><i>Not used yet.</i> An integer specifying the total number of pages which the full response requires. If <i>$page_total</i> is set but <i>$page_number</i> is not (or vice versa) then the response rendering function will fail.
+</p>
+<h5> <span class="mw-headline" id="var_.24page_number">var $page_number</span></h5>
+<p><i>Not used yet.</i> An integer specifying the response page currently being returned. If <i>$page_total</i> is set but <i>$page_number</i> is not (or vice versa) then the response rendering function will fail.
+</p><p><br />
+</p>
+<h5> <span class="mw-headline" id="var_.24data">var $data</span></h5>
+<p><i>Optional.</i> This member will contain the line or lines of data which should follow the status line in the response. It can be a single scalar value (e.g. int or string), or an array. If it is an array, then each element becomes one line. Each line can also be a single scalar, or an array of scalars. Wherever the line is an array, each element is printed on the same line, with a field separator between them.
+</p>
+<ul><li> <i>NOTE:</i> it is imperative that you avoid data which conflicts with the line and field separators (<a href="../../../../articles/s/l/o/SLOODLE_LINE_SEPARATOR.html" title="SLOODLE LINE SEPARATOR">SLOODLE_LINE_SEPARATOR</a> and <a href="../../../../articles/s/l/o/SLOODLE_FIELD_SEPARATOR.html" title="SLOODLE FIELD SEPARATOR">SLOODLE_FIELD_SEPARATOR</a>). Currently these are the newline "\n" and pipe "|" characters respectively.
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Functions"> Functions </span></h2>
+<h3> <span class="mw-headline" id="Accessors"> Accessors </span></h3>
+<p>Each accessor function is used to set a particular value in the response. They will perform any basic error checking, and will immediately terminate the script with an error message on failure. You can set a value to NULL to remove it from the response (unless it is a required value). There are no equivalent "get" accessors.
+</p>
+<h5> <span class="mw-headline" id="set_status_code.28.24par.29">set_status_code($par)</span></h5>
+<p>Sets the value of member <i>$status_code</i>. Fails if <i>$par</i> is not an integer, or if is 0 (because 0 is an invalid status code).
+</p>
+<h5> <span class="mw-headline" id="set_status_descriptor.28.24par.29">set_status_descriptor($par)</span></h5>
+<p>Sets the value of member <i>$status_descriptor</i>. Fails if <i>$par</i> is not a string or NULL.
+</p>
+<h5> <span class="mw-headline" id="set_side_effects.28.24par.29">set_side_effects($par)</span></h5>
+<p>Sets the value of member <i>$side_effects</i>. Fails if <i>$par</i> is not an integer, an array or integers, or NULL.
+</p>
+<ul><li> <i>Note:</i> this function should not normally be used, unless you want to set the side effects codes to NULL in order to remove them from the response. Normally you should use "add_side_effect(..)" or "add_side_effects(..)".
+</li></ul>
+<h5> <span class="mw-headline" id="add_side_effects.28.24par.29">add_side_effects($par)</span></h5>
+<p>Adds one or more side effect codes to the <i>$side_effects</i> member. Parameter <i>$par</i> can be either an integer or an array of integers. Otherwise, the function fails.
+</p>
+<h5> <span class="mw-headline" id="add_side_effect.28.24par.29">add_side_effect($par)</span></h5>
+<p>Adds a single side effect to the <i>$side_effects</i> member. Parameter <i>$par</i> must be a single integer, otherwise the function will fail.
+</p>
+<h5> <span class="mw-headline" id=".3Dset_request_descriptor.28.24par.29">=set_request_descriptor($par)</span></h5>
+<p>Sets the value of member <i>$request_descriptor</i>. Fails if <i>$par</i> is not a string or NULL.
+</p>
+<h5> <span class="mw-headline" id="set_request_timestamp.28.24par.29">set_request_timestamp($par)</span></h5>
+<p>Sets the value of member <i>$request_timestamp</i>. Fails if <i>$par</i> is not an integer or NULL.
+</p>
+<h5> <span class="mw-headline" id="set_response_timestamp.28.24par.29">set_response_timestamp($par)</span></h5>
+<p>Sets the value of member <i>$response_timestamp</i>. Fails if <i>$par</i> is not an integer or NULL.
+</p>
+<h5> <span class="mw-headline" id="set_user_key.28.24par.29">set_user_key($par)</span></h5>
+<p>Sets the value of member <i>$user_key</i>. Fails if <i>$par</i> is not a string or NULL.
+</p>
+<h5> <span class="mw-headline" id="set_tracking_code.28.24par.29">set_tracking_code($par)</span></h5>
+<p>Sets the value of member <i>$tracking_code</i>. No error checking.
+</p>
+<h5> <span class="mw-headline" id="set_page_total.28.24par.29">set_page_total($par)</span></h5>
+<p>Sets the value of member <i>$page_total</i>. Fails if <i>$par</i> is not a positive or zero integer, or NULL.
+</p>
+<h5> <span class="mw-headline" id="set_page_number.28.24par.29">set_page_number($par)</span></h5>
+<p>Sets the value of member <i>$page_number</i>. Fails if <i>$par</i> is not a positive or zero integer, or NULL.
+</p><p><br />
+</p>
+<h5> <span class="mw-headline" id="set_data.28.24par.29">set_data($par)</span></h5>
+<p>Sets the value of member <i>$data</i>. Parameter <i>$par</i> can be NULL, a single scalar, or an array containing scalars and/or arrays of scalars. Otherwise, the function fails.
+</p>
+<ul><li> <i>NOTE:</i> You are advised <i>not</i> to use this function in most circumstances. It is generally preferable to use the "add_data_line(..)" member function instead (see below).
+</li></ul>
+<h5> <span class="mw-headline" id="add_data_line.28.24par.29">add_data_line($par)</span></h5>
+<p>Adds a single line of data to the <i>$data</i> member. Parameter <i>$par</i> can be a single scalar, or an array of scalars. Otherwise, the function fails.
+</p>
+<h5> <span class="mw-headline" id="clear_data.28.29">clear_data()</span></h5>
+<p>Clears all data from the response by setting the <i>$data</i> member to NULL.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Other_Functions"> Other Functions </span></h3>
+<h5> <span class="mw-headline" id="SloodleLSLResponse.28.24status_code.3DNULL.2C_.24status_descriptor.3DNULL.2C_.24data.3DNULL.29">SloodleLSLResponse($status_code=NULL, $status_descriptor=NULL, $data=NULL)</span></h5>
+<p><i>Constructor.</i> All parameters for this constructor are optional. If specified, they will be automatically stored in the object. Otherwise, the function does nothing.
+</p><p><br />
+</p>
+<h5> <span class="mw-headline" id="render_to_string.28.26.24str.29">render_to_string(&amp;$str)</span></h5>
+<p>This function takes an object reference, forces it to an empty string, and renders all of the response data to it. If any errors occur (such as invalid data), the script will terminate with an error message.
+</p>
+<h5> <span class="mw-headline" id="render_to_output.28.29">render_to_output()</span></h5>
+<p>This function will create a string, use the "render_to_string(..)" function (see above) to render the output, and then echo it to the HTTP response.
+</p>
+<h5> <span class="mw-headline" id="quick_output.28.24status_code.2C_.24status_descriptor.3DNULL.2C_.24data.3DNULL.2C_.24static.3DTRUE.29">quick_output($status_code, $status_descriptor=NULL, $data=NULL, $static=TRUE)</span></h5>
+<p>This function is designed for quick output, avoiding several accessor-calls. It call be used in two ways: statically (default), or non-statically. (This is affected by the <i>$static</i> parameter, <b>not</b> by calling method convention). If in static mode, then it creates a new response object, writes all of the specified parameters (status code etc.) to it, and immediately outputs it to the HTTP response.
+</p><p>Non-static mode will use the object as-is, write your parameters to its members, and render it to output. This is useful if you are using a <strong class="selflink">SloodleLSLResponse</strong> object in a <a href="../../../../articles/s/l/o/SloodleLSLHandler.html" title="SloodleLSLHandler">SloodleLSLHandler</a> class, in which case certain items of data may already have been written to it by the <a href="../../../../articles/s/l/o/SloodleLSLRequest.html" title="SloodleLSLRequest">SloodleLSLRequest</a> class.
+</p>
+<h5> <span class="mw-headline" id="internal_validation_error.28.24msg.29">_internal_validation_error($msg)</span></h5>
+<p>This function is used internally when a validation error has occured within the <strong class="selflink">SloodleLSLResponse</strong> class. It will output properly structured data containing the error message from parameter <i>$msg</i>. It does <i>not</i> use any class functions or data, so it can safely be called statically on the class (rather than on an instance).
+</p><p><br />
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 161/1000000
+Post‐expand include size: 557/2097152 bytes
+Template argument size: 47/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/s/l/o/Category:Sloodle_PHP_API.html" title="Category:Sloodle PHP API">Sloodle PHP API</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/l/o/SloodleLSLResponse.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:SloodleLSLResponse&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/SloodleLSLResponse">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 06:34, 6 February 2008 by SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Sloodle Developer Documents - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-Sloodle_Developer_Documents">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Sloodle Developer Documents</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Sloodle_Developer_Documentation"><span class="tocnumber">1</span> <span class="toctext">Sloodle Developer Documentation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Translation"><span class="tocnumber">1.1</span> <span class="toctext">Translation</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Testing"><span class="tocnumber">1.2</span> <span class="toctext">Testing</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Programming"><span class="tocnumber">1.3</span> <span class="toctext">Programming</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Beginners.27_Guides"><span class="tocnumber">1.3.1</span> <span class="toctext">Beginners' Guides</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Advanced_Guides"><span class="tocnumber">1.3.2</span> <span class="toctext">Advanced Guides</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Testing_2"><span class="tocnumber">1.3.3</span> <span class="toctext">Testing</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Releasing"><span class="tocnumber">1.3.4</span> <span class="toctext">Releasing</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Programming_References"><span class="tocnumber">1.3.5</span> <span class="toctext">Programming References</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Other_References"><span class="tocnumber">1.3.6</span> <span class="toctext">Other References</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#SVN"><span class="tocnumber">1.3.7</span> <span class="toctext">SVN</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#LSL_SLOODLE_API"><span class="tocnumber">1.3.8</span> <span class="toctext">LSL SLOODLE API</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Sloodle_Developer_Documentation">Sloodle Developer Documentation</span></h1>
+<p>The documentation here is designed for people who want to contribute to the Sloodle project, including programmers, scripters, testers, translators, and others. For quick browsing, you may wish to use the <a href="../../../../articles/s/l/o/Category:SloodleDevDocs.html" title="Category:SloodleDevDocs">category</a> page to view a complete list of all articles in this section. Otherwise, you may use the sections below.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Translation">Translation</span></h2>
+<p>If you want to help translate the Sloodle module, then your help is much appreciated! We are working on establishing sensible ways of having multiple languages on this wiki, which would allow you to translate the online documentation. There are also opportunities to translate the contents of the Sloodle module itself, and of the Second Life scripts/objects. Get in touch if you would like to help by posting on our forums at <a rel="nofollow" class="external text" href="http://www.sloodle.org">sloodle.org</a>.
+</p><p>The following pages will provide you with more information about translating for each part of the Sloodle project:
+</p>
+<ul><li> <a href="../../../../articles/t/r/a/Translating_on_the_Sloodle_wiki.html" title="Translating on the Sloodle wiki">Translating on the Sloodle wiki</a>
+</li><li> <a href="../../../../articles/t/r/a/Translating_the_Sloodle_module.html" title="Translating the Sloodle module">Translating the Sloodle module</a>
+</li><li> <a href="../../../../articles/t/r/a/Translating_Sloodle_objects_in_Second_Life.html" title="Translating Sloodle objects in Second Life">Translating Sloodle objects in Second Life</a>
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Testing">Testing</span></h2>
+<p>Programmers are not perfect, so we are always interested to have people testing Sloodle, especially when we have a new release. The best way to get involved as a tester is simply to install Sloodle on your own Moodle site, get the in-world objects, and try it out!
+</p><p>If you are new to Sloodle,  then the following links should help you get started:
+</p>
+<ul><li> <a href="../../../../articles/i/n/s/Installing_the_Sloodle_Module.html" title="Installing the Sloodle Module" class="mw-redirect">Installing the Sloodle Module</a>
+</li><li> <a href="../../../../articles/h/o/w/How_do_I_Get_Started_with_Sloodle.html" title="How do I Get Started with Sloodle" class="mw-redirect">How do I Get Started with Sloodle</a>
+</li><li> <a href="../../../../articles/g/e/t/Getting_help_with_Sloodle.html" title="Getting help with Sloodle">Getting help with Sloodle</a>
+</li></ul>
+<p><br />
+If you discover problems with Sloodle, then please report them! It is also important to test the solutions for problems, as it might take several attempts to properly fix something.
+</p>
+<ul><li> <a href="../../../../articles/r/e/p/Reporting_Sloodle_problems.html" title="Reporting Sloodle problems">Reporting Sloodle problems</a>
+</li></ul>
+<p><br />
+If you are a programmer, then you are welcome to help fix problems. You will need to get involved with the programming, so see the section below.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Programming">Programming</span></h2>
+<pre>New page: <a href="../../../../articles/m/a/k/Making_new_Sloodle_objects.html" title="Making new Sloodle objects" class="mw-redirect">Making new Sloodle objects</a>
+</pre>
+<h4> <span class="mw-headline" id="Beginners.27_Guides">Beginners' Guides</span></h4>
+<p>Sloodle is a community project which thrives on willing volunteers contributing their time and effort. You are very welcome to contribute as a programmer, although you will usually need some experience of the computer languages involved first. Look at these pages to find out if you are ready:
+</p>
+<ul><li> <a href="../../../../articles/w/h/a/What_do_I_need_to_be_a_Sloodle_programmer%3F.html" title="What do I need to be a Sloodle programmer?">What do I need to be a Sloodle programmer?</a>
+</li><li> <a href="../../../../articles/g/e/t/Getting_started_as_a_Sloodle_programmer.html" title="Getting started as a Sloodle programmer">Getting started as a Sloodle programmer</a>
+</li><li> <a href="../../../../articles/s/l/o/Sloodle_programming_survival_kit.html" title="Sloodle programming survival kit">Sloodle programming survival kit</a>
+</li></ul>
+<p><br />
+</p>
+<h4> <span class="mw-headline" id="Advanced_Guides">Advanced Guides</span></h4>
+<ul><li> <a href="../../../../articles/h/o/w/How_objects_get_setup_with_basic_class_configuration_information.html" title="How objects get setup with basic class configuration information">How objects get setup with basic class configuration information</a>
+</li><li> <a href="../../../../articles/m/o/o/Moodle-SL_Interactions.html" title="Moodle-SL Interactions">Moodle-SL Interactions</a> - which objects talk to which scripts?
+</li><li> <a href="../../../../articles/s/l/o/Sloodle_programming_guidelines.html" title="Sloodle programming guidelines">Sloodle programming guidelines</a> - a set of principles and conventions to follow when programming
+</li></ul>
+<ul><li> <a href="../../../../articles/s/l/o/Sloodle_Source_Code_Repository.html" title="Sloodle Source Code Repository">Sloodle Source Code Repository</a> - the layout of the Sloodle source code repository
+</li><li> <a href="../../../../articles/x/m/l/XMLRPC_in_Sloodle.html" title="XMLRPC in Sloodle">XMLRPC in Sloodle</a> - how is XMLRPC used by Sloodle?
+</li><li> <a href="../../../../articles/u/p/d/Update_Module_Page.html" title="Update Module Page">Update Module Page</a> - how to ensure settings are saved into the DB
+</li><li> <a href="../../../../articles/a/d/d/Add_Module_Page.html" title="Add Module Page">Add Module Page</a> - how to add elements to your modules setup page
+</li><li> <a href="../../../../articles/a/d/d/AddElement_attributes.html" title="AddElement attributes">addElement attributes</a> - how to add defaults to your elements, and add help files to your modules setup page
+</li></ul>
+<h4> <span class="mw-headline" id="Testing_2">Testing</span></h4>
+<p>As a programmer, you will need to test your own code, and will have the opportunity to find and fix bugs and faults. Use the following pages for more information:
+</p>
+<ul><li> <a href="../../../../articles/r/e/p/Reporting_Sloodle_problems.html" title="Reporting Sloodle problems">Reporting Sloodle problems</a>
+</li><li> <a href="http:http://localhost/sl/index.php?title=Fixing_Sloodle_problems&amp;action=edit&amp;redlink=1" class="new" title="Fixing Sloodle problems (page does not exist)">Fixing Sloodle problems</a>
+</li></ul>
+<ul><li> <a href="../../../../articles/u/n/i/Unit_tests.html" title="Unit tests">Unit tests</a> - testing the Sloodle module
+</li></ul>
+<h4> <span class="mw-headline" id="Releasing">Releasing</span></h4>
+<ul><li> <a href="../../../../articles/s/l/_/SL_Release_Checklist.html" title="SL Release Checklist">SL Release Checklist</a>
+</li></ul>
+<h4> <span class="mw-headline" id="Programming_References">Programming References</span></h4>
+<p>There is a lot involved in Sloodle programming, so the reference documentation will get fairly large. It is useful if you know where to look though:
+</p>
+<ul><li> <a href="../../../../articles/s/l/o/Sloodle_PHP_API.html" title="Sloodle PHP API">Sloodle PHP API</a> - PHP classes, functions, constants, and variables
+</li><li> <a href="../../../../articles/s/l/o/Sloodle_LSL_Library.html" title="Sloodle LSL Library">Sloodle LSL Library</a> - standard LSL scripts and snippets for Sloodle programming
+</li></ul>
+<p><br />
+</p>
+<ul><li> <a href="../../../../articles/s/l/o/Sloodle_communications_specification.html" title="Sloodle communications specification">Sloodle communications specification</a> - the way in which objects and scripts must communicate
+</li><li> <a href="../../../../articles/c/o/m/Component_Specifications.html" title="Component Specifications">Component Specifications</a> - a description of specifications, and a complete list
+</li><li> <a href="../../../../articles/c/h/a/Changing_Database_Fields.html" title="Changing Database Fields">Changing Database Fields</a> - how to make changes to the database
+</li></ul>
+<h4> <span class="mw-headline" id="Other_References">Other References</span></h4>
+<p>These pages contain other information which may be of interest to Sloodle programmers:
+</p>
+<ul><li> <a href="../../../../articles/r/o/a/Roadmap.html" title="Roadmap">Roadmap</a> - our development roadmap
+</li><li> <a href="../../../../articles/a/c/t/Action_Points.html" title="Action Points">Action Points</a> - weekly list of tasks
+</li></ul>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="SVN">SVN</span></h3>
+<p>We are currently using SVN to track and manage updates to the SLOODLE codebase.
+Generally, everything gets checked into the trunk at: <a rel="nofollow" class="external free" href="http://sloodle.googlecode.com">http://sloodle.googlecode.com</a>
+and during releases - we tag the code, which creates a copy of the current trunk specific to that release.
+If we have to add changes to a tagged version once it's been tagged, the currently tagged version is checked out , the change is commited, and then merged back into the trunk.
+</p><p>For a detailed guide on tagging - see this URL: <a rel="nofollow" class="external free" href="http://netpl.blogspot.com/2008/12/tortoise-svn-tag-merge-tutorial.html">http://netpl.blogspot.com/2008/12/tortoise-svn-tag-merge-tutorial.html</a>
+</p>
+<h3> <span class="mw-headline" id="LSL_SLOODLE_API">LSL SLOODLE API</span></h3>
+<p><a href="../../../../articles/s/l/o/SLOODLE_LSL_API.html" title="SLOODLE LSL API">SLOODLE LSL API</a>
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 52/1000000
+Post‐expand include size: 486/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../../../../articles/s/l/o/Category:Sloodle.html" title="Category:Sloodle">Sloodle</a></li><li><a href="../../../../articles/s/l/o/Category:SloodleDocs.html" title="Category:SloodleDocs">SloodleDocs</a></li><li><a href="../../../../articles/s/l/o/Category:SloodleDevDocs.html" title="Category:SloodleDevDocs">SloodleDevDocs</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/l/o/Sloodle_Developer_Documents.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:Sloodle_Developer_Documents&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/Sloodle_Developer_Documents">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 22:49, 4 August 2012 by <a href="http:http://localhost/sl/index.php?title=User:Edochan&amp;action=edit&amp;redlink=1" class="new" title="User:Edochan (page does not exist)">Edmund Edgar</a>. Based on work by <a href="http:http://localhost/sl/index.php?title=User:Fire&amp;action=edit&amp;redlink=1" class="new" title="User:Fire (page does not exist)">Paul Preibisch</a> and SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>.</li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

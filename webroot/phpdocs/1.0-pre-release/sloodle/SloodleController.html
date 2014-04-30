@@ -1,0 +1,1371 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class SloodleController</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> SloodleController</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Represents a Sloodle Controller, including data such as prim password.</p>
+		<p class="notes">
+			Located in <a class="field" href="_lib---controller.php.html">/lib/controller.php</a> (line <span class="field"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a25">25</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																								<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$cm" title="details" class="var-name">$cm</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$sloodle_controller_instance" title="details" class="var-name">$sloodle_controller_instance</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$sloodle_module_instance" title="details" class="var-name">$sloodle_module_instance</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																							
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">SloodleController</span>
+										<a href="#SloodleController" title="details" class="method-name">SloodleController</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#authorise_object" title="details" class="method-name">authorise_object</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#check_authorisation" title="details" class="method-name">check_authorisation</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#configure_object_from_layout_entry" title="details" class="method-name">configure_object_from_layout_entry</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$authid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$layout_entry_id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#configure_object_from_parent" title="details" class="method-name">configure_object_from_parent</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$authid</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$parent_object</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#disable" title="details" class="method-name">disable</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#enable" title="details" class="method-name">enable</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed|bool</span>
+										<a href="#get_authorizing_user" title="details" class="method-name">get_authorizing_user</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$uuid</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#get_controller_id" title="details" class="method-name">get_controller_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#get_course_id" title="details" class="method-name">get_course_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#get_creation_time" title="details" class="method-name">get_creation_time</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#get_id" title="details" class="method-name">get_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_intro" title="details" class="method-name">get_intro</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#get_modification_time" title="details" class="method-name">get_modification_time</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_name" title="details" class="method-name">get_name</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../sloodle/SloodleActiveObject.html">SloodleActiveObject</a>|bool</span>
+										<a href="#get_object" title="details" class="method-name">get_object</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#get_object_configuration" title="details" class="method-name">get_object_configuration</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_password" title="details" class="method-name">get_password</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_available" title="details" class="method-name">is_available</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_enabled" title="details" class="method-name">is_enabled</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_loaded" title="details" class="method-name">is_loaded</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#load" title="details" class="method-name">load</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#ping_object" title="details" class="method-name">ping_object</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int|bool</span>
+										<a href="#register_object" title="details" class="method-name">register_object</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">''</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int|bool</span>
+										<a href="#register_unauth_object" title="details" class="method-name">register_unauth_object</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">''</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#remove_object" title="details" class="method-name">remove_object</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_intro" title="details" class="method-name">set_intro</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$intro</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_name" title="details" class="method-name">set_name</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#set_password" title="details" class="method-name">set_password</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#update_object_type" title="details" class="method-name">update_object_type</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#write" title="details" class="method-name">write</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$cm" id="$cm"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$cm</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a35">35</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internal for Moodle only - course module instance.</p>
+<p class="description"><p>Corresponds to one record from the Moodle 'course_modules' table.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$sloodle_controller_instance" id="$sloodle_controller_instance"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$sloodle_controller_instance</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a51">51</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internal only - Sloodle Controller instance database object.</p>
+<p class="description"><p>Corresponds to one record from the Moodle 'sloodle_controller' table.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$sloodle_module_instance" id="$sloodle_module_instance"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$sloodle_module_instance</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a43">43</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internal only - Sloodle module instance database object.</p>
+<p class="description"><p>Corresponds to one record from the Moodle 'sloodle' table.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodSloodleController" id="SloodleController"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor SloodleController</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a59">59</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+	
+	<div class="method-signature">
+		<span class="method-result">SloodleController</span>
+		<span class="method-name">
+			SloodleController
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodauthorise_object" id="authorise_object"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">authorise_object</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a460">460</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Authorises an otherwise unauthorised active object against the given user and the current controller.</p>
+<p class="description"><p>(NOTE: the object must previously have been registered using <a href="../sloodle/SloodleController.html#methodregister_object">register_object()</a>).  <strong>Must not be called statically.</strong></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false if not</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			authorise_object
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: The UUID of the object being updated</span>			</li>
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">$user</span><span class="var-description">: The user to authorise the object against</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: (Optional). Specifies the type to store for this object. Ignored if null.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheck_authorisation" id="check_authorisation"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">check_authorisation</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a480">480</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if the specified object is authorised for this controller with the given password.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if object is authorised, or false if not</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			check_authorisation
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: The UUID of the object to check</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: The password to check</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodconfigure_object_from_layout_entry" id="configure_object_from_layout_entry"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">configure_object_from_layout_entry</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a338">338</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Configures a registered object based on the defaults for its layout entry id</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			configure_object_from_layout_entry
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$authid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$layout_entry_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$authid</span><span class="var-description">: The ID of the object as registered by register_object in the active_objects table</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$layout_entry_id</span><span class="var-description">: The ID of the layout entry corresponding to this object  NB The reverse of this process, where we create a layout entry config based on the active object,  ...is in the SloodleLayoutEntry class.  TODO: Would this be better there?</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodconfigure_object_from_parent" id="configure_object_from_parent"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">configure_object_from_parent</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a355">355</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			configure_object_from_parent
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$authid</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$parent_object</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$authid</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$parent_object</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddisable" id="disable"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">disable</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a251">251</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Disables this controller</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			disable
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodenable" id="enable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">enable</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a242">242</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enables this controller</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			enable
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_authorizing_user" id="get_authorizing_user"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_authorizing_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a502">502</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the ID of the user who authorised the specified object.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns the user ID if successful, or FALSE if not</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed|bool</span>
+		<span class="method-name">
+			get_authorizing_user
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$uuid</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uuid</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_controller_id" id="get_controller_id"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_controller_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a148">148</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the identifier for controller (unique among all Sloodle controlers - may be the same as <a href="../sloodle/SloodlePluginBase.html#methodget_id">get_id()</a> in some environments</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Identifier. Type is dependent on VLE. On Moodle, it is an integer relating to the 'id' field of the 'sloodle_controller' table</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			get_controller_id
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_course_id" id="get_course_id"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_course_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a195">195</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the identifier of the course this controller belongs to.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Course identifier. Type depends on VLE. (In Moodle, it will be an integer).</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			get_course_id
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_creation_time" id="get_creation_time"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_creation_time</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a204">204</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the time at which this controller was created.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Timestamp</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			get_creation_time
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_id" id="get_id"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a139">139</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the site-wide unique identifier for this module.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Identifier. Type is dependent on VLE. On Moodle, it is an integer course module identifier.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			get_id
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_intro" id="get_intro"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_intro</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a176">176</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the intro description of this controller.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The intro description of this controller</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_intro
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_modification_time" id="get_modification_time"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_modification_time</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a213">213</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the time at which this controller was last modified.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Timestamp</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			get_modification_time
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_name" id="get_name"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_name</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a157">157</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the name of this controller.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The name of this controller</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_name
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_object" id="get_object"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_object</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a533">533</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets data about an active object.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns false on failure</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../sloodle/SloodleActiveObject.html">SloodleActiveObject</a>|bool</span>
+		<span class="method-name">
+			get_object
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: If an integer, it is the ID of an active object. If it is a string it is the object's UUID.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_object_configuration" id="get_object_configuration"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_object_configuration</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a568">568</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets an array of object configuration settings.</p>
+<p class="description"><p>(Can be called statically).</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Associative array of setting names to values. (Returns an empty array if unsuccessful.)</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			get_object_configuration
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: If an integer, it is the ID of an active object. If it is a string it is the object's UUID.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_password" id="get_password"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_password</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a260">260</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the prim password of this controller.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current prim password.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_password
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_available" id="is_available"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_available</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a223">223</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not this controller is available (i.e. not hidden).</p>
+<p class="description"><p>Note: this is separate from being enabled or disabled.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the controller is available.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_available
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_enabled" id="is_enabled"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_enabled</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a233">233</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines if this controller is enabled or not.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the controller is enabled, or false otherwise.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_enabled
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_loaded" id="is_loaded"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_loaded</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a129">129</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not this controller is loaded.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_loaded
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodload" id="load"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">load</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a70">70</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loads data from the database.</p>
+<p class="description"><p>Note: even if the function fails, it may still have overwritten some or all existing data in the object.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			load
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: The site-wide unique identifier for all modules. Type depends on VLE. On Moodle, it is an integer course module identifier ('id' field of 'course_modules' table)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodping_object" id="ping_object"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">ping_object</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a595">595</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updates the last active timer on an object.</p>
+<p class="description"><p>(Cannot be called statically... object must be authorised for this controller).</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false if not.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			ping_object
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: If an integer, it is the ID of an active object. If it is a string it is the object's UUID.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodregister_object" id="register_object"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">register_object</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a291">291</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Registers a new active object (or renew an existing authorisation) with this controller.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The new authorisation ID if successful, or false if not</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int|bool</span>
+		<span class="method-name">
+			register_object
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">''</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: The UUID of the object to be registered</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: Name of the object to be registered</span>			</li>
+					<li>
+				<span class="var-type"><a href="../sloodle/SloodleUser.html">SloodleUser</a></span>
+				<span class="var-name">$user</span><span class="var-description">: The user who is authorising the object</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: The password for the object</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: Type identifier of the object to be registered</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$timestamp</span><span class="var-description">: The timestamp of the object's registration, or null to use the current time.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodregister_unauth_object" id="register_unauth_object"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">register_unauth_object</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a397">397</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Registers a new unauthorised object.</p>
+<p class="description"><p>(Can be called statically).  Creates a new active object entry, not linked to any user or controller.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The integer ID of the active object entry, or false if not</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int|bool</span>
+		<span class="method-name">
+			register_unauth_object
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">''</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: The UUID of the object to be registered</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: Name of the object to be registered</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: The password for the object</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: Type identifier of the object to be registered</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$timestamp</span><span class="var-description">: The timestamp of the object's registration, or null to use the current time.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremove_object" id="remove_object"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">remove_object</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a516">516</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes an active object and all its related items.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			remove_object
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: If it is an integer, then it is treated as the active object ID. If a string, it is treated as the object UUID.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_intro" id="set_intro"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_intro</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a186">186</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the intro description of this controller.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_intro
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$intro</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$intro</span><span class="var-description">: The new intro for this controller - ignored if empty</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_name" id="set_name"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_name</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a167">167</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the name of this controller.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_name
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The new name for this controller - ignored if empty</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_password" id="set_password"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_password</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a271">271</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the prim password of this controller.</p>
+<p class="description"><p>Also checks for validity before storing.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successfully stored, or false if the password is invalid</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			set_password
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: The new prim password</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdate_object_type" id="update_object_type"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">update_object_type</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a439">439</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updates the type of a given active object to the specified type.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false if not</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			update_object_type
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: The UUID of the object being updated</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: Name of the new type identifier</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodwrite" id="write"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">write</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libcontroller.php.html#a108">108</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updates the currently loaded entry in the database.</p>
+<p class="description"><p>Note: the data *must* have been previously loaded using load_from_db().  This function cannot be used to create new entries.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			write
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 17 Jul 2009 11:01:07 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

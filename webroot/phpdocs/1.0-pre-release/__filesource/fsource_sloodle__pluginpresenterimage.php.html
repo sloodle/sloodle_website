@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for image.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file image.php</h1>
+<p>Documentation is available at <a href="../sloodle/_plugin---presenter---image.php.html">image.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-comm">//&nbsp;This&nbsp;file&nbsp;is&nbsp;part&nbsp;of&nbsp;the&nbsp;Sloodle&nbsp;project&nbsp;(www.sloodle.org)&nbsp;and&nbsp;is&nbsp;released&nbsp;under&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;v3.</span></div></li>
+<li><div class="src-line"><a name="a3"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">*&nbsp;Defines&nbsp;the&nbsp;SLOODLE&nbsp;Presenter&nbsp;plugin&nbsp;for&nbsp;showing&nbsp;image&nbsp;slides.</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">*</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;sloodle</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@copyright</span><span class="src-doc">&nbsp;Copyright&nbsp;(c)&nbsp;2009&nbsp;Sloodle&nbsp;(various&nbsp;contributors)</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@license</span><span class="src-doc">&nbsp;http://www.gnu.org/licenses/gpl-3.0.html&nbsp;GNU&nbsp;GPL&nbsp;v3</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@since</span><span class="src-doc">&nbsp;Sloodle&nbsp;0.4.1</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">*</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-tag">@contributor</span><span class="src-doc">&nbsp;Peter&nbsp;R.&nbsp;Bloomfield</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">*</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">*/</span></div></li>
+<li><div class="src-line"><a name="a15"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-doc">*&nbsp;Presenter&nbsp;plugin&nbsp;for&nbsp;showing&nbsp;image&nbsp;slides.</span></div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-doc">*</span></div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-doc">*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;sloodle</span></div></li>
+<li><div class="src-line"><a name="a21"></a><span class="src-doc">*/</span></div></li>
+<li><div class="src-line"><a name="a22"></a><span class="src-key">class&nbsp;</span><a href="../sloodle/SloodlePluginPresenterSlideImage.html">SloodlePluginPresenterSlideImage</a>&nbsp;<span class="src-key">extends&nbsp;</span><a href="../sloodle/SloodlePluginBasePresenterSlide.html">SloodlePluginBasePresenterSlide</a></div></li>
+<li><div class="src-line"><a name="a23"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a26"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Construct&nbsp;an&nbsp;absolute&nbsp;URL,&nbsp;based&nbsp;on&nbsp;the&nbsp;given&nbsp;source&nbsp;data.</span></div></li>
+<li><div class="src-line"><a name="a27"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Leaves&nbsp;existing&nbsp;absolute&nbsp;URLs&nbsp;alone,&nbsp;but&nbsp;converts&nbsp;relative&nbsp;URLs&nbsp;as&nbsp;necessary.</span></div></li>
+<li><div class="src-line"><a name="a28"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;(This&nbsp;allows&nbsp;the&nbsp;site&nbsp;to&nbsp;be&nbsp;moved&nbsp;without&nbsp;disrupting&nbsp;these&nbsp;slides.)</span></div></li>
+<li><div class="src-line"><a name="a29"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$source&nbsp;</span><span class="src-doc">The&nbsp;source&nbsp;data&nbsp;from&nbsp;the&nbsp;slide.</span></div></li>
+<li><div class="src-line"><a name="a30"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc">An&nbsp;absolute&nbsp;URL.</span></div></li>
+<li><div class="src-line"><a name="a31"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/SloodlePluginPresenterSlideImage.html#methodget_absolute_url">get_absolute_url</a><span class="src-sym">(</span><span class="src-var">$source</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">global&nbsp;</span><span class="src-var">$CFG</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;If&nbsp;we&nbsp;have&nbsp;a&nbsp;protocol&nbsp;specifier,&nbsp;then&nbsp;assume&nbsp;this&nbsp;is&nbsp;already&nbsp;an&nbsp;absolute&nbsp;URL</span></div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><a href="http://www.php.net/strpos">strpos</a><span class="src-sym">(</span><span class="src-var">$source</span><span class="src-sym">,&nbsp;</span><span class="src-str">'://'</span><span class="src-sym">)&nbsp;</span>!==&nbsp;<span class="src-id">false</span><span class="src-sym">)&nbsp;</span><span class="src-key">return&nbsp;</span><span class="src-var">$source</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Assume&nbsp;the&nbsp;source&nbsp;URL&nbsp;is&nbsp;relative&nbsp;to&nbsp;the&nbsp;Moodle&nbsp;WWW&nbsp;root.</span></div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Make&nbsp;sure&nbsp;we&nbsp;don't&nbsp;duplicate&nbsp;a&nbsp;forward&nbsp;slash.</span></div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><a href="http://www.php.net/strpos">strpos</a><span class="src-sym">(</span><span class="src-var">$source</span><span class="src-sym">,&nbsp;</span><span class="src-str">'/'</span><span class="src-sym">)&nbsp;</span>===&nbsp;<span class="src-num">0</span><span class="src-sym">)&nbsp;</span><span class="src-key">return&nbsp;</span><span class="src-var">$CFG</span><span class="src-sym">-&gt;</span><span class="src-id">wwwroot</span>.<span class="src-var">$source</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$CFG</span><span class="src-sym">-&gt;</span><span class="src-id">wwwroot</span>.<span class="src-str">'/'</span>.<span class="src-var">$source</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a44"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Render&nbsp;the&nbsp;given&nbsp;slide&nbsp;for&nbsp;browser&nbsp;output&nbsp;--&nbsp;NOTE:&nbsp;render&nbsp;to&nbsp;a&nbsp;string,&nbsp;and&nbsp;return&nbsp;the&nbsp;string.</span></div></li>
+<li><div class="src-line"><a name="a45"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;title&nbsp;of&nbsp;the&nbsp;slide&nbsp;need&nbsp;not&nbsp;be&nbsp;included&nbsp;--&nbsp;simply&nbsp;the&nbsp;basic&nbsp;iFrame&nbsp;or&nbsp;embedded&nbsp;player&nbsp;etc.</span></div></li>
+<li><div class="src-line"><a name="a46"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">SloodlePresenterSlide&nbsp;</span><span class="src-doc-var">$slide&nbsp;</span><span class="src-doc">An&nbsp;object&nbsp;containing&nbsp;the&nbsp;raw&nbsp;slide&nbsp;data.</span></div></li>
+<li><div class="src-line"><a name="a47"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">string&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a48"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/SloodlePluginPresenterSlideImage.html#methodrender_slide_for_browser">render_slide_for_browser</a><span class="src-sym">(</span><span class="src-var">$slide</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$url&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../sloodle/SloodlePluginPresenterSlideImage.html#methodget_absolute_url">get_absolute_url</a><span class="src-sym">(</span><span class="src-var">$slide</span><span class="src-sym">-&gt;</span><span class="src-id">source</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$output&nbsp;</span>=&nbsp;<span class="src-str">&quot;</span><span class="src-str">&lt;img&nbsp;src=\&quot;{<span class="src-var">$url</span><span class="src-sym">}</span>\&quot;&nbsp;alt=\&quot;{<span class="src-var">$slide</span></span><span class="src-sym">-&gt;</span><span class="src-id">name</span><span class="src-str"></span><span class="src-sym">}</span>\&quot;&nbsp;/&gt;</span><span class="src-str">&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$output</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a57"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Render&nbsp;the&nbsp;given&nbsp;slide&nbsp;for&nbsp;virtual-world&nbsp;output.</span></div></li>
+<li><div class="src-line"><a name="a58"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;returns&nbsp;two&nbsp;items&nbsp;of&nbsp;data&nbsp;in&nbsp;a&nbsp;numeric&nbsp;array.</span></div></li>
+<li><div class="src-line"><a name="a59"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;first&nbsp;is&nbsp;the&nbsp;virtual&nbsp;world&nbsp;compatible&nbsp;type&nbsp;identifier:&nbsp;web,&nbsp;image,&nbsp;video,&nbsp;or&nbsp;audio&nbsp;(or&nbsp;a&nbsp;mime&nbsp;type).</span></div></li>
+<li><div class="src-line"><a name="a60"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;second&nbsp;is&nbsp;the&nbsp;absolute&nbsp;URL&nbsp;to&nbsp;give&nbsp;it.</span></div></li>
+<li><div class="src-line"><a name="a61"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">SloodlePresenterSlide&nbsp;</span><span class="src-doc-var">$slide&nbsp;</span><span class="src-doc">An&nbsp;object&nbsp;containing&nbsp;the&nbsp;raw&nbsp;slide&nbsp;data.</span></div></li>
+<li><div class="src-line"><a name="a62"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">array&nbsp;</span><span class="src-doc">Numeric&nbsp;array&nbsp;containg&nbsp;(type,&nbsp;url)</span></div></li>
+<li><div class="src-line"><a name="a63"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/SloodlePluginPresenterSlideImage.html#methodrender_slide_for_sl">render_slide_for_sl</a><span class="src-sym">(</span><span class="src-var">$slide</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'image/*'</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../sloodle/SloodlePluginPresenterSlideImage.html#methodget_absolute_url">get_absolute_url</a><span class="src-sym">(</span><span class="src-var">$slide</span><span class="src-sym">-&gt;</span><span class="src-id">source</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a68"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a70"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Gets&nbsp;the&nbsp;human-readable&nbsp;name&nbsp;of&nbsp;this&nbsp;plugin.</span></div></li>
+<li><div class="src-line"><a name="a71"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;MUST&nbsp;be&nbsp;overridden&nbsp;by&nbsp;base&nbsp;classes.&nbsp;If&nbsp;not,&nbsp;it&nbsp;will&nbsp;just&nbsp;return&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;class.</span></div></li>
+<li><div class="src-line"><a name="a72"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$lang&nbsp;</span><span class="src-doc">Optional&nbsp;--&nbsp;can&nbsp;specify&nbsp;the&nbsp;language&nbsp;we&nbsp;want&nbsp;the&nbsp;plugin&nbsp;name&nbsp;in,&nbsp;as&nbsp;an&nbsp;identifier&nbsp;like&nbsp;&quot;en_utf8&quot;.&nbsp;If&nbsp;unspecified,&nbsp;then&nbsp;the&nbsp;current&nbsp;Moodle&nbsp;language&nbsp;should&nbsp;be&nbsp;used.</span></div></li>
+<li><div class="src-line"><a name="a73"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@access</span><span class="src-doc">&nbsp;public</span></div></li>
+<li><div class="src-line"><a name="a74"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc">The&nbsp;human-readable&nbsp;name&nbsp;of&nbsp;this&nbsp;plugin</span></div></li>
+<li><div class="src-line"><a name="a75"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/SloodlePluginPresenterSlideImage.html#methodget_plugin_name">get_plugin_name</a><span class="src-sym">(</span><span class="src-var">$lang&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-str">'Image'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a82"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Gets&nbsp;the&nbsp;internal&nbsp;version&nbsp;number&nbsp;of&nbsp;this&nbsp;plugin.</span></div></li>
+<li><div class="src-line"><a name="a83"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;MUST&nbsp;be&nbsp;overridden.</span></div></li>
+<li><div class="src-line"><a name="a84"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;should&nbsp;be&nbsp;a&nbsp;number&nbsp;like&nbsp;the&nbsp;internal&nbsp;version&nbsp;number&nbsp;for&nbsp;Moodle&nbsp;modules,&nbsp;containing&nbsp;the&nbsp;date&nbsp;and&nbsp;release&nbsp;number.</span></div></li>
+<li><div class="src-line"><a name="a85"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Format&nbsp;is:&nbsp;YYYYMMDD##.</span></div></li>
+<li><div class="src-line"><a name="a86"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;For&nbsp;example,&nbsp;&quot;2009012302&quot;&nbsp;would&nbsp;be&nbsp;the&nbsp;3rd&nbsp;release&nbsp;on&nbsp;the&nbsp;23rd&nbsp;January&nbsp;2009.</span></div></li>
+<li><div class="src-line"><a name="a87"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">int&nbsp;</span><span class="src-doc">The&nbsp;version&nbsp;number&nbsp;of&nbsp;this&nbsp;module.</span></div></li>
+<li><div class="src-line"><a name="a88"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a89"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/SloodlePluginPresenterSlideImage.html#methodget_version">get_version</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a90"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a91"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-num">2009050600</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a92"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a93"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a94"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a95"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a96"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a97"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a98"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 17 Jul 2009 11:01:22 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</body>
+</html>

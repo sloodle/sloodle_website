@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>SloodleLSLRequest - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-SloodleLSLRequest">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">SloodleLSLRequest</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Declaration"><span class="tocnumber">1</span> <span class="toctext">Declaration</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Summary"><span class="tocnumber">2</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Compatibility"><span class="tocnumber">3</span> <span class="toctext">Compatibility</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Data"><span class="tocnumber">4</span> <span class="toctext">Data</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Status_Data"><span class="tocnumber">4.1</span> <span class="toctext">Status Data</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#var_.24request_data_processed"><span class="tocnumber">4.1.1</span> <span class="toctext">var $request_data_processed</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#var_.24auth_status"><span class="tocnumber">4.1.2</span> <span class="toctext">var $auth_status</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Request_Data"><span class="tocnumber">4.2</span> <span class="toctext">Request Data</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#var_.24password"><span class="tocnumber">4.2.1</span> <span class="toctext">var $password</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#var_.24login_zone_pos"><span class="tocnumber">4.2.2</span> <span class="toctext">var $login_zone_pos</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#var_.24course_id"><span class="tocnumber">4.2.3</span> <span class="toctext">var $course_id</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#var_.24module_id"><span class="tocnumber">4.2.4</span> <span class="toctext">var $module_id</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#var_.24avatar_uuid"><span class="tocnumber">4.2.5</span> <span class="toctext">var $avatar_uuid</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#var_.24avatar_name"><span class="tocnumber">4.2.6</span> <span class="toctext">var $avatar_name</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#var_.24login_security_token"><span class="tocnumber">4.2.7</span> <span class="toctext">var $login_security_token</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="#Utility_Objects"><span class="tocnumber">4.3</span> <span class="toctext">Utility Objects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#var_.24response"><span class="tocnumber">4.3.1</span> <span class="toctext">var $response</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#var_.24user"><span class="tocnumber">4.3.2</span> <span class="toctext">var $user</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Functions"><span class="tocnumber">5</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#Passive_Accessors"><span class="tocnumber">5.1</span> <span class="toctext">Passive Accessors</span></a>
+<ul>
+<li class="toclevel-3 tocsection-21"><a href="#is_request_data_processed.28.29"><span class="tocnumber">5.1.1</span> <span class="toctext">is_request_data_processed()</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#get_auth_status.28.29"><span class="tocnumber">5.1.2</span> <span class="toctext">get_auth_status()</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#is_authenticated.28.29"><span class="tocnumber">5.1.3</span> <span class="toctext">is_authenticated()</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#is_auth_failed.28.29"><span class="tocnumber">5.1.4</span> <span class="toctext">is_auth_failed()</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#set_response.28.24response.29"><span class="tocnumber">5.1.5</span> <span class="toctext">set_response($response)</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#set_user.28.24user.29"><span class="tocnumber">5.1.6</span> <span class="toctext">set_user($user)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="#Active_Accessors"><span class="tocnumber">5.2</span> <span class="toctext">Active Accessors</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="#get_password.28.29"><span class="tocnumber">5.2.1</span> <span class="toctext">get_password()</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#get_course_id.28.29"><span class="tocnumber">5.2.2</span> <span class="toctext">get_course_id()</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#get_module_id.28.29"><span class="tocnumber">5.2.3</span> <span class="toctext">get_module_id()</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#get_avatar_uuid.28.29"><span class="tocnumber">5.2.4</span> <span class="toctext">get_avatar_uuid()</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#get_avatar_name.28.29"><span class="tocnumber">5.2.5</span> <span class="toctext">get_avatar_name()</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#get_login_security_token.28.29"><span class="tocnumber">5.2.6</span> <span class="toctext">get_login_security_token()</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#get_response.28.29"><span class="tocnumber">5.2.7</span> <span class="toctext">get_response()</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#get_user.28.29"><span class="tocnumber">5.2.8</span> <span class="toctext">get_user()</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-36"><a href="#Construction"><span class="tocnumber">5.3</span> <span class="toctext">Construction</span></a>
+<ul>
+<li class="toclevel-3 tocsection-37"><a href="#SloodleLSLRequest.28.26.24response.2C_.26.24user.29"><span class="tocnumber">5.3.1</span> <span class="toctext">SloodleLSLRequest(&amp;$response, &amp;$user)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-38"><a href="#Other_Functions"><span class="tocnumber">5.4</span> <span class="toctext">Other Functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-39"><a href="#process_request_data.28.24force_.3D_FALSE.29"><span class="tocnumber">5.4.1</span> <span class="toctext">process_request_data($force = FALSE)</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#authenticate_request.28.24require_.3D_TRUE.29"><span class="tocnumber">5.4.2</span> <span class="toctext">authenticate_request($require = TRUE)</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="#get_course_record.28.24require_.3D_TRUE.29"><span class="tocnumber">5.4.3</span> <span class="toctext">get_course_record($require = TRUE)</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="#get_course_module_instance.28.24type_.3D_.27.27.2C_.24require_.3D_TRUE.29"><span class="tocnumber">5.4.4</span> <span class="toctext">get_course_module_instance($type = '', $require = TRUE)</span></a></li>
+<li class="toclevel-3 tocsection-43"><a href="#required_param.28.24parname.2C_.24type.3DPARAM_RAW.29"><span class="tocnumber">5.4.5</span> <span class="toctext">required_param($parname, $type=PARAM_RAW)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Declaration"> Declaration </span></h2>
+<p><font size="5"><code>class SloodleLSLRequest</code></font><br />
+Defined in: <a href="../../../../articles/f/i/l/File:File.gif.html" class="image"><img alt="File.gif" src="../../../../images/a/2F/a/a/af/File.gif" width="16" height="16" /></a>  <a href="../../../../articles/l/i/b/Fileref:lib/sl_iolib.php.html" title="Fileref:lib/sl iolib.php">lib/sl_iolib.php</a> <br />
+Contained by: <a href="../../../../articles/s/l/o/SloodleLSLHandler.html" title="SloodleLSLHandler">SloodleLSLHandler</a><br />
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Summary"> Summary </span></h2>
+<p>This PHP class is created to simplify and automated much of the handling of HTTP requests from LSL scripts. With a single function call, it will fetch and store all of the standard Sloodle parameters, and perform basic functionality. It will also manipulate a <a href="../../../../articles/s/l/o/SloodleUser.html" title="SloodleUser">SloodleUser</a> object and a <a href="../../../../articles/s/l/o/SloodleLSLResponse.html" title="SloodleLSLResponse">SloodleLSLResponse</a> object to reflect the input data (both of these objects can be provided in the constructor, which is handled automatically by the <a href="../../../../articles/s/l/o/SloodleLSLHandler.html" title="SloodleLSLHandler">SloodleLSLHandler</a> class).
+</p><p>Additional functions allow further processing on the input data, as well as the ability to fetch custom parameters. It is also capable of terminating the script and automatically outputting an error message if an error occurs.
+</p>
+<div class="center"><div class="floatnone"><a href="../../../../articles/s/l/o/File:Sloodle_api_uml_highlight_request.jpg.html" class="image"><img alt="Sloodle api uml highlight request.jpg" src="../../../../images/f/2F/f/f/f8/Sloodle_api_uml_highlight_request.jpg" width="798" height="277" /></a></div></div>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Compatibility"> Compatibility </span></h2>
+<p>This class conforms to PHP4 syntax, and so scope visibility qualifiers (public, private, protected) are not available. All of the data should be considered <b>private</b>, with access via appropriate accessor functions.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Data"> Data </span></h2>
+<p>All data should be considered <b>private</b>.
+</p>
+<h3> <span class="mw-headline" id="Status_Data"> Status Data </span></h3>
+<p>These data members represent general status information about the request.
+</p>
+<h5> <span class="mw-headline" id="var_.24request_data_processed">var $request_data_processed</span></h5>
+<p>This member will always be a boolean, initially FALSE, indicating whether or not the request data has been processed yet. Use the "process_request_data(..)" function to process the data.
+</p>
+<h5> <span class="mw-headline" id="var_.24auth_status">var $auth_status</span></h5>
+<p>This member indicates the status of authentication of the request (i.e. the success or failure of the password). It will take on one of the following values: <a href="../../../../articles/s/l/o/SLOODLE_AUTH_UNKNOWN.html" title="SLOODLE AUTH UNKNOWN">SLOODLE_AUTH_UNKNOWN</a> (default), <a href="../../../../articles/s/l/o/SLOODLE_AUTH_OK.html" title="SLOODLE AUTH OK">SLOODLE_AUTH_OK</a>, or <a href="../../../../articles/s/l/o/SLOODLE_AUTH_FAILED.html" title="SLOODLE AUTH FAILED">SLOODLE_AUTH_FAILED</a>. These represent "authentication not attempted, "authentication succeeded", and "authentication failed" respectively.
+</p><p>You can check authentication by calling the "authenticate_request()" member function.
+</p>
+<h3> <span class="mw-headline" id="Request_Data"> Request Data </span></h3>
+<p>These data members represent data which has been passed-in via HTTP parameter. If a value is NULL (default) and the request data <i>has</i> been processed, then that value was not specified in the request.
+</p>
+<h5> <span class="mw-headline" id="var_.24password">var $password</span></h5>
+<p>The security password provided by an object in the "<i>sloodlepwd</i>" parameter. This can either be the site-wide <a href="../../../../articles/p/r/i/Prim_Password.html" title="Prim Password">Prim Password</a>, or an object-specific session key (if using <a href="../../../../articles/o/b/j/Object_Authorization.html" title="Object Authorization">Object Authorization</a>).
+</p>
+<h5> <span class="mw-headline" id="var_.24login_zone_pos">var $login_zone_pos</span></h5>
+<p>Contains an array vector {x,y,z} giving the position of a LoginZone, as reported in HTTP parameter "<i>sloodleloginzonepos</i>".
+</p>
+<h5> <span class="mw-headline" id="var_.24course_id">var $course_id</span></h5>
+<p>Integer identifying a Moodle course, as specified in HTTP parameter "<i>sloodlecourseid</i>".
+</p>
+<h5> <span class="mw-headline" id="var_.24module_id">var $module_id</span></h5>
+<p>Integer identifying a Moodle course module instance, as specified in HTTP parameter "<i>sloodlemoduleid</i>".
+</p>
+<h5> <span class="mw-headline" id="var_.24avatar_uuid">var $avatar_uuid</span></h5>
+<p>A string containing the UUID of an SL avatar, as specified in HTTP parameter "<i>sloodleuuid</i>". When processing takes place, this value is automatically passed-on to the <i>$response</i> object.
+</p>
+<h5> <span class="mw-headline" id="var_.24avatar_name">var $avatar_name</span></h5>
+<p>A string containing the name of an SL avatar, as specified in HTTP parameter "<i>sloodleavname</i>". Note that this is the full name separated by a space -- i.e. "firstname lastname".
+</p>
+<h5> <span class="mw-headline" id="var_.24login_security_token">var $login_security_token</span></h5>
+<p>A string containing the login security token for the user registration attempt, as given in HTTP parameter "<i>sloodlelst</i>".
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Utility_Objects"> Utility Objects </span></h3>
+<p>These members are references to other objects which are used/manipulated by this object. They may be passed-in from outside, either via the constructor or via accessor. However, if none are passed-in, then the class creates them itself. (Note: the <a href="../../../../articles/s/l/o/SloodleLSLHandler.html" title="SloodleLSLHandler">SloodleLSLHandler</a> class automatically provides its own objects for this purpose).
+</p>
+<h5> <span class="mw-headline" id="var_.24response">var $response</span></h5>
+<p>Reference to a <a href="../../../../articles/s/l/o/SloodleLSLResponse.html" title="SloodleLSLResponse">SloodleLSLResponse</a> object, to which appropriate response data is automatically written during request processing. Additionally, this object is used for output purposes if an error occurs.
+</p>
+<h5> <span class="mw-headline" id="var_.24user">var $user</span></h5>
+<p>References to a <a href="../../../../articles/s/l/o/SloodleUser.html" title="SloodleUser">SloodleUser</a> object, to which appropriate user data is automatically written during request processing. If an avatar is identified in the request data, then their Sloodle user data is fetched (if it exists). Additionally, if it is linked to a Moodle account, then that data is fetched as well.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Functions"> Functions </span></h2>
+<h3> <span class="mw-headline" id="Passive_Accessors"> Passive Accessors </span></h3>
+<p>These functions are used to get/set data which is otherwise private. No other processing is done in these functions.
+</p>
+<h5> <span class="mw-headline" id="is_request_data_processed.28.29">is_request_data_processed()</span></h5>
+<p>Returns the value of member <i>$request_data_processed</i>, indicating whether or not basic request processing has already been done.
+</p>
+<h5> <span class="mw-headline" id="get_auth_status.28.29">get_auth_status()</span></h5>
+<p>Returns the value of member <i>$auth_status</i>, indicating if request authentication has been attempted, and whether or not it was successful.
+</p>
+<h5> <span class="mw-headline" id="is_authenticated.28.29">is_authenticated()</span></h5>
+<p>Returns TRUE if the request has been authenticated, or FALSE if it has not been attempted, or if authentication failed.
+</p>
+<h5> <span class="mw-headline" id="is_auth_failed.28.29">is_auth_failed()</span></h5>
+<p>Returns TRUE if request authentication has failed, or FALSE if it succeeded or has not yet been attampted.
+</p>
+<h5> <span class="mw-headline" id="set_response.28.24response.29">set_response($response)</span></h5>
+<p>Provides a reference to a <a href="../../../../articles/s/l/o/SloodleLSLResponse.html" title="SloodleLSLResponse">SloodleLSLResponse</a> object which is to be stored in the <i>$response</i> member.
+</p>
+<ul><li> <i>Note:</i> if you are providing a custom response object, it is advisable to provide it in the constructor, or immediately thereafter.
+</li></ul>
+<h5> <span class="mw-headline" id="set_user.28.24user.29">set_user($user)</span></h5>
+<p>Provides a reference to a <a href="../../../../articles/s/l/o/SloodleUser.html" title="SloodleUser">SloodleUser</a> object which is to be stored in the <i>$user</i> member.
+</p>
+<ul><li> <i>Note:</i> if you are providing a custom user object, it is advisable to provide it in the constructor, or immediately thereafter.
+</li></ul>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="Active_Accessors"> Active Accessors </span></h3>
+<p>These functions provide access to the request data, but will first make sure the request data has been processed. (Note: if the request data <i>has</i> already been processed, then it is not done again). Remember that each function may return NULL if the appropriate parameter was not specified in the request.
+</p>
+<h5> <span class="mw-headline" id="get_password.28.29">get_password()</span></h5>
+<p>Returns the password string stored in member <i>$password</i>.
+</p>
+<h5> <span class="mw-headline" id="get_course_id.28.29">get_course_id()</span></h5>
+<p>Returns the course ID integer stored in member <i>$course_id</i>.
+</p>
+<h5> <span class="mw-headline" id="get_module_id.28.29">get_module_id()</span></h5>
+<p>Returns the module ID integer stored in member <i>$module_id</i>.
+</p>
+<h5> <span class="mw-headline" id="get_avatar_uuid.28.29">get_avatar_uuid()</span></h5>
+<p>Returns the avatar UUID string stored in member <i>$avatar_uuid</i>.
+</p>
+<h5> <span class="mw-headline" id="get_avatar_name.28.29">get_avatar_name()</span></h5>
+<p>Returns the avatar name string stored in member <i>$avatar_name</i>.
+</p>
+<h5> <span class="mw-headline" id="get_login_security_token.28.29">get_login_security_token()</span></h5>
+<p>Returns the login security token string stored in member <i>$login_security_token</i>.
+</p>
+<h5> <span class="mw-headline" id="get_response.28.29">get_response()</span></h5>
+<p>Returns the reference to a <a href="../../../../articles/s/l/o/SloodleLSLResponse.html" title="SloodleLSLResponse">SloodleLSLResponse</a> object stored in member <i>$response</i>.
+</p>
+<h5> <span class="mw-headline" id="get_user.28.29">get_user()</span></h5>
+<p>Returns the reference to a <a href="../../../../articles/s/l/o/SloodleUser.html" title="SloodleUser">SloodleUser</a> object stored in member <i>$user</i>.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Construction"> Construction </span></h3>
+<h5> <span class="mw-headline" id="SloodleLSLRequest.28.26.24response.2C_.26.24user.29">SloodleLSLRequest(&amp;$response, &amp;$user)</span></h5>
+<p>This constructor can be used to provide references to <a href="../../../../articles/s/l/o/SloodleLSLResponse.html" title="SloodleLSLResponse">SloodleLSLResponse</a> and <a href="../../../../articles/s/l/o/SloodleUser.html" title="SloodleUser">SloodleUser</a> objects (parameters <i>$response</i> and <i>$user</i> respectively). If they are not NULL, then they are stored in members <i>$response</i> and <i>$user</i> respectively. However, if the parameters are NULL, then the constructor creates its own objects for this.
+</p>
+<ul><li> <b>Note:</b> you can provide one object, and make the other NULL.
+</li></ul>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="Other_Functions"> Other Functions </span></h3>
+<p>Like the "Active Accessors" above, these functions will make sure the request data has been processed before they execute.
+</p>
+<h5> <span class="mw-headline" id="process_request_data.28.24force_.3D_FALSE.29">process_request_data($force = FALSE)</span></h5>
+<p>This is the most important function in the class. It will check for all of the standard Sloodle parameters in the incoming HTTP request (using the Moodle "optional_param" function), and store any values it finds. Most other member functions in this class will call this function if necessary before they start, so you rarely actually <i>need</i> to call this function directly. <i>However,</i> it is strongly advisable to do so anyway, to avoid problems.
+</p><p>It also performs certain processing, such as converting the Login Zone position string to an array of vector information. Most importantly, if an avatar is identified by name and/or UUID, then it will lookup that user in the database and, if found, store their details in the <a href="../../../../articles/s/l/o/SloodleUser.html" title="SloodleUser">SloodleUser</a> <i>$user</i> member. Additionally, if the avatar is linked to a Moodle account, then it will automatically lookup and store the details for that Moodle account in the <i>$user</i> member as well. Another useful feature is that, if only the avatar name or UUID was specified in the request, but the other item was found in the database, then it will replace the missing request data so that your processing scripts can continue without problem.
+</p><p>Furthermore, this processing function will write certain items of data to the <a href="../../../../articles/s/l/o/SloodleLSLResponse.html" title="SloodleLSLResponse">SloodleLSLResponse</a> <i>$response</i> member, including avatar UUID, and the request descriptor (which does not get stored in the request class).
+</p>
+<ul><li> <b>NOTE:</b> when processing is done, the <i>$request_data_processed</i> member is set to TRUE. If processing has already been done when this function is called, then it is not done again... <b>unless</b> the optional <i>$force</i> parameter is explicitly set to TRUE (the default is FALSE). This can be used if you know the request data has changed, for whatever reason... although that is a very unlikely circumstance!
+</li></ul>
+<p><br />
+</p>
+<h5> <span class="mw-headline" id="authenticate_request.28.24require_.3D_TRUE.29">authenticate_request($require = TRUE)</span></h5>
+<p>This function is used to check the authentication information provided in the request parameters (i.e. the <i>$password</i> member) against the authentication data in the database. If the authentication data is correct, then it will set the <i>$auth_status</i> member to <a href="../../../../articles/s/l/o/SLOODLE_AUTH_OK.html" title="SLOODLE AUTH OK">SLOODLE_AUTH_OK</a>, and return TRUE.
+</p><p>If authentication fails, then behaviour the <i>$auth_status</i> member is set to <a href="../../../../articles/s/l/o/SLOODLE_AUTH_FAILED.html" title="SLOODLE AUTH FAILED">SLOODLE_AUTH_FAILED</a>, although the subsequent behaviour depends upon the <i>$require</i> parameter. If <i>$require</i> is TRUE (default), then the script will terminate with an error message. Otherwise, it will simply return FALSE.
+</p>
+<ul><li> In most cases, you can omit the <i>$require</i> parameter, as it will default to TRUE, and you want to make sure unauthorised requests are not permitted.
+</li><li> See <a href="../../../../articles/p/r/i/Prim_Password.html" title="Prim Password">Prim Password</a> and <a href="../../../../articles/o/b/j/Object_Authorization.html" title="Object Authorization">Object Authorization</a> for more information on object authentication methods.
+</li></ul>
+<p><br />
+</p>
+<h5> <span class="mw-headline" id="get_course_record.28.24require_.3D_TRUE.29">get_course_record($require = TRUE)</span></h5>
+<p>Searches the database for the course identified in member <i>$course_id</i> (HTTP parameter "<i>sloodlecourseid</i>"). If the parameter was specified, and the course is found, it returns a database record object representing the course.
+</p><p>Note that if the course ID was not specified, the course does not exist, or if it is not visible, the function will fail. If parameter <i>$require</i> is TRUE (default) then failure means the script will terminate with an error message. Otherwise, it will return FALSE.
+</p><p><br />
+</p>
+<h5> <span class="mw-headline" id="get_course_module_instance.28.24type_.3D_.27.27.2C_.24require_.3D_TRUE.29">get_course_module_instance($type = '', $require = TRUE)</span></h5>
+<p>Searches the database for the course module instance identified in member <i>$module_id</i> (HTTP parameter "<i>sloodlemoduleid</i>"). If the instance is found, is visible, and is of the correct type (according to the name in parameter <i>$type</i>) then a database record object is returned. (Note: type-checking is based on module names such as "forum" or "sloodle". It is optional, and is skipped if the name is empty).
+</p><p>Note that if the module ID was not specified, the module does not exist, it is not visible, or if it is of the wrong type, then the function fails. If parameter <i>$require</i> is TRUE (default) then failure means the script will terminate with an error message. Otherwise, it will return FALSE.
+</p><p><br />
+</p>
+<h5> <span class="mw-headline" id="required_param.28.24parname.2C_.24type.3DPARAM_RAW.29">required_param($parname, $type=PARAM_RAW)</span></h5>
+<p>This function is a Sloodle-friendly version of the Moodle "required_param" function. However, instead of rendering an HTML error message on failure, this will render an LSL-friendly error message.
+</p><p>It is used to get a particular HTTP request parameter, with name <i>$parname</i>, and type according to parameter <i>$type</i> (the standard Moodle types work here, such as PARAM_RAW for a string, PARAM_INT for an integer).
+</p>
+<ul><li> See also the global Sloodle function: <a href="../../../../articles/s/l/o/Sloodle_required_param.html" title="Sloodle required param">sloodle_required_param</a>.
+</li></ul>
+<p>(The advantage to using the member version is that it will still output other response status data that may have been accumulated).
+</p><p><br />
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 188/1000000
+Post‐expand include size: 557/2097152 bytes
+Template argument size: 47/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/s/l/o/Category:Sloodle_PHP_API.html" title="Category:Sloodle PHP API">Sloodle PHP API</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/l/o/SloodleLSLRequest.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:SloodleLSLRequest&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/SloodleLSLRequest">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 07:48, 6 February 2008 by SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

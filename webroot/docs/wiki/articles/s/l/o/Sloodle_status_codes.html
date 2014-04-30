@@ -1,0 +1,836 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Sloodle status codes - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-Sloodle_status_codes">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Sloodle status codes</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Core_success_codes"><span class="tocnumber">1</span> <span class="toctext">Core success codes</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Core_error_codes"><span class="tocnumber">2</span> <span class="toctext">Core error codes</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Object-Specific_Success_Codes"><span class="tocnumber">3</span> <span class="toctext">Object-Specific Success Codes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Choice"><span class="tocnumber">3.1</span> <span class="toctext">Choice</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Awards"><span class="tocnumber">3.2</span> <span class="toctext">Awards</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Chat"><span class="tocnumber">3.3</span> <span class="toctext">Chat</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Object-Specific_Error_Codes"><span class="tocnumber">4</span> <span class="toctext">Object-Specific Error Codes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Choice_2"><span class="tocnumber">4.1</span> <span class="toctext">Choice</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Chat_2"><span class="tocnumber">4.2</span> <span class="toctext">Chat</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Assignments_.28e.g._PrimDrop.29"><span class="tocnumber">4.3</span> <span class="toctext">Assignments (e.g. PrimDrop)</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Quiz"><span class="tocnumber">4.4</span> <span class="toctext">Quiz</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Blog"><span class="tocnumber">4.5</span> <span class="toctext">Blog</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Presenter"><span class="tocnumber">4.6</span> <span class="toctext">Presenter</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Awards_2"><span class="tocnumber">4.7</span> <span class="toctext">Awards</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Lessons"><span class="tocnumber">4.8</span> <span class="toctext">Lessons</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Groups"><span class="tocnumber">4.9</span> <span class="toctext">Groups</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Core_success_codes"> Core success codes </span></h2>
+<p>Codes 1 to 9999 are reserved for core functionality that will be shared by different modules.
+</p><p>In most cases, success will return 1.
+</p><p>In some cases, where the request was successful but had side effects, eg. the avatar was automatically registered and enrolled in a course before data for them was provided to administer a quiz, status codes for side effects will be included in a separate side-effect field in the status line.
+</p><p>(See <a href="../../../../articles/c/o/m/Communicating_between_server_and_client.html#The_status_line" title="Communicating between server and client">Communicating_between_server_and_client#The_status_line</a> )
+</p>
+<table class="wikitable">
+<caption>Status Codes (planned)
+</caption>
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> 1 </td>
+<td> MISC </td>
+<td> OK
+</td></tr>
+<tr>
+<td> 103 </td>
+<td> SYSTEM </td>
+<td> Successfully inserted data into system
+</td></tr>
+<tr>
+<td> 301 </td>
+<td> MISC_REGISTER </td>
+<td> OK - User is already registered
+</td></tr>
+<tr>
+<td> 322 </td>
+<td> MISC_REGISTER </td>
+<td> OK - User wasn't previously registered, but we registered them automatically, kept going, and everything worked out great.
+</td></tr>
+<tr>
+<td> 401 </td>
+<td> MISC_ENROL </td>
+<td> OK - User is already enrolled
+</td></tr>
+<tr>
+<td> 422 </td>
+<td> MISC_ENROL </td>
+<td> OK - User wasn't previously enrolled on the necessary course, but we enrolled them automatically, kept going, and everything worked out great.
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Core_error_codes"> Core error codes </span></h2>
+<p>Codes -1 to -9999 are reserved for core functionality that will be shared between different modules.
+</p>
+<table class="wikitable">
+<caption>Error Codes (planned)
+</caption>
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> -1 </td>
+<td> MISC </td>
+<td> An unspecified error - try not to use these...
+</td></tr>
+<tr>
+<td> -101 </td>
+<td> SYSTEM </td>
+<td> An unknown system error occured (Try to be more specific...) .
+</td></tr>
+<tr>
+<td> -102 </td>
+<td> SYSTEM </td>
+<td> Could not connect to the database.
+</td></tr>
+<tr>
+<td> -103 </td>
+<td> SYSTEM </td>
+<td> Could not fetch data we expected to be there.
+</td></tr>
+<tr>
+<td> -104 </td>
+<td> SYSTEM </td>
+<td> Data formatting error
+</td></tr>
+<tr>
+<td> -105 </td>
+<td> SYSTEM </td>
+<td> XMLRPC error
+</td></tr>
+<tr>
+<td> -106 </td>
+<td> SYSTEM </td>
+<td> The Sloodle module is not installed in Moodle
+</td></tr>
+<tr>
+<td> -111 </td>
+<td> SYSTEM </td>
+<td> System is temporarily down for maintenance.
+</td></tr>
+<tr>
+<td> -112 </td>
+<td> SYSTEM </td>
+<td> System is temporarily down due to non-payment (Avatar Classroom)
+</td></tr>
+<tr>
+<td> -121 </td>
+<td> SYSTEM </td>
+<td> Failed to send required email
+</td></tr>
+<tr>
+<td> -131 </td>
+<td> PLUGIN </td>
+<td> Failed to load plugins
+</td></tr>
+<tr>
+<td> -132 </td>
+<td> PLUGIN </td>
+<td> The required plugin was not found
+</td></tr>
+<tr>
+<td> -201 </td>
+<td> OBJECT_AUTH </td>
+<td> There was an unspecified problem authenticating the object.
+</td></tr>
+<tr>
+<td> -212 </td>
+<td> OBJECT_AUTH </td>
+<td> Object did not supply the necessary information to authenticate itself.
+</td></tr>
+<tr>
+<td> -213 </td>
+<td> OBJECT_AUTH </td>
+<td> Object authentication key was invalid
+</td></tr>
+<tr>
+<td> -214 </td>
+<td> OBJECT_AUTH </td>
+<td> Object not authorised in this context
+</td></tr>
+<tr>
+<td> -215 </td>
+<td> OBJECT_AUTH </td>
+<td> Prim password access has been disabled for this Controller.
+</td></tr>
+<tr>
+<td> -216 </td>
+<td> OBJECT_AUTH </td>
+<td> Object not found in database
+</td></tr>
+<tr>
+<td> -217 </td>
+<td> OBJECT_AUTH </td>
+<td> Could not save HTTP-in URL (v2.0 etc)
+</td></tr>
+<tr>
+<td> -218 </td>
+<td> OBJECT_AUTH </td>
+<td> Active object not found while trying to save HTTP-in URL (v2.0 etc)
+</td></tr>
+<tr>
+<td> -219 </td>
+<td> OBJECT_AUTH </td>
+<td> Sending configuration to object via HTTP-in URL failed
+</td></tr>
+<tr>
+<td> -301 </td>
+<td> USER_AUTH </td>
+<td> There was an unspecified problem authenticating the user.
+</td></tr>
+<tr>
+<td> -311 </td>
+<td> USER_AUTH </td>
+<td> Object did not supply the necessary information to authenticate the user.
+</td></tr>
+<tr>
+<td> -321 </td>
+<td> USER_AUTH </td>
+<td> User was not registered and we weren't allowed to register them automatically.
+</td></tr>
+<tr>
+<td> -322 </td>
+<td> USER_AUTH </td>
+<td> User was not registered and we tried to register them but failed.
+</td></tr>
+<tr>
+<td> -331 </td>
+<td> USER_AUTH </td>
+<td> User did not have permission to access the resources requested .
+</td></tr>
+<tr>
+<td> -341 </td>
+<td> USER_AUTH </td>
+<td> Password cannot be reset via Sloodle, as user was not auto-registered (or has since registered an email account).
+</td></tr>
+<tr>
+<td> -401 </td>
+<td> USER_ENROL </td>
+<td> There was an unspecified problem involving course enrolment.
+</td></tr>
+<tr>
+<td> -421 </td>
+<td> USER_ENROL </td>
+<td> User was not enrolled on the course and we weren't allowed to enrol them automatically.
+</td></tr>
+<tr>
+<td> -422 </td>
+<td> USER_ENROL </td>
+<td> User was not enrolled on the course and tried to enrol them but failed.
+</td></tr>
+<tr>
+<td> -501 </td>
+<td> COURSE </td>
+<td> There was an unspecified problem involving the course you ar trying to use.
+</td></tr>
+<tr>
+<td> -511 </td>
+<td> COURSE </td>
+<td> The course you are trying to use was not specified.
+</td></tr>
+<tr>
+<td> -512 </td>
+<td> COURSE </td>
+<td> The course you are trying to use was not found.
+</td></tr>
+<tr>
+<td> -513 </td>
+<td> COURSE </td>
+<td> The course you are trying to use was inactive.
+</td></tr>
+<tr>
+<td> -514 </td>
+<td> COURSE </td>
+<td> The course you are trying to use was forbidden from being used with Sloodle.
+</td></tr>
+<tr>
+<td> -515 </td>
+<td> COURSE </td>
+<td> Auto Enrol is not enabled for this site
+</td></tr>
+<tr>
+<td> -516 </td>
+<td> COURSE </td>
+<td> Auto Registration is not enabled for this site
+</td></tr>
+
+<tr>
+<td> -601 </td>
+<td> MODULE </td>
+<td> There was an unspecifed problem involving the module you're trying to use.
+</td></tr>
+<tr>
+<td> -611 </td>
+<td> MODULE </td>
+<td> The module you are trying to use was not specified.
+</td></tr>
+<tr>
+<td> -612 </td>
+<td> MODULE </td>
+<td> The module you are trying to use was found.
+</td></tr>
+<tr>
+<td> -613 </td>
+<td> MODULE </td>
+<td> The module you are trying to use was inactive.
+</td></tr>
+<tr>
+<td> -614 </td>
+<td> MODULE </td>
+<td> The module you are trying to use was forbidden from being used by Sloodle.
+</td></tr>
+<tr>
+<td> -701 </td>
+<td> MODULE_INSTANCE </td>
+<td> There was an unspecifed problem involving the module instance you're trying to use.
+</td></tr>
+<tr>
+<td> -711 </td>
+<td> MODULE_INSTANCE </td>
+<td> The module instance you are trying to use was not specified.
+</td></tr>
+<tr>
+<td> -712 </td>
+<td> MODULE_INSTANCE </td>
+<td> The module instance you are trying to use was not found.
+</td></tr>
+<tr>
+<td> -713 </td>
+<td> MODULE_INSTANCE </td>
+<td> The module instance you are trying to use was inactive.
+</td></tr>
+<tr>
+<td> -714 </td>
+<td> MODULE_INSTANCE </td>
+<td> The module instance you are trying to use was forbidden from being used by Sloodle.
+</td></tr>
+<tr>
+<td> -801 </td>
+<td> REQUEST </td>
+<td> Requested script permanently deleted.
+</td></tr>
+<tr>
+<td> -802 </td>
+<td> REQUEST </td>
+<td> Requested script moved (new location may be specified in the first data line)
+</td></tr>
+<tr>
+<td> -811 </td>
+<td> REQUEST </td>
+<td> Request incomplete (not all required data present)
+</td></tr>
+<tr>
+<td> -812 </td>
+<td> REQUEST </td>
+<td> Requested resource could not be found (although the request itself was handled successfully)
+</td></tr>
+<tr>
+<td> -901 </td>
+<td> PROFILE </td>
+<td> Unknown profile error
+</td></tr>
+<tr>
+<td> -902 </td>
+<td> PROFILE </td>
+<td> Profile does not exist
+</td></tr>
+<tr>
+<td> -903 </td>
+<td> PROFILE </td>
+<td> Profile already exists
+</td></tr>
+<tr>
+<td> -904 </td>
+<td> PROFILE </td>
+<td> Unknown profile command
+</td></tr>
+<tr>
+<td> -1001 </td>
+<td> AWARDS </td>
+<td> You do not have enough points to use this object. (There may be a customized message in the next line.)
+</td></tr>
+</table>
+<h2> <span class="mw-headline" id="Object-Specific_Success_Codes"> Object-Specific Success Codes </span></h2>
+<h4> <span class="mw-headline" id="Choice"> Choice </span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> 10001 </td>
+<td> CHOICE_QUERY </td>
+<td> Obtained results successfully
+</td></tr>
+<tr>
+<td> 10011 </td>
+<td> CHOICE_SELECT </td>
+<td> Added new choice selection for user
+</td></tr>
+<tr>
+<td> 10012 </td>
+<td> CHOICE_SELECT </td>
+<td> Updated choice selection for user
+</td></tr>
+<tr>
+<td> 10013 </td>
+<td> CHOICE_SELECT </td>
+<td> User had previously selected the same option
+</td></tr></table>
+<h4> <span class="mw-headline" id="Awards"> Awards </span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> 10601</td>
+<td> AWARDS </td>
+<td> User points were updated.
+</td></tr>
+</table>
+<h4> <span class="mw-headline" id="Chat"> Chat</span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> 10101 </td>
+<td> CHAT_MESSAGE </td>
+<td> Successfully added a chat message into the database (commonly used as a side-effect code)
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Object-Specific_Error_Codes"> Object-Specific Error Codes </span></h2>
+<h4> <span class="mw-headline" id="Choice_2"> Choice </span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> -10001 </td>
+<td> CHOICE_QUERY </td>
+<td> Unable to query choice status for unknown reason
+</td></tr>
+<tr>
+<td> -10011 </td>
+<td> CHOICE_SELECT </td>
+<td> The user has already selected a choice, and choices cannot be updated
+</td></tr>
+<tr>
+<td> -10012 </td>
+<td> CHOICE_SELECT </td>
+<td> Maximum number of selections for this choice already made
+</td></tr>
+<tr>
+<td> -10013 </td>
+<td> CHOICE_SELECT </td>
+<td> Choice is not yet open for selections
+</td></tr>
+<tr>
+<td> -10014 </td>
+<td> CHOICE_SELECT </td>
+<td> Choice has been closed
+</td></tr>
+<tr>
+<td> -10015 </td>
+<td> CHOICE_SELECT </td>
+<td> Specified option not found in choice
+</td></tr>
+<tr>
+<td> -10016 </td>
+<td> CHOICE_SELECT </td>
+<td> Unable to make choice selection for unknown reason (usually more data appended in data lines)
+</td></tr>
+<tr>
+<td> -10021 </td>
+<td> CHOICE_LIST_QUERY </td>
+<td> Unable to query list of choice instances for unknown reason
+</td></tr>
+<tr>
+<td> -10022 </td>
+<td> CHOICE_LIST_QUERY </td>
+<td> Not choice instances available in course
+</td></tr></table>
+<p><br />
+</p>
+<h4> <span class="mw-headline" id="Chat_2"> Chat</span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> -10101 </td>
+<td> CHAT_MESSAGE </td>
+<td> Failed to add chat message to database
+</td></tr></table>
+<p><br />
+</p>
+<h4> <span class="mw-headline" id="Assignments_.28e.g._PrimDrop.29"> Assignments (e.g. PrimDrop) </span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> -10201 </td>
+<td> ASSIGNMENT </td>
+<td> User is not authorised to submit assignments
+</td></tr>
+<tr>
+<td> -10202 </td>
+<td> ASSIGNMENT </td>
+<td> Assignment is not yet open for submissions
+</td></tr>
+<tr>
+<td> -10203 </td>
+<td> ASSIGNMENT </td>
+<td> Assignment due date has passed, and is closed for submissions
+</td></tr>
+<tr>
+<td> -10204 </td>
+<td> ASSIGNMENT </td>
+<td> Assignment due date has passed, but is still accepting submissions (typically a side effect code)
+</td></tr>
+<tr>
+<td> -10205 </td>
+<td> ASSIGNMENT </td>
+<td> Resubmissions are not permitted
+</td></tr></table>
+<p><br />
+</p>
+<h4> <span class="mw-headline" id="Quiz"> Quiz </span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> -10301 </td>
+<td> QUIZ </td>
+<td> Student has used all quiz attempts
+</td></tr>
+<tr>
+<td> -10302 </td>
+<td> QUIZ </td>
+<td> Quiz requires password - this is not supported by Sloodle
+</td></tr>
+<tr>
+<td> -10303 </td>
+<td> QUIZ </td>
+<td> Error loading questions
+</td></tr></table>
+<p><br />
+</p>
+<h4> <span class="mw-headline" id="Blog"> Blog </span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> -10401 </td>
+<td> BLOG </td>
+<td> Blogging is disabled on this site.
+</td></tr>
+<tr>
+<td> -10402 </td>
+<td> BLOG </td>
+<td> User does not have permission to write blogs
+</td></tr></table>
+<p><br />
+</p>
+<h4> <span class="mw-headline" id="Presenter"> Presenter </span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> -10501 </td>
+<td> PRESENTER </td>
+<td> There are no slides in this presentation.
+</td></tr></table>
+<h4> <span class="mw-headline" id="Awards_2"> Awards </span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> 80002</td>
+<td> HQ </td>
+<td>  No players have joined the game yet.
+</td></tr>
+<tr>
+<td> -500001 </td>
+<td> HQ </td>
+<td>  tried to insert data into the sloodle_award_players table - but there was an error
+</td></tr>
+<tr>
+<td> -500100 </td>
+<td> HQ </td>
+<td>  tried to insert Sloodle_awards_teams  but got an error
+</td></tr>
+<tr>
+<td> -500200 </td>
+<td> HQ </td>
+<td>  tried to add an award group, but group name passed into the function does not exist in moodle.
+</td></tr>
+<tr>
+<td> -500300 </td>
+<td> HQ </td>
+<td>  group already exists for this award
+</td></tr>
+<tr>
+<td> -500400 </td>
+<td> HQ </td>
+<td>  group doesn't exist for this award
+</td></tr>
+<tr>
+<td> -500500 </td>
+<td> HQ </td>
+<td>  could not delete the group from the sloodle_awards_teams table
+</td></tr>
+<tr>
+<td> -500600 </td>
+<td> HQ </td>
+<td>   group does not exist in the sloodle_awards_teams table
+</td></tr>
+<tr>
+<td> -500700 </td>
+<td> HQ </td>
+<td>   no awards groups exist for this sloodle module id
+</td></tr>
+<tr>
+<td> -500800 </td>
+<td> HQ </td>
+<td>   HQ A transaction was searched for based on avatar uuid, and transaction details.  However, we could not find the transaction searched for, based on the query specified
+</td></tr>
+<tr>
+<td> -500900 </td>
+<td> HQ </td>
+<td>   &amp;sloodlemoduleid or &amp;sloodleid must be defined and included in the url request so we can connect to an awards activity to complete this transaction
+</td></tr>
+<tr>
+<td> -501100</td>
+<td> HQ </td>
+<td>   no Sloodle_awards for this course
+</td></tr>
+<tr>
+<td> -501200</td>
+<td> HQ </td>
+<td>  cant insert record in sloodle_awards_scoreboards
+</td></tr>
+<tr>
+<td> -501300</td>
+<td> HQ </td>
+<td>  cant delete record in sloodle_awards_scoreboards
+</td></tr>
+<tr>
+<td> -777000</td>
+<td>TRANSACTION</td>
+<td> Transaction Not found - this was issued by the Sloodle Awards System when a transaction was searched for in the sloodle_award_trans table, and nothing was found
+</td></tr></table>
+<h4> <span class="mw-headline" id="Lessons"> Lessons </span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> -9782 </td>
+<td> HQ </td>
+<td>  No lessons in the course
+</td></tr>
+<tr>
+<td> -9783 </td>
+<td> HQ </td>
+<td>  No pages for this lesson in the course
+</td></tr>
+<tr>
+<td> -9784</td>
+<td> HQ </td>
+<td> No answers for this lesson in the course
+</td></tr>
+
+
+</table>
+<h4> <span class="mw-headline" id="Groups"> Groups </span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Code </th>
+<th> Type </th>
+<th> Summary
+</th></tr>
+<tr>
+<td> -97000 </td>
+<td> HQ </td>
+<td>  Tried to add user to group, but MOODLE failed to add user to the group
+</td></tr>
+
+
+</table>
+<p><br />
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 66/1000000
+Post‐expand include size: 486/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/s/l/o/Category:SloodleDevDocs.html" title="Category:SloodleDevDocs">SloodleDevDocs</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/l/o/Sloodle_status_codes.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:Sloodle_status_codes&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/Sloodle_status_codes">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 15:35, 28 June 2011 by <a href="http:http://localhost/sl/index.php?title=User:Edochan&amp;action=edit&amp;redlink=1" class="new" title="User:Edochan (page does not exist)">Edmund Edgar</a>. Based on work by <a href="http:http://localhost/sl/index.php?title=User:Fire&amp;action=edit&amp;redlink=1" class="new" title="User:Fire (page does not exist)">Paul Preibisch</a>, SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a> and SLIS Second Life Wiki anonymous user <a href="http://localhost/sl/index.php/Special:Contributions/60.62.8.214" title="Special:Contributions/60.62.8.214">60.62.8.214</a>.</li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

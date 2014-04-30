@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs for page sl_choice_lib.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name"><img src="../media/images/Page_logo.png" alt="File" style="vertical-align: middle">/mod/choice/sl_choice_lib.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+									<a href="#sec-includes">Includes</a>
+			|											<a href="#sec-functions">Functions</a>
+			</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sloodle choice local library functions.</p>
+<p class="description"><p>Allows easier access to the Moodle choice data.</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2008 Sloodle (various contributors)</li>
+				<li><span class="field">contributor:</span> Peter R. Bloomfield</li>
+				<li><span class="field">filesource:</span> <a href="../__filesource/fsource_sloodlechoice__modchoicesl_choice_lib.php.html">Source Code for this file</a></li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	<a name="sec-includes"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Includes</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Includes</span>
+			|													<a href="#sec-functions">Functions</a>
+					</div>
+		<div class="info-box-body">	
+			<a name="_$CFG->dirroot_/mod/choice/lib_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Page.png" alt=" " />
+		<span class="include-title">
+			<span class="include-type">require_once</span>
+			(<span class="include-name">$CFG->dirroot.'/mod/choice/lib.php'</span>)
+			(line <span class="line-number"><a href="../__filesource/fsource_sloodlechoice__modchoicesl_choice_lib.php.html#a18">18</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+		</div>
+	</div>
+	
+	
+	
+	<a name="sec-functions"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Functions</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-includes">Includes</a>
+				|												<span class="disabled">Functions</span>
+		</div>
+		<div class="info-box-body">	
+			<a name="functionsloodle_get_choice" id="functionsloodle_get_choice"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_get_choice</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodlechoice__modchoicesl_choice_lib.php.html#a89">89</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets a complete record of a particular choice instance.</p>
+<p class="description"><p>If successful, returns a database record of the choice, with the following items added: <ul><li>option[] - associates option IDs with option texts</li><li>maxanswers[] - associates option IDs with the maximum allowable number of answers for each one</li><li>selections[] - associates option IDs with the number of times each one has already been selected</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If successful, a customized database object. Otherwise, boolean false.</li>
+				<li><span class="field">see:</span> <a href="../sloodlechoice/_mod---choice---sl_choice_lib.php.html#functionsloodle_get_visible_choices_in_course">sloodle_get_visible_choices_in_course()</a></li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			sloodle_get_choice
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$course_module_instance</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$course_module_instance</span><span class="var-description">: A course module instance database record</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_get_num_users_not_answered_choice" id="functionsloodle_get_num_users_not_answered_choice"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_get_num_users_not_answered_choice</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodlechoice__modchoicesl_choice_lib.php.html#a125">125</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the number of users on the course who have not yet answered the specified choice.</p>
+<p class="description"><p><strong>Note:</strong> the count includes students and teachers.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If successful, a positive integer. Otherwise, a string error message.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			sloodle_get_num_users_not_answered_choice
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$choice</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$choice</span><span class="var-description">: A choice object from the {@link:sloodle_get_choice()} function</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_get_visible_choices_in_course" id="functionsloodle_get_visible_choices_in_course"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_get_visible_choices_in_course</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodlechoice__modchoicesl_choice_lib.php.html#a32">32</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets an array of available choices in the specified course.</p>
+<p class="description"><p>Choices which are hidden, or which are in a hidden section of the course, are ignored.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If successful, a numeric array, associating module instance ID's with database record objects of the activity modules. Returns boolean false if an error occurs.</li>
+				<li><span class="field">see:</span> <a href="../sloodlechoice/_mod---choice---sl_choice_lib.php.html#functionsloodle_get_choice">sloodle_get_choice()</a></li>
+				<li><span class="field">see:</span> <a href="../sloodlechat/_mod---chat---sl_webintercom_lib.php.html#functionsloodle_get_visible_chatrooms_in_course">sloodle_get_visible_chatrooms_in_course()</a></li>
+				<li><span class="field">see:</span> <a href="../sloodleglossary/_mod---glossary---sl_glossary_lib.php.html#functionsloodle_get_visible_glossaries_in_course">sloodle_get_visible_glossaries_in_course()</a></li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			sloodle_get_visible_choices_in_course
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$course_id</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$course_id</span><span class="var-description">: Integer ID of a Moodle course</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionsloodle_select_choice_option" id="functionsloodle_select_choice_option"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">sloodle_select_choice_option</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodlechoice__modchoicesl_choice_lib.php.html#a170">170</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Select an option from a choice.</p>
+<p class="description"><p>The return will either be an integer or a string.  If an integer, then it is a <a href="http://slisweb.sjsu.edu/sl/index.php/Sloodle_status_codes">status code</a>.  The following status codes are typical responses: <ul><li>10011 = added new choice selection</li><li>10012 = updated existing choice selection</li><li>-10011 = User already made a selection, and re-selection is not allowed</li><li>-10012 = max number of selections for this choice already made</li><li>-10013 = choice is not yet open</li><li>-10014 = choice is already closed</li></ul> If a string, then it is an error message reporting that something went wrong.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If successful, a positive integer. Otherwise, a string error message.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			sloodle_select_choice_option
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$choice</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$optionid</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$moodle_user_id</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$choice</span><span class="var-description">: A choice object from the {@link:sloodle_get_choice()} function</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$optionid</span><span class="var-description">: The integer ID of an option (note: these are unique across an entire site)</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$moodle_user_id</span><span class="var-description">: The integer ID of the Moodle user making the selection</span>			</li>
+				</ul>
+		
+	
+</div>
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 04 Mar 2008 15:08:36 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

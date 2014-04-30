@@ -1,0 +1,721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Sloodle 0.3 Database Schema - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-Sloodle_0_3_Database_Schema">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Sloodle 0.3 Database Schema</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p style="text-align:right;"><span title="This information only applies to Sloodle versions: 0.3" style="vertical-align:middle; padding:4px; font-size:12pt; background-color:#ccffff; border:solid 1px #7777ff;">Sloodle Versions: <strong>0.3</strong> <span style="font-size:75%; vertical-align:middle;"><a href="../../../../articles/s/l/o/Sloodle_Versions.html" title="Sloodle Versions">(?)</a></span></span></p>
+<pre>This page is for SLOODLE 0.3 only.
+</pre>
+<p>The schema is divided into two parts: the internal schema (the database tables which SLOODLE itself creates), and the external schema (the way SLOODLE uses existing Moodle tables). Note, however, that index information is generally not specified here; in-depth information can be found in the "sloodle/db/install.xml" XMLDB file in the SLOODLE module download.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Internal_Schema"><span class="tocnumber">1</span> <span class="toctext">Internal Schema</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#sloodle"><span class="tocnumber">1.1</span> <span class="toctext">sloodle</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#sloodle_controller"><span class="tocnumber">1.2</span> <span class="toctext">sloodle_controller</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#sloodle_distributor"><span class="tocnumber">1.3</span> <span class="toctext">sloodle_distributor</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#sloodle_distributor_entry"><span class="tocnumber">1.4</span> <span class="toctext">sloodle_distributor_entry</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#sloodle_users"><span class="tocnumber">1.5</span> <span class="toctext">sloodle_users</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#sloodle_pending_avatars"><span class="tocnumber">1.6</span> <span class="toctext">sloodle_pending_avatars</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#sloodle_course"><span class="tocnumber">1.7</span> <span class="toctext">sloodle_course</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#sloodle_active_object"><span class="tocnumber">1.8</span> <span class="toctext">sloodle_active_object</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#sloodle_object_config"><span class="tocnumber">1.9</span> <span class="toctext">sloodle_object_config</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#sloodle_login_notifications"><span class="tocnumber">1.10</span> <span class="toctext">sloodle_login_notifications</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#sloodle_layout"><span class="tocnumber">1.11</span> <span class="toctext">sloodle_layout</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#sloodle_layout_entry"><span class="tocnumber">1.12</span> <span class="toctext">sloodle_layout_entry</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#sloodle_loginzone_allocation"><span class="tocnumber">1.13</span> <span class="toctext">sloodle_loginzone_allocation</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#sloodle_user_object"><span class="tocnumber">1.14</span> <span class="toctext">sloodle_user_object</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#External_Schema"><span class="tocnumber">2</span> <span class="toctext">External Schema</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#config"><span class="tocnumber">2.1</span> <span class="toctext">config</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Other_Moodle_Tables"><span class="tocnumber">2.2</span> <span class="toctext">Other Moodle Tables</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Internal_Schema"> Internal Schema </span></h1>
+<p>SLOODLE directly creates and uses several tables, as follows:
+</p>
+<h3> <span class="mw-headline" id="sloodle"> sloodle </span></h3>
+<p>Each record defines an <a href="../../../../articles/s/l/o/Sloodle_Instances.html" title="Sloodle Instances">instance</a> of a SLOODLE module (such as a <a href="../../../../articles/s/l/o/Sloodle_Controller_Module.html" title="Sloodle Controller Module">Controller</a> or a <a href="../../../../articles/s/l/o/Sloodle_Distributor_Module.html" title="Sloodle Distributor Module">Distributor</a> module). 
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>course</i> </td>
+<td> integer </td>
+<td> Identifies the ID of the course this instance belongs to
+</td></tr>
+<tr>
+<td> <i>type</i> </td>
+<td> string </td>
+<td> Gives the short name of this module type, such as "controller" or "distributor"
+</td></tr>
+<tr>
+<td> <i>name</i> </td>
+<td> string </td>
+<td> Name of this module instance
+</td></tr>
+<tr>
+<td> <i>intro</i> </td>
+<td> string </td>
+<td> Description of this module instance
+</td></tr>
+<tr>
+<td> <i>timecreated</i> </td>
+<td> integer </td>
+<td> Timestamp when this module was created
+</td></tr>
+<tr>
+<td> <i>timemodified</i> </td>
+<td> integer </td>
+<td> Timestamp when this module was last modified
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_controller"> sloodle_controller </span></h3>
+<p>Each record represents a <a href="../../../../articles/s/l/o/Sloodle_Controller_Module.html" title="Sloodle Controller Module">Sloodle Controller Module</a>, which is an <a href="../../../../articles/s/l/o/Sloodle_Instances.html" title="Sloodle Instances">instance</a> of a SLOODLE module (so each record provides more information for a related record in the <a href="#sloodle">sloodle</a> table).
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>sloodleid</i> </td>
+<td> integer </td>
+<td> The ID of a record in the <a href="#sloodle">sloodle</a> table
+</td></tr>
+<tr>
+<td> <i>enabled</i> </td>
+<td> integer </td>
+<td> Indicates if this <a href="../../../../articles/s/l/o/Sloodle_Controller_Module.html" title="Sloodle Controller Module">Controller</a> is enabled or disabled (zero = disabled, non-zero = enabled)
+</td></tr>
+<tr>
+<td> <i>password</i> </td>
+<td> string </td>
+<td> The <a href="../../../../articles/p/r/i/Prim_Password.html" title="Prim Password">Prim Password</a> for this <a href="../../../../articles/s/l/o/Sloodle_Controller_Module.html" title="Sloodle Controller Module">Controller</a> (will be empty if prim passwords are disabled for this Controller)
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_distributor"> sloodle_distributor </span></h3>
+<p>Each record represents a <a href="../../../../articles/s/l/o/Sloodle_Distributor_Module.html" title="Sloodle Distributor Module">Sloodle Distributor Module</a> (used with the <a href="../../../../articles/s/l/o/Sloodle_Vending_Machine.html" title="Sloodle Vending Machine">Vending Machine</a> object), which is an <a href="../../../../articles/s/l/o/Sloodle_Instances.html" title="Sloodle Instances">|instance</a> of a SLOODLE module (so each record provides more information for a related record in the <a href="#sloodle">sloodle</a> table).
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>sloodleid</i> </td>
+<td> integer </td>
+<td> The ID of a record in the "sloodle" table
+</td></tr>
+<tr>
+<td> <i>channel</i> </td>
+<td> string </td>
+<td> The UUID of the XMLRPC channel opened by the related Vending Machine
+</td></tr>
+<tr>
+<td> <i>timeupdated</i> </td>
+<td> integer </td>
+<td> Timestamp when the Vending Machine last updated its connection to this <a href="../../../../articles/s/l/o/Sloodle_Distributor_Module.html" title="Sloodle Distributor Module">Distributor module</a>
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_distributor_entry"> sloodle_distributor_entry </span></h3>
+<p>Each record represents an item in a <a href="../../../../articles/s/l/o/Sloodle_Distributor_Module.html" title="Sloodle Distributor Module">Sloodle Distributor Module</a>, which can be distributed by an associated <a href="../../../../articles/s/l/o/Sloodle_Vending_Machine.html" title="Sloodle Vending Machine">Vending Machine</a> in-world (so each record is linked to a record in the <a href="#sloodle_distributor">sloodle_distributor</a> table).
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>distributorid</i> </td>
+<td> integer </td>
+<td> The ID of a record in the <a href="#sloodle_distributor">sloodle_distributor</a> table
+</td></tr>
+<tr>
+<td> <i>name</i> </td>
+<td> string </td>
+<td> The name of the item which can be distributed
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_users"> sloodle_users </span></h3>
+<p>Each record represents an avatar which is registered to a Moodle user (so each record is linked to the Moodle "user" table).
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>userid</i> </td>
+<td> integer </td>
+<td> ID of a record in Moodle's "user" table
+</td></tr>
+<tr>
+<td> <i>uuid</i> </td>
+<td> string </td>
+<td> UUID of the avatar
+</td></tr>
+<tr>
+<td> <i>avname</i> </td>
+<td> string </td>
+<td> Full name of the avatar (e.g. "Pedro McMillan")
+</td></tr>
+<tr>
+<td> <i>lastactive</i> </td>
+<td> integer </td>
+<td> Timestamp of the last known SLOODLE activity by this avatar
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_pending_avatars"> sloodle_pending_avatars </span></h3>
+<p>Each record represents an avatar which is known by the system, but which is not yet registered to a Moodle user. This is used by systems such as the Registration Booth, where the user has clicked on the panel in the booth, but has not yet logged-in to Moodle to confirm the registration.
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>uuid</i> </td>
+<td> string </td>
+<td> UUID of the avatar
+</td></tr>
+<tr>
+<td> <i>avname</i> </td>
+<td> string </td>
+<td> Full name of the avatar (e.g. "Pedro McMillan")
+</td></tr>
+<tr>
+<td> <i>lst</i> </td>
+<td> string </td>
+<td> The "login security token" to authenticate this avatar -- this string is passed in with the URL when the user logs-in to Moodle to confirm the registration. This ensures nobody can 'spoof' an avatar registration (unless they have a ludicrously lucky guess!)
+</td></tr>
+<tr>
+<td> <i>timeupdated</i> </td>
+<td> integer </td>
+<td> Timestamp of the time this avatar's details were last updated.
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_course"> sloodle_course </span></h3>
+<p>Each record provides additional SLOODLE-related data about a given Moodle course (so they related to the Moodle "course" table). SLOODLE will not automatically create a record here whenever a Moodle course is created -- rather, it creates it the first time it is needed.
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>course</i> </td>
+<td> integer </td>
+<td> ID of a course in Moodle's "course" table
+</td></tr>
+<tr>
+<td> <i>autoreg</i> </td>
+<td> integer </td>
+<td> Indicates whether or not auto-registration is enabled for this course (zero = disabled, non-zero = enabled)
+</td></tr>
+<tr>
+<td> <i>autoenrol</i> </td>
+<td> integer </td>
+<td> Indicates whether or not auto-enrolment is enabled for this course (zero = disabled, non-zero = enabled)
+</td></tr>
+<tr>
+<td> <i>loginzonepos</i> </td>
+<td> string </td>
+<td> The position of this course's LoginZone (described as "&lt;x,y,z&gt;")
+</td></tr>
+<tr>
+<td> <i>loginzonesize</i> </td>
+<td> string </td>
+<td> The size of this course's LoginZone (described as "&lt;x,y,z&gt;")
+</td></tr>
+<tr>
+<td> <i>loginzoneregion</i> </td>
+<td> string </td>
+<td> The name of the region in which this LoginZone has been rezzed
+</td></tr>
+<tr>
+<td> <i>loginzoneupdated</i> </td>
+<td> integer </td>
+<td> The timestamp of the last time the LoginZone 'pinged' Moodle (after a period of time with no 'pings', Moodle will warn the user that the LoginZone may not be available, but will continue to allow teleports to it)
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_active_object"> sloodle_active_object </span></h3>
+<p>Each record represents an in-world object which has been <a href="../../../../articles/o/b/j/Object_Authorisation.html" title="Object Authorisation" class="mw-redirect">authorised and configured</a> (using the <a href="http:http://localhost/sl/index.php?title=Sloodle_web_configuration&amp;action=edit&amp;redlink=1" class="new" title="Sloodle web configuration (page does not exist)">web configuration</a> system which was new in SLOODLE 0.3) to 'talk to' a particular <a href="../../../../articles/s/l/o/Sloodle_Controller_Module.html" title="Sloodle Controller Module">Controller</a>.
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>controllerid</i> </td>
+<td> integer </td>
+<td> ID of an entry in Moodle's "course_modules" table (aka a course module instance ID). For a SLOODLE module, the "instance" field of a course_modules record relates to the ID of a record in the <a href="#sloodle">sloodle</a> table.
+</td></tr>
+<tr>
+<td> <i>userid</i> </td>
+<td> integer </td>
+<td> ID of an entry in Moodle's "user" table, identifying the user who authorised this object, if known. (This data is not really used by the system yet, but ideally should determine the object's level of access to courses etc.)
+</td></tr>
+<tr>
+<td> <i>uuid</i> </td>
+<td> string </td>
+<td> The UUID of the object which has been authorised.
+</td></tr>
+<tr>
+<td> <i>password</i> </td>
+<td> string </td>
+<td> A random internal password assigned uniquely to this object (should be a 9 digit number, which allows it to be transferred through an SL object's starting parameter).
+</td></tr>
+<tr>
+<td> <i>name</i> </td>
+<td> string </td>
+<td> Name of the object which has been authorised (this information is arbitrary -- exists solely to help the user identify objects in a list)
+</td></tr>
+<tr>
+<td> <i>type</i> </td>
+<td> string </td>
+<td> The type identifier name for this particular object, such as "chat-1.0" or "glossary-1.0". This relates directly to the names of folders in the SLOODLE modules "mod" folder, e.g. "mod/sloodle/mod/chat-1.0/linker.php".
+</td></tr>
+<tr>
+<td> <i>timeupdated</i> </td>
+<td> integer </td>
+<td> Last time this object was known to exist. Active objects should 'ping' Moodle on a regular basis to update this value. If no 'ping' is received for a period of time (determined in days by the SLOODLE module configuration), then its entry is deleted, so it needs to be re-configured. This prevents the database getting overloaded with redundant objects, and helps security by minimizing redundant passwords.
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_object_config"> sloodle_object_config </span></h3>
+<p>Each record stores a single configuration value for a specific object in the <a href="#sloodle_active_object">sloodle_active_object</a> table. Currently, only active objects can have configurations stored, but in the future, we hope to be able to store 'blueprint' configurations, so that new objects can be configured automatically with default settings (e.g. automatic classroom rezzers).
+</p><p><br />    
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>object</i> </td>
+<td> integer </td>
+<td> ID of an object in the <a href="#sloodle_active_object">sloodle_active_object</a> table.
+</td></tr>
+<tr>
+<td> <i>name</i> </td>
+<td> string </td>
+<td> Name of this configuration setting (such as "sloodlecontrollerid"). The names of these settings should conform to variable names in LSL scripts, and (where appropriate) to the names of HTTP parameters passed-back to Moodle by the in-world objects.
+</td></tr>
+<tr>
+<td> <i>value</i> </td>
+<td> string </td>
+<td> Value of this configuration settings, stored as a string.
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_login_notifications"> sloodle_login_notifications </span></h3>
+<p>Each record stores the username and password for an auto-registered user, along with the UUID of the object which auto-registered them. When the Moodle cron job executes, SLOODLE goes through this list, and emails the details to the object in-world, which then IM's them to the avatar. The details are then deleted from this table for security.
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>destination</i> </td>
+<td> string </td>
+<td> UUID of the object which auto-registered the avatar, and to which the notification email should therefore be sent.
+</td></tr>
+<tr>
+<td> <i>avatar</i> </td>
+<td> string </td>
+<td> UUID of the avatar who had a Moodle account auto-registered for them.
+</td></tr>
+<tr>
+<td> <i>username</i> </td>
+<td> string </td>
+<td> The auto-registered username. This should typically be the avatar name, lower-case, without any spaces. However, in the event of a conflict with an existing username, a number will be appended.
+</td></tr>
+<tr>
+<td> <i>password</i> </td>
+<td> string </td>
+<td> The auto-registered password. This is a random selection of letters and numbers.
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_layout"> sloodle_layout </span></h3>
+<p>Each record represents a single layout which has been stored using a SLOODLE Set. Layouts exist on a per-course basis.
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>course</i> </td>
+<td> integer </td>
+<td> ID of an entry in Moodle's "course" list, identifying the course to which this layout belongs.
+</td></tr>
+<tr>
+<td> <i>name</i> </td>
+<td> string </td>
+<td> The name of this layout. (Layout names must be unique within a course).
+</td></tr>
+<tr>
+<td> <i>timeupdated</i> </td>
+<td> integer </td>
+<td> Timestamp of when this layout was last saved.
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_layout_entry"> sloodle_layout_entry </span></h3>
+<p>Each record is a single object from a layout identified in the <a href="#sloodle_layout">sloodle_layout</a> table.
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>layout</i> </td>
+<td> integer </td>
+<td> ID of a record in the <a href="#sloodle_layout">sloodle_layout</a> table.
+</td></tr>
+<tr>
+<td> <i>name</i> </td>
+<td> string </td>
+<td> Name of the object in the layout.
+</td></tr>
+<tr>
+<td> <i>position</i> </td>
+<td> string </td>
+<td> Position of the object, relative to the SLOODLE Set (stored as "&lt;x,y,z&gt;")
+</td></tr>
+<tr>
+<td> <i>rotation</i> </td>
+<td> string </td>
+<td> Rotation of the object, relative to the SLOODLE Set (stored as a quaternion, "&lt;w,i,j,k&gt;").
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_loginzone_allocation"> sloodle_loginzone_allocation </span></h3>
+<p>Each record identifies an allocated position within a LoginZone -- whenever a Moodle user without a registered avatar visits a LoginZone page, they are allocated a new position. It exists for up to 15 minutes, during which time they can teleport to that position using a SLurl which the system provides them. Note that LoginZones are one-per-course, so each allocation is on a per-course basis -- a single user cannot have multiple allocations in a single course.
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>course</i> </td>
+<td> integer </td>
+<td> ID of an entry in Moodle's "course" table, identifying the course to which this allocation belongs. (Note, this also relates to the "course" field of the <a href="#sloodle_course">sloodle_course</a> table, where additional LoginZone data is held).
+</td></tr>
+<tr>
+<td> <i>userid</i> </td>
+<td> integer </td>
+<td> ID of an entry in Moodle's "user" table, identying the user who requested a LoginZone allocation.
+</td></tr>
+<tr>
+<td> <i>position</i> </td>
+<td> string </td>
+<td> Position of this allocation, relative to the center of the LoginZone (so the LoginZone can be moved without disrupting existing LoginZone allocations). Stored as a vector "&lt;x,y,z&gt;".
+</td></tr>
+<tr>
+<td> <i>timecreated</i> </td>
+<td> integer </td>
+<td> Timestamp when this allocation was created. It will be considered "expired" after 15 minutes, at which point it will be deleted.
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="sloodle_user_object"> sloodle_user_object </span></h3>
+<p>Each record represents an object which has been authorised (or is in the process of being authorised) as a "user object". This form of authorisation was introduced in SLOODLE 0.3 to let students authorise their own SLOODLE Toolbar (this makes it a little quicker for teachers to setup, but more error prone too!). Note that this is purely an avatar-based authorisation -- therefore if a user changes the avatar associated with their Moodle account, then they will need to re-authorise such objects to work with their new avatar. (You can view a list of authorised user objects by visiting a user's SLOODLE Profile, accessible through the SLOODLE Menu Block).
+</p>
+<table border="1" style="border-collapse:collapse;" cellpadding="3">
+
+<tr>
+<th> Column Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <i>id</i> </td>
+<td> integer </td>
+<td> Primary table ID
+</td></tr>
+<tr>
+<td> <i>avuuid</i> </td>
+<td> string</td>
+<td> UUID of the avatar to whom this object is authorised.
+</td></tr>
+<tr>
+<td> <i>objuuid</i> </td>
+<td> string </td>
+<td> UUID of the object being authorised.
+</td></tr>
+<tr>
+<td> <i>objname</i> </td>
+<td> string </td>
+<td> Name of the object being authorised (this information is arbitrary, and exists only to help users identify objects in a list).
+</td></tr>
+<tr>
+<td> <i>password</i> </td>
+<td> string </td>
+<td> Internal password uniquely generated for this object. (For sake of consistency with "<a href="#sloodle_active_object">active objects</a>", this is a 9-digit number).
+</td></tr>
+<tr>
+<td> <i>authorised</i> </td>
+<td> integer </td>
+<td> Indicates whether or not this object has been authorised yet (the user must login to Moodle in order to authorise the object).
+</td></tr>
+<tr>
+<td> <i>timeupdated</i> </td>
+<td> integer </td>
+<td> Timestamp of when this object last 'pinged' Moodle (if the object is rezzed or attach to an avatar in-world, then it will 'ping' Moodle a few times a day. Several weeks with no pings will cause SLOODLE to delete the entry and disable the password of the object).
+</td></tr></table>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="External_Schema"> External Schema </span></h1>
+<p>SLOODLE uses the following tables in the standard Moodle database:
+</p>
+<h3> <span class="mw-headline" id="config"> config </span></h3>
+<p>As per the Moodle convention, core module settings are stored in this table:
+</p>
+<ul><li> <b>sloodle_active_object_lifetime</b> = life time of active objects (in days)
+</li><li> <b>sloodle_user_object_lifetime</b> = life time of user objects (in days)
+</li><li> <b>sloodle_allow_autoenrol</b> = indicates if auto-enrolment is available for this site (0 or 1)
+</li><li> <b>sloodle_allow_autoreg</b> = indicates if auto-registration is available for this site (0 or 1)
+</li></ul>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="Other_Moodle_Tables"> Other Moodle Tables </span></h3>
+<p>SLOODLE also adds information to the following, but only according to normal Moodle conventions:
+</p>
+<ul><li> <b>post</b> = adds blog entries posted using the <a href="../../../../articles/s/l/o/Sloodle_Toolbar.html" title="Sloodle Toolbar">Sloodle Toolbar</a>
+</li><li> <b>chat_message</b> = adds chat messages logged by the <a href="../../../../articles/s/l/o/Sloodle_WebIntercom.html" title="Sloodle WebIntercom">Sloodle WebIntercom</a>
+</li><li> <b>quiz_attempts</b> = adds attempts made at quiz questions using the <a href="../../../../articles/s/l/o/Sloodle_Quiz_Chair.html" title="Sloodle Quiz Chair">Sloodle Quiz Chair</a>
+</li><li> <b>choice_answers</b> = adds Choice selections made by avatars using the <a href="../../../../articles/s/l/o/Sloodle_Choice.html" title="Sloodle Choice">Sloodle Choice</a>
+</li><li> <b>assignment_submission</b> = adds submission data for objects submitted to the <a href="http:http://localhost/sl/index.php?title=Sloodle_PrimDrop&amp;action=edit&amp;redlink=1" class="new" title="Sloodle PrimDrop (page does not exist)">Sloodle PrimDrop</a>
+</li></ul>
+<p><br />
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 84/1000000
+Post‐expand include size: 829/2097152 bytes
+Template argument size: 6/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/s/l/o/Category:SloodleDevDocs.html" title="Category:SloodleDevDocs">SloodleDevDocs</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/l/o/Sloodle_0.3_Database_Schema.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:Sloodle_0.3_Database_Schema&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/Sloodle_0.3_Database_Schema">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 06:51, 21 October 2008 by SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

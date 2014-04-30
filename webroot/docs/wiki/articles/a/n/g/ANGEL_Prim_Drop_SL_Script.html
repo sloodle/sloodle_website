@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>ANGEL Prim Drop SL Script - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-ANGEL_Prim_Drop_SL_Script">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">ANGEL Prim Drop SL Script</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h2> <span class="mw-headline" id="Add_this_code_to_the_moving_drawer">Add this code to the moving drawer</span></h2>
+<p>Be sure to change all the variables in the <b>// ANGEL Connection</b> block
+</p>
+<pre>
+
+string ApplicationName = &quot;ANGEL PrimDrop&quot;;
+string version = &quot;.09&quot;;
+
+// Sloodle - Copyright (C) 2008 Jeremy Kemp, et al
+// Whitepaper: http://www.sloodle.com/whitepaper.pdf
+
+////////////
+//FUNCTION
+// Accepts objects and reports their properties to a web script. 
+// Prototype for 3D Object assignment tool.
+// REQUIRES API configured with new function SL_CHECK_AVATAR
+// LICENSE - GNU General Public License 3
+// This program comes with ABSOLUTELY NO WARRANTY; for details see
+// http://www.sloodle.com/license
+// This is free software, and you are welcome to redistribute it under certain conditions.
+// BASED ON Bulletin Board by Apotheus Silverman
+// VERSIONS
+//.01 initial build from Sloodle Primdrop
+//.06 cleaned and documented
+//.07 made the UUID secret with instant message and Load URL dialog,
+//.08 changed image on top to make ctrl-drag easier
+//.09 added drawer movement, docs, ANGEL connection constants
+////////////
+
+////Constants
+
+// ANGEL Connection
+
+string URL=&quot;secondlife.angellearning.com&quot;; //The server address
+string SECTION=&quot;SEM1-ANG-Demo-testing-1&quot;; //The class section
+string ENTRY=&quot;86F124EF7871431A9C4C34B453EAC58D&quot;;//The assignment's ID
+string ANGELID=&quot;199790f0-ee64-4e97-9d01-ac8d3c44709a&quot;; //Used for API calls
+string APIUSER=&quot;jkemp&quot;;//to access the API - DANGER - THIS SHOULD NOT BE HARDCODED
+string APIPWD=&quot;angel123&quot;;//to access the API - DANGER - THIS SHOULD NOT BE HARDCODED
+
+// Shelf movement
+
+float movementToForeground = 0.35; //Change this to suit the size of your object
+
+// Sounds
+
+key ConnectedSound=&quot;c6cf7fc3-e07b-b4dc-1f55-785cf4b8c32a&quot;;// Metal Door - http://www.freesound.org/samplesViewSingle.php?id=26923
+key ConnectingSound=&quot;ba74fb28-47d4-0270-c875-e12267d02dce&quot;;// Radio waves - http://www.freesound.org/samplesViewSingle.php?id=3176
+key SubmittedSound=&quot;ba74fb28-47d4-0270-c875-e12267d02dce&quot;; // Radio waves - http://www.freesound.org/samplesViewSingle.php?id=3176
+key ErrorSound=&quot;4174f859-0d3d-c517-c424-72923dc21f65&quot;;// Guitar twang
+key TimeoutSound=&quot;b3831ff2-a197-62df-34f7-a83be592c1da&quot;;// Crickets
+
+// Colors
+
+vector colorOpen=&lt;0,128,0&gt;; // Green - &quot;Accepting objects&quot;
+vector colorClosed=&lt;128,50,0&gt;; // Yellow - &quot;Waiting to be touched&quot;
+
+float Timeout = 45; //Reset if no object is given
+
+// Variables
+string SubmitObject; //Results of the API call for ITEM_RESPONSE_POST
+string CheckAvatar; //Results of the API call for SL_CHECK_AVATAR
+
+string Region; //Where is this box?
+integer x;
+integer y;
+integer z;
+
+key CurrentAgent;
+integer ListenHandle;
+string BulletinTitle;
+string BulletinItem;
+list InventoryBefore;
+integer RezQuant;
+string AviID; 
+string AviName;
+
+// All inventory types
+list InventoryTypes = [
+    INVENTORY_TEXTURE,
+    INVENTORY_SOUND,
+    INVENTORY_OBJECT,
+    INVENTORY_SCRIPT,
+    INVENTORY_LANDMARK,
+    INVENTORY_CLOTHING,
+    INVENTORY_NOTECARD,
+    INVENTORY_BODYPART
+];
+
+// Global functions
+
+Identify() {// Identifies this application in public chat.
+    llSay(0, ApplicationName + &quot; v&quot; + version);
+}
+
+integer GetInventoryType(string inventory) { // Returns the type of inventory (an integer value) defined by the inventory argument.
+    if (llGetInventoryKey(inventory) == NULL_KEY) {
+        return(-1);
+    } else {
+        integer i;
+        for (i = 0; i &lt; llGetListLength(InventoryTypes); i++) {
+            integer constant = llList2Integer(InventoryTypes, i);
+            integer j;
+            for (j = 0; j &lt; llGetInventoryNumber(constant); j++) {
+                if(inventory == llGetInventoryName(constant, j)) {
+                    return(constant);
+                }
+            }
+        }
+    }
+    return(-1);
+}
+
+list GetInventoryDirectory() {// Returns a list of inventory names
+    list myInventory;
+    integer j;
+    integer k;
+    for(j = 0; j &lt; llGetListLength(InventoryTypes); j++) {
+        integer constant = llList2Integer(InventoryTypes, j);
+        for(k = 0; k &lt; llGetInventoryNumber(constant); k++) {
+            myInventory += llGetInventoryName(constant, k);
+        }
+    }
+    return(myInventory);
+}
+
+string ListDiff(list list1, list list2) { // Returns the first item in list1 that does not exist in list2. If all items in list1 exist in list2, returns an empty string.
+    integer i;
+    for (i = 0; i &lt; llGetListLength(list1); i++) {
+        if (llListFindList(list2, llList2List(list1, i, i)) == -1) {
+            return(llList2String(list1, i));
+        }
+    }
+    return(&quot;&quot;);
+}
+
+// States
+
+default {
+    state_entry() { // Initialize
+        Identify();
+        llStopSound();
+        llPlaySound(ConnectingSound, 1.0);
+        state idle;
+    }
+}
+
+state idle {
+    state_entry() { // Clear global vars, change color and start listening
+        llAllowInventoryDrop(FALSE);
+        CurrentAgent = NULL_KEY;
+        InventoryBefore = [];
+        BulletinItem = &quot;&quot;;
+        BulletinTitle = &quot;&quot;;
+        llSetPrimitiveParams([PRIM_COLOR,ALL_SIDES,colorClosed,1]);  
+        llListenRemove(ListenHandle);
+        ListenHandle = llListen(0, &quot;&quot;, NULL_KEY, &quot;&quot;);
+    }
+    
+    touch_start(integer total_number) { // &quot;I've been clicked!&quot; 
+        AviID = (string)llDetectedKey(0); //Get the UUID of the avatar touching
+        AviName = llKey2Name(llDetectedKey(0)); //Convert the UUID to a name
+        llSay(0,&quot;Hello &quot;+AviName+&quot;. This object is checking your unique Second Life ID against the ANGEL database.&quot;);
+        CheckAvatar = llHTTPRequest(&quot;http://&quot;+URL+&quot;/api/default.asp?APIACTION=SL_CHECK_AVATAR&amp;APIUSER=&quot;+APIUSER+&quot;&amp;APIPWD=&quot;+APIPWD+&quot;&amp;AVATAR_UUID=&quot;+llEscapeURL(AviID),[HTTP_METHOD,&quot;GET&quot;],&quot;&quot;);//Send off a request to the ANGEL server API with variables set above
+    }
+    
+    http_response(key request_id, integer status, list metadata, string body)
+    { //Interprets the returned messages from the ANGEL server in XML
+        if (request_id == CheckAvatar)
+        {
+            if (llSubStringIndex(llToUpper(body),&quot;&lt;SUCCESS&gt;&quot;)==30)//ANGEL server acknowledges with XML and &quot;&lt;SUCCESS&gt;&quot; 30 characters in       
+            {
+            llSay(0,&quot;ANGEL recognizes you....&quot;);
+            llStopSound();
+            llPlaySound(ConnectedSound, 1.0);
+            ANGELID=llList2String(llParseString2List(body,[&quot;\&quot;&quot;],[]),3);//Grabs the 3rd item which is the ID from the ANGEL user table
+            state bulletin;
+            } else
+            {
+            llStopSound();
+            llPlaySound(ErrorSound, 1.0);
+            llInstantMessage(AviID,&quot;\nSelect and copy &quot;+AviName+&quot;'s secret code: \n-------\n&quot;+AviID+&quot;\n-------\nand click 'Go to page' in the blue pull-down message in the top right of your screen.&quot;);
+            llLoadURL(AviID, &quot;Your avatar is not linked. Add the Angel Island component then copy the secret code&quot;, &quot;http://&quot;+URL);
+            state idle;
+            }
+        } else if (request_id == SubmitObject)
+            {
+                if (llSubStringIndex(llToUpper(body),&quot;&lt;SUCCESS&gt;&quot;)==30)  
+                { 
+                llStopSound();
+                llPlaySound(SubmittedSound, 1.0); 
+                llSay(0, &quot;Success! You should see an entry in the dropbox resource.&quot;);
+                //Move the drawer back into the mailbox
+                vector fgpos = llGetPos();
+                vector bgpos = llGetPos() - (&lt;movementToForeground, 0.0, 0.0&gt; * llGetRot());
+                llSetPos(bgpos);
+        
+                } else
+                {
+                llSay(0,&quot;There is a problem...\n&quot;+body);
+                llStopSound();
+                llPlaySound(ErrorSound, 1.0);
+                }
+            }
+    }
+
+}
+
+state bulletin {
+    state_entry() {
+        InventoryBefore = GetInventoryDirectory();
+        llSay(0, &quot;CTRL-drag an object from Inventory.&quot;);
+        llSetPrimitiveParams([PRIM_COLOR,ALL_SIDES,colorOpen,1]); 
+        //Move the drawer out from the mailbox
+        vector bgpos = llGetPos();
+        vector fgpos = llGetPos() + (&lt;movementToForeground, 0.0, 0.0&gt; * llGetRot());
+        llSetPos(fgpos);      
+        llAllowInventoryDrop(TRUE);
+        llSetTimerEvent(Timeout);
+        llListenRemove(ListenHandle);
+        ListenHandle = llListen(0, &quot;&quot;, NULL_KEY, &quot;&quot;);
+    }
+
+    touch_start(integer total_number) { //touched while waiting for an object
+        llSay(0,&quot;Already connected - Ctrl-Drag an object.&quot;);
+        llStopSound();
+        llPlaySound(ErrorSound, 1.0);        
+    }
+    
+    changed(integer change) { //Something was added
+        if ((change &amp; CHANGED_INVENTORY) || (change &amp; CHANGED_ALLOWED_DROP)) {
+            // Get new inventory list
+            list inventoryAfter = GetInventoryDirectory();
+            // Make sure something was added
+            if (llGetListLength(InventoryBefore) &lt; llGetListLength(inventoryAfter)) 
+                // Figure out what was added
+                BulletinItem = ListDiff(inventoryAfter, InventoryBefore);
+                if (BulletinItem&#160;!= &quot;&quot;) { //It is named something
+                    // Create new bulletin
+                    llSay(0,&quot;Sending the item &quot;+BulletinItem+&quot;...&quot;);
+                    llSetTimerEvent(0);
+                    //Gather data envelope to package this and send to ANGEL server
+                    string obj_id = (string)llGetInventoryKey(BulletinItem); 
+                    string obj_name = BulletinItem; 
+                    string AviID = (string)CurrentAgent; 
+                    string AviName = llKey2Name(CurrentAgent); 
+                    string region = llGetRegionName(); 
+                    vector Where = llGetPos();
+                    integer x = (integer)Where.x;
+                    integer y = (integer)Where.y;
+                    integer z = (integer)Where.z;
+                    string obj_type = (string)GetInventoryType(BulletinItem); 
+                    integer prim_count=llGetObjectPrimCount(llGetInventoryKey(BulletinItem));
+                    string dropbox_name = llGetObjectName(); 
+                    string dropbox_id = (string)llGetInventoryKey(dropbox_name);
+                    SubmitObject = llHTTPRequest(&quot;http://&quot;+URL+&quot;/api/default.asp?APIACTION=ITEM_RESPONSE_POST&amp;APIUSER=&quot;+APIUSER+&quot;&amp;APIPWD=&quot;+APIPWD+&quot;&amp;ENTRY=&quot;+ENTRY+&quot;&amp;SECTION=&quot;+SECTION+&quot;&amp;RESPONSE_SUBMITTER=&quot;+ANGELID+&quot;&amp;RESPONSE_TITLE=&quot;+llEscapeURL(obj_name)+&quot;&amp;RESPONSE_DATA=&quot;+llEscapeURL(&quot;Second Life object (ID=&quot;)+llEscapeURL(obj_id)+llEscapeURL(&quot;) stored in a box at: &lt;a href=\&quot;http://slurl.com/secondlife/&quot;)+llEscapeURL(region)+&quot;/&quot;+(string)x+&quot;/&quot;+(string)y+&quot;/&quot;+(string)z+&quot;\&quot;&gt;http://slurl.com/secondlife/&quot;+llEscapeURL(region)+&quot;/&quot;+(string)x+&quot;/&quot;+(string)y+&quot;/&quot;+(string)z+&quot;&lt;/a&gt;&quot;,[HTTP_METHOD,&quot;GET&quot;],&quot;&quot;);
+
+                    state idle&#160;;
+
+                }
+            }
+        }
+   // }
+
+
+    timer() {
+        llSetTimerEvent(0);
+        llSay(0, &quot;TIMED OUT. Please start over.&quot;);
+        llStopSound();
+        llPlaySound(TimeoutSound, 1.0);
+        //Move the drawer back into the mailbox
+        vector fgpos = llGetPos();
+        vector bgpos = llGetPos() - (&lt;movementToForeground, 0.0, 0.0&gt; * llGetRot());
+        llSetPos(bgpos);    
+        state idle;
+    }
+}
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 5/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks catlinks-allhidden'></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/a/n/g/ANGEL_Prim_Drop_SL_Script.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:ANGEL_Prim_Drop_SL_Script&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/ANGEL_Prim_Drop_SL_Script">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 13:27, 17 December 2008 by <a href="../../../../articles/j/k/e/User:Jkemp.html" title="User:Jkemp">Jeremy Kemp</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

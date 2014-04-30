@@ -1,0 +1,1245 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs for page locallib.1.9.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name"><img src="../media/images/Page_logo.png" alt="File" style="vertical-align: middle">/sloodle/mod/quiz-1.0/locallib.1.9.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+									<a href="#sec-includes">Includes</a>
+			|							<a href="#sec-constants">Constants</a>
+			|									<a href="#sec-functions">Functions</a>
+			</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Library of functions used by the quiz module.</p>
+<p class="description"><p>This contains functions that are called from within the quiz module only  Functions that are also called by core Moodle are in <a href="../sloodle/_sloodle---lib.php.html">lib.php</a>  This script also loads the code in questionlib.php which holds  the module-indpendent code for handling questions and which in turn  initialises all the questiontype classes.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Martin Dougiamas and many others. This has recently been completely          rewritten by Alex Smith, Julian Sedding and Gustav Delius as part of          the Serving Mathematics project          <a href="http://maths.york.ac.uk/serving_maths">http://maths.york.ac.uk/serving_maths</a></li>
+				<li><span class="field">filesource:</span> <a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html">Source Code for this file</a></li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/copyleft/gpl.html">GNU Public License</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	<a name="sec-includes"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Includes</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Includes</span>
+			|							<a href="#sec-constants">Constants</a>
+				|													<a href="#sec-functions">Functions</a>
+					</div>
+		<div class="info-box-body">	
+			<a name="_$CFG->dirroot_/question/editlib_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Page.png" alt=" " />
+		<span class="include-title">
+			<span class="include-type">require_once</span>
+			(<span class="include-name">$CFG->dirroot.'/question/editlib.php'</span>)
+			(line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a23">23</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$CFG->dirroot_/mod/quiz/lib_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Page.png" alt=" " />
+		<span class="include-title">
+			<span class="include-type">require_once</span>
+			(<span class="include-name">$CFG->dirroot.'/mod/quiz/lib.php'</span>)
+			(line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a22">22</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Include those library functions that are also used by core Moodle or other modules</p>
+	
+</div>
+		</div>
+	</div>
+	
+	<a name="sec-constants"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-includes">Includes</a>
+				|						<span class="disabled">Constants</span>
+			|										<a href="#sec-functions">Functions</a>
+					</div>
+		<div class="info-box-body">	
+			<a name="defineQUIZ_ATTEMPTFIRST"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">QUIZ_ATTEMPTFIRST</span> = &quot;3&quot;
+			(line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a33">33</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Options determining how the grades from individual attempts are combined to give</p>
+<p class="description"><p>the overall grade for a user</p></p>
+	
+		
+</div>
+<a name="defineQUIZ_ATTEMPTLAST"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">QUIZ_ATTEMPTLAST</span> = &quot;4&quot;
+			(line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a34">34</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Options determining how the grades from individual attempts are combined to give</p>
+<p class="description"><p>the overall grade for a user</p></p>
+	
+		
+</div>
+<a name="defineQUIZ_GRADEAVERAGE"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">QUIZ_GRADEAVERAGE</span> = &quot;2&quot;
+			(line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a32">32</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Options determining how the grades from individual attempts are combined to give</p>
+<p class="description"><p>the overall grade for a user</p></p>
+	
+		
+</div>
+<a name="defineQUIZ_GRADEHIGHEST"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">QUIZ_GRADEHIGHEST</span> = &quot;1&quot;
+			(line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a31">31</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Options determining how the grades from individual attempts are combined to give</p>
+<p class="description"><p>the overall grade for a user</p></p>
+	
+		
+</div>
+<a name="defineQUIZ_STATE_CLOSED"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">QUIZ_STATE_CLOSED</span> = 'closed'
+			(line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a43">43</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constants to describe the various states a quiz attempt can be in.</p>
+	
+		
+</div>
+<a name="defineQUIZ_STATE_DURING"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">QUIZ_STATE_DURING</span> = 'during'
+			(line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a40">40</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constants to describe the various states a quiz attempt can be in.</p>
+	
+		
+</div>
+<a name="defineQUIZ_STATE_IMMEDIATELY"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">QUIZ_STATE_IMMEDIATELY</span> = 'immedately'
+			(line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a41">41</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constants to describe the various states a quiz attempt can be in.</p>
+	
+		
+</div>
+<a name="defineQUIZ_STATE_OPEN"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">QUIZ_STATE_OPEN</span> = 'open'
+			(line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a42">42</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constants to describe the various states a quiz attempt can be in.</p>
+	
+		
+</div>
+<a name="defineQUIZ_STATE_TEACHERACCESS"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Constant.png" />
+		<span class="const-title">
+			<span class="const-name">QUIZ_STATE_TEACHERACCESS</span> = 'teacheraccess'
+			(line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a44">44</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constants to describe the various states a quiz attempt can be in.</p>
+	
+		
+</div>
+		</div>
+	</div>
+	
+	
+	<a name="sec-functions"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Functions</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-includes">Includes</a>
+				|										<a href="#sec-constants">Constants</a>
+				|									<span class="disabled">Functions</span>
+		</div>
+		<div class="info-box-body">	
+			<a name="functionquiz_calculate_best_attempt" id="functionquiz_calculate_best_attempt"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_calculate_best_attempt</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a526">526</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the attempt with the best grade for a quiz</p>
+<p class="description"><p>Which attempt is the best depends on $quiz-&gt;grademethod. If the grade  method is GRADEAVERAGE then this function simply returns the last attempt.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> attempt with the best grade</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">object The</span>
+		<span class="method-name">
+			quiz_calculate_best_attempt
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$quiz</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$attempts</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$quiz</span><span class="var-description">: The quiz for which the best grade is to be calculated</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attempts</span><span class="var-description">: An array of all the attempts of the user at the quiz</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_calculate_best_grade" id="functionquiz_calculate_best_grade"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_calculate_best_grade</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a480">480</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculate the overall grade for a quiz given a number of attempts by a particular user.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The overall grade</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">float</span>
+		<span class="method-name">
+			quiz_calculate_best_grade
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$quiz</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$attempts</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$quiz</span><span class="var-description">: The quiz for which the best grade is to be calculated</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attempts</span><span class="var-description">: An array of all the attempts of the user at the quiz</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_create_attempt" id="functionquiz_create_attempt"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_create_attempt</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a59">59</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates an object to represent a new attempt at a quiz</p>
+<p class="description"><p>Creates an attempt object to represent an attempt at the quiz by the current  user starting at the current time. The -&gt;id field is not set. The object is  NOT written to the database.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> newly created attempt object.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">object The</span>
+		<span class="method-name">
+			quiz_create_attempt
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$quiz</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$attemptnumber</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$quiz</span><span class="var-description">: The quiz to create an attempt for.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$attemptnumber</span><span class="var-description">: The sequence number for the attempt.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_delete_attempt" id="functionquiz_delete_attempt"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_delete_attempt</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a106">106</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete a quiz attempt.</p>
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			quiz_delete_attempt
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$attempt</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$quiz</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$attempt</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$quiz</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_feedback_for_grade" id="functionquiz_feedback_for_grade"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_feedback_for_grade</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a340">340</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the feedback text that should be show to a student who  got this grade on this quiz. The feedback is processed ready for diplay.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the comment that corresponds to this grade (empty string if there is not one.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			quiz_feedback_for_grade
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$grade</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$quizid</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$grade</span><span class="var-description">: a grade on this quiz.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$quizid</span><span class="var-description">: the id of the quiz object.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_first_questionnumber" id="functionquiz_first_questionnumber"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_first_questionnumber</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a181">181</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the first question number for the current quiz page</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of the first question</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			quiz_first_questionnumber
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$quizlayout</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$pagelayout</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$quizlayout</span><span class="var-description">: The string representing the layout for the whole quiz</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$pagelayout</span><span class="var-description">: The string representing the layout for the current page</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_get_all_question_grades" id="functionquiz_get_all_question_grades"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_get_all_question_grades</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a267">267</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates an array of maximum grades for a quiz</p>
+<p class="description"><p>The grades are extracted from the quiz_question_instances table.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Array of grades indexed by question id                       These are the maximum possible grades that                       students can achieve for each of the questions</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			quiz_get_all_question_grades
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$quiz</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$quiz</span><span class="var-description">: The quiz object</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_get_best_grade" id="functionquiz_get_best_grade"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_get_best_grade</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a301">301</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the best current grade for a particular user in a quiz.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the user's current grade for this quiz.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">float</span>
+		<span class="method-name">
+			quiz_get_best_grade
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$quiz</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$userid</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$quiz</span><span class="var-description">: the quiz object.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$userid</span><span class="var-description">: the id of the user.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_get_combined_reviewoptions" id="functionquiz_get_combined_reviewoptions"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_get_combined_reviewoptions</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a754">754</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Combines the review options from a number of different quiz attempts.</p>
+<p class="description"><p>Returns an array of two ojects, so he suggested way of calling this  funciton is:  list($someoptions, $alloptions) = quiz_get_combined_reviewoptions(...)</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> of two options objects, one showing which options are true for           at least one of the attempts, the other showing which options are true           for all attempts.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			quiz_get_combined_reviewoptions
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$quiz</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$attempts</span>, [<span class="var-type">$context</span>&nbsp;<span class="var-name">$context</span> = <span class="var-default">null</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$quiz</span><span class="var-description">: the quiz instance.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attempts</span><span class="var-description">: an array of attempt objects.</span>			</li>
+					<li>
+				<span class="var-type">$context</span>
+				<span class="var-name">$context</span><span class="var-description">: the roles and permissions context,           normally the context for the quiz module instance.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_get_grading_options" id="functionquiz_get_grading_options"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_get_grading_options</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a559">559</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">return:</span> options for calculating the quiz grade from the individual attempt grades.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			quiz_get_grading_options
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functionquiz_get_grading_option_name" id="functionquiz_get_grading_option_name"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_get_grading_option_name</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a571">571</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">return:</span> lang string for that option.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			quiz_get_grading_option_name
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$option</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$option</span><span class="var-description">: one of the values QUIZ_GRADEHIGHEST, QUIZ_GRADEAVERAGE, QUIZ_ATTEMPTFIRST or QUIZ_ATTEMPTLAST.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_get_renderoptions" id="functionquiz_get_renderoptions"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_get_renderoptions</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a648">648</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determine render options</p>
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			quiz_get_renderoptions
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$reviewoptions</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">$state</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$reviewoptions</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$state</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_get_reviewoptions" id="functionquiz_get_reviewoptions"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_get_reviewoptions</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a689">689</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determine review options</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object with boolean fields responses, scores, feedback,           correct_responses, solutions and general feedback</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">object an</span>
+		<span class="method-name">
+			quiz_get_reviewoptions
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$quiz</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">$attempt</span>, [<span class="var-type">$context</span>&nbsp;<span class="var-name">$context</span> = <span class="var-default">null</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$quiz</span><span class="var-description">: the quiz instance.</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$attempt</span><span class="var-description">: the attempt in question.</span>			</li>
+					<li>
+				<span class="var-type">$context</span>
+				<span class="var-name">$context</span><span class="var-description">: the roles and permissions context,           normally the context for the quiz module instance.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_get_user_attempt_unfinished" id="functionquiz_get_user_attempt_unfinished"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_get_user_attempt_unfinished</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a94">94</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an unfinished attempt (if there is one) for the given  user on the given quiz. This function does not return preview attempts.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the unfinished attempt if there is one, false if not.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			quiz_get_user_attempt_unfinished
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$quizid</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$userid</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$quizid</span><span class="var-description">: the id of the quiz.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$userid</span><span class="var-description">: the id of the user.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_has_feedback" id="functionquiz_has_feedback"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_has_feedback</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a360">360</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">return:</span> Whether this quiz has any non-blank feedback text.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			quiz_has_feedback
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$quizid</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$quizid</span><span class="var-description">: the id of the quiz object.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_number_of_pages" id="functionquiz_number_of_pages"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_number_of_pages</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a170">170</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the number of pages in the quiz layout</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Comma separated list of question ids</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			quiz_number_of_pages
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$layout</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$layout</span><span class="var-description">: The string representing the quiz layout.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_parse_fieldname" id="functionquiz_parse_fieldname"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_parse_fieldname</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a581">581</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Parse field names used for the replace options on question edit forms</p>
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			quiz_parse_fieldname
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$nameprefix</span> = <span class="var-default">&#039;question&#039;</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$nameprefix</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_print_navigation_panel" id="functionquiz_print_navigation_panel"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_print_navigation_panel</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a229">229</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Print navigation panel for quiz attempt and review pages</p>
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			quiz_print_navigation_panel
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$page</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pages</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$page</span><span class="var-description">: The number of the current page (counting from 0).</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$pages</span><span class="var-description">: The total number of pages.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_questions_in_quiz" id="functionquiz_questions_in_quiz"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_questions_in_quiz</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a160">160</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a comma separated list of question ids for the quiz</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Comma separated list of question ids</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			quiz_questions_in_quiz
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$layout</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$layout</span><span class="var-description">: The string representing the quiz layout. Each page is represented as a                         comma separated list of question ids and 0 indicating page breaks.                         So 5,2,0,3,0 means questions 5 and 2 on page 1 and question 3 on page 2</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_questions_on_page" id="functionquiz_questions_on_page"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_questions_on_page</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a147">147</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a comma separated list of question ids for the current page</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Comma separated list of question ids</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			quiz_questions_on_page
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$layout</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$page</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$layout</span><span class="var-description">: The string representing the quiz layout. Each page is represented as a                         comma separated list of question ids and 0 indicating page breaks.                         So 5,2,0,3,0 means questions 5 and 2 on page 1 and question 3 on page 2</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$page</span><span class="var-description">: The number of the current page.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_question_preview_button" id="functionquiz_question_preview_button"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_question_preview_button</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a630">630</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">return:</span> HTML for a preview question icon.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">the</span>
+		<span class="method-name">
+			quiz_question_preview_button
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$quiz</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">$question</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$quiz</span><span class="var-description">: the quiz</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$question</span><span class="var-description">: the question</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_repaginate" id="functionquiz_repaginate"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_repaginate</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a203">203</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Re-paginates the quiz layout</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The new layout string</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			quiz_repaginate
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$layout</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$perpage</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$shuffle</span> = <span class="var-default">false</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$layout</span><span class="var-description">: The string representing the quiz layout.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$perpage</span><span class="var-description">: The number of questions per page</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$shuffle</span><span class="var-description">: Should the questions be reordered randomly?</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_rescale_grade" id="functionquiz_rescale_grade"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_rescale_grade</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a320">320</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert the raw grade stored in $attempt into a grade out of the maximum  grade for this quiz.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the rescaled grade.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">float</span>
+		<span class="method-name">
+			quiz_rescale_grade
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$rawgrade</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">$quiz</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$round</span> = <span class="var-default">true</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$rawgrade</span><span class="var-description">: the unadjusted grade, fof example $attempt-&gt;sumgrades</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$quiz</span><span class="var-description">: the quiz object. Only the fields grade, sumgrades and decimalpoints are used.</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$round</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_save_best_grade" id="functionquiz_save_best_grade"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_save_best_grade</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a433">433</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Save the overall grade for a user at a quiz in the quiz_grades table</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Indicates success or failure.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			quiz_save_best_grade
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$quiz</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$userid</span> = <span class="var-default">null</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$quiz</span><span class="var-description">: The quiz for which the best grade is to be calculated and then saved.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$userid</span><span class="var-description">: The userid to calculate the grade for. Defaults to the current user.</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_send_confirmation" id="functionquiz_send_confirmation"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_send_confirmation</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a781">781</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sends confirmation email to the student taking the course</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> result of email_to_user()</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool|string</span>
+		<span class="method-name">
+			quiz_send_confirmation
+		</span>
+					(<span class="var-type">stdClass</span>&nbsp;<span class="var-name">$a</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">stdClass</span>
+				<span class="var-name">$a</span><span class="var-description">: associative array of replaceable fields for the templates</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_send_notification" id="functionquiz_send_notification"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_send_notification</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a806">806</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sends notification email to the interested parties that assign the role capability</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> result of email_to_user()</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">bool|string</span>
+		<span class="method-name">
+			quiz_send_notification
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$recipient</span>, <span class="var-type">stdClass</span>&nbsp;<span class="var-name">$a</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$recipient</span><span class="var-description">: user object of the intended recipient</span>			</li>
+					<li>
+				<span class="var-type">stdClass</span>
+				<span class="var-name">$a</span><span class="var-description">: associative array of replaceable fields for the templates</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_send_notification_emails" id="functionquiz_send_notification_emails"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_send_notification_emails</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a835">835</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Takes a bunch of information to format into an email and send  to the specified recipient.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> number of emails sent</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			quiz_send_notification_emails
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$course</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">$quiz</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">$attempt</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">$context</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">$cm</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$course</span><span class="var-description">: the course</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$quiz</span><span class="var-description">: the quiz</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$attempt</span><span class="var-description">: this attempt just finished</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$context</span><span class="var-description">: the quiz context</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$cm</span><span class="var-description">: the coursemodule for this quiz</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_set_grade" id="functionquiz_set_grade"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_set_grade</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a378">378</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The quiz grade is the score that student's results are marked out of. When it  changes, the corresponding data in quiz_grades and quiz_feedback needs to be  rescaled.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> indicating success or failure.</li>
+			</ul>
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			quiz_set_grade
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$newgrade</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$quiz</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">$quiz</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$newgrade</span><span class="var-description">: the new maximum grade for the quiz.</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$quiz</span><span class="var-description">: the quiz we are updating. Passed by reference so its grade field can be updated too.</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$quiz</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionquiz_upgrade_states" id="functionquiz_upgrade_states"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<img src="../media/images/Function.png" />
+		<span class="method-title">quiz_upgrade_states</span> (line <span class="line-number"><a href="../__filesource/fsource_quiz__sloodlemodquiz-1.0locallib.1.9.php.html#a599">599</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Upgrade states for an attempt to Moodle 1.5 model</p>
+<p class="description"><p>Any state that does not yet have its timestamp set to nonzero has not yet been upgraded from Moodle 1.4  The reason these are still around is that for large sites it would have taken too long to  upgrade all states at once. This function sets the timestamp field and creates an entry in the  question_sessions table.</p></p>
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			quiz_upgrade_states
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$attempt</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$attempt</span><span class="var-description">: The attempt whose states need upgrading</span>			</li>
+				</ul>
+		
+	
+</div>
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 16 Jun 2008 15:56:36 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

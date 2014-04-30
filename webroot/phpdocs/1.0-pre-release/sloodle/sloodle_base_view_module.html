@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class sloodle_base_view_module</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> sloodle_base_view_module</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The base class for viewing a SLOODLE module.</p>
+<p class="description"><p>Should be inherited and overridden.  Child class MUST be named &quot;sloodle_view_NAME&quot;, where NAME replaces the name of the feature or module.  For example, &quot;sloodle_view_controller&quot; or &quot;sloodle_view_course&quot;.  For modules, the NAME must match the &quot;type&quot; specifier in the &quot;sloodle&quot; table, such as &quot;controller&quot;, &quot;distributor&quot;, or &quot;presenter&quot;.</p></p>
+		<p class="notes">
+			Located in <a class="field" href="_view---base---base_view_module.php.html">/view/base/base_view_module.php</a> (line <span class="field"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a28">28</a></span>)
+		</p>
+		
+				
+		<pre><a href="../sloodle/sloodle_base_view.html">sloodle_base_view</a>
+   |
+   --sloodle_base_view_module</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../sloodle/sloodle_view_controller.html">sloodle_view_controller</a>
+					</td>
+					<td>
+											The base class for viewing a SLOODLE Controller module.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../sloodle/sloodle_view_distributor.html">sloodle_view_distributor</a>
+					</td>
+					<td>
+											Class for rendering a view of a Distributor module in Moodle.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../sloodle/sloodle_view_ibank.html">sloodle_view_ibank</a>
+					</td>
+					<td>
+											Class for rendering a view of a Distributor module in Moodle.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../sloodle/sloodle_view_map.html">sloodle_view_map</a>
+					</td>
+					<td>
+											Class for rendering a view of a Map module in Moodle.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../sloodle/sloodle_view_presenter.html">sloodle_view_presenter</a>
+					</td>
+					<td>
+											Class for rendering a view of a Presenter module in Moodle.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																								<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">bool</span>
+					<a href="#$canedit" title="details" class="var-name">$canedit</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$cm" title="details" class="var-name">$cm</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$course" title="details" class="var-name">$course</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$course_context" title="details" class="var-name">$course_context</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$module_context" title="details" class="var-name">$module_context</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$sloodle" title="details" class="var-name">$sloodle</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type"><a href="../sloodle/SloodleCourse.html">SloodleCourse</a></span>
+					<a href="#$sloodle_course" title="details" class="var-name">$sloodle_course</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																							
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">sloodle_base_view_module</span>
+										<a href="#sloodle_base_view_module" title="details" class="method-name">sloodle_base_view_module</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#check_permission" title="details" class="method-name">check_permission</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#print_footer" title="details" class="method-name">print_footer</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#print_header" title="details" class="method-name">print_header</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#process_form" title="details" class="method-name">process_form</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#process_request" title="details" class="method-name">process_request</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#render" title="details" class="method-name">render</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$canedit" id="$canedit"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">bool</span>
+			<span class="var-name">$canedit</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a77">77</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates whether or the user can edit (or 'manage') this module, according to the VLE permissions.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$cm" id="$cm"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$cm</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a35">35</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The course module instance, retrieved directly from the database (table: course_modules)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/sloodle_view_ibank.html#var$cm">sloodle_view_ibank::$cm</a>
+								: The course module instance, retrieved directly from the database (table: course_modules)
+							</li>
+				</ul>
+		
+
+</div>
+<a name="var$course" id="$course"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$course</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a49">49</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The VLE course object, retrieved directly from the database (table: course)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/sloodle_view_ibank.html#var$course">sloodle_view_ibank::$course</a>
+								: The VLE course object, retrieved directly from the database (table: course)
+							</li>
+				</ul>
+		
+
+</div>
+<a name="var$course_context" id="$course_context"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$course_context</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a63">63</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Context object for permissions in the Moodle course.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/sloodle_view_ibank.html#var$course_context">sloodle_view_ibank::$course_context</a>
+								: Context object for permissions in the Moodle course.
+							</li>
+				</ul>
+		
+
+</div>
+<a name="var$module_context" id="$module_context"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$module_context</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a70">70</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Context object for permissions in the Moodle module.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$sloodle" id="$sloodle"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$sloodle</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a42">42</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The main SLOODLE module instance, retreived directly from the database (table: sloodle)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/sloodle_view_ibank.html#var$sloodle">sloodle_view_ibank::$sloodle</a>
+								: The main SLOODLE module instance, retreived directly from the database (table: sloodle)
+							</li>
+				</ul>
+		
+
+</div>
+<a name="var$sloodle_course" id="$sloodle_course"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../sloodle/SloodleCourse.html">SloodleCourse</a></span>
+			<span class="var-name">$sloodle_course</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a56">56</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The SLOODLE course object.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/sloodle_view_ibank.html#var$sloodle_course">sloodle_view_ibank::$sloodle_course</a>
+								: The SLOODLE course object.
+							</li>
+				</ul>
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodsloodle_base_view_module" id="sloodle_base_view_module"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor sloodle_base_view_module</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a83">83</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">sloodle_base_view_module</span>
+		<span class="method-name">
+			sloodle_base_view_module
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/sloodle_view_distributor.html#methodsloodle_base_view_module">sloodle_view_distributor::sloodle_base_view_module()</a>
+								: Constructor.
+							</li>
+				</ul>
+	</div>
+<a name="methodcheck_permission" id="check_permission"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">check_permission</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a111">111</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check that the user has permission to view this module, and check if they can edit it too.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			check_permission
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/sloodle_base_view.html#methodcheck_permission">sloodle_base_view::check_permission()</a></dt>
+						<dd>Check that the user has permission to access the current resources.</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/sloodle_view_ibank.html#methodcheck_permission">sloodle_view_ibank::check_permission()</a>
+								: Check that the user has permission to view this module, and check if they can edit it too.
+							</li>
+				</ul>
+	</div>
+<a name="methodprint_footer" id="print_footer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">print_footer</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a177">177</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Print the footer for this course.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			print_footer
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/sloodle_base_view.html#methodprint_footer">sloodle_base_view::print_footer()</a></dt>
+						<dd>Output the page footer.</dd>
+					</dl>
+			
+	</div>
+<a name="methodprint_header" id="print_header"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">print_header</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a137">137</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Print module header info.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			print_header
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/sloodle_base_view.html#methodprint_header">sloodle_base_view::print_header()</a></dt>
+						<dd>Print the standard page header.</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/sloodle_view_ibank.html#methodprint_header">sloodle_view_ibank::print_header()</a>
+								: Override the base_view_module print_header for formatting reasons
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_map.html#methodprint_header">sloodle_view_map::print_header()</a>
+								: Print the page header (requires special scripts to be added into the header)
+							</li>
+				</ul>
+	</div>
+<a name="methodprocess_form" id="process_form"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">process_form</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a130">130</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Process any form data which has been submitted.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			process_form
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/sloodle_base_view.html#methodprocess_form">sloodle_base_view::process_form()</a></dt>
+						<dd>Process any form data which has been submitted.</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/sloodle_view_controller.html#methodprocess_form">sloodle_view_controller::process_form()</a>
+								: Process any form data which has been submitted.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_distributor.html#methodprocess_form">sloodle_view_distributor::process_form()</a>
+								: Process any form data which has been submitted.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_ibank.html#methodprocess_form">sloodle_view_ibank::process_form()</a>
+								: Process any form data which has been submitted.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_map.html#methodprocess_form">sloodle_view_map::process_form()</a>
+								: Process any form data which has been submitted.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_presenter.html#methodprocess_form">sloodle_view_presenter::process_form()</a>
+								: Process any form data which has been submitted.
+							</li>
+				</ul>
+	</div>
+<a name="methodprocess_request" id="process_request"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">process_request</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a93">93</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks for incoming request data identifying a particular module (parameter 'id').</p>
+<p class="description"><p>Loads the relevant course module and SLOODLE module instances.  This should be overridden to add functionality to load any module-specific data.  However, you can simply call the parent function (i.e. this one) first to load the basic data.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			process_request
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/sloodle_base_view.html#methodprocess_request">sloodle_base_view::process_request()</a></dt>
+						<dd>Check for incoming request data identifying a particular course or module.</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/sloodle_view_controller.html#methodprocess_request">sloodle_view_controller::process_request()</a>
+								: Uses the parent class to process basic request information, then obtains additional Controller data.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_distributor.html#methodprocess_request">sloodle_view_distributor::process_request()</a>
+								: Processes request data to determine which Distributor is being accessed.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_ibank.html#methodprocess_request">sloodle_view_ibank::process_request()</a>
+								: Check and process the request parameters.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_map.html#methodprocess_request">sloodle_view_map::process_request()</a>
+								: Processes request data to determine which Map is being accessed.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_presenter.html#methodprocess_request">sloodle_view_presenter::process_request()</a>
+								: Processes request data to determine which Presenter is being accessed.
+							</li>
+				</ul>
+	</div>
+<a name="methodrender" id="render"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">render</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__viewbasebase_view_module.php.html#a170">170</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Render the view of the module or feature.</p>
+<p class="description"><p>This MUST be overridden to provide functionality.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			render
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../sloodle/sloodle_base_view.html#methodrender">sloodle_base_view::render()</a></dt>
+						<dd>Render the view of the module or feature.</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../sloodle/sloodle_view_controller.html#methodrender">sloodle_view_controller::render()</a>
+								: Render the view of the Controller.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_distributor.html#methodrender">sloodle_view_distributor::render()</a>
+								: Render the view of the Distributor.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_ibank.html#methodrender">sloodle_view_ibank::render()</a>
+								: Render the view of the Stipend Giver.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_map.html#methodrender">sloodle_view_map::render()</a>
+								: Render the view of the Map.
+							</li>
+					<li>
+				<a href="../sloodle/sloodle_view_presenter.html#methodrender">sloodle_view_presenter::render()</a>
+								: Render the view of the Presenter.
+							</li>
+				</ul>
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../sloodle/sloodle_base_view.html">sloodle_base_view</a></span></p>
+					<blockquote>
+													<img src="../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/sloodle_base_view.html#methodsloodle_base_view">sloodle_base_view::sloodle_base_view()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/sloodle_base_view.html#methodcheck_permission">sloodle_base_view::check_permission()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/sloodle_base_view.html#methodprint_footer">sloodle_base_view::print_footer()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/sloodle_base_view.html#methodprint_header">sloodle_base_view::print_header()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/sloodle_base_view.html#methodprocess_form">sloodle_base_view::process_form()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/sloodle_base_view.html#methodprocess_request">sloodle_base_view::process_request()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/sloodle_base_view.html#methodrender">sloodle_base_view::render()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../sloodle/sloodle_base_view.html#methodview">sloodle_base_view::view()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 17 Jul 2009 11:01:02 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

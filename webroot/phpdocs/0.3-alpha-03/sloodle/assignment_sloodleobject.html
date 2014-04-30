@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class assignment_sloodleobject</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> assignment_sloodleobject</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Extend the base assignment class for assignments where you submit an SL object in-world.</p>
+<p class="description"><p>This has been modified from the &quot;assignment_online&quot; type.</p></p>
+		<p class="notes">
+			Located in <a class="field" href="_sloodle---mod---primdrop-1.0---sloodleobject---assignment.class.php.html">/sloodle/mod/primdrop-1.0/sloodleobject/assignment.class.php</a> (line <span class="field"><a href="../__filesource/fsource_sloodle__sloodlemodprimdrop-1.0sloodleobjectassignment.class.php.html#a29">29</a></span>)
+		</p>
+		
+				
+		<pre>assignment_base
+   |
+   --assignment_sloodleobject</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																															
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">assignment_sloodleobject</span>
+										<a href="#assignment_sloodleobject" title="details" class="method-name">assignment_sloodleobject</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$cmid</span> = <span class="var-default">'staticonly'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$assignment</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$cm</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$course</span> = <span class="var-default">NULL</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#preprocess_submission" title="details" class="method-name">preprocess_submission</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$submission</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#print_student_answer" title="details" class="method-name">print_student_answer</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$userid</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$return</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#print_user_files" title="details" class="method-name">print_user_files</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$userid</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$return</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setup_elements" title="details" class="method-name">setup_elements</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$mform</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#update_submission" title="details" class="method-name">update_submission</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$userid</span>, <span class="var-type"><a href="../sloodle/assignment_sloodleobject_submission.html">assignment_sloodleobject_submission</a></span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#view" title="details" class="method-name">view</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#view_dates" title="details" class="method-name">view_dates</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodassignment_sloodleobject" id="assignment_sloodleobject"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor assignment_sloodleobject</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlemodprimdrop-1.0sloodleobjectassignment.class.php.html#a31">31</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">assignment_sloodleobject</span>
+		<span class="method-name">
+			assignment_sloodleobject
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$cmid</span> = <span class="var-default">'staticonly'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$assignment</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$cm</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$course</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$cmid</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$assignment</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$cm</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$course</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodpreprocess_submission" id="preprocess_submission"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">preprocess_submission</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlemodprimdrop-1.0sloodleobjectassignment.class.php.html#a172">172</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			preprocess_submission
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$submission</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$submission</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodprint_student_answer" id="print_student_answer"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">print_student_answer</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlemodprimdrop-1.0sloodleobjectassignment.class.php.html#a126">126</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			print_student_answer
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$userid</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$return</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$userid</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$return</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodprint_user_files" id="print_user_files"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">print_user_files</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlemodprimdrop-1.0sloodleobjectassignment.class.php.html#a152">152</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			print_user_files
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$userid</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$return</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$userid</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$return</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetup_elements" id="setup_elements"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setup_elements</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlemodprimdrop-1.0sloodleobjectassignment.class.php.html#a176">176</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setup_elements
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$mform</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$mform</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdate_submission" id="update_submission"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">update_submission</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlemodprimdrop-1.0sloodleobjectassignment.class.php.html#a112">112</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Update the submission with the provided data.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			update_submission
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$userid</span>, <span class="var-type"><a href="../sloodle/assignment_sloodleobject_submission.html">assignment_sloodleobject_submission</a></span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$userid</span><span class="var-description">: Integer ID of the user making the submission</span>			</li>
+					<li>
+				<span class="var-type"><a href="../sloodle/assignment_sloodleobject_submission.html">assignment_sloodleobject_submission</a></span>
+				<span class="var-name">$data</span><span class="var-description">: A structure containing data about the Sloodle assignment submission</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodview" id="view"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">view</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlemodprimdrop-1.0sloodleobjectassignment.class.php.html#a36">36</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			view
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodview_dates" id="view_dates"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">view_dates</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__sloodlemodprimdrop-1.0sloodleobjectassignment.class.php.html#a67">67</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			view_dates
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 16 Jun 2008 15:56:06 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

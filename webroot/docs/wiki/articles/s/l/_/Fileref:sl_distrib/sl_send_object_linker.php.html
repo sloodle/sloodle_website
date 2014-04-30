@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>Fileref:sl distrib/sl send object linker.php - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-Fileref_sl_distrib_sl_send_object_linker_php">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">Fileref:sl distrib/sl send object linker.php</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><a href="../../../../articles/f/o/l/File:Folder.gif.html" class="image"><img alt="Folder.gif" src="../../../../images/6/2F/6/6/67/Folder.gif" width="16" height="16" /></a>  <a href="../../../../articles/s/l/_/Fileref:sl_distrib.html" title="Fileref:sl distrib">(parent)</a> <br />
+</p><p>This <a href="../../../../articles/l/i/n/Linker_Script.html" title="Linker Script">Linker Script</a> allows in-world <a href="../../../../articles/s/l/o/Sloodle_Object_Selector.html" title="Sloodle Object Selector">selector objects</a> to fetch a list of available objects for distribution from the Moodle database (query mode), and to request that a specific object be distributed to an avatar (sendobject mode).
+</p><p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Dependencies"><span class="tocnumber">1</span> <span class="toctext">Dependencies</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Parameters"><span class="tocnumber">2</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Response"><span class="tocnumber">3</span> <span class="toctext">Response</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Algorithm"><span class="tocnumber">4</span> <span class="toctext">Algorithm</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Dependencies"> Dependencies </span></h1>
+<p>Sloodle files:
+</p>
+<ul><li> <a href="../../../../articles/c/o/n/Fileref:config.php.html" title="Fileref:config.php">config.php</a>
+</li><li> <a href="../../../../articles/s/l/_/Fileref:sl_debug.php.html" title="Fileref:sl debug.php">sl_debug.php</a>
+</li><li> <a href="../../../../articles/l/i/b/Fileref:lib/sl_lsllib.php.html" title="Fileref:lib/sl lsllib.php">lib/sl_lsllib.php</a>
+</li></ul>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Parameters"> Parameters </span></h1>
+<p>The following HTTP parameters are always required when requesting this script:
+</p>
+<ul><li> sloodlepwd = the site's <a href="../../../../articles/p/r/i/Prim_Password.html" title="Prim Password">Prim Password</a>
+</li><li> sloodlecmd = the name of the mode requested (either 'query' or 'sendobject')
+</li></ul>
+<p>When in 'sendobject' mode, the following additional parameters are also required:
+</p>
+<ul><li> sloodleuuid = UUID of the avatar to whom an object should be sent (NOTE: this is optional if 'sloodleavname' is specified and the avatar is in the Moodle database)
+</li><li> sloodleavname = name of the avatar to whom an object should be sent (NOTE: this is ignored if 'sloodleuuid' is specified)
+</li><li> sloodleobject = name of the object to send to the avatar
+</li></ul>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Response"> Response </span></h1>
+<p>If the mode specified by parameter 'sloodlecmd' is not recognised, then the script returns the -811 status code.
+</p><p><br />
+In 'query' mode, if successful, the script will return status code 1, and each data line will contain the name of an object available for distribution. Otherwise, various standard error codes might be returned in the event of a problem.
+</p><p><b>Note:</b> the status code may be 1 even if there are no objects. Please check the number of data lines before attempting to process them. 
+</p><p><br />
+In 'sendobject' mode, the returned status code will be 1 if successful, and the name of the distributed object will be specified in the first data line. (Note: the UUID of the avatar to whom the object was sent will be specified in the status line, in accordance with the <a href="../../../../articles/s/l/o/Sloodle_communications_specification.html" title="Sloodle communications specification">Sloodle communications specification</a>).
+</p><p>Various error codes may be returned if something goes wrong in 'sendobject' mode:
+</p>
+<ul><li> -812 if requested object is not found in database
+</li><li> -103 if the distribution channel is not known
+</li><li> -105 if the XML-RPC fails
+</li></ul>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Algorithm"> Algorithm </span></h1>
+<ol><li> Construct <a href="../../../../articles/s/l/o/SloodleLSLHandler.html" title="SloodleLSLHandler">SloodleLSLHandler</a> object
+</li><li> Process basic request data
+</li><li> Authenticate request
+</li><li> Fetch additional parameters
+</li><li> Make sure script mode is recognised (terminate if not)
+</li><li> Fetch the XMLRPC channel from the database (terminate if it cannot be found)
+</li><li> Fetch the list of available distribution objects from the database (terminate if none can be found)
+</li><li> Is script in query mode? If yes then:
+<ol><li> Output list of objects available for distribution
+</li></ol>
+</li><li> Else if script is in sendobject mode then:
+<ol><li> Is avatar UUID available? If not:
+<ol><li> Look-up name in database to fetch stored UUID (terminate on failure)
+</li></ol>
+</li><li> Make sure the requested object is specified in the database (terminate on failure)
+</li><li> Construct and send XMLRPC message
+</li><li> Output success or error message
+</li></ol>
+</li><li> Render response
+</li><li> Terminate script
+</li></ol>
+<p><br />
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 24/1000000
+Post‐expand include size: 545/2097152 bytes
+Template argument size: 33/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/s/l/o/Category:SloodleFileRef.html" title="Category:SloodleFileRef">SloodleFileRef</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/l/_/Fileref:sl_distrib/sl_send_object_linker.php.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:Fileref:sl_distrib/sl_send_object_linker.php&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/Fileref:sl_distrib/sl_send_object_linker.php">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 05:41, 25 January 2008 by SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

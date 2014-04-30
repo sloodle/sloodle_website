@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for sl_debug.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file sl_debug.php</h1>
+<p>Documentation is available at <a href="../sloodle/_sl_debug.php.html">sl_debug.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a3"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Sloodle&nbsp;debug&nbsp;script.</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Activates&nbsp;or&nbsp;deactivates&nbsp;debug&nbsp;mode,&nbsp;depending&nbsp;on&nbsp;a&nbsp;request&nbsp;parameter.</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;sloodle</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@copyright</span><span class="src-doc">&nbsp;Copyright&nbsp;(c)&nbsp;2007-8&nbsp;Sloodle&nbsp;(various&nbsp;contributors)</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@license</span><span class="src-doc">&nbsp;http://www.gnu.org/licenses/gpl-3.0.html&nbsp;GNU&nbsp;GPL&nbsp;v3</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-tag">@contributor</span><span class="src-doc">&nbsp;Peter&nbsp;R.&nbsp;Bloomfield</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a15"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Define&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;debug&nbsp;mode&nbsp;parameter</span></div></li>
+<li><div class="src-line"><a name="a17"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'SLOODLE_DEBUG_MODE_PARAM_NAME'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'sloodledebug'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a18"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Get&nbsp;the&nbsp;parameter</span></div></li>
+<li><div class="src-line"><a name="a20"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span>isset<span class="src-sym">(</span><span class="src-var">$_REQUEST</span><span class="src-sym">[</span><span class="src-id"><a href="../sloodle/_sl_debug.php.html#defineSLOODLE_DEBUG_MODE_PARAM_NAME">SLOODLE_DEBUG_MODE_PARAM_NAME</a></span><span class="src-sym">]</span><span class="src-sym">))&nbsp;</span><span class="src-var">$_dbg&nbsp;</span>=&nbsp;<a href="http://www.php.net/strtolower">strtolower</a><span class="src-sym">(</span><a href="http://www.php.net/trim">trim</a><span class="src-sym">(</span><span class="src-var">$_REQUEST</span><span class="src-sym">[</span><span class="src-id"><a href="../sloodle/_sl_debug.php.html#defineSLOODLE_DEBUG_MODE_PARAM_NAME">SLOODLE_DEBUG_MODE_PARAM_NAME</a></span><span class="src-sym">]</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Should&nbsp;debug&nbsp;mode&nbsp;be&nbsp;activated?&nbsp;Check&nbsp;for&nbsp;typical&nbsp;values,&nbsp;such&nbsp;as&nbsp;&quot;true&quot;,&nbsp;&quot;yes&quot;,&nbsp;&quot;ok&quot;&nbsp;and&nbsp;&quot;1&quot;</span></div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span>isset<span class="src-sym">(</span><span class="src-var">$_dbg</span><span class="src-sym">)&nbsp;</span>&amp;&amp;&nbsp;<span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$_dbg</span><span class="src-sym">)&nbsp;</span>&amp;&amp;&nbsp;<span class="src-sym">(</span><span class="src-var">$_dbg</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">'t'&nbsp;</span>||&nbsp;<span class="src-var">$_dbg&nbsp;</span>==&nbsp;<span class="src-str">'ok'&nbsp;</span>||&nbsp;<span class="src-var">$_dbg&nbsp;</span>==&nbsp;<span class="src-str">'on'&nbsp;</span>||&nbsp;<span class="src-var">$_dbg</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">'y'&nbsp;</span>||&nbsp;(int)<span class="src-var">$_dbg&nbsp;</span>!=&nbsp;<span class="src-num">0</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'SLOODLE_DEBUG'</span><span class="src-sym">,&nbsp;</span><span class="src-id">TRUE</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Enable&nbsp;PHP&nbsp;error&nbsp;display&nbsp;and&nbsp;full&nbsp;reporting&nbsp;level</span></div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/ini_set">ini_set</a><span class="src-sym">(</span><span class="src-str">'display_errors'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'1'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/error_reporting">error_reporting</a><span class="src-sym">(</span><span class="src-num">2047</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'SLOODLE_DEBUG'</span><span class="src-sym">,&nbsp;</span><span class="src-id">FALSE</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Disable&nbsp;PHP&nbsp;error&nbsp;display</span></div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/ini_set">ini_set</a><span class="src-sym">(</span><span class="src-str">'display_errors'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'0'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Note&nbsp;that&nbsp;the&nbsp;error&nbsp;reporting&nbsp;level&nbsp;is&nbsp;not&nbsp;changed&nbsp;here&nbsp;--&nbsp;this&nbsp;is&nbsp;to&nbsp;ensure&nbsp;that&nbsp;the&nbsp;error&nbsp;log&nbsp;is&nbsp;still&nbsp;written&nbsp;to</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Sloodle&nbsp;debug&nbsp;output&nbsp;function</span></div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Will&nbsp;echo&nbsp;the&nbsp;given&nbsp;string&nbsp;to&nbsp;the&nbsp;HTTP&nbsp;response&nbsp;if&nbsp;Sloodle&nbsp;debug&nbsp;mode&nbsp;is&nbsp;active</span></div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../sloodle/_sl_debug.php.html#functionsloodle_debug_output">sloodle_debug_output</a><span class="src-sym">(</span><span class="src-var">$str</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-id"><a href="../sloodle/_sl_debug.php.html#defineSLOODLE_DEBUG">SLOODLE_DEBUG</a></span><span class="src-sym">)&nbsp;</span>echo&nbsp;<span class="src-var">$str</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a40"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 04 Mar 2008 15:08:38 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</body>
+</html>

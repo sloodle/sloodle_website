@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for lib.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file lib.php</h1>
+<p>Documentation is available at <a href="../sloodle/_lib.php.html">lib.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a3"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Sloodle&nbsp;module&nbsp;core&nbsp;library&nbsp;functionality.</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;script&nbsp;is&nbsp;required&nbsp;by&nbsp;Moodle&nbsp;to&nbsp;contain&nbsp;certain&nbsp;key&nbsp;functionality&nbsp;for&nbsp;the&nbsp;module.</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;sloodle</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@copyright</span><span class="src-doc">&nbsp;Copyright&nbsp;(c)&nbsp;2007&nbsp;Sloodle&nbsp;(various&nbsp;contributors)</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@license</span><span class="src-doc">&nbsp;http://www.gnu.org/licenses/gpl-3.0.html&nbsp;GNU&nbsp;GPL&nbsp;v3</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-tag">@contributor</span><span class="src-doc">&nbsp;Peter&nbsp;R.&nbsp;Bloomfield</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a15"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a16"></a><span class="src-comm">//&nbsp;Process&nbsp;the&nbsp;configuration&nbsp;options&nbsp;for&nbsp;the&nbsp;Sloodle&nbsp;module</span></div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-comm">//&nbsp;$config&nbsp;is&nbsp;a&nbsp;reference&nbsp;to&nbsp;the&nbsp;submitted&nbsp;configuration&nbsp;settings</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-comm">//&nbsp;We&nbsp;can&nbsp;perform&nbsp;validation&nbsp;and&nbsp;other&nbsp;processing&nbsp;here&nbsp;as&nbsp;necessary</span></div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-key">function&nbsp;</span><a href="../sloodle/_lib.php.html#functionsloodle_process_options">sloodle_process_options</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$config</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">global&nbsp;</span><span class="src-var">$CFG</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Determine&nbsp;the&nbsp;page&nbsp;which&nbsp;we&nbsp;should&nbsp;re-direct&nbsp;to&nbsp;if&nbsp;validation&nbsp;fails</span></div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$redirect&nbsp;</span>=&nbsp;<span class="src-var">$CFG</span><span class="src-sym">-&gt;</span><span class="src-id">wwwroot&nbsp;</span>.&nbsp;<span class="src-str">'/admin/module.php?module=sloodle'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;This&nbsp;string&nbsp;will&nbsp;contain&nbsp;error&nbsp;codes&nbsp;to&nbsp;supply&nbsp;to&nbsp;the&nbsp;configuration&nbsp;page&nbsp;if&nbsp;validation&nbsp;fails</span></div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$error_codes&nbsp;</span>=&nbsp;<span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Make&nbsp;sure&nbsp;the&nbsp;prim&nbsp;password&nbsp;is&nbsp;valid</span></div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$sloodle_pwd&nbsp;</span>=&nbsp;<span class="src-var">$config</span><span class="src-sym">-&gt;</span><span class="src-id">prim_password</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Is&nbsp;is&nbsp;an&nbsp;appropriate&nbsp;length?</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$len&nbsp;</span>=&nbsp;<a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$sloodle_pwd</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$len&nbsp;</span>&lt;&nbsp;<span class="src-num">5</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$error_codes&nbsp;</span>.=&nbsp;<span class="src-str">&quot;&amp;sloodlepwdshort=yes&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$len&nbsp;</span>&gt;&nbsp;<span class="src-num">9</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$error_codes&nbsp;</span>.=&nbsp;<span class="src-str">&quot;&amp;sloodlepwdlong=yes&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Is&nbsp;it&nbsp;numeric&nbsp;only?</span></div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span><a href="http://www.php.net/ctype_digit">ctype_digit</a><span class="src-sym">(</span><span class="src-var">$sloodle_pwd</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$error_codes&nbsp;</span>.=&nbsp;<span class="src-str">&quot;&amp;sloodlepwdnonnum=yes&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Does&nbsp;it&nbsp;have&nbsp;a&nbsp;leading&nbsp;zero?</span></div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$len&nbsp;</span>&gt;=&nbsp;<span class="src-num">1&nbsp;</span>&amp;&amp;&nbsp;<a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$sloodle_pwd</span><span class="src-sym">,&nbsp;</span><span class="src-num">0</span><span class="src-sym">,&nbsp;</span><span class="src-num">1</span><span class="src-sym">)&nbsp;</span>==&nbsp;<span class="src-str">&quot;0&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$error_codes&nbsp;</span>.=&nbsp;<span class="src-str">&quot;&amp;sloodlepwdleadzero=yes&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Is&nbsp;the&nbsp;flag&nbsp;for&nbsp;allowing&nbsp;teachers&nbsp;to&nbsp;edit&nbsp;user&nbsp;data&nbsp;valid?</span></div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span>isset<span class="src-sym">(</span><span class="src-var">$config</span><span class="src-sym">-&gt;</span><span class="src-id">allow_user_edit_by_teachers</span><span class="src-sym">)&nbsp;</span>==&nbsp;<span class="src-id">FALSE&nbsp;</span>||&nbsp;<span class="src-sym">(</span><span class="src-var">$config</span><span class="src-sym">-&gt;</span><span class="src-id">allow_user_edit_by_teachers&nbsp;</span>!=&nbsp;<span class="src-str">'true'&nbsp;</span>&amp;&amp;&nbsp;<span class="src-var">$config</span><span class="src-sym">-&gt;</span><span class="src-id">allow_user_edit_by_teachers&nbsp;</span>!=&nbsp;<span class="src-str">'false'</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Force&nbsp;it&nbsp;to&nbsp;a&nbsp;default&nbsp;value</span></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$config</span><span class="src-sym">-&gt;</span><span class="src-id">allow_user_edit_by_teachers&nbsp;</span>=&nbsp;<span class="src-str">'false'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Is&nbsp;the&nbsp;auth&nbsp;method&nbsp;recognised?</span></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$config</span><span class="src-sym">-&gt;</span><span class="src-id">auth_method&nbsp;</span>==&nbsp;<span class="src-str">&quot;web&quot;&nbsp;</span>||&nbsp;<span class="src-var">$config</span><span class="src-sym">-&gt;</span><span class="src-id">auth_method&nbsp;</span>==&nbsp;<span class="src-str">&quot;autoregister&quot;</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$error_codes&nbsp;</span>.=&nbsp;<span class="src-str">&quot;&amp;sloodleauthinvalid=yes&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Were&nbsp;there&nbsp;any&nbsp;error&nbsp;messages?</span></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$error_codes</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Append&nbsp;our&nbsp;parameters&nbsp;to&nbsp;the&nbsp;error&nbsp;codes&nbsp;string</span></div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$error_codes&nbsp;</span>.=&nbsp;<span class="src-str">&quot;</span><span class="src-str">&amp;sloodlepwd={<span class="src-var">$config</span></span><span class="src-sym">-&gt;</span><span class="src-id">prim_password</span><span class="src-str"></span><span class="src-sym">}</span>&amp;sloodleauth={<span class="src-var">$config</span></span><span class="src-sym">-&gt;</span><span class="src-id">auth_method</span><span class="src-str"></span><span class="src-sym">}</span></span><span class="src-str">&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a62"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Redirect&nbsp;back&nbsp;to&nbsp;the&nbsp;configuration&nbsp;page</span></div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span><a href="http://www.php.net/headers_sent">headers_sent</a><span class="src-sym">(</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/header">header</a><span class="src-sym">(</span><span class="src-str">&quot;Location:&nbsp;&quot;&nbsp;</span>.&nbsp;<span class="src-var">$redirect&nbsp;</span>.&nbsp;<span class="src-var">$error_codes&nbsp;</span>.&nbsp;<span class="src-str">&quot;&amp;header_redirect=true&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">exit</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a68"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">redirect</span><span class="src-sym">(</span><span class="src-var">$redirect&nbsp;</span>.&nbsp;<span class="src-var">$error_codes&nbsp;</span>.&nbsp;<span class="src-str">&quot;&amp;header_redirect=false&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-str">&quot;There&nbsp;was&nbsp;an&nbsp;error&nbsp;in&nbsp;the&nbsp;configuration.&nbsp;Please&nbsp;try&nbsp;again.&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">exit</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a71"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a74"></a><span class="src-comm">//&nbsp;Placeholder&nbsp;functions</span></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a76"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a77"></a><span class="src-doc">&nbsp;*&nbsp;Given&nbsp;an&nbsp;object&nbsp;containing&nbsp;all&nbsp;the&nbsp;necessary&nbsp;data,</span></div></li>
+<li><div class="src-line"><a name="a78"></a><span class="src-doc">&nbsp;*&nbsp;(defined&nbsp;by&nbsp;the&nbsp;form&nbsp;in&nbsp;mod.html)&nbsp;this&nbsp;function</span></div></li>
+<li><div class="src-line"><a name="a79"></a><span class="src-doc">&nbsp;*&nbsp;will&nbsp;create&nbsp;a&nbsp;new&nbsp;instance&nbsp;and&nbsp;return&nbsp;the&nbsp;id&nbsp;number</span></div></li>
+<li><div class="src-line"><a name="a80"></a><span class="src-doc">&nbsp;*&nbsp;of&nbsp;the&nbsp;new&nbsp;instance.</span></div></li>
+<li><div class="src-line"><a name="a81"></a><span class="src-doc">&nbsp;*&nbsp;&lt;b&gt;Note:&lt;/b&gt;&nbsp;this&nbsp;function&nbsp;is&nbsp;not&nbsp;yet&nbsp;used&nbsp;by&nbsp;Sloodle.&nbsp;Will&nbsp;hopefully&nbsp;be&nbsp;used&nbsp;in&nbsp;version&nbsp;0.3!</span></div></li>
+<li><div class="src-line"><a name="a82"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a83"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">object&nbsp;</span><span class="src-doc-var">$instance&nbsp;</span><span class="src-doc">An&nbsp;object&nbsp;from&nbsp;the&nbsp;form&nbsp;in&nbsp;mod.html</span></div></li>
+<li><div class="src-line"><a name="a84"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">int&nbsp;</span><span class="src-doc">The&nbsp;id&nbsp;of&nbsp;the&nbsp;newly&nbsp;inserted&nbsp;sloodle&nbsp;record</span></div></li>
+<li><div class="src-line"><a name="a85"></a><span class="src-doc">&nbsp;***/</span></div></li>
+<li><div class="src-line"><a name="a86"></a><span class="src-key">function&nbsp;</span><a href="../sloodle/_lib.php.html#functionsloodle_add_instance">sloodle_add_instance</a><span class="src-sym">(</span><span class="src-var">$sloodle</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">FALSE</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a89"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a90"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a91"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a92"></a><span class="src-doc">&nbsp;*&nbsp;Given&nbsp;an&nbsp;object&nbsp;containing&nbsp;all&nbsp;the&nbsp;necessary&nbsp;data,</span></div></li>
+<li><div class="src-line"><a name="a93"></a><span class="src-doc">&nbsp;*&nbsp;(defined&nbsp;by&nbsp;the&nbsp;form&nbsp;in&nbsp;mod.html)&nbsp;this&nbsp;function</span></div></li>
+<li><div class="src-line"><a name="a94"></a><span class="src-doc">&nbsp;*&nbsp;will&nbsp;update&nbsp;an&nbsp;existing&nbsp;instance&nbsp;with&nbsp;new&nbsp;data.</span></div></li>
+<li><div class="src-line"><a name="a95"></a><span class="src-doc">&nbsp;*&nbsp;&lt;b&gt;Note:&lt;/b&gt;&nbsp;this&nbsp;function&nbsp;is&nbsp;not&nbsp;yet&nbsp;used&nbsp;by&nbsp;Sloodle.&nbsp;Will&nbsp;hopefully&nbsp;be&nbsp;used&nbsp;in&nbsp;version&nbsp;0.3!</span></div></li>
+<li><div class="src-line"><a name="a96"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a97"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">object&nbsp;</span><span class="src-doc-var">$instance&nbsp;</span><span class="src-doc">An&nbsp;object&nbsp;from&nbsp;the&nbsp;form&nbsp;in&nbsp;mod.html</span></div></li>
+<li><div class="src-line"><a name="a98"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">boolean&nbsp;</span><span class="src-doc">Success/Fail</span></div></li>
+<li><div class="src-line"><a name="a99"></a><span class="src-doc">&nbsp;***/</span></div></li>
+<li><div class="src-line"><a name="a100"></a><span class="src-key">function&nbsp;</span><a href="../sloodle/_lib.php.html#functionsloodle_update_instance">sloodle_update_instance</a><span class="src-sym">(</span><span class="src-var">$sloodle</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a101"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a102"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">FALSE</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a103"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a104"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a105"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a106"></a><span class="src-doc">&nbsp;*&nbsp;Given&nbsp;an&nbsp;ID&nbsp;of&nbsp;an&nbsp;instance&nbsp;of&nbsp;this&nbsp;module,</span></div></li>
+<li><div class="src-line"><a name="a107"></a><span class="src-doc">&nbsp;*&nbsp;this&nbsp;function&nbsp;will&nbsp;permanently&nbsp;delete&nbsp;the&nbsp;instance</span></div></li>
+<li><div class="src-line"><a name="a108"></a><span class="src-doc">&nbsp;*&nbsp;and&nbsp;any&nbsp;data&nbsp;that&nbsp;depends&nbsp;on&nbsp;it.</span></div></li>
+<li><div class="src-line"><a name="a109"></a><span class="src-doc">&nbsp;*&nbsp;&lt;b&gt;Note:&lt;/b&gt;&nbsp;this&nbsp;function&nbsp;is&nbsp;not&nbsp;yet&nbsp;used&nbsp;by&nbsp;Sloodle.&nbsp;Will&nbsp;hopefully&nbsp;be&nbsp;used&nbsp;in&nbsp;version&nbsp;0.3!</span></div></li>
+<li><div class="src-line"><a name="a110"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a111"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">int&nbsp;</span><span class="src-doc-var">$id&nbsp;</span><span class="src-doc">Id&nbsp;of&nbsp;the&nbsp;module&nbsp;instance</span></div></li>
+<li><div class="src-line"><a name="a112"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">boolean&nbsp;</span><span class="src-doc">Success/Failure</span></div></li>
+<li><div class="src-line"><a name="a113"></a><span class="src-doc">&nbsp;***/</span></div></li>
+<li><div class="src-line"><a name="a114"></a><span class="src-key">function&nbsp;</span><a href="../sloodle/_lib.php.html#functionsloodle_delete_instance">sloodle_delete_instance</a><span class="src-sym">(</span><span class="src-var">$id</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a115"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a116"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">FALSE</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a117"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a118"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a119"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a120"></a><span class="src-doc">&nbsp;*&nbsp;Return&nbsp;a&nbsp;small&nbsp;object&nbsp;with&nbsp;summary&nbsp;information&nbsp;about&nbsp;what&nbsp;a</span></div></li>
+<li><div class="src-line"><a name="a121"></a><span class="src-doc">&nbsp;*&nbsp;user&nbsp;has&nbsp;done&nbsp;with&nbsp;a&nbsp;given&nbsp;particular&nbsp;instance&nbsp;of&nbsp;this&nbsp;module</span></div></li>
+<li><div class="src-line"><a name="a122"></a><span class="src-doc">&nbsp;*&nbsp;Used&nbsp;for&nbsp;user&nbsp;activity&nbsp;reports.</span></div></li>
+<li><div class="src-line"><a name="a123"></a><span class="src-doc">&nbsp;*&nbsp;$return-&gt;time&nbsp;=&nbsp;the&nbsp;time&nbsp;they&nbsp;did&nbsp;it</span></div></li>
+<li><div class="src-line"><a name="a124"></a><span class="src-doc">&nbsp;*&nbsp;$return-&gt;info&nbsp;=&nbsp;a&nbsp;short&nbsp;text&nbsp;description</span></div></li>
+<li><div class="src-line"><a name="a125"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a126"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">null&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a127"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@todo</span><span class="src-doc">&nbsp;Finish&nbsp;documenting&nbsp;this&nbsp;function</span></div></li>
+<li><div class="src-line"><a name="a128"></a><span class="src-doc">&nbsp;***/</span></div></li>
+<li><div class="src-line"><a name="a129"></a><span class="src-key">function&nbsp;</span><a href="../sloodle/_lib.php.html#functionsloodle_user_outline">sloodle_user_outline</a><span class="src-sym">(</span><span class="src-var">$course</span><span class="src-sym">,&nbsp;</span><span class="src-var">$user</span><span class="src-sym">,&nbsp;</span><span class="src-var">$mod</span><span class="src-sym">,&nbsp;</span><span class="src-var">$sloodle</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a130"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">NULL</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a131"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a132"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a133"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a134"></a><span class="src-doc">&nbsp;*&nbsp;Print&nbsp;a&nbsp;detailed&nbsp;representation&nbsp;of&nbsp;what&nbsp;a&nbsp;user&nbsp;has&nbsp;done&nbsp;with</span></div></li>
+<li><div class="src-line"><a name="a135"></a><span class="src-doc">&nbsp;*&nbsp;a&nbsp;given&nbsp;particular&nbsp;instance&nbsp;of&nbsp;this&nbsp;module,&nbsp;for&nbsp;user&nbsp;activity&nbsp;reports.</span></div></li>
+<li><div class="src-line"><a name="a136"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a137"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">boolean&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a138"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@todo</span><span class="src-doc">&nbsp;Finish&nbsp;documenting&nbsp;this&nbsp;function</span></div></li>
+<li><div class="src-line"><a name="a139"></a><span class="src-doc">&nbsp;***/</span></div></li>
+<li><div class="src-line"><a name="a140"></a><span class="src-key">function&nbsp;</span><a href="../sloodle/_lib.php.html#functionsloodle_user_complete">sloodle_user_complete</a><span class="src-sym">(</span><span class="src-var">$course</span><span class="src-sym">,&nbsp;</span><span class="src-var">$user</span><span class="src-sym">,&nbsp;</span><span class="src-var">$mod</span><span class="src-sym">,&nbsp;</span><span class="src-var">$sloodle</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a141"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">true</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a142"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a143"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a144"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a145"></a><span class="src-doc">&nbsp;*&nbsp;Given&nbsp;a&nbsp;course&nbsp;and&nbsp;a&nbsp;time,&nbsp;this&nbsp;module&nbsp;should&nbsp;find&nbsp;recent&nbsp;activity</span></div></li>
+<li><div class="src-line"><a name="a146"></a><span class="src-doc">&nbsp;*&nbsp;that&nbsp;has&nbsp;occurred&nbsp;in&nbsp;sloodle&nbsp;activities&nbsp;and&nbsp;print&nbsp;it&nbsp;out.</span></div></li>
+<li><div class="src-line"><a name="a147"></a><span class="src-doc">&nbsp;*&nbsp;Return&nbsp;true&nbsp;if&nbsp;there&nbsp;was&nbsp;output,&nbsp;or&nbsp;false&nbsp;is&nbsp;there&nbsp;was&nbsp;none.</span></div></li>
+<li><div class="src-line"><a name="a148"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a149"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@uses</span><span class="src-doc">&nbsp;$CFG</span></div></li>
+<li><div class="src-line"><a name="a150"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">boolean&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a151"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@todo</span><span class="src-doc">&nbsp;Finish&nbsp;documenting&nbsp;this&nbsp;function</span></div></li>
+<li><div class="src-line"><a name="a152"></a><span class="src-doc">&nbsp;***/</span></div></li>
+<li><div class="src-line"><a name="a153"></a><span class="src-key">function&nbsp;</span><a href="../sloodle/_lib.php.html#functionsloodle_print_recent_activity">sloodle_print_recent_activity</a><span class="src-sym">(</span><span class="src-var">$course</span><span class="src-sym">,&nbsp;</span><span class="src-var">$isteacher</span><span class="src-sym">,&nbsp;</span><span class="src-var">$timestart</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a154"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">global&nbsp;</span><span class="src-var">$CFG</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a155"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a156"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">false</span><span class="src-sym">;&nbsp;&nbsp;</span><span class="src-comm">//&nbsp;&nbsp;True&nbsp;if&nbsp;anything&nbsp;was&nbsp;printed,&nbsp;otherwise&nbsp;false&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a157"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a158"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a159"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a160"></a><span class="src-doc">&nbsp;*&nbsp;Function&nbsp;to&nbsp;be&nbsp;run&nbsp;periodically&nbsp;according&nbsp;to&nbsp;the&nbsp;moodle&nbsp;cron</span></div></li>
+<li><div class="src-line"><a name="a161"></a><span class="src-doc">&nbsp;*&nbsp;This&nbsp;function&nbsp;searches&nbsp;for&nbsp;things&nbsp;that&nbsp;need&nbsp;to&nbsp;be&nbsp;done,&nbsp;such</span></div></li>
+<li><div class="src-line"><a name="a162"></a><span class="src-doc">&nbsp;*&nbsp;as&nbsp;sending&nbsp;out&nbsp;mail,&nbsp;toggling&nbsp;flags&nbsp;etc&nbsp;...</span></div></li>
+<li><div class="src-line"><a name="a163"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a164"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@uses</span><span class="src-doc">&nbsp;$CFG</span></div></li>
+<li><div class="src-line"><a name="a165"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">boolean&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a166"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@todo</span><span class="src-doc">&nbsp;Finish&nbsp;documenting&nbsp;this&nbsp;function</span></div></li>
+<li><div class="src-line"><a name="a167"></a><span class="src-doc">&nbsp;***/</span></div></li>
+<li><div class="src-line"><a name="a168"></a><span class="src-key">function&nbsp;</span><a href="../sloodle/_lib.php.html#functionsloodle_cron">sloodle_cron</a>&nbsp;<span class="src-sym">(</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a169"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">global&nbsp;</span><span class="src-var">$CFG</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a170"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a171"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">true</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a172"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a173"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a174"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a175"></a><span class="src-doc">&nbsp;*&nbsp;Must&nbsp;return&nbsp;an&nbsp;array&nbsp;of&nbsp;grades&nbsp;for&nbsp;a&nbsp;given&nbsp;instance&nbsp;of&nbsp;this&nbsp;module,</span></div></li>
+<li><div class="src-line"><a name="a176"></a><span class="src-doc">&nbsp;*&nbsp;indexed&nbsp;by&nbsp;user.&nbsp;&nbsp;It&nbsp;also&nbsp;returns&nbsp;a&nbsp;maximum&nbsp;allowed&nbsp;grade.</span></div></li>
+<li><div class="src-line"><a name="a177"></a><span class="src-doc">&nbsp;*&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a178"></a><span class="src-doc">&nbsp;*&nbsp;Example:</span></div></li>
+<li><div class="src-line"><a name="a179"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;$return-&gt;grades&nbsp;=&nbsp;array&nbsp;of&nbsp;grades;</span></div></li>
+<li><div class="src-line"><a name="a180"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;$return-&gt;maxgrade&nbsp;=&nbsp;maximum&nbsp;allowed&nbsp;grade;</span></div></li>
+<li><div class="src-line"><a name="a181"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a182"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$return;</span></div></li>
+<li><div class="src-line"><a name="a183"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a184"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">int&nbsp;</span><span class="src-doc-var">$sloodleid&nbsp;</span><span class="src-doc">ID&nbsp;of&nbsp;an&nbsp;instance&nbsp;of&nbsp;this&nbsp;module</span></div></li>
+<li><div class="src-line"><a name="a185"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">mixed&nbsp;</span><span class="src-doc">Null&nbsp;or&nbsp;object&nbsp;with&nbsp;an&nbsp;array&nbsp;of&nbsp;grades&nbsp;and&nbsp;with&nbsp;the&nbsp;maximum&nbsp;grade</span></div></li>
+<li><div class="src-line"><a name="a186"></a><span class="src-doc">&nbsp;***/</span></div></li>
+<li><div class="src-line"><a name="a187"></a><span class="src-key">function&nbsp;</span><a href="../sloodle/_lib.php.html#functionsloodle_grades">sloodle_grades</a><span class="src-sym">(</span><span class="src-var">$sloodleid</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a188"></a>&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">NULL</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a189"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a190"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a191"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a192"></a><span class="src-doc">&nbsp;*&nbsp;Must&nbsp;return&nbsp;an&nbsp;array&nbsp;of&nbsp;user&nbsp;records&nbsp;(all&nbsp;data)&nbsp;who&nbsp;are&nbsp;participants</span></div></li>
+<li><div class="src-line"><a name="a193"></a><span class="src-doc">&nbsp;*&nbsp;for&nbsp;a&nbsp;given&nbsp;instance&nbsp;of&nbsp;sloodle.&nbsp;Must&nbsp;include&nbsp;every&nbsp;user&nbsp;involved</span></div></li>
+<li><div class="src-line"><a name="a194"></a><span class="src-doc">&nbsp;*&nbsp;in&nbsp;the&nbsp;instance,&nbsp;independient&nbsp;of&nbsp;his&nbsp;role&nbsp;(student,&nbsp;teacher,&nbsp;admin...)</span></div></li>
+<li><div class="src-line"><a name="a195"></a><span class="src-doc">&nbsp;*&nbsp;See&nbsp;other&nbsp;modules&nbsp;as&nbsp;example.</span></div></li>
+<li><div class="src-line"><a name="a196"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a197"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">int&nbsp;</span><span class="src-doc-var">$sloodleid&nbsp;</span><span class="src-doc">ID&nbsp;of&nbsp;an&nbsp;instance&nbsp;of&nbsp;this&nbsp;module</span></div></li>
+<li><div class="src-line"><a name="a198"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">mixed&nbsp;</span><span class="src-doc">boolean/array&nbsp;of&nbsp;students</span></div></li>
+<li><div class="src-line"><a name="a199"></a><span class="src-doc">&nbsp;***/</span></div></li>
+<li><div class="src-line"><a name="a200"></a><span class="src-key">function&nbsp;</span><a href="../sloodle/_lib.php.html#functionsloodle_get_participants">sloodle_get_participants</a><span class="src-sym">(</span><span class="src-var">$sloodleid</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a201"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-id">false</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a202"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a203"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a204"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a205"></a><span class="src-doc">&nbsp;*&nbsp;This&nbsp;function&nbsp;returns&nbsp;if&nbsp;a&nbsp;scale&nbsp;is&nbsp;being&nbsp;used&nbsp;by&nbsp;one&nbsp;sloodle</span></div></li>
+<li><div class="src-line"><a name="a206"></a><span class="src-doc">&nbsp;*&nbsp;it&nbsp;it&nbsp;has&nbsp;support&nbsp;for&nbsp;grading&nbsp;and&nbsp;scales.&nbsp;Commented&nbsp;code&nbsp;should&nbsp;be</span></div></li>
+<li><div class="src-line"><a name="a207"></a><span class="src-doc">&nbsp;*&nbsp;modified&nbsp;if&nbsp;necessary.&nbsp;See&nbsp;forum,&nbsp;glossary&nbsp;or&nbsp;journal&nbsp;modules</span></div></li>
+<li><div class="src-line"><a name="a208"></a><span class="src-doc">&nbsp;*&nbsp;as&nbsp;reference.</span></div></li>
+<li><div class="src-line"><a name="a209"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a210"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">int&nbsp;</span><span class="src-doc-var">$sloodleid&nbsp;</span><span class="src-doc">ID&nbsp;of&nbsp;an&nbsp;instance&nbsp;of&nbsp;this&nbsp;module</span></div></li>
+<li><div class="src-line"><a name="a211"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">mixed&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a212"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@todo</span><span class="src-doc">&nbsp;Finish&nbsp;documenting&nbsp;this&nbsp;function</span></div></li>
+<li><div class="src-line"><a name="a213"></a><span class="src-doc">&nbsp;***/</span></div></li>
+<li><div class="src-line"><a name="a214"></a><span class="src-key">function&nbsp;</span><a href="../sloodle/_lib.php.html#functionsloodle_scale_used">sloodle_scale_used</a>&nbsp;<span class="src-sym">(</span><span class="src-var">$sloodleid</span><span class="src-sym">,</span><span class="src-var">$scaleid</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a215"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$return&nbsp;</span>=&nbsp;<span class="src-id">false</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a216"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a217"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//$rec&nbsp;=&nbsp;get_record(&quot;sloodle&quot;,&quot;id&quot;,&quot;$sloodleid&quot;,&quot;scale&quot;,&quot;-$scaleid&quot;);</span></div></li>
+<li><div class="src-line"><a name="a218"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//</span></div></li>
+<li><div class="src-line"><a name="a219"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//if&nbsp;(!empty($rec)&nbsp;&nbsp;&amp;&amp;&nbsp;!empty($scaleid))&nbsp;{</span></div></li>
+<li><div class="src-line"><a name="a220"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;&nbsp;&nbsp;&nbsp;$return&nbsp;=&nbsp;true;</span></div></li>
+<li><div class="src-line"><a name="a221"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//}</span></div></li>
+<li><div class="src-line"><a name="a222"></a>&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a223"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$return</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a224"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a225"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a226"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a227"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 04 Mar 2008 15:08:34 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</body>
+</html>

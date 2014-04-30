@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>SloodleUser - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-SloodleUser">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">SloodleUser</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Declaration"><span class="tocnumber">1</span> <span class="toctext">Declaration</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Summary"><span class="tocnumber">2</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Compatibility"><span class="tocnumber">3</span> <span class="toctext">Compatibility</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Data"><span class="tocnumber">4</span> <span class="toctext">Data</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Private"><span class="tocnumber">4.1</span> <span class="toctext">Private</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#var_.24sloodle_user_id"><span class="tocnumber">4.1.1</span> <span class="toctext">var $sloodle_user_id</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#var_.24moodle_user_id"><span class="tocnumber">4.1.2</span> <span class="toctext">var $moodle_user_id</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Public"><span class="tocnumber">4.2</span> <span class="toctext">Public</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#var_.24sloodle_user_cache"><span class="tocnumber">4.2.1</span> <span class="toctext">var $sloodle_user_cache</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#var_.24moodle_user_cache"><span class="tocnumber">4.2.2</span> <span class="toctext">var $moodle_user_cache</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#var_.24enrolled_courses_cache"><span class="tocnumber">4.2.3</span> <span class="toctext">var $enrolled_courses_cache</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Functions"><span class="tocnumber">5</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Construction"><span class="tocnumber">5.1</span> <span class="toctext">Construction</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="#SloodleUser.28.29"><span class="tocnumber">5.1.1</span> <span class="toctext">SloodleUser()</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="#Accessors"><span class="tocnumber">5.2</span> <span class="toctext">Accessors</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#get_sloodle_user_id.28.29"><span class="tocnumber">5.2.1</span> <span class="toctext">get_sloodle_user_id()</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#set_sloodle_user_id.28.24id.29"><span class="tocnumber">5.2.2</span> <span class="toctext">set_sloodle_user_id($id)</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#get_moodle_user_id.28.29"><span class="tocnumber">5.2.3</span> <span class="toctext">get_moodle_user_id()</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#set_moodle_user_id.28.24id.29"><span class="tocnumber">5.2.4</span> <span class="toctext">set_moodle_user_id($id)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="#User_Links"><span class="tocnumber">5.3</span> <span class="toctext">User Links</span></a>
+<ul>
+<li class="toclevel-3 tocsection-21"><a href="#users_linked.28.24use_cache_.3D_FALSE.29"><span class="tocnumber">5.3.1</span> <span class="toctext">users_linked($use_cache = FALSE)</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#link_users.28.29"><span class="tocnumber">5.3.2</span> <span class="toctext">link_users()</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#unlink_sloodle_user.28.29"><span class="tocnumber">5.3.3</span> <span class="toctext">unlink_sloodle_user()</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-24"><a href="#Database_Functions"><span class="tocnumber">5.4</span> <span class="toctext">Database Functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="#delete_sloodle_user.28.29"><span class="tocnumber">5.4.1</span> <span class="toctext">delete_sloodle_user()</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#update_sloodle_user_cache_from_db.28.29"><span class="tocnumber">5.4.2</span> <span class="toctext">update_sloodle_user_cache_from_db()</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#update_moodle_user_cache_from_db.28.29"><span class="tocnumber">5.4.3</span> <span class="toctext">update_moodle_user_cache_from_db()</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#update_sloodle_user_cache_to_db.28.29"><span class="tocnumber">5.4.4</span> <span class="toctext">update_sloodle_user_cache_to_db()</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#insert_sloodle_user_cache_to_db.28.29"><span class="tocnumber">5.4.5</span> <span class="toctext">insert_sloodle_user_cache_to_db()</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#create_sloodle_user.28.24uuid.2C_.24avname.2C_.24userid.2C_.24loginposition.2C_.24loginpositionexpires.2C_.24loginpositionregion.2C_.24loginsecuritytoken.29"><span class="tocnumber">5.4.6</span> <span class="toctext">create_sloodle_user($uuid, $avname, $userid, $loginposition, $loginpositionexpires, $loginpositionregion, $loginsecuritytoken)</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#delete_login_position.28.29"><span class="tocnumber">5.4.7</span> <span class="toctext">delete_login_position()</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#generate_login_position.28.24expires.29"><span class="tocnumber">5.4.8</span> <span class="toctext">generate_login_position($expires)</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#create_moodle_user.28.24firstname.2C_.24lastname.2C_.24email.29"><span class="tocnumber">5.4.9</span> <span class="toctext">create_moodle_user($firstname, $lastname, $email)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-34"><a href="#User_Searching_Functions"><span class="tocnumber">5.5</span> <span class="toctext">User Searching Functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-35"><a href="#find_sloodle_user.28.24uuid.2C_.24name.2C_.24cache_data_.3D_TRUE.29"><span class="tocnumber">5.5.1</span> <span class="toctext">find_sloodle_user($uuid, $name, $cache_data = TRUE)</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#find_linked_sloodle_user.28.24cache_data_.3D_TRUE.29"><span class="tocnumber">5.5.2</span> <span class="toctext">find_linked_sloodle_user($cache_data = TRUE)</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#find_linked_moodle_user.28.24use_cache_.3D_FALSE.2C_.24cache_data_.3D_TRUE.29"><span class="tocnumber">5.5.3</span> <span class="toctext">find_linked_moodle_user($use_cache = FALSE, $cache_data = TRUE)</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#find_sloodle_user_by_login_position.28.24position.2C_.24cache_data_.3D_TRUE.29"><span class="tocnumber">5.5.4</span> <span class="toctext">find_sloodle_user_by_login_position($position, $cache_data = TRUE)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-39"><a href="#Login_Functions"><span class="tocnumber">5.6</span> <span class="toctext">Login Functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-40"><a href="#login_moodle_user.28.29"><span class="tocnumber">5.6.1</span> <span class="toctext">login_moodle_user()</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="#regenerate_login_security_token.28.24cache_data_.3D_TRUE.29"><span class="tocnumber">5.6.2</span> <span class="toctext">regenerate_login_security_token($cache_data = TRUE)</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="#has_login_security_token.28.24use_cache_.3D_FALSE.29"><span class="tocnumber">5.6.3</span> <span class="toctext">has_login_security_token($use_cache = FALSE)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-43"><a href="#Course_Functions"><span class="tocnumber">5.7</span> <span class="toctext">Course Functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-44"><a href="#update_enrolled_courses_cache_from_db.28.29"><span class="tocnumber">5.7.1</span> <span class="toctext">update_enrolled_courses_cache_from_db()</span></a></li>
+<li class="toclevel-3 tocsection-45"><a href="#is_user_in_course.28.24course_id.2C_.24use_cache_.3D_FALSE.29"><span class="tocnumber">5.7.2</span> <span class="toctext">is_user_in_course($course_id, $use_cache = FALSE)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Declaration"> Declaration </span></h2>
+<p><font size="5"><code>class SloodleUser</code></font><br />
+Defined in: <a href="../../../../articles/f/i/l/File:File.gif.html" class="image"><img alt="File.gif" src="../../../../images/a/2F/a/a/af/File.gif" width="16" height="16" /></a>  <a href="../../../../articles/l/i/b/Fileref:lib/sl_lsllib.php.html" title="Fileref:lib/sl lsllib.php">lib/sl_lsllib.php</a> <br />
+Contained by: <a href="../../../../articles/s/l/o/SloodleLSLHandler.html" title="SloodleLSLHandler">SloodleLSLHandler</a>, <a href="../../../../articles/s/l/o/SloodleLSLRequest.html" title="SloodleLSLRequest">SloodleLSLRequest</a><br />
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Summary"> Summary </span></h2>
+<p>This PHP class is responsible for Sloodle and Moodle user handling in the <a href="../../../../articles/s/l/o/Sloodle_PHP_API.html" title="Sloodle PHP API">Sloodle PHP API</a>, providing functionality for finding, managing and manipulating user data. Note that a "Sloodle user" is really just an avatar.
+</p><p>At any one time, an object of this class type can have on Sloodle user selected, and/or one Moodle user selected. Typically, an HTTP request from an LSL script will contain an avatar's UUID and/or name. This class can be used to track down the relevant Sloodle user data, and whatever Moodle account may be linked to it. (It can also do the reverse, as well as create user entries, and link/unlink separate users).
+</p>
+<div class="center"><div class="floatnone"><a href="../../../../articles/s/l/o/File:Sloodle_api_uml_highlight_user.jpg.html" class="image"><img alt="Sloodle api uml highlight user.jpg" src="../../../../images/e/2F/e/e/e1/Sloodle_api_uml_highlight_user.jpg" width="798" height="273" /></a></div></div>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Compatibility"> Compatibility </span></h2>
+<p>This class conforms to PHP4 syntax, and so scope visibility qualifiers (public, private, protected) are not available. Some of the data should be considered private, whereas the 'cache' variables can be considered public.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Data"> Data </span></h2>
+<h3> <span class="mw-headline" id="Private"> Private </span></h3>
+<p>This class contains the following member values, which should be considered <b>private</b>:
+</p>
+<h5> <span class="mw-headline" id="var_.24sloodle_user_id">var $sloodle_user_id</span></h5>
+<p>This variable will always been an integer, storing the database ID of an avatar's entry in the 'sloodle_users' table (i.e. the currently 'selected' user). Note: 0 is an invalid ID, so if the value is not positive, then it can be considered empty.
+</p><p>You can get/set this value using the member accessor functions <i>get_sloode_user_id()</i> and <i>set_sloodle_user_id($id)</i>.
+</p><p><br />
+</p>
+<h5> <span class="mw-headline" id="var_.24moodle_user_id">var $moodle_user_id</span></h5>
+<p>This variable will always been an integer, storing the database ID of a Moodle user's account entry in the Moodle 'user' table (i.e. the currently 'selected' user). Note: 0 is an invalid ID, so if the value is not positive, then it can be considered empty.
+</p><p>You can get/set this value using the member accessor functions <i>get_moode_user_id()</i> and <i>set_moodle_user_id($id)</i>.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Public"> Public </span></h3>
+<p>This class contains the following member values, which should be considered <b>public</b>:
+</p>
+<h5> <span class="mw-headline" id="var_.24sloodle_user_cache">var $sloodle_user_cache</span></h5>
+<p>This variable will be used to store the data from the latest database query for Sloodle user data (i.e. avatar name/UUID etc.). Initially default to NULL, but after construction it will always be a custom object, where each member corresponds to a field in the 'sloodle_users' table. Various functions will overwrite the data here with updated data, but some can also use this cached data to perform more efficient queries (i.e. use the cache instead of making a new database query).
+</p>
+<ul><li> <b>Note:</b> if a function updates the cache, it will always match the user identified in member <i>$sloodle_user_id</i>. However, changing the ID will <b>not</b> update the cache, so you cannot be guaranteed that the cache and the ID number are in sync!
+</li></ul>
+<p><br />
+</p>
+<h5> <span class="mw-headline" id="var_.24moodle_user_cache">var $moodle_user_cache</span></h5>
+<p>This variable will be used to store the data from the latest database query for Moodle user data (i.e. name, email address etc.). Initially default to NULL, but after construction it will always be a custom object, where each member corresponds to a field in the Moodle 'user' table. Various functions will overwrite the data here with updated data, but some can also use this cached data to perform more efficient queries (i.e. use the cache instead of making a new database query).
+</p>
+<ul><li> <b>Note:</b> if a function updates the cache, it will always match the user identified in member <i>$moodle_user_id</i>. However, changing the ID will <b>not</b> update the cache, so you cannot be guaranteed that the cache and the ID number are in sync!
+</li></ul>
+<p><br />
+</p>
+<h5> <span class="mw-headline" id="var_.24enrolled_courses_cache">var $enrolled_courses_cache</span></h5>
+<p>Initially defaulted to NULL, but after construction, will <i>always</i> be a numeric array (although it may an empty array). Certain functions can use or update the cache with a list of integer ID's that the current Moodle user (i.e. the one identified by member <i>$moodle_user_id</i>) is enrolled in. As with the other caches, this can be used to avoid additional queries for the same database data.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Functions"> Functions </span></h2>
+<h3> <span class="mw-headline" id="Construction"> Construction </span></h3>
+<h5> <span class="mw-headline" id="SloodleUser.28.29">SloodleUser()</span></h5>
+<p>Constructor -- initialises the cache objects and array.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Accessors"> Accessors </span></h3>
+<h5> <span class="mw-headline" id="get_sloodle_user_id.28.29">get_sloodle_user_id()</span></h5>
+<p>Accessor: returns the member <i>$sloodle_user_id</i>.
+</p>
+<h5> <span class="mw-headline" id="set_sloodle_user_id.28.24id.29">set_sloodle_user_id($id)</span></h5>
+<p>Accessor: sets the member <i>$sloodle_user_id</i>.
+</p>
+<ul><li> Parameter <i>$id</i> should be a positive or zero integer.
+</li></ul>
+<h5> <span class="mw-headline" id="get_moodle_user_id.28.29">get_moodle_user_id()</span></h5>
+<p>Accessor: returns the member <i>$sloodle_user_id</i>.
+</p>
+<h5> <span class="mw-headline" id="set_moodle_user_id.28.24id.29">set_moodle_user_id($id)</span></h5>
+<p>Accessor: sets the member <i>$moodle_user_id</i>.
+</p>
+<ul><li> Parameter <i>$id</i> should be a positive or zero integer.
+</li></ul>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="User_Links"> User Links </span></h3>
+<p>These functions handle the linking between avatars and Moodle accounts (see <a href="../../../../articles/r/e/g/Registration_and_Enrolment.html" title="Registration and Enrolment">Registration and Enrolment</a> for more details).
+</p>
+<h5> <span class="mw-headline" id="users_linked.28.24use_cache_.3D_FALSE.29">users_linked($use_cache = FALSE)</span></h5>
+<p>Checks if the avatar identified by member <i>$sloodle_user_id</i> is <a href="../../../../articles/r/e/g/Registration_and_Enrolment.html" title="Registration and Enrolment">linked</a> to the Moodle account identified by member <i>$moodle_user_id</i>.
+</p><p>The <i>$use_cache</i> parameter can be set to TRUE to force the query to use the Sloodle and Moodle user caches, isntead of fetching new data for each user. <b>WARNING:</b> ensure that <i>both</i> user caches are up-to-date if you use this!
+</p><p>Returns TRUE if the avatar is linked, FALSE if not, or a string containing an error message if an error occurs. Common errors may include:
+</p>
+<ul><li> One or both of the user ID's is 0, or does not identify a valid user
+</li><li> Parameter <i>$use_cache</i> was set to true, but there is not data in one or both of the user caches
+</li></ul>
+<h5> <span class="mw-headline" id="link_users.28.29">link_users()</span></h5>
+<p>This function will <a href="../../../../articles/r/e/g/Registration_and_Enrolment.html" title="Registration and Enrolment">link</a> the avatar identified by member <i>$sloodle_user_id</i> with the Moodle account identified by member <i>$moodle_user_id</i>.
+</p><p>Returns TRUE if successful in linking the avatar to the Moodle account, FALSE if the database update failed, or a string containing an error message if an error occurs. Common errors may include:
+</p>
+<ul><li> One or both of the user ID's is 0, or does not identify a valid user
+</li></ul>
+<h5> <span class="mw-headline" id="unlink_sloodle_user.28.29">unlink_sloodle_user()</span></h5>
+<p>If a Sloodle user (i.e. an avatar) is selected by having an ID in member <i>$sloodle_user_id</i>, then this function will remove any link from that avatar to a Moodle account. Note: when an avatar is linked to a Moodle account, the link physically only exists in the Sloodle user data, so nothing needs to be done on the Moodle side.
+</p><p>Returns TRUE if successful, FALSE if the database update fails, or a string if an error occurs. The only typical error is if the <i>$sloodle_user_id</i> member is not a valid ID.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Database_Functions"> Database Functions </span></h3>
+<p>These functions are used for general database manipulation of user data. Most of them will return TRUE if successful, FALSE if the database operation fails, or a string error message if there is another problem. Such problems are usually related to an invalid parameter, or not having a valid user identified in the <i>$sloodle_user_id</i> or <i>$moodle_user_id</i> members.
+</p>
+<h5> <span class="mw-headline" id="delete_sloodle_user.28.29">delete_sloodle_user()</span></h5>
+<p>If a Sloodle user is currently identified by the <i>$sloodle_user_id</i> member, then the associated entry in the database will be deleted. The function will return TRUE if successful, FALSE if the database operation fails, or a string error message if there is another problem.
+</p>
+<h5> <span class="mw-headline" id="update_sloodle_user_cache_from_db.28.29">update_sloodle_user_cache_from_db()</span></h5>
+<p>This function will query the database for avatar data about the Sloodle user identified in member <i>$sloodle_user_id</i>. The new data will be stored in the <i>$sloodle_user_cache</i> member, and the function will return TRUE if successful. It will return FALSE if it fails, or a string if an error occurs.
+</p>
+<h5> <span class="mw-headline" id="update_moodle_user_cache_from_db.28.29">update_moodle_user_cache_from_db()</span></h5>
+<p>This function will query the database for account data about the Moodle user identified in member <i>$moodle_user_id</i>. The new data will be stored in the <i>$moodle_user_cache</i> member, and the function will return TRUE if successful. It will return FALSE if it fails, or a string if an error occurs.
+</p>
+<h5> <span class="mw-headline" id="update_sloodle_user_cache_to_db.28.29">update_sloodle_user_cache_to_db()</span></h5>
+<p>If you have previously retrieved database data into the Sloodle user cache (member <i>$sloodle_user_cache</i>), then you can modify the cache manually, and send your changes back to the database using this function. It will return TRUE if successful, FALSE if the database operation fails, or a string error message if there is another problem.
+</p>
+<h5> <span class="mw-headline" id="insert_sloodle_user_cache_to_db.28.29">insert_sloodle_user_cache_to_db()</span></h5>
+<p>If you have manually created a Sloodle user (i.e. avatar) entry in the <i>$sloodle_user_cache</i> member, then you can insert it as a new database entry using this function. It will return TRUE if successful, FALSE if the database operation fails, or a string error message if another problem occurs. Note: the new ID value will be written to to the <i>$sloodle_user_id</i> member prior to function return. (Although the cache itself will <i>not</i> be updated... perhaps we should change this behaviour?&#160;:-)).
+</p>
+<h5> <span class="mw-headline" id="create_sloodle_user.28.24uuid.2C_.24avname.2C_.24userid.2C_.24loginposition.2C_.24loginpositionexpires.2C_.24loginpositionregion.2C_.24loginsecuritytoken.29">create_sloodle_user($uuid, $avname, $userid, $loginposition, $loginpositionexpires, $loginpositionregion, $loginsecuritytoken)</span></h5>
+<p>This function will create a new Sloodle user entry in the database, based on the parameters specified in the function. All parameters are optional and can be left blank, although it is recommended that you specify as much as possible. Note: a new login security token will be generated automatically if you do not specify one. If successful, the new Sloodle user ID will be stored in member <i>$sloodle_user_id</i>, and the <i>$sloodle_user_cache</i> member will be updated.
+</p><p>The function will return TRUE if successful, FALSE if the database operation fails, or a string error message if another problem occurs.
+</p>
+<h5> <span class="mw-headline" id="delete_login_position.28.29">delete_login_position()</span></h5>
+<p>If the Sloodle user identified by member <i>$sloodle_user_id</i> currently has a LoginZone position allocated to them, then this function will delete it. It will return TRUE if successful, FALSE if the database operation fails, or a string error message if another problem occurs.
+</p>
+<h5> <span class="mw-headline" id="generate_login_position.28.24expires.29">generate_login_position($expires)</span></h5>
+<p>This function will attempt to allocate a new, unique LoginZone position to the Sloodle user identified by member <i>$sloodle_user_id</i>. Parameter <i>$expires</i> should be an integer timestamp indicating when the LoginZone position should expire (it <i>must</i> be greater than the current time).
+</p><p>If successful, the function updates the Sloodle user cache (<i>$sloodle_user_cache</i>), and returns TRUE. If a unique LoginZone position could not be created, then FALSE is returned. If any other error occurs (including database errors) then a string error message is returned.
+</p>
+<h5> <span class="mw-headline" id="create_moodle_user.28.24firstname.2C_.24lastname.2C_.24email.29">create_moodle_user($firstname, $lastname, $email)</span></h5>
+<ul><li> <b>NOTE:</b> may want to replace the contents of this function with a call to a standard Moodle user-creation function?
+</li></ul>
+<p>This function will create a new Moodle user account, with the details specified in parameters <i>$firstname</i>, <i>$lastname</i> and <i>$email</i>. It will generate a username by concatenating the first and last names, and if necessary, appending a random 3 digit number to ensure uniqueness. If successful, the new data will be written to the <i>$moodle_user_id</i> and <i>$moodle_user_cache</i> members, and the function will return TRUE. Otherwise, a string error message will be returned.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="User_Searching_Functions"> User Searching Functions </span></h3>
+<p>These functions are used for automatically finding avatars or users based on certain criteria. They will typically update the ID's and (optionally) the caches, and return TRUE or FALSE to indicate successful or failure.
+</p>
+<h5> <span class="mw-headline" id="find_sloodle_user.28.24uuid.2C_.24name.2C_.24cache_data_.3D_TRUE.29">find_sloodle_user($uuid, $name, $cache_data = TRUE)</span></h5>
+<p>This function will attempt to find an avatar in the database with the specified UUID (parameter <i>$uuid</i>), and if that fails, it will attempt to find them by name (<i>$name</i>). If an avatar is found, then its ID is stored in the <i>$sloodle_user_id</i> member, and the function returns TRUE. (Note: if parameter <i>$cache_data</i> is TRUE (default), then the database data is also stored in the <i>$sloodle_user_cache</i> member.)
+</p><p>If no matching user is found then the function returns FALSE. If there is an error, such as the UUID and name being empty, then a string error message is returned.
+</p>
+<h5> <span class="mw-headline" id="find_linked_sloodle_user.28.24cache_data_.3D_TRUE.29">find_linked_sloodle_user($cache_data = TRUE)</span></h5>
+<p>This function will attempt to find an avatar (Sloodle user) in the database which is linked to the Moodle user identified by member <i>$moodle_user_id</i>. If successful, it will store the Sloodle user ID in member <i>$sloodle_user_id</i>, and return TRUE. (Note: if parameter <i>$cache_data</i> is TRUE (default), then the database data is also stored in the <i>$sloodle_user_cache</i> member.)
+</p><p>If there is no linked Sloodle user, then FALSE is returned. If an error occurss, such as an invalid Moodle user ID or multiple avatars linked to the Moodle account, then a string error message will be returned.
+</p>
+<h5> <span class="mw-headline" id="find_linked_moodle_user.28.24use_cache_.3D_FALSE.2C_.24cache_data_.3D_TRUE.29">find_linked_moodle_user($use_cache = FALSE, $cache_data = TRUE)</span></h5>
+<p>Attempts to find the Moodle user account linked to the current Sloodle user. Note: if parameter <i>$use_cache</i> is FALSE (default) then it will query the database for the Sloodle user identified in member <i>$sloodle_user_id</i> to get link data. Otherwise, it will use the <i>$sloodle_user_cache</i> member to look for link data.
+</p><p>If a linked Moodle account is found, then the user ID is stored in member <i>$moodle_user_id</i>, and TRUE is returned. (Note: if parameter <i>$cache_data</i> is TRUE (default), then the database data is also stored in the <i>$moodle_user_cache</i> member.)
+</p><p>If there is no linked Moodle account, then FALSE is returned. If a problem occurs, such invalid user ID's, then a string error message is returned.
+</p>
+<h5> <span class="mw-headline" id="find_sloodle_user_by_login_position.28.24position.2C_.24cache_data_.3D_TRUE.29">find_sloodle_user_by_login_position($position, $cache_data = TRUE)</span></h5>
+<p>This function will attempt to find a Sloodle user with the given LoginZone position. If successful, it will store the Sloodle user's  ID in the <i>$sloodle_user_id</i> member, and TRUE will be returned. (Note: if parameter <i>$cache_data</i> is TRUE (default), then the database data is also stored in the <i>$sloodle_user_cache</i> member.)
+</p><p>If no matching Sloodle user is found, then FALSE is returned. Otherwise, if an error occurs, such as an invalid user ID, then a string error message is returned.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Login_Functions"> Login Functions </span></h3>
+<p>These functions relate to 'logging-in' a user for purposes of the currently executing script. This only affects general Moodle user actions carried out by the current script, and does not affect the user's web-browsing experience, which is entirely separate.
+</p>
+<h5> <span class="mw-headline" id="login_moodle_user.28.29">login_moodle_user()</span></h5>
+<p>This function willl attempt to 'login' the Moodle user identified in member <i>$moodle_user_id</i> by storing their user data in Moodle's global <i>$USER</i> variable. If the Moodle user ID is invalid, or the user cannot be found, then FALSE is returned.
+</p>
+<h5> <span class="mw-headline" id="regenerate_login_security_token.28.24cache_data_.3D_TRUE.29">regenerate_login_security_token($cache_data = TRUE)</span></h5>
+<p>This function generate a new login security token for the Sloodle user identified by member <i>$sloodle_user_id</i>. It will return TRUE if successful, or FALSE if it fails (failure occurs if the user ID is invalid, or if the database query fails).
+</p><p>(Note: if parameter <i>$cache_data</i> is TRUE (default), and the operation is succesful, then the new database data is also stored in the <i>$sloodle_user_cache</i> member.)
+</p>
+<h5> <span class="mw-headline" id="has_login_security_token.28.24use_cache_.3D_FALSE.29">has_login_security_token($use_cache = FALSE)</span></h5>
+<p>This function checks to see whether or not the Sloodle user already has a security token. If parameter <i>$use_cache</i> is TRUE then it will check the cached data for a login security token, and return TRUE if it was found, or FALSE otherwise.
+</p><p>If the <i>$use_cache</i> parameter is FALSE (default) then the function will fetch new database data to perform the query.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Course_Functions"> Course Functions </span></h3>
+<p>These functions deal with Moodle courses in relation to the current Moodle user.
+</p>
+<h5> <span class="mw-headline" id="update_enrolled_courses_cache_from_db.28.29">update_enrolled_courses_cache_from_db()</span></h5>
+<p>This function will use the Moodle functions to find a list of courses which the Moodle user identified by member <i>$moodle_user_cache</i> is enrolled in. It will store an array of the integer ID's of those courses in the <i>$enrolled_courses_cache</i> member if successful, and return TRUE. If it fails (e.g. because the user is not recognised), then it will return FALSE.
+</p>
+<h5> <span class="mw-headline" id="is_user_in_course.28.24course_id.2C_.24use_cache_.3D_FALSE.29">is_user_in_course($course_id, $use_cache = FALSE)</span></h5>
+<p>Checks whether or not the user identified by the <i>$moodle_user_id</i> member is enrolled in the course identified by parameter <i>$course_id</i>. Returns TRUE if so, or FALSE if not (or if an error occurs).
+</p><p>Note: if parameter <i>$use_cache</i> is TRUE then the function will use the <i>$enrolled_courses_cache</i> member as-is to perform the check. Otherwise, it will update that cache first, and then perform the check.
+</p><p><br />
+</p>
+<table style="background-color:white; border:1px solid #0099cc; text-align:center; width:100%;">
+<tr>
+<th style="background-color:#99d9ea;" colspan="4"> This page is part of the SLOODLE documentation
+</th></tr>
+<tr>
+<td style="border-bottom:solid 1px #dddddd;"> Docs: <a href="../../../../articles/s/l/o/SloodleUserDocs.html" title="SloodleUserDocs" class="mw-redirect">Users</a> | <a href="../../../../articles/s/l/o/SloodleAdminDocs.html" title="SloodleAdminDocs" class="mw-redirect">Administrators</a> | <a href="../../../../articles/s/l/o/SloodleDevDocs.html" title="SloodleDevDocs" class="mw-redirect">Developers</a>
+</td></tr>
+<tr>
+<td style=""> <span style="float:left"><a href="../../../../articles/s/l/o/Sloodle.html" title="Sloodle" class="mw-redirect">Wiki Frontpage</a></span> <span style="float:right"><a rel="nofollow" class="external text" href="http://www.sloodle.org">Sloodle.org</a></span>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 189/1000000
+Post‐expand include size: 559/2097152 bytes
+Template argument size: 49/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/s/l/o/Category:Sloodle_PHP_API.html" title="Category:Sloodle PHP API">Sloodle PHP API</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/s/l/o/SloodleUser.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:SloodleUser&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/SloodleUser">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 08:56, 6 February 2008 by SLIS Second Life Wiki user <a href="http:http://localhost/sl/index.php?title=User:Peter_Bloomfield&amp;action=edit&amp;redlink=1" class="new" title="User:Peter Bloomfield (page does not exist)">Peter Bloomfield</a>. </li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>

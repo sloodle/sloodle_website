@@ -1,0 +1,1645 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class SloodleUser</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> SloodleUser</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A class to represent a single user, including Moodle and Sloodle data.</p>
+	<ul class="tags">
+				<li><span class="field">usedby:</span> <a href="../sloodle/SloodleRequest.html">SloodleRequest</a> - Stores and processes user data incoming from an HTTP request</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_lib---user.php.html">/lib/user.php</a> (line <span class="field"><a href="../__filesource/fsource_sloodle__libuser.php.html#a33">33</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																								<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$avatar_data" title="details" class="var-name">$avatar_data</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">obejct</span>
+					<a href="#$user_data" title="details" class="var-name">$user_data</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">object</span>
+					<a href="#$_session" title="details" class="var-name">$_session</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																																																																							
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">SloodleUser</span>
+										<a href="#SloodleUser" title="details" class="method-name">SloodleUser</a>
+											(<span class="var-type">object</span>&nbsp;<span class="var-name">&$_session</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#add_linked_avatar" title="details" class="method-name">add_linked_avatar</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$avname</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">object|bool</span>
+										<a href="#add_pending_avatar" title="details" class="method-name">add_pending_avatar</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$avname</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int|bool</span>
+										<a href="#add_user_object" title="details" class="method-name">add_user_object</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$avuuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$objuuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$objname</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#authorise_user_object" title="details" class="method-name">authorise_user_object</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$authid</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|bool</span>
+										<a href="#autoregister_avatar_user" title="details" class="method-name">autoregister_avatar_user</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#delete_avatar" title="details" class="method-name">delete_avatar</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#delete_user_object" title="details" class="method-name">delete_user_object</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#enrol" title="details" class="method-name">enrol</a>
+											([<span class="var-type">object</span>&nbsp;<span class="var-name">$sloodle_course</span> = <span class="var-default">null</span>], <span class="var-type">bool</span>&nbsp;<span class="var-name">1</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#get_avatar_id" title="details" class="method-name">get_avatar_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#get_avatar_last_active" title="details" class="method-name">get_avatar_last_active</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_avatar_name" title="details" class="method-name">get_avatar_name</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_avatar_uuid" title="details" class="method-name">get_avatar_uuid</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#get_enrolled_courses" title="details" class="method-name">get_enrolled_courses</a>
+											([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$category</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#get_staff_courses" title="details" class="method-name">get_staff_courses</a>
+											([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$category</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_username" title="details" class="method-name">get_username</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|null</span>
+										<a href="#get_user_email" title="details" class="method-name">get_user_email</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_user_firstname" title="details" class="method-name">get_user_firstname</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#get_user_id" title="details" class="method-name">get_user_id</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_user_lastname" title="details" class="method-name">get_user_lastname</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#get_user_objects" title="details" class="method-name">get_user_objects</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_avatar_linked" title="details" class="method-name">is_avatar_linked</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_avatar_loaded" title="details" class="method-name">is_avatar_loaded</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#is_enrolled" title="details" class="method-name">is_enrolled</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$courseid</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$course</span>, <span class="var-type">bool</span>&nbsp;<span class="var-name">1</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#is_staff" title="details" class="method-name">is_staff</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$courseid</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$course</span>, <span class="var-type">bool</span>&nbsp;<span class="var-name">1</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#is_user_loaded" title="details" class="method-name">is_user_loaded</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#link_avatar" title="details" class="method-name">link_avatar</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#load_avatar" title="details" class="method-name">load_avatar</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$avname</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#load_avatar_by_id" title="details" class="method-name">load_avatar_by_id</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool,string</span>
+										<a href="#load_linked_avatar" title="details" class="method-name">load_linked_avatar</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#load_linked_user" title="details" class="method-name">load_linked_user</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#load_user" title="details" class="method-name">load_user</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#login" title="details" class="method-name">login</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#purge_password_notifications" title="details" class="method-name">purge_password_notifications</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|bool</span>
+										<a href="#reset_password" title="details" class="method-name">reset_password</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_avatar_last_active" title="details" class="method-name">set_avatar_last_active</a>
+											([<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_avatar_name" title="details" class="method-name">set_avatar_name</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$avname</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#set_avatar_uuid" title="details" class="method-name">set_avatar_uuid</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#write_avatar" title="details" class="method-name">write_avatar</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$avatar_data" id="$avatar_data"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$avatar_data</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a51">51</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internal only - avatar data.</p>
+<p class="description"><p>In Moodle, corresponds to a record from the 'sloodle_users' table.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$user_data" id="$user_data"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">obejct</span>
+			<span class="var-name">$user_data</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a59">59</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internal only - user data. (i.e. VLE user)  In Moodle, corresponds to a record from the 'user' table.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_session" id="$_session"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">object</span>
+			<span class="var-name">$_session</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a43">43</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internal only - reference to the containing <a href="../sloodle/SloodleSession.html">SloodleSession</a> object.</p>
+<p class="description"><p>Note: always check that it is not null before use!</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodSloodleUser" id="SloodleUser"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor SloodleUser</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a69">69</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class constructor.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SloodleUser</span>
+		<span class="method-name">
+			SloodleUser
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">&$_session</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">&$_session</span><span class="var-description">: Reference to the containing <a href="../sloodle/SloodleSession.html">SloodleSession</a> object, if available.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodadd_linked_avatar" id="add_linked_avatar"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">add_linked_avatar</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a361">361</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a new avatar to the database, and link it to the specified user.</p>
+<p class="description"><p>If successful, it deletes any matching avatar details from pending users list.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false if not.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			add_linked_avatar
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$avname</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$userid</span><span class="var-description">: Site-wide unique ID of a user (type depends on VLE; integer for Moodle)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: UUID of the avatar</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$avname</span><span class="var-description">: Name of the avatar</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodadd_pending_avatar" id="add_pending_avatar"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">add_pending_avatar</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a391">391</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a new unlinked avatar to the database (the entry is pending linking)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns the database object if successul, or false if not.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">object|bool</span>
+		<span class="method-name">
+			add_pending_avatar
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$avname</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: UUID of the avatar</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$avname</span><span class="var-description">: Name of the avatar</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$timestamp</span><span class="var-description">: The timestamp at which to mark the update (or null to use the current timestamp). Entries expire after a certain period.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodadd_user_object" id="add_user_object"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">add_user_object</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a820">820</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds or udpates the given user object as unauthorised.</p>
+<p class="description"><p>(This function can be called statically).</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Integer ID of the authorisation entry, or false otherwise</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int|bool</span>
+		<span class="method-name">
+			add_user_object
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$avuuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$objuuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$objname</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$avuuid</span><span class="var-description">: UUID of the avatar the object will be authorised for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$objuuid</span><span class="var-description">: UUID of the object</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$objname</span><span class="var-description">: Name of the object</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: Password to store for the object</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodauthorise_user_object" id="authorise_user_object"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">authorise_user_object</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a795">795</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Authorises the given object for the current avatar.</p>
+<p class="description"><p>Note: the object must already exist in the database.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			authorise_user_object
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$authid</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$authid</span><span class="var-description">: The ID of the authorisation entry</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodautoregister_avatar_user" id="autoregister_avatar_user"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">autoregister_avatar_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a421">421</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Auto-register a new user account for the current avatar.</p>
+<p class="description"><p>NOTE: this does NOT respect ANYTHING but the most basic Moodle accounts.  Use at your own risk!</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The new password (plaintext) if successful, or false if not</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|bool</span>
+		<span class="method-name">
+			autoregister_avatar_user
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddelete_avatar" id="delete_avatar"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">delete_avatar</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a258">258</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes the current avatar from the database.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			delete_avatar
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddelete_user_object" id="delete_user_object"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">delete_user_object</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a891">891</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes a user-centric object by UUID.</p>
+<p class="description"><p>Note: the object must have been authorised for the current avatar.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			delete_user_object
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: The UUID of the object to delete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodenrol" id="enrol"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">enrol</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a673">673</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enrols the current user in the specified course</p>
+<p class="description"><p>NOTE: a side effect of this is that it logs-in the user</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			enrol
+		</span>
+					([<span class="var-type">object</span>&nbsp;<span class="var-name">$sloodle_course</span> = <span class="var-default">null</span>], <span class="var-type">bool</span>&nbsp;<span class="var-name">1</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$sloodle_course</span><span class="var-description">: A <a href="../sloodle/SloodleCourse.html">SloodleCourse</a> object setup for the necessary course. If null, then the <a href="../sloodle/SloodleUser.html#var$_session">$_session</a> member is queried instead.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">1</span><span class="var-description">: True if successful (or the user was already enrolled), or false otherwise</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_avatar_id" id="get_avatar_id"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_avatar_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a82">82</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the unique ID of the avatar.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Type depends on VLE. (Integer on Moodle). Returns null if there is no avatar.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			get_avatar_id
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_avatar_last_active" id="get_avatar_last_active"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_avatar_last_active</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a187">187</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the timestamp of whenever the avatar was last active</p>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			get_avatar_last_active
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_avatar_name" id="get_avatar_name"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_avatar_name</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a141">141</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the name of the avatar</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_avatar_name
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_avatar_uuid" id="get_avatar_uuid"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_avatar_uuid</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a122">122</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the UUID of the avatar</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_avatar_uuid
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_enrolled_courses" id="get_enrolled_courses"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_enrolled_courses</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a553">553</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets a numeric array of <a href="../sloodle/SloodleCourse.html">SloodleCourse</a> objects for courses the user is enrolled in.</p>
+<p class="description"><p>WARNING: this function is not very efficient, and will likely be very slow on large sites.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A numeric array of <a href="../sloodle/SloodleCourse.html">SloodleCourse</a> objects</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			get_enrolled_courses
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$category</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$category</span><span class="var-description">: Unique identifier of a category to limit the query to. Ignored if null. (Type depends on VLE; integer for Moodle)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_staff_courses" id="get_staff_courses"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_staff_courses</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a590">590</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets a numeric array of <a href="../sloodle/SloodleCourse.html">SloodleCourse</a> objects for courses the user is Sloodle staff.</p>
+<p class="description"><p>This relates to the &quot;mod/sloodle:staff&quot; capability.  WARNING: this function is not very efficient, and will likely be very slow on large sites.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A numeric array of <a href="../sloodle/SloodleCourse.html">SloodleCourse</a> objects</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			get_staff_courses
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$category</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$category</span><span class="var-description">: Unique identifier of a category to limit the query to. Ignored if null. (Type depends on VLE; integer for Moodle)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_username" id="get_username"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_username</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a160">160</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the user's username</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_username
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_user_email" id="get_user_email"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_user_email</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a207">207</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the user's email address.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The user's email address, or null if none is specified of if email is disabled.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|null</span>
+		<span class="method-name">
+			get_user_email
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_user_firstname" id="get_user_firstname"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_user_firstname</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a169">169</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the first name of the user</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_user_firstname
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_user_id" id="get_user_id"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_user_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a93">93</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the unique ID of the VLE user.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Type depends on VLE. (Integer on Moodle). Returns null if there is no user</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			get_user_id
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_user_lastname" id="get_user_lastname"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_user_lastname</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a178">178</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the last name of the user</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_user_lastname
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_user_objects" id="get_user_objects"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_user_objects</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a859">859</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets a list of all user-centric objects authorised for the current avatar.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A numeric array of <a href="../sloodle/SloodleUserObject.html">SloodleUserObject</a> objects</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			get_user_objects
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_avatar_linked" id="is_avatar_linked"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_avatar_linked</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a221">221</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not the current user and avatar are linked.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if they are linked, or false if not.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_avatar_linked
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_avatar_loaded" id="is_avatar_loaded"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_avatar_loaded</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a103">103</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not an avatar is loaded.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_avatar_loaded
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodis_enrolled" id="is_enrolled"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_enrolled</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a623">623</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Is the current user enrolled in the specified course?</p>
+<p class="description"><p>NOTE: a side effect of this is that it logs-in the user</p></p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Update to match parameter format and handling of <a href="../sloodle/SloodleUser.html#methodenrol">enrol()</a> function.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			is_enrolled
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$courseid</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$course</span>, <span class="var-type">bool</span>&nbsp;<span class="var-name">1</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$course</span><span class="var-description">: Unique identifier of the course -- type depends on VLE (integer for Moodle)</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">1</span><span class="var-description">: True if the user is enrolled, or false if not.</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$courseid</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodis_staff" id="is_staff"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_staff</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a649">649</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Is the current user Sloodle staff in the specified course?</p>
+<p class="description"><p>NOTE: a side effect of this is that it logs-in the user</p></p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Update to match parameter format and handling of <a href="../sloodle/SloodleUser.html#methodenrol">enrol()</a> function.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			is_staff
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$courseid</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$course</span>, <span class="var-type">bool</span>&nbsp;<span class="var-name">1</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$course</span><span class="var-description">: Unique identifier of the course -- type depends on VLE (integer for Moodle)</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">1</span><span class="var-description">: True if the user is staff, or false if not.</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$courseid</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodis_user_loaded" id="is_user_loaded"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">is_user_loaded</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a112">112</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines whether or not a VLE user is loaded.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			is_user_loaded
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodlink_avatar" id="link_avatar"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">link_avatar</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a236">236</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Links the current avatar to the current user.</p>
+<p class="description"><p><strong>NOTE:</strong> does not remove any other avatar links to the VLE user.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful or false otherwise.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			link_avatar
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodload_avatar" id="load_avatar"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">load_avatar</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a294">294</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Finds an avatar with the given UUID and/or name, and loads its data.</p>
+<p class="description"><p>The UUID is searched for first. If that is not found, then the name is used.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			load_avatar
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$avname</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: The UUID of the avatar, or blank to search only by name.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$avname</span><span class="var-description">: The name of the avatar, or blank to search only by UUID.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodload_avatar_by_id" id="load_avatar_by_id"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">load_avatar_by_id</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a273">273</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loads the specified avatar from the database.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			load_avatar_by_id
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: The ID of the avatar (type depends on VLE; integer for Moodle)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodload_linked_avatar" id="load_linked_avatar"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">load_linked_avatar</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a491">491</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Load the avatar linked to the current user.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if a link was loaded, false if there was no link, or string 'multi' if multiple avatars are linked</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool,string</span>
+		<span class="method-name">
+			load_linked_avatar
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodload_linked_user" id="load_linked_user"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">load_linked_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a513">513</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Find the VLE user linked to the current avatar.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false if no link was found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			load_linked_user
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodload_user" id="load_user"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">load_user</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a322">322</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Load the specified user from the database</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			load_user
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: The unique identifier for the VLE user. (Type depends on VLE; integer for Moodle)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlogin" id="login"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">login</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a534">534</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internally 'log-in' the current user.</p>
+<p class="description"><p>In Moodle, this just stores all the user data in the global $USER variable.  This function will not perform automatic registration.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false otherwise.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			login
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpurge_password_notifications" id="purge_password_notifications"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">purge_password_notifications</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a778">778</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">If the system is waiting to send a password notification to this user, then remove it</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			purge_password_notifications
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodreset_password" id="reset_password"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">reset_password</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a741">741</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Resets the user's password</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The new password if successful, or false otherwise (if $require was false).</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|bool</span>
+		<span class="method-name">
+			reset_password
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$require</span><span class="var-description">: If true, then the script will be terminated if the operation fails</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_avatar_last_active" id="set_avatar_last_active"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_avatar_last_active</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a197">197</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the timestamp of when the user was last active</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_avatar_last_active
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$timestamp</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$timestamp</span><span class="var-description">: A UNIX timestamp, or null to use the current time</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_avatar_name" id="set_avatar_name"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_avatar_name</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a151">151</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the name of the avatar</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_avatar_name
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$avname</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$avname</span><span class="var-description">: The new avatar name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset_avatar_uuid" id="set_avatar_uuid"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_avatar_uuid</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a132">132</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the UUID of the avatar</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_avatar_uuid
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uuid</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uuid</span><span class="var-description">: The new UUID</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodwrite_avatar" id="write_avatar"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">write_avatar</span> (line <span class="line-number"><a href="../__filesource/fsource_sloodle__libuser.php.html#a344">344</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Uses the current avatar data to update the database.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if successful, or false if the update fails</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			write_avatar
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 07 Jul 2008 12:33:20 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.0</a>
+	</p>
+	</div></body>
+</html>

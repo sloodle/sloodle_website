@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- headlinks removed -->
+	<link rel="shortcut icon" href="../../../../misc/favicon.ico"/>
+    <title>GetLessons - SLIS Second Life Wiki</title>
+    <style type="text/css">/*<![CDATA[*/ @import "../../../../skins/offline/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="../../../../skins/common/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "../../../../skins/monobook/IE55Fixes.css";</style><![endif]-->
+    <!--[if IE 6]><style type="text/css">@import "../../../../skins/monobook/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="../../../../skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <script type="text/javascript" src="../../../../skins/common/wikibits.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/md5.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/utf8.js"></script>
+    <script type="text/javascript" src="../../../../skins/offline/lookup.js"></script>
+                      </head>
+  <body
+    class="ns-0 ns-subject page-GetLessons">
+    <div id="globalWrapper">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="contentTop"></a>
+	        <h1 class="firstHeading">GetLessons</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From SLIS Second Life Wiki</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table border="0" cellpadding="0" cellspacing="0" style="text-align: top; width: 95%;">
+
+<tr>
+<td> <a href="../../../../articles/s/l/o/SLOODLE_LSL_API.html" title="SLOODLE LSL API">Back to Sloodle API</a>
+</td></tr></table>
+<p><br />
+</p>
+<table border="2" cellpadding="0" cellspacing="0" style="text-align: top; width: 95%; color:#5a3696; border-color:black;">
+
+<tr>
+<td>
+<table border="0" style="width: 100%; background:#f4f8fb; color:#5a3696; font-weight:bold; font-size:180%;">
+
+<tr>
+<td>Function: getLessons
+</td></tr></table>
+</td></tr>
+<tr>
+<td>
+<table border="0">
+
+<tr>
+<td style="width: 10%; font-weight:bold;"> Description:
+</td>
+<td style="width: 90%;"> Returns a list of lessons in the course specified
+</td></tr></table>
+</td></tr>
+<tr>
+<td>
+<table border="0">
+
+<tr>
+<td style="width: 10%; font-weight:bold;">  <font color="red">llMessageLinked</font>(<font color="green">LINK_SET</font>, PLUGIN_CHANNEL, "<font color="green">plugin:lessons,function:getLessons\nSLOODLEID:null\nindex:0|lessonsPerPage:9</font>", <font color="red">NULL_KEY</font>);
+</td></tr></table>
+</td></tr>
+<tr>
+<td>
+<table border="0">
+
+<tr>
+<td style="width: 10%; font-weight:bold;" colspan="2"> Parameters:
+</td></tr>
+<tr>
+<td style="width: 10%; color:green;"> <b>SLOODLE_ID:null</b>
+</td>
+<td style="width: 90%;">  this is left as null because we aren't accessing a specific activity
+</td></tr>
+<tr>
+<td style="width: 10%; color:green;"> <b>INDEX</b>:
+</td>
+<td style="width: 90%;">  The index of the tool you'd like to start from
+</td></tr>
+<tr>
+<td style="width: 10%; color:green;"> <b>ITEMS_PER_PAGE</b>:
+</td>
+<td style="width: 90%;">  The number of items you'd like to appear in the output
+</td></tr></table>
+<p><br />
+</p>
+</td></tr>
+<tr>
+<td>
+<table border="0">
+
+<tr>
+<td style="width: 10%; font-weight:bold;"> Output:
+</td>
+<td style="width: 90%;"> <a href="../../../../articles/g/e/t/File:Getlessons.jpg.html" class="image"><img alt="Getlessons.jpg" src="../../../../images/f/2F/f/f/fd/Getlessons.jpg" width="779" height="181" /></a>
+</td></tr></table>
+<p><br />
+</p>
+</td></tr>
+<tr>
+<td>
+<table border="0">
+
+<tr>
+<td style="width: 10%; font-weight:bold;"> Example Script:
+</td>
+<td style="width: 90%;">
+<pre> /*********************************************
+*  Copyright (c) 2009 Paul Preibisch
+*  Released under the GNU GPL 3.0
+*  This script can be used in your scripts, but you must include this copyright header as per the GPL Licence
+*  For more information about GPL 3.0 - see: <a rel="nofollow" class="external free" href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a>
+* 
+*
+*  This script is part of the SLOODLE Project see <a rel="nofollow" class="external free" href="http://sloodle.org">http://sloodle.org</a>
+*
+*  Copyright:
+*  Paul G. Preibisch (Fire Centaur in SL)
+*  fire@b3dMultiTech.com  
+*
+* API DEMO OBJECT.lsl 
+* 
+* PURPOSE
+*  This script is part of the SLOODLE HQ.
+*  
+/**********************************************************************************************/
+key owner;
+// *************************************************** HOVER TEXT VARIABLES
+integer DISPLAY_DATA                                                        =-774477; //every time the display is updated, data goes  on this channel
+integer PLUGIN_RESPONSE_CHANNEL                                =998822; //sloodle_api.lsl responses
+integer PLUGIN_CHANNEL                                                    =998821;//sloodle_api requests
+integer SLOODLE_CHANNEL_TRANSLATION_REQUEST     = -1928374651;//translation channel
+integer SLOODLE_CHANNEL_TRANSLATION_RESPONSE     = -1928374652;//translation channel
+integer SLOODLE_CHANNEL_OBJECT_DIALOG                     = -3857343;//configuration channel
+
+/***********************************************
+*  getFieldData-- returns data from a table based on the column name
+***********************************************/
+string getFieldData(list tableRowData, string colName){
+   return llList2String(tableRowData,llListFindList(tableRowData, [colName])+1);
+} 
+/***********************************************
+*  s()  used so that sending of linked messages is more readable by humans.  Ie: instead of sending a linked message as
+*  GETDATA|50091bcd-d86d-3749-c8a2-055842b33484 
+*  Context is added instead: COMMAND:GETDATA|PLAYERUUID:50091bcd-d86d-3749-c8a2-055842b33484
+*  All this function does is strip off the text before the ":" char and return a string
+***********************************************/
+string s (string ss){
+    return llList2String(llParseString2List(ss, [":"], []),1);
+}
+/***********************************************
+*  k()  used so that sending of linked messages is more readable by humans.  Ie: instead of sending a linked message as
+*  GETDATA|50091bcd-d86d-3749-c8a2-055842b33484 
+*  Context is added instead: COMMAND:GETDATA|PLAYERUUID:50091bcd-d86d-3749-c8a2-055842b33484
+*  All this function does is strip off the text before the ":" char and return a key
+***********************************************/
+key k (string kk){
+   return llList2Key(llParseString2List(kk, [":"], []),1);
+}
+/***********************************************
+*  counter()  used so that sending of linked messages is more readable by humans.  Ie: instead of sending a linked message as
+*  GETDATA|50091bcd-d86d-3749-c8a2-055842b33484 
+*  Context is added instead: COMMAND:GETDATA|PLAYERUUID:50091bcd-d86d-3749-c8a2-055842b33484
+*  All this function does is strip off the text before the ":" char and return an integer
+***********************************************/
+integer i (string ii){
+   return llList2Integer(llParseString2List(ii, [":"], []),1);
+}
+
+
+/* &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+*
+*  default state
+*  In this state we wait until the rest of the scripts in this object init
+*
+* &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp; */
+default{
+    
+    state_entry() {
+      
+        //set owner
+        owner = llGetOwner();
+    }
+   link_message(integer sender_num, integer channel, string str, key id) {
+       list dataLines=llParseString2List(str, ["\n"],[]);
+       list cmdLine = llParseString2List(str, ["|"],[]);
+       string cmd=s(llList2String(cmdLine,0));
+       if (channel==PLUGIN_RESPONSE_CHANNEL){
+           if (cmd=="API READY") state go;
+       }//endif channel=PLUGIN_RESPONSE_CHANNEL
+   }//end linked_message event
+   /***********************************************
+   *  changed event
+   *  |--&gt;Every time the inventory changes, reset the script
+   *        
+   ***********************************************/
+   changed(integer change) {
+        if (change ==CHANGED_INVENTORY){         
+            llResetScript();
+        }//endif
+    }//end changed state
+}//end default state
+
+
+   
+state go{
+   touch_start(integer num_detected) {
+       /*********************************************************************************
+       * API CALL: getLessons:     Return all lessons in the course         
+       **********************************************************************************/
+        llMessageLinked(LINK_SET, PLUGIN_CHANNEL, "plugin:lessons,function:getLessons\nSLOODLEID:null\nindex:0|lessonsPerPage:9", NULL_KEY);
+   }
+    link_message(integer sender_num, integer channel, string str, key id) {
+        
+            if (channel==PLUGIN_RESPONSE_CHANNEL){
+               list dataLines = llParseStringKeepNulls(str,["\n"],[]);           
+               //get status code
+               list statusLine =llParseString2List(llList2String(dataLines,0),["|"],[]);
+               integer status =llList2Integer(statusLine,0);
+               string descripter = llList2String(statusLine,1);
+               string response = s(llList2String(dataLines,1));
+               integer index = i(llList2String(dataLines,2)); 
+               integer totalGrps= i(llList2String(dataLines,3));
+               integer counter=0;
+               if (response=="lessons|getLessons"){
+                    //check status of returned response
+                   if (status==1){
+                       //get all of the lesson activities returned                        
+                       list lessons = llList2List(dataLines, 5,llGetListLength(dataLines)-1);                         
+                       integer len = llGetListLength(lessons);
+
+                       list colNames =llParseString2List(llList2String(dataLines,4), ["|"], []);
+                       integer colLen = llGetListLength(colNames);
+                       list data;
+                       for (counter=0;counter&lt;len;counter++){
+                                list colData=llParseString2List(llList2String(lessons,counter), ["|"], []); //parse the message into a list
+                                integer j;
+                                //add all data from this line into a 2 dimensional list called tableRowData:
+                                //["nameOfColumn","value"]
+                                list tableRowData;      
+                               for (j=0;j&lt;colLen;j++){
+                                   tableRowData +=[llList2String(colNames,j),llList2String(colData,j)];
+                                   llOwnerSay(llList2String(colNames,j)+": "+llList2String(colData,j));
+                               }//end for
+                       }//for                 
+                   }//status==1
+               }//endif response=="getLessons"
+            }//end if channel==PLUGIN_RESPONSE_CHANNEL
+      }//end link_message
+       
+   /***********************************************
+   *  changed event
+   *  |--&gt;Every time the inventory changes, reset the script
+   *        
+   ***********************************************/
+   changed(integer change) {
+        if (change ==CHANGED_INVENTORY){         
+            llResetScript();
+        }//endif
+    }//end changed state
+    
+}//end state
+   
+</pre>
+<p><br />
+</p>
+</td></tr></table>
+<p><br />
+</p>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 5/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+</div><div class="printfooter">
+</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://localhost/sl/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../../articles/i/n/w/Category:Inworld_API.html" title="Category:Inworld API">Inworld API</a></li></ul></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	</div>
+      </div>
+      <div id="column-one">
+	<div id="p-cactions" class="portlet">
+	  <h5>Views</h5>
+	  <ul>
+	    <li id="ca-nstab-main"
+	       class="selected"	       ><a href="../../../../articles/g/e/t/GetLessons.html">Page</a></li><li id="ca-talk"
+	       class="new"	       ><a href="http:http://localhost/sl/index.php?title=Talk:GetLessons&amp;action=edit&amp;redlink=1">Discussion</a></li><li id="ca-current"
+	       	       ><a href="http://localhost/sl/index.php/GetLessons">Latest revision</a></li>	  </ul>
+	</div>
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(../../../../misc/wiki.png);"
+	    href="../../../../index.html"
+	    title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage-description"><a href="../../../../index.html">Main page</a></li>
+	     	      <li id="n-SLOODLE"><a href="../../../../articles/s/l/o/Sloodle.html">SLOODLE</a></li>
+	     	      <li id="n-currentevents"><a href="../../../../articles/c/u/r/SLIS_Second_Life_Wiki:Current_events.html">Current events</a></li>
+	     	      <li id="n-help"><a href="../../../../articles/c/o/n/Help:Contents.html">Help</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-SEARCH'>
+	  <h5>Search</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-TOOLBOX'>
+	  <h5>Toolbox</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-LANGUAGES'>
+	  <h5>LANGUAGES</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	    </ul>
+	  </div>
+	</div>
+		<div id="p-search" class="portlet">
+	  <h5><label for="searchInput">Search</label></h5>
+	  <div id="searchBody" class="pBody">
+	    <form action="javascript:goToStatic(3)" id="searchform"><div>
+	      <input id="searchInput" name="search" type="text"
+	        accesskey="f" value="" />
+	      <input type='submit' name="go" class="searchButton" id="searchGoButton"
+	        value="Go" />
+	    </div></form>
+	  </div>
+	</div>
+	      </div><!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="../../../../skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  	  	  <li id="f-credits">This page was last modified 07:11, 12 October 2009 by <a href="../../../../articles/d/a/n/User:Daniel.html" title="User:Daniel">daniel.livingstone@gmail.com</a>. Based on work by <a href="http:http://localhost/sl/index.php?title=User:Fire&amp;action=edit&amp;redlink=1" class="new" title="User:Fire (page does not exist)">Paul Preibisch</a>.</li>	  	  <li id="f-about"><a href="../../../../articles/a/b/o/SLIS_Second_Life_Wiki:About.html" title="SLIS Second Life Wiki:About">About SLIS Second Life Wiki</a></li>	  <li id="f-disclaimer"><a href="../../../../articles/g/e/n/SLIS_Second_Life_Wiki:General_disclaimer.html" title="SLIS Second Life Wiki:General disclaimer">Disclaimers</a></li>	  	</ul>
+      </div>
+    </div>
+  </body>
+</html>
