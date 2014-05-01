@@ -30,10 +30,10 @@ include(dirname(__FILE__).'/include/header.php');
 	</td><td class="sidebar">
 
 	<div >
-		<img style="margin:20px; "src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRreD5BUpvW1p4ve8JBKbo-HJ7F67JvEqhbbqyduBFhB_JjgWWC3w" />
-		<img style="margin:20px; " src="http://farm4.staticflickr.com/3026/3062899537_12665dab9e_m.jpg" />
-		<img style="margin:20px; " src="http://farm1.staticflickr.com/81/279223975_98c8eec98d_m.jpg" />
-		<img style="margin:20px; " src="http://farm4.staticflickr.com/3132/3234158392_da69a59134_m.jpg" />
+		<img style="margin:20px; "src="/img/rezzer.jpg" />
+		<img style="margin:20px; " src="/img/3062899537_12665dab9e_m.jpg" />
+		<img style="margin:20px; " src="/img/279223975_98c8eec98d_m.jpg" />
+		<img style="margin:20px; " src="/img/3234158392_da69a59134_m.jpg" />
 
 	</div>
 
