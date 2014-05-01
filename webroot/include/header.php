@@ -1,3 +1,4 @@
+<? include(dirname(__FILE__).'/settings.php'); ?>
 
 <!DOCTYPE html>
 <html  dir="ltr" lang="en" xml:lang="en">

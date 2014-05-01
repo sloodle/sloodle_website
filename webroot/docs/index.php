@@ -53,6 +53,9 @@ if (preg_match('/(\<table id="toc" class="toc"\>.*?\<\/table\>)/s', $contents, $
 }
 ?>
 <?php include(dirname(__FILE__).'/../include/header.php'); ?>
+<?php
+$contents = preg_replace('/SL_DISTRIBUTION_LOCATION/s', $sl_distribution_location, $contents);
+?>
 	<table id="content_table"><tr><td class="main">
 
 	<div class="post" id="" style="width:100%">
