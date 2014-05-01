@@ -1,6 +1,2 @@
 #ErrorDocument 404 /errordocs/404.php
 XBitHack on
-
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
