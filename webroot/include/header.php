@@ -8,9 +8,7 @@
     .sloodle-custom ul,ol{padding:15px !important}
     </style>
 <meta name="keywords" content="moodle, SLOODLE: Administration: Notifications" />
-<script type="text/javascript" src="/moodle/theme/jquery.php/theme_bootstrap/bootstrap.js"></script>
 <script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="/css/all.css" />
-<script type="text/javascript" src="/js/javascript-static.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
