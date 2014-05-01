@@ -18,7 +18,7 @@
 <p><a title="From MUVE to 3D VLE" href="http://www.informaworld.com/10.1080/09687760802526707" target="_blank">From Multi-User Virtual Environment to 3D Virtual Learning Environment</a>, Livingstone, D.,  Kemp J. and Edgar, E. ALT-J. 16(3):139-150. 2008  http://www.informaworld.com/10.1080/09687760802526707</p>
 <p><a title="Integrating web-based and 3D learning environments" href="http://www.upgrade-cepis.org/issues/2008/3/up9-3-Livingstone.pdf" target="_blank">Integrating Web-Based and 3D Learning Environments: Second Life Meets Moodle</a>,  Livingstone, D., Kemp, J., UPGRADE, The European Journal for the Informatics  Professional, (ISSN 1684-5285),<em> </em>Vol IX, 3, pp8-14.</p>
 <p>Case-study:<br />
-<a href="http://www.sloodle.org/moodle/file.php/1/SLOODLEcasestudy1.pdf">SLOODLE case study: International Cultural Exchange with SLOODLE</a></p>
+<a href="/moodle/file.php/1/SLOODLEcasestudy1.pdf">SLOODLE case study: International Cultural Exchange with SLOODLE</a></p>
 <p class="MsoHeader">Learning Support in Multi-User Virtual Environments,  Livingstone D. and Kemp, J., The European Conference on Games Based Learning, Glynhill Hotel, Paisley, 25-26 October 2007</p>
 <p class="MsoHeader">Sloodle &#8211; Merging Moodle and Second Life, Livingstone, D.  MoodleMoot UK 2007, Milton Keynes, October 23rd-25th 2007</p>
 <p class="MsoHeader"><a href="http://www.alt.ac.uk/altc2007/timetable/abstract.php?abstract_id=1158"> Bridging 3D and web-based learning environments</a>, Livingstone, D. and Kemp,  J. Presented at ALT-C 2007, University of Nottingham. 2007</p>

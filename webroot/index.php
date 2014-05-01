@@ -17,9 +17,9 @@ include(dirname(__FILE__).'/include/header.php');
 
     <h3>Getting started</h3>    <p>To set up SLOODLE on your server, <a href="/download">download</a> it then read our <a href="/docs/SloodleAdminDocs">administrator documentation</a>.
     <br />    Once it's been installed, read the <a href="/docs/Quickstart_Sloodle_2">Quick-Start Guide for SLOODLE 2</a> or <a href="/docs/Quickstart_Sloodle_10">SLOODLE 1.x</a>.
-    </p>    <p>    If you get stuck then please <a href="http://www.sloodle.org/moodle/mod/forum/view.php?f=15">visit our forums</a> to ask a question.
+    </p>    <p>    If you get stuck then please <a href="/moodle/mod/forum/view.php?f=15">visit our forums</a> to ask a question.
     </p>    <p>    Core developers Edmund Edgar and Paul Preibisch also provide a hosted version of SLOODLE, with additional tools, at <a href="http://www.avatarclassroom.com">Avatar Classroom</a>.
-    </p>    <h3>Connect and stay informed</h3>    <p>    To join the SLOODLE community and stay informed of future developments, <a href="/moodle/login/signup.php">sign up on our site</a>. We recommend that new users <a href="http://www.sloodle.org/moodle/mod/forum/view.php?f=16">post their avatar names</a>.
+    </p>    <h3>Connect and stay informed</h3>    <p>    To join the SLOODLE community and stay informed of future developments, <a href="/moodle/login/signup.php">sign up on our site</a>. We recommend that new users <a href="/moodle/mod/forum/view.php?f=16">post their avatar names</a>.
     </p>    <p>    You can also <a href="http://www.twitter.com/sloodle">follow us on Twitter</a>.
     </p>
 <p><br /></p>
