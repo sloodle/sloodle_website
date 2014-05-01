@@ -33,12 +33,15 @@ if (preg_match('/\<title\>(.*?)\<\/title\>/s', $contents, $matches)) {
 	$title = $matches[1];
 }
 
+
 $contents = preg_replace('/^.*?\<div id="mw-content-text.*?\>/s', '', $contents);
 $contents = preg_replace('/<div class="printfooter.*$/s', '', $contents);
 $contents = str_replace('../../../../images/', 'wiki/images/', $contents);
 $contents = preg_replace('#../../../../articles/\w/\w/\w/([A-Za-z0-9_-]+)\.html#', '${1}', $contents);
 $contents = str_replace('http://slisweb.sjsu.edu/sl/index.php/', '', $contents);
 $contents = str_replace('Wiki Frontpage', 'Document Top', $contents);
+$contents = preg_replace('/<table style="background-color:#ffffff; border:solid 1px #cccccc;">/', '<table style="background-color:light-gray; margin-left:0px; margin-top:10px; margin-bottom:10px;">', $contents);
+$contents = preg_replace('/<td style="background-color:#dddddd; font-weight:bold;"> Language Menu:/', '<td>Languages:', $contents);
 
 $sidebar = '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;';
 

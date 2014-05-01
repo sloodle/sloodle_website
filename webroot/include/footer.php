@@ -1,3 +1,5 @@
+<br />
+<br />
 <div id="footer_info" style="font-size:80%; text-align:center">
 Second Life® is a trademark of Linden Research, Inc. SLOODLE is not affiliated with or sponsored by Linden Research.<br/>
 <br />
