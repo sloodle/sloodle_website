@@ -56,7 +56,7 @@
 		<h4>Get the in-world tools:</h4>
 
 		<ul>
-			<li> <b>Second Life</b>: <b><a href="<?= $sl_distribution_location ?>" class="external text" rel="nofollow">Teleport to the SLOODLE area in Second Life</a></b> and use the free Vending Machine to get the tools directly in Second Life. <br /><br /></li>
+			<li> <b>Second Life</b>: <b><a href="https://marketplace.secondlife.com/p/Sloodle-2111/6091104" class="external text" rel="nofollow">Get the rezzer from the Second Life marketplace.<br /><br /></li>
 
 			<li> 
 				<b>OpenSim</b>: <a href="http://download.avatarclassroom.com/sloodle/latest.php?v=2&amp;format=iar" class="external text" rel="nofollow">Download the SLOODLE 2.1 rezzer IAR for OpenSim</a>.<br />
